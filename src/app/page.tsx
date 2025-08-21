@@ -41,7 +41,7 @@ export default function Home() {
         </header>
         
         <main className="flex flex-col items-center justify-center p-4 md:p-8 text-center">
-          <div className="relative w-full max-w-lg mx-auto aspect-square mb-8">
+          <div className="relative w-full max-w-xl mx-auto aspect-square mb-8">
             <Image
               src={dishImage || '/1000786745-removebg-preview.png'}
               alt="Fuego SmartCook"
