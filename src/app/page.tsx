@@ -93,12 +93,12 @@ export default function Home() {
           </div>
           
           <div className="space-y-4 max-w-4xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tighter font-headline animate-float [text-shadow:0_5px_15px_rgba(0,0,0,0.3)]">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter font-headline [text-shadow:0_8px_20px_rgba(0,0,0,0.5)]">
               {title.split('').map((char, index) => (
                 <span
                   key={index}
-                  className="inline-block transition-all duration-300 ease-out hover:text-accent hover:-translate-y-3 hover:scale-110"
-                  style={{ whiteSpace: 'pre' }}
+                  className="inline-block animate-disperse-and-gather"
+                  style={{ animationDelay: `${index * 0.05}s`, whiteSpace: 'pre' }}
                 >
                   {char}
                 </span>

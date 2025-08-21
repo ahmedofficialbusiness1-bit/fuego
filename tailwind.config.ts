@@ -96,10 +96,16 @@ export default {
           '0%': { 'background-position': '0 0' },
           '100%': { 'background-position': '16px 16px' },
         },
-        float: {
-          '0%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
-          '100%': { transform: 'translateY(0px)' },
+        'disperse-and-gather': {
+          '0%, 100%': {
+            transform: 'translateY(0) translateX(0) rotate(0deg)',
+            opacity: '1',
+          },
+          '50%': {
+            transform:
+              'translateY(calc(sin(var(--angle)) * 20px)) translateX(calc(cos(var(--angle)) * 20px)) rotate(calc(var(--angle) * 10deg))',
+            opacity: '0.5',
+          },
         },
       },
       animation: {
@@ -107,7 +113,7 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         glow: 'glow 3s ease-in-out infinite',
         'move-dots': 'move-dots 2s linear infinite',
-        float: 'float 6s ease-in-out infinite',
+        'disperse-and-gather': 'disperse-and-gather 8s ease-in-out infinite',
       },
     },
   },
