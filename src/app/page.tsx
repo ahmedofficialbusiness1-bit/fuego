@@ -53,29 +53,15 @@ export default function Home() {
       <main className="min-h-screen w-full bg-background font-body text-foreground flex items-center justify-center p-4 overflow-hidden">
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl w-full">
           <div className="relative flex items-center justify-center w-full aspect-square -mt-16 lg:mt-0">
-             <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl"></div>
-            
-            <div className="relative w-[70%] h-[70%]">
-              <Image
-                src={imageSrc}
-                alt="Fuego SmartCook Pressure Cooker"
-                width={600}
-                height={600}
-                priority
-                className="rounded-full object-cover shadow-2xl z-10 aspect-square"
-                data-ai-hint={imageHint}
-              />
-              <div className="absolute inset-0 flex items-center justify-center z-20">
-                <div className="w-48 h-24 bg-gray-900/80 backdrop-blur-sm rounded-lg border border-gray-600 flex flex-col items-center justify-center shadow-inner-lg">
-                  <span className="text-6xl font-mono font-bold text-accent tracking-widest drop-shadow-[0_0_5px_hsl(var(--accent))]">
-                    {formatTime(time)}
-                  </span>
-                  <span className="text-xs text-primary-foreground/70 uppercase tracking-widest">
-                    Fuego
-                  </span>
-                </div>
-              </div>
-            </div>
+            <Image
+              src={imageSrc}
+              alt="Fuego SmartCook Pressure Cooker"
+              width={600}
+              height={600}
+              priority
+              className="rounded-lg object-cover shadow-2xl z-10 aspect-square"
+              data-ai-hint={imageHint}
+            />
           </div>
 
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
