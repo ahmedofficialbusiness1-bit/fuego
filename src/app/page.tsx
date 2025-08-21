@@ -11,7 +11,7 @@ import { Toaster } from "@/components/ui/toaster";
 export default function Home() {
   const [time, setTime] = useState(28 * 60); // 28 minutes in seconds
   const [isTimerRunning, setIsTimerRunning] = useState(false);
-  const [imageSrc, setImageSrc] = useState("/images/fuego-smartcook.png");
+  const [imageSrc, setImageSrc] = useState("https://placehold.co/600x400.png");
   const [imageHint, setImageHint] = useState("pressure cooker");
 
   useEffect(() => {
