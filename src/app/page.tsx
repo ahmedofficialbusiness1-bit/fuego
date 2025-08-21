@@ -38,7 +38,8 @@ export default function Home() {
     setRotation({ x: 0, y: 0 });
   };
   
-  const mainTitle = "FUEGO PRESSURE COOKER";
+  const fuegoTitle = "FUEGO";
+  const restOfTitle = " PRESSURE COOKER";
   const subtitle = "FUMUA LADHA ZOTE KWA SEKUNDE";
 
   return (
@@ -92,12 +93,13 @@ export default function Home() {
             </Badge>
           </div>
           
-          <div className="space-y-4 max-w-2xl">
+          <div className="space-y-4 max-w-4xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tighter font-headline">
-              {mainTitle.split('').map((char, index) => (
+              <span className="fuego-animated inline-block">{fuegoTitle}</span>
+              {restOfTitle.split('').map((char, index) => (
                 <span
                   key={index}
-                  className="inline-block transition-all duration-300 ease-out hover:text-accent hover:translate-y-2 hover:scale-110 hover:rotate-3"
+                  className="inline-block transition-all duration-300 ease-out hover:text-accent hover:-translate-y-2 hover:scale-110 hover:rotate-3"
                   style={{ whiteSpace: 'pre' }}
                 >
                   {char}
