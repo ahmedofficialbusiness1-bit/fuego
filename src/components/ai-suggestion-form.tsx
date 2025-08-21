@@ -13,16 +13,18 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Loader2, Sparkles, Lightbulb } from "lucide-react";
+import { Loader2, Sparkles, Lightbulb, Upload } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 interface AISuggestionFormProps {
   onSuggestion: (suggestion: SuggestCookingTimesOutput) => void;
+  onImageChange: (dataUrl: string) => void;
 }
 
-export function AISuggestionForm({ onSuggestion }: AISuggestionFormProps) {
+export function AISuggestionForm({ onSuggestion, onImageChange }: AISuggestionFormProps) {
   const [suggestion, setSuggestion] = useState<SuggestCookingTimesOutput | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [photoDataUri, setPhotoDataUri] = useState<string | null>(null);
   const { toast } = useToast();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -33,11 +35,34 @@ export function AISuggestionForm({ onSuggestion }: AISuggestionFormProps) {
     },
   });
 
+  const handlePhotoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const dataUrl = reader.result as string;
+        setPhotoDataUri(dataUrl);
+        onImageChange(dataUrl);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
     setSuggestion(null);
 
-    const result = await getCookingSuggestion(values);
+    if (!photoDataUri) {
+        toast({
+            variant: "destructive",
+            title: "Error",
+            description: "Please upload a photo of your dish.",
+        });
+        setIsLoading(false);
+        return;
+    }
+
+    const result = await getCookingSuggestion({ ...values, photoDataUri });
 
     setIsLoading(false);
 
@@ -71,6 +96,13 @@ export function AISuggestionForm({ onSuggestion }: AISuggestionFormProps) {
       <CardContent>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <FormItem>
+              <FormLabel>Photo of your Dish</FormLabel>
+              <FormControl>
+                <Input type="file" accept="image/*" onChange={handlePhotoChange} className="file:text-foreground"/>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
             <FormField
               control={form.control}
               name="dishName"

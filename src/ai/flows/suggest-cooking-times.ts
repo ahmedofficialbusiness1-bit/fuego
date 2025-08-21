@@ -20,6 +20,11 @@ const SuggestCookingTimesInputSchema = z.object({
     ),
   availablePrograms:
   z.array(z.string()).describe('Available cooking programs of the Fuego SmartCook pressure cooker, such as Keep Warm, Strong, Rice, Soup, Chicken, and Steam'),
+  photoDataUri: z
+    .string()
+    .describe(
+      "A photo of the dish, as a data URI that must include a MIME type and use Base64 encoding. Expected format: 'data:<mimetype>;base64,<encoded_data>'."
+    ),
 });
 export type SuggestCookingTimesInput = z.infer<typeof SuggestCookingTimesInputSchema>;
 
@@ -40,8 +45,9 @@ const prompt = ai.definePrompt({
   output: {schema: SuggestCookingTimesOutputSchema},
   prompt: `You are an AI cooking assistant that suggests optimal cooking times and programs for the Fuego SmartCook pressure cooker.
 
-  Based on the dish name, user preferences, and available cooking programs, determine the most suitable cooking program and time.
+  Based on the photo of the dish, the dish name, user preferences, and available cooking programs, determine the most suitable cooking program and time.
 
+  Photo of dish: {{media url=photoDataUri}}
   Dish Name: {{{dishName}}}
   User Preferences: {{{userPreferences}}}
   Available Cooking Programs: {{#each availablePrograms}}{{{this}}}{{#unless @last}}, {{/unless}}{{/each}}

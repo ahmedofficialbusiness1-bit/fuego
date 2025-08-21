@@ -13,7 +13,7 @@ export async function getCookingSuggestion(
     return { suggestion: null, error: 'Invalid input.' };
   }
 
-  const { dishName, userPreferences } = validatedFields.data;
+  const { dishName, userPreferences, photoDataUri } = validatedFields.data;
 
   const availablePrograms = ['Keep Warm', 'Strong', 'Rice', 'Soup', 'Chicken', 'Steam'];
   
@@ -21,6 +21,7 @@ export async function getCookingSuggestion(
     dishName,
     userPreferences,
     availablePrograms,
+    photoDataUri,
   };
 
   try {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import { Bolt, Soup, Drumstick, Wheat, Cloud, Flame } from 'lucide-react';
 
@@ -22,6 +22,8 @@ const cookingPrograms = [
 export default function Home() {
   const [time, setTime] = useState(28 * 60); // 28 minutes in seconds
   const [isTimerRunning, setIsTimerRunning] = useState(false);
+  const [imageSrc, setImageSrc] = useState("https://placehold.co/600x600.png");
+  const [imageHint, setImageHint] = useState("pressure cooker");
 
   useEffect(() => {
     let interval: NodeJS.Timeout | undefined;
@@ -44,6 +46,11 @@ export default function Home() {
         setIsTimerRunning(true);
       }
     }
+  }, []);
+  
+  const handleImageChange = useCallback((newImageSrc: string) => {
+    setImageSrc(newImageSrc);
+    setImageHint("user uploaded dish");
   }, []);
 
   const formatTime = (seconds: number) => {
@@ -76,13 +83,13 @@ export default function Home() {
 
             <div className="relative w-[70%] h-[70%]">
               <Image
-                src="https://placehold.co/600x600.png"
+                src={imageSrc}
                 alt="Fuego SmartCook Pressure Cooker"
                 width={600}
                 height={600}
                 priority
-                className="rounded-full object-cover shadow-2xl z-10"
-                data-ai-hint="pressure cooker"
+                className="rounded-full object-cover shadow-2xl z-10 aspect-square"
+                data-ai-hint={imageHint}
               />
               <div className="absolute inset-0 flex items-center justify-center z-20">
                 <div className="w-48 h-24 bg-gray-900/80 backdrop-blur-sm rounded-lg border border-gray-600 flex flex-col items-center justify-center shadow-inner-lg">
@@ -108,7 +115,7 @@ export default function Home() {
             <p className="max-w-md text-muted-foreground">
               Experience the future of cooking. Fuego SmartCook adapts to your needs, delivering perfect meals every time with AI-powered precision.
             </p>
-            <AISuggestionForm onSuggestion={handleSuggestion} />
+            <AISuggestionForm onSuggestion={handleSuggestion} onImageChange={handleImageChange} />
           </div>
         </div>
       </main>
