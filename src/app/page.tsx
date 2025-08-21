@@ -15,7 +15,7 @@ import type { MouseEvent } from "react";
 export default function Home() {
   const [suggestion, setSuggestion] =
     useState<SuggestCookingTimesOutput | null>(null);
-  const [dishImage, setDishImage] = useState<string | null>('/1000786745-removebg-preview.png');
+  const [dishImage, setDishImage] = useState<string | null>('/Adobe Express - file.png');
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
 
@@ -67,7 +67,7 @@ export default function Home() {
             style={{ perspective: '1000px' }}
           >
             <Image
-              src={dishImage || '/1000786745-removebg-preview.png'}
+              src={dishImage || '/Adobe Express - file.png'}
               alt="Fuego SmartCook"
               width={800}
               height={800}
