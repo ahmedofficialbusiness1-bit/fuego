@@ -41,12 +41,13 @@ export default function Home() {
         </header>
         
         <main className="flex flex-col items-center justify-center p-4 md:p-8 text-center">
-          <div className="relative w-full max-w-xl mx-auto aspect-square mb-8">
+          <div className="relative w-full max-w-2xl mx-auto aspect-square mb-8">
             <Image
               src={dishImage || '/1000786745-removebg-preview.png'}
               alt="Fuego SmartCook"
-              width={600}
-              height={600}
+              width={800}
+              height={800}
+              quality={100}
               className="object-contain w-full h-full animate-glow"
               style={{
                 filter: 'drop-shadow(0 0 20px hsl(var(--accent)))'
