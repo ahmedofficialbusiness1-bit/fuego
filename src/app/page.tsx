@@ -93,12 +93,12 @@ export default function Home() {
           </div>
           
           <div className="space-y-4 max-w-4xl">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter font-headline [text-shadow:0_8px_20px_rgba(0,0,0,0.5)]">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter font-headline [text-shadow:0_8px_20px_rgba(0,0,0,0.5)]">
               {title.split('').map((char, index) => (
                 <span
                   key={index}
-                  className="inline-block animate-disperse-and-gather"
-                  style={{ animationDelay: `${index * 0.05}s`, whiteSpace: 'pre' }}
+                  className="inline-block transition-all duration-300 ease-out animate-disperse-and-gather hover:text-accent hover:-translate-y-2 hover:scale-110"
+                  style={{ animationDelay: `${index * 0.05}s`, whiteSpace: 'pre', '--angle': `${Math.random() * 360}deg` } as React.CSSProperties}
                 >
                   {char}
                 </span>
