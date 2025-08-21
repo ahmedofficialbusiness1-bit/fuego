@@ -91,10 +91,10 @@ export default function Home() {
           </div>
           
           <div className="space-y-4 max-w-2xl">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground tracking-tight font-headline">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground tracking-tighter font-headline">
                 FUEGO PRESSURE COOKER
               </h1>
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground/90">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-foreground/90 tracking-tight">
                 FUMUA LADHA ZOTE KWA SEKUNDE
               </h2>
               <p className="max-w-xl text-muted-foreground mx-auto text-sm">
