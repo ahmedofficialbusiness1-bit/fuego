@@ -92,7 +92,7 @@ export default function Home() {
           
           <div className="space-y-4 max-w-2xl">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground tracking-tight font-headline">
-                UHODARI WA KUPIKIA
+                FUEGO PRESSURE COOKER
               </h1>
               <h2 className="text-2xl md:text-3xl font-bold text-foreground/90">
                 FUMUA LADHA ZOTE KWA SEKUNDE
