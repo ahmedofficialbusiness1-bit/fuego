@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="min-h-screen w-full bg-gradient-to-br from-gray-900 via-blue-900 to-black font-body text-white">
+      <div className="min-h-screen w-full bg-gradient-to-br from-red-900 via-orange-700 to-black font-body text-white">
         <header className="w-full max-w-7xl mx-auto flex items-center justify-between p-4 md:p-8">
           <FuegoLogo className="h-16 w-48" />
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
@@ -45,7 +45,7 @@ export default function Home() {
               alt="Fuego SmartCook"
               width={600}
               height={600}
-              className="object-contain w-full h-full animate-glow"
+              className="object-contain w-full h-full"
               data-ai-hint="pressure cooker"
             />
             <Badge className="absolute top-[10%] left-[5%] bg-black/50 backdrop-blur-sm border-accent text-white animate-pulse">
