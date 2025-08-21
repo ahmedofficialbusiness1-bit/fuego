@@ -109,7 +109,7 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'move-dots': 'move-dots 2s linear infinite',
-        'disperse-and-gather': 'disperse-and-gather 15s ease-in-out infinite',
+        'disperse-and-gather': 'disperse-and-gather 5s ease-in-out infinite',
       },
     },
   },
