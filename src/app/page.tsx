@@ -97,7 +97,7 @@ export default function Home() {
               {mainTitle.split('').map((char, index) => (
                 <span
                   key={index}
-                  className="inline-block transition-all duration-300 ease-out hover:text-accent hover:-translate-y-3 hover:scale-115"
+                  className="inline-block transition-all duration-300 ease-out hover:text-accent hover:translate-y-2 hover:scale-110 hover:rotate-3"
                   style={{ whiteSpace: 'pre' }}
                 >
                   {char}
@@ -108,7 +108,7 @@ export default function Home() {
               {subtitle.split('').map((char, index) => (
                 <span
                   key={index}
-                  className="inline-block transition-all duration-300 ease-out hover:text-accent hover:-translate-y-3 hover:scale-115"
+                  className="inline-block transition-all duration-300 ease-out hover:text-accent hover:-translate-y-2 hover:scale-110"
                   style={{ whiteSpace: 'pre' }}
                 >
                   {char}
