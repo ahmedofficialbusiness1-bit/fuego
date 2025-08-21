@@ -39,7 +39,9 @@ export default function Home() {
   const handleMouseLeave = () => {
     setRotation({ x: 0, y: 0 });
   };
-
+  
+  const mainTitle = "FUEGO PRESSURE COOKER";
+  const subtitle = "FUMUA LADHA ZOTE KWA SEKUNDE";
 
   return (
     <>
@@ -92,25 +94,37 @@ export default function Home() {
             </Badge>
           </div>
           
-          <div 
-            className="space-y-4 max-w-2xl"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            >
-              <h1 className={`text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground tracking-tighter font-headline transition-all duration-300 ${isHovered ? 'scale-105 text-accent' : ''}`}>
-                FUEGO PRESSURE COOKER
-              </h1>
-              <h2 className={`text-2xl md:text-3xl font-extrabold text-foreground/90 tracking-tight transition-all duration-300 ${isHovered ? 'scale-105 text-accent' : ''}`}>
-                FUMUA LADHA ZOTE KWA SEKUNDE
-              </h2>
-              <p className="max-w-xl text-muted-foreground mx-auto text-sm">
-                Mfinyaniko wa Umeme wa Kisasa na Vipimo 10 vilivyoboreshwa. Pika kwa usahihi, weka joto, na ongoza kwa urahisi.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold">SOMA MAELEZO ZAIDI</Button>
-                <Button size="lg" variant="outline" className="font-bold">NUNUA SASA</Button>
-              </div>
+          <div className="space-y-4 max-w-2xl">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground tracking-tighter font-headline">
+              {mainTitle.split('').map((char, index) => (
+                <span
+                  key={index}
+                  className="inline-block transition-all duration-300 ease-out hover:text-accent hover:-translate-y-3 hover:scale-110"
+                  style={{ whiteSpace: 'pre' }}
+                >
+                  {char}
+                </span>
+              ))}
+            </h1>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-foreground/90 tracking-tight">
+              {subtitle.split('').map((char, index) => (
+                <span
+                  key={index}
+                  className="inline-block transition-all duration-300 ease-out hover:text-accent hover:-translate-y-2 hover:scale-105"
+                  style={{ whiteSpace: 'pre' }}
+                >
+                  {char}
+                </span>
+              ))}
+            </h2>
+            <p className="max-w-xl text-muted-foreground mx-auto text-sm">
+              Mfinyaniko wa Umeme wa Kisasa na Vipimo 10 vilivyoboreshwa. Pika kwa usahihi, weka joto, na ongoza kwa urahisi.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold">SOMA MAELEZO ZAIDI</Button>
+              <Button size="lg" variant="outline" className="font-bold">NUNUA SASA</Button>
             </div>
+          </div>
 
             <div className="w-full max-w-lg mt-12">
                 <AISuggestionForm onSuggestion={handleSuggestion} onImageChange={handleImageChange} />
