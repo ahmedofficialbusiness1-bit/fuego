@@ -10,11 +10,13 @@ import { Bolt, Lock, Soup } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import type { MouseEvent } from "react";
 
 export default function Home() {
   const [suggestion, setSuggestion] =
     useState<SuggestCookingTimesOutput | null>(null);
   const [dishImage, setDishImage] = useState<string | null>('/1000786745-removebg-preview.png');
+  const [rotation, setRotation] = useState({ x: 0, y: 0 });
 
   const handleSuggestion = (newSuggestion: SuggestCookingTimesOutput) => {
     setSuggestion(newSuggestion);
@@ -23,6 +25,19 @@ export default function Home() {
   const handleImageChange = (dataUrl: string) => {
     setDishImage(dataUrl);
   };
+
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    const { clientX, clientY, currentTarget } = e;
+    const { left, top, width, height } = currentTarget.getBoundingClientRect();
+    const x = (clientX - left - width / 2) / (width / 2);
+    const y = (clientY - top - height / 2) / (height / 2);
+    setRotation({ x: -y * 10, y: x * 10 }); // Multiplied by 10 for more pronounced effect
+  };
+
+  const handleMouseLeave = () => {
+    setRotation({ x: 0, y: 0 });
+  };
+
 
   return (
     <>
@@ -41,16 +56,23 @@ export default function Home() {
         </header>
         
         <main className="flex flex-col items-center justify-center p-4 md:p-8 text-center">
-          <div className="relative w-full max-w-2xl mx-auto aspect-square mb-8">
+          <div 
+            className="relative w-full max-w-2xl mx-auto aspect-square mb-8"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{ perspective: '1000px' }}
+          >
             <Image
               src={dishImage || '/1000786745-removebg-preview.png'}
               alt="Fuego SmartCook"
               width={800}
               height={800}
               quality={100}
-              className="object-contain w-full h-full animate-glow"
+              className="object-contain w-full h-full"
               style={{
-                filter: 'drop-shadow(0 0 20px hsl(var(--accent)))'
+                filter: 'drop-shadow(0 0 20px hsl(var(--accent)))',
+                transition: 'transform 0.1s ease-out',
+                transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
               }}
               data-ai-hint="pressure cooker"
             />
