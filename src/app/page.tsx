@@ -26,9 +26,11 @@ export default function Home() {
 
   return (
     <>
-      <div className="min-h-screen w-full bg-background font-body text-foreground">
+      <div className="fixed inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+      <div className="fixed inset-0 -z-20 h-full w-full bg-gradient-to-t from-slate-50 to-slate-200" />
+      <div className="min-h-screen w-full bg-transparent font-body text-foreground">
         <header className="w-full max-w-7xl mx-auto flex items-center justify-between p-4 md:p-8">
-          <FuegoLogo className="h-20 w-52" />
+          <FuegoLogo className="h-28 w-64" />
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
             <Link href="#" className="text-foreground hover:text-accent transition-colors border-b-2 border-accent pb-1">Home</Link>
             <Link href="#" className="text-muted-foreground hover:text-accent transition-colors">About</Link>
@@ -46,6 +48,9 @@ export default function Home() {
               width={600}
               height={600}
               className="object-contain w-full h-full animate-glow"
+              style={{
+                filter: 'drop-shadow(0 0 20px hsl(var(--accent)))'
+              }}
               data-ai-hint="pressure cooker"
             />
             <Badge className="absolute top-[10%] left-[5%] bg-background/50 backdrop-blur-sm border-accent text-foreground animate-pulse">
