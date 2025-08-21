@@ -7,8 +7,7 @@ export function FuegoLogo({ className }: { className?: string }) {
       <Image
         src="/logo.png"
         alt="Fuego Logo"
-        width={140}
-        height={40}
+        fill
         className="object-contain"
       />
     </div>
