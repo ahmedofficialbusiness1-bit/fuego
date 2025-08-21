@@ -23,7 +23,6 @@ export default function Home() {
   const [randomAngles, setRandomAngles] = useState<number[]>([]);
 
   useEffect(() => {
-    // Generate random angles only on the client-side to prevent hydration mismatch
     setRandomAngles(
       Array.from({ length: title.length }, () => Math.random() * 360)
     );
@@ -42,7 +41,7 @@ export default function Home() {
     const { left, top, width, height } = currentTarget.getBoundingClientRect();
     const x = (clientX - left - width / 2) / (width / 2);
     const y = (clientY - top - height / 2) / (height / 2);
-    setRotation({ x: -y * 10, y: x * 10 }); // Multiplied by 10 for more pronounced effect
+    setRotation({ x: -y * 10, y: x * 10 });
   };
 
   const handleMouseLeave = () => {
@@ -103,14 +102,14 @@ export default function Home() {
           </div>
           
           <div className="space-y-4 max-w-4xl">
-           <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter font-headline [text-shadow:0_8px_20px_rgba(0,0,0,0.5)]">
+           <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter font-headline [text-shadow:0_4px_6px_rgba(0,0,0,0.4)]">
               {title.split('').map((char, index) => (
                 <span
                   key={index}
                   className="inline-block transition-all duration-300 ease-out hover:animate-disperse-and-gather hover:text-accent"
-                  style={{ 
+                  style={{
                     '--angle': `${randomAngles[index] ?? 0}deg`,
-                    whiteSpace: 'pre' 
+                     whiteSpace: char === ' ' ? 'pre' : 'normal',
                   } as React.CSSProperties}
                 >
                   {char}
