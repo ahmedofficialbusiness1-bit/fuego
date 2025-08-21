@@ -9,7 +9,7 @@ import type { SuggestCookingTimesOutput } from "@/ai/flows/suggest-cooking-times
 import { Bolt, Lock, Soup } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { MouseEvent } from "react";
 
 export default function Home() {
@@ -17,6 +17,14 @@ export default function Home() {
     useState<SuggestCookingTimesOutput | null>(null);
   const [dishImage, setDishImage] = useState<string | null>('/Adobe Express - file.png');
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
+  
+  const title = "FUEGO PRESSURE COOKER";
+  const [angles, setAngles] = useState<number[]>([]);
+
+  useEffect(() => {
+    setAngles(title.split('').map(() => Math.random() * 360));
+  }, [title]);
+
 
   const handleSuggestion = (newSuggestion: SuggestCookingTimesOutput) => {
     setSuggestion(newSuggestion);
@@ -38,7 +46,6 @@ export default function Home() {
     setRotation({ x: 0, y: 0 });
   };
   
-  const title = "FUEGO PRESSURE COOKER";
   const subtitle = "FUMUA LADHA ZOTE KWA SEKUNDE";
 
   return (
@@ -98,7 +105,7 @@ export default function Home() {
                 <span
                   key={index}
                   className="inline-block transition-all duration-300 ease-out animate-disperse-and-gather hover:text-accent hover:-translate-y-2 hover:scale-110"
-                  style={{ animationDelay: `${index * 0.05}s`, whiteSpace: 'pre', '--angle': `${Math.random() * 360}deg` } as React.CSSProperties}
+                  style={{ animationDelay: `${index * 0.05}s`, whiteSpace: 'pre', '--angle': `${angles[index] || 0}deg` } as React.CSSProperties}
                 >
                   {char}
                 </span>
