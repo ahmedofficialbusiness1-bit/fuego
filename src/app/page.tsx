@@ -65,21 +65,7 @@ export default function Home() {
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl w-full">
           <div className="relative flex items-center justify-center w-full aspect-square -mt-16 lg:mt-0">
              <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl"></div>
-            {cookingPrograms.map((program, index) => (
-              <div
-                key={program.name}
-                className={cn(
-                  'absolute flex flex-col items-center gap-2 text-primary animate-glow',
-                  program.position
-                )}
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                <div className="p-3 bg-card/80 backdrop-blur-sm rounded-full shadow-lg border border-primary/20">
-                   <program.icon className="w-8 h-8 drop-shadow-[0_0_8px_hsl(var(--accent))]"/>
-                </div>
-                <span className="text-sm font-medium">{program.name}</span>
-              </div>
-            ))}
+            
 
             <div className="relative w-[70%] h-[70%]">
               <Image
