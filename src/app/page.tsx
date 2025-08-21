@@ -26,8 +26,8 @@ export default function Home() {
 
   return (
     <>
-      <div className="fixed inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
-      <div className="fixed inset-0 -z-20 h-full w-full bg-gradient-to-t from-slate-50 to-slate-200" />
+      <div className="fixed inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px] animate-move-dots"></div>
+      <div className="fixed inset-0 -z-20 h-full w-full bg-gradient-to-t from-[#e5d5ca] to-slate-200" />
       <div className="min-h-screen w-full bg-transparent font-body text-foreground">
         <header className="w-full max-w-7xl mx-auto flex items-center justify-between p-4 md:p-8">
           <FuegoLogo className="h-28 w-64" />

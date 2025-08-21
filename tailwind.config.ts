@@ -92,11 +92,16 @@ export default {
           '0%, 100%': { transform: 'scale(1)' },
           '50%': { transform: 'scale(1.02)' },
         },
+        'move-dots': {
+          '0%': { 'background-position': '0 0' },
+          '100%': { 'background-position': '16px 16px' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         glow: 'glow 3s ease-in-out infinite',
+        'move-dots': 'move-dots 2s linear infinite',
       },
     },
   },
