@@ -22,7 +22,7 @@ const cookingPrograms = [
 export default function Home() {
   const [time, setTime] = useState(28 * 60); // 28 minutes in seconds
   const [isTimerRunning, setIsTimerRunning] = useState(false);
-  const [imageSrc, setImageSrc] = useState("https://placehold.co/600x600.png");
+  const [imageSrc, setImageSrc] = useState("/fuego-cooker.png");
   const [imageHint, setImageHint] = useState("pressure cooker");
 
   useEffect(() => {
