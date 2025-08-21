@@ -17,6 +17,8 @@ export default function Home() {
     useState<SuggestCookingTimesOutput | null>(null);
   const [dishImage, setDishImage] = useState<string | null>('/1000786745-removebg-preview.png');
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+
 
   const handleSuggestion = (newSuggestion: SuggestCookingTimesOutput) => {
     setSuggestion(newSuggestion);
@@ -90,11 +92,15 @@ export default function Home() {
             </Badge>
           </div>
           
-          <div className="space-y-4 max-w-2xl">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground tracking-tighter font-headline">
+          <div 
+            className="space-y-4 max-w-2xl"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            >
+              <h1 className={`text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground tracking-tighter font-headline transition-all duration-300 ${isHovered ? 'scale-105 text-accent' : ''}`}>
                 FUEGO PRESSURE COOKER
               </h1>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-foreground/90 tracking-tight">
+              <h2 className={`text-2xl md:text-3xl font-extrabold text-foreground/90 tracking-tight transition-all duration-300 ${isHovered ? 'scale-105 text-accent' : ''}`}>
                 FUMUA LADHA ZOTE KWA SEKUNDE
               </h2>
               <p className="max-w-xl text-muted-foreground mx-auto text-sm">
