@@ -93,7 +93,7 @@ export default function Home() {
           </div>
           
           <div className="space-y-4 max-w-2xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground tracking-tighter font-headline">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tighter font-headline">
               {mainTitle.split('').map((char, index) => (
                 <span
                   key={index}
@@ -104,7 +104,7 @@ export default function Home() {
                 </span>
               ))}
             </h1>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-foreground/90 tracking-tight">
+            <h2 className="text-xl md:text-2xl font-extrabold text-foreground/90 tracking-tight">
               {subtitle.split('').map((char, index) => (
                 <span
                   key={index}
