@@ -19,13 +19,11 @@ export default function Home() {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   
   const title = "FUEGO PRESSURE COOKER";
-  const [angles, setAngles] = useState<number[]>([]);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
-    setAngles(title.split('').map(() => Math.random() * 360));
-  }, [title]);
+  }, []);
 
 
   const handleSuggestion = (newSuggestion: SuggestCookingTimesOutput) => {
@@ -102,12 +100,12 @@ export default function Home() {
           </div>
           
           <div className="space-y-4 max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter font-headline [text-shadow:0_8px_20px_rgba(0,0,0,0.8)]">
+            <h1 className="text-3xl md:text-4xl font-extrabold text-foreground tracking-tighter font-headline">
               {isClient && title.split('').map((char, index) => (
                 <span
                   key={index}
-                  className="inline-block transition-all duration-300 ease-out animate-disperse-and-gather hover:text-accent hover:-translate-y-2 hover:scale-110"
-                  style={{ animationDelay: `${index * 0.05}s`, whiteSpace: 'pre', '--angle': `${angles[index]}deg` } as React.CSSProperties}
+                  className="inline-block transition-all duration-300 ease-out hover:text-accent hover:-translate-y-2 hover:scale-110"
+                  style={{ whiteSpace: 'pre' }}
                 >
                   {char}
                 </span>
