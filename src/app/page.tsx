@@ -11,7 +11,7 @@ import { Toaster } from "@/components/ui/toaster";
 export default function Home() {
   const [time, setTime] = useState(28 * 60); // 28 minutes in seconds
   const [isTimerRunning, setIsTimerRunning] = useState(false);
-  const [imageSrc, setImageSrc] = useState("https://placehold.co/600x400.png");
+  const [imageSrc, setImageSrc] = useState("/1000786745.png");
   const [imageHint, setImageHint] = useState("pressure cooker");
 
   useEffect(() => {
@@ -38,8 +38,7 @@ export default function Home() {
   }, []);
   
   const handleImageChange = useCallback((newImageSrc: string) => {
-    setImageSrc(newImageSrc);
-    setImageHint("user uploaded dish");
+    // This function is now empty as we are not changing the hero image from the form.
   }, []);
 
   const formatTime = (seconds: number) => {
