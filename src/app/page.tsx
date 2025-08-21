@@ -1,82 +1,59 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { FuegoLogo } from '@/components/fuego-logo';
-import { AISuggestionForm } from '@/components/ai-suggestion-form';
-import type { SuggestCookingTimesOutput } from '@/ai/flows/suggest-cooking-times';
+import { Button } from '@/components/ui/button';
 import { Toaster } from "@/components/ui/toaster";
 
 export default function Home() {
-  const [time, setTime] = useState(28 * 60); // 28 minutes in seconds
-  const [isTimerRunning, setIsTimerRunning] = useState(false);
-  const [imageSrc, setImageSrc] = useState("/1000786745.png");
-  const [imageHint, setImageHint] = useState("pressure cooker");
-
-  useEffect(() => {
-    let interval: NodeJS.Timeout | undefined;
-    if (isTimerRunning && time > 0) {
-      interval = setInterval(() => {
-        setTime((prevTime) => prevTime - 1);
-      }, 1000);
-    } else if (time === 0) {
-      setIsTimerRunning(false);
-    }
-    return () => clearInterval(interval);
-  }, [isTimerRunning, time]);
-
-  const handleSuggestion = useCallback((suggestion: SuggestCookingTimesOutput) => {
-    if (suggestion.suggestedCookingTime) {
-      const [minutes, seconds] = suggestion.suggestedCookingTime.split(':').map(Number);
-      if (!isNaN(minutes) && !isNaN(seconds)) {
-        const newTime = (minutes * 60) + seconds;
-        setTime(newTime);
-        setIsTimerRunning(true);
-      }
-    }
-  }, []);
-  
-  const handleImageChange = useCallback((newImageSrc: string) => {
-    setImageSrc(newImageSrc);
-    setImageHint(""); // You might want to update the hint based on the new image
-  }, []);
-
-  const formatTime = (seconds: number) => {
-    const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
-    const secs = (seconds % 60).toString().padStart(2, '0');
-    return `${mins}:${secs}`;
-  };
-
   return (
     <>
-      <main className="min-h-screen w-full bg-background font-body text-foreground flex flex-col items-center justify-center p-4 overflow-hidden">
-        <div className="flex flex-col items-center justify-center max-w-7xl w-full gap-8 py-8">
-          <div className="relative w-full max-w-md aspect-square">
-            <Image
-              src={imageSrc}
-              alt="Fuego SmartCook"
-              fill
-              className="object-contain"
-              data-ai-hint={imageHint}
-            />
-          </div>
-
-          <div className="flex flex-col items-center text-center space-y-6">
+      <div className="min-h-screen w-full bg-background font-body text-foreground flex flex-col">
+        <header className="w-full px-4 md:px-8 py-4">
+          <div className="max-w-7xl mx-auto flex items-center justify-between">
             <FuegoLogo className="h-10 w-auto" />
-            <h1 className="text-4xl md:text-5xl font-extrabold text-primary tracking-tight font-headline">
-              Fuego SmartCook
-            </h1>
-            <p className="text-2xl text-foreground/80 font-medium">
-              Always Smart.
-            </p>
-            <p className="max-w-md text-muted-foreground">
-              Experience the future of cooking. Fuego SmartCook adapts to your needs, delivering perfect meals every time with AI-powered precision.
-            </p>
-            <AISuggestionForm onSuggestion={handleSuggestion} onImageChange={handleImageChange} />
+            <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+              <Link href="#" className="text-foreground hover:text-primary transition-colors">Home</Link>
+              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">About</Link>
+              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Products</Link>
+              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link>
+            </nav>
+            <Button variant="outline" className="md:hidden">Menu</Button>
           </div>
-        </div>
-      </main>
+        </header>
+
+        <main className="flex-1 flex items-center justify-center py-12 px-4 md:px-8">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6 text-center md:text-left">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary tracking-tight font-headline">
+                UHODARI WA KUPIKIA
+              </h1>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground/90">
+                FUMUA LADHA ZOTE KWA SEKUNDE
+              </h2>
+              <p className="max-w-lg text-muted-foreground mx-auto md:mx-0">
+                Mfinyaniko wa Umeme wa Kisasa wa Fuego SmartCook hufanya upishi kuwa rahisi na wa haraka. Gundua ulimwengu wa ladha mpya kwa kugusa kitufe tu.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">SOMA MAELEZO</Button>
+                <Button size="lg" variant="outline">NUNUA SASA</Button>
+              </div>
+            </div>
+            
+            <div className="relative w-full max-w-md mx-auto aspect-square">
+              <Image
+                src="/1000786745.png"
+                alt="Fuego SmartCook"
+                fill
+                className="object-contain"
+                data-ai-hint="pressure cooker"
+              />
+            </div>
+          </div>
+        </main>
+      </div>
       <Toaster />
     </>
   );
