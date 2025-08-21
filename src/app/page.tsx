@@ -45,7 +45,7 @@ export default function Home() {
               alt="Fuego SmartCook"
               width={600}
               height={600}
-              className="object-contain w-full h-full animate-glow-white"
+              className="object-contain w-full h-full animate-glow"
               data-ai-hint="pressure cooker"
             />
             <Badge className="absolute top-[10%] left-[5%] bg-background/50 backdrop-blur-sm border-accent text-foreground animate-pulse">
