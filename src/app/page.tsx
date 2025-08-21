@@ -38,7 +38,8 @@ export default function Home() {
   }, []);
   
   const handleImageChange = useCallback((newImageSrc: string) => {
-    // This function is now empty as we are not changing the hero image from the form.
+    setImageSrc(newImageSrc);
+    setImageHint(""); // You might want to update the hint based on the new image
   }, []);
 
   const formatTime = (seconds: number) => {
@@ -49,9 +50,19 @@ export default function Home() {
 
   return (
     <>
-      <main className="min-h-screen w-full bg-background font-body text-foreground flex items-center justify-center p-4 overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center items-center max-w-7xl w-full gap-16">
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
+      <main className="min-h-screen w-full bg-background font-body text-foreground flex flex-col items-center justify-center p-4 overflow-hidden">
+        <div className="flex flex-col items-center justify-center max-w-7xl w-full gap-8 py-8">
+          <div className="relative w-full max-w-md aspect-square">
+            <Image
+              src={imageSrc}
+              alt="Fuego SmartCook"
+              fill
+              className="object-contain"
+              data-ai-hint={imageHint}
+            />
+          </div>
+
+          <div className="flex flex-col items-center text-center space-y-6">
             <FuegoLogo className="h-10 w-auto" />
             <h1 className="text-4xl md:text-5xl font-extrabold text-primary tracking-tight font-headline">
               Fuego SmartCook
@@ -63,15 +74,6 @@ export default function Home() {
               Experience the future of cooking. Fuego SmartCook adapts to your needs, delivering perfect meals every time with AI-powered precision.
             </p>
             <AISuggestionForm onSuggestion={handleSuggestion} onImageChange={handleImageChange} />
-          </div>
-          <div className="relative w-full max-w-md aspect-square">
-            <Image
-              src={imageSrc}
-              alt="Fuego SmartCook"
-              fill
-              className="object-contain"
-              data-ai-hint={imageHint}
-            />
           </div>
         </div>
       </main>
