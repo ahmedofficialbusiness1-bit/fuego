@@ -65,3 +65,30 @@
 .animation-delay-4000 {
   animation-delay: 4s;
 }
+
+.fire-text-container {
+  position: relative;
+  color: hsl(var(--foreground));
+  transition: color 0.3s ease-in-out;
+}
+
+.fire-text-container::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px hsl(var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(to left, hsl(var(--accent)), #ff7300, #fde400, #fefcc9);
+  background-size: 200% auto;
+  background-position: 200% 0;
+  transition: background-position 0.8s ease-in-out;
+}
+
+.fire-text-container:hover::before {
+  background-position: 0 0;
+}

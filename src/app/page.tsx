@@ -95,16 +95,8 @@ export default function Home() {
           </div>
           
           <div className="space-y-4 max-w-2xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground tracking-tighter font-headline">
-              {mainTitle.split('').map((char, index) => (
-                <span
-                  key={index}
-                  className="inline-block transition-all duration-300 ease-out hover:text-accent hover:-translate-y-4 hover:scale-125"
-                  style={{ whiteSpace: 'pre' }}
-                >
-                  {char}
-                </span>
-              ))}
+          <h1 className="fire-text-container text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground tracking-tighter font-headline whitespace-nowrap">
+              {mainTitle}
             </h1>
             <h2 className="text-2xl md:text-3xl font-extrabold text-foreground/90 tracking-tight">
               {subtitle.split('').map((char, index) => (
