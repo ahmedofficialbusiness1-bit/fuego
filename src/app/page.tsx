@@ -44,7 +44,7 @@ export default function Home() {
               src={dishImage || '/1000786745-removebg-preview.png'}
               alt="Fuego SmartCook"
               fill
-              className="object-contain animate-glow"
+              className="object-contain animate-glow-white"
               data-ai-hint="pressure cooker"
             />
             <Badge className="absolute top-[10%] left-[5%] bg-black/50 backdrop-blur-sm border-accent text-white animate-pulse">
