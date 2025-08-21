@@ -88,15 +88,15 @@ export default {
             height: '0',
           },
         },
-        'glow': {
-          '0%, 100%': { opacity: '0.7', transform: 'scale(1)' },
-          '50%': { opacity: '1', transform: 'scale(1.1)' },
+        glow: {
+          '0%, 100%': { filter: 'drop-shadow(0 0 10px hsl(var(--accent)))', transform: 'scale(1)' },
+          '50%': { filter: 'drop-shadow(0 0 20px hsl(var(--accent)))', transform: 'scale(1.02)' },
         },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'glow': 'glow 4s ease-in-out infinite',
+        glow: 'glow 3s ease-in-out infinite',
       },
     },
   },
