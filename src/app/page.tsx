@@ -26,16 +26,16 @@ export default function Home() {
 
   return (
     <>
-      <div className="min-h-screen w-full bg-gradient-to-br from-gray-50 via-amber-100 to-yellow-300 font-body text-gray-800">
+      <div className="min-h-screen w-full bg-black font-body text-gray-200">
         <header className="w-full max-w-7xl mx-auto flex items-center justify-between p-4 md:p-8">
-          <FuegoLogo className="h-16 w-48" />
+          <FuegoLogo className="h-20 w-52" />
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-            <Link href="#" className="text-gray-800 hover:text-accent transition-colors border-b-2 border-accent pb-1">Home</Link>
-            <Link href="#" className="text-gray-600 hover:text-accent transition-colors">About</Link>
-            <Link href="#" className="text-gray-600 hover:text-accent transition-colors">Products</Link>
-            <Link href="#" className="text-gray-600 hover:text-accent transition-colors">Contact</Link>
+            <Link href="#" className="text-gray-200 hover:text-accent transition-colors border-b-2 border-accent pb-1">Home</Link>
+            <Link href="#" className="text-gray-400 hover:text-accent transition-colors">About</Link>
+            <Link href="#" className="text-gray-400 hover:text-accent transition-colors">Products</Link>
+            <Link href="#" className="text-gray-400 hover:text-accent transition-colors">Contact</Link>
           </nav>
-          <Button variant="outline" className="md:hidden bg-transparent border-gray-400 text-gray-800 hover:bg-gray-200">Menu</Button>
+          <Button variant="outline" className="md:hidden bg-transparent border-gray-600 text-gray-200 hover:bg-gray-800">Menu</Button>
         </header>
         
         <main className="flex flex-col items-center justify-center p-4 md:p-8 text-center">
@@ -63,18 +63,18 @@ export default function Home() {
           </div>
           
           <div className="space-y-4 max-w-2xl">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 tracking-tight font-headline">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight font-headline">
                 UHODARI WA KUPIKIA
               </h1>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-700">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-300">
                 FUMUA LADHA ZOTE KWA SEKUNDE
               </h2>
-              <p className="max-w-xl text-gray-600 mx-auto text-sm">
+              <p className="max-w-xl text-gray-400 mx-auto text-sm">
                 Mfinyaniko wa Umeme wa Kisasa na Vipimo 10 vilivyoboreshwa. Pika kwa usahihi, weka joto, na ongoza kwa urahisi.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold">SOMA MAELEZO ZAIDI</Button>
-                <Button size="lg" variant="outline" className="text-gray-800 border-gray-800 hover:bg-gray-800 hover:text-white font-bold">NAUNUA SASA</Button>
+                <Button size="lg" variant="outline" className="text-gray-200 border-gray-200 hover:bg-gray-200 hover:text-black font-bold">NAUNUA SASA</Button>
               </div>
             </div>
 
