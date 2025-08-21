@@ -94,12 +94,12 @@ export default {
         },
         'disperse-and-gather': {
           '0%, 100%': {
-            transform: 'translateY(0) scale(1)',
+            transform: 'translate(0, 0) scale(1) rotate(0deg)',
             opacity: '1',
             'text-shadow': '0 8px 20px rgba(0,0,0,0.8)',
           },
           '50%': {
-            transform: 'translate(var(--tx), var(--ty)) scale(0.8)',
+            transform: 'translate(calc(cos(var(--angle)) * 60px), calc(sin(var(--angle)) * 60px)) scale(0.8) rotate(calc(var(--angle) * 0.5turn))',
             opacity: '0.5',
             'text-shadow': '0 15px 30px rgba(0,0,0,0.9)',
           },
