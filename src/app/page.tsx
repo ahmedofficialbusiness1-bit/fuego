@@ -68,7 +68,7 @@ export default function Home() {
               <h2 className="text-2xl md:text-3xl font-bold text-gray-300">
                 FUMUA LADHA ZOTE KWA SEKUNDE
               </h2>
-              <p className="max-w-lg text-gray-400 mx-auto text-base">
+              <p className="max-w-xl text-gray-400 mx-auto text-lg">
                 Mfinyaniko wa Umeme wa Kisasa na Vipimo 10 vilivyoboreshwa. Pika kwa usahihi, weka joto, na ongoza kwa urahisi.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
