@@ -20,8 +20,12 @@ export default function Home() {
   
   const title = "FUEGO PRESSURE COOKER";
   
-  const randomAngles = useMemo(() => {
-    return Array.from({ length: title.length }, () => Math.random() * 360);
+  const [randomAngles, setRandomAngles] = useState<number[]>([]);
+
+  useEffect(() => {
+    setRandomAngles(
+      Array.from({ length: title.length }, () => Math.random() * 360)
+    );
   }, [title.length]);
 
   const handleSuggestion = (newSuggestion: SuggestCookingTimesOutput) => {
@@ -98,12 +102,16 @@ export default function Home() {
           </div>
           
           <div className="space-y-4 max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter font-headline [text-shadow:0_8px_20px_rgba(0,0,0,0.5)]">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter font-headline [text-shadow:0_8px_20px_rgba(0,0,0,0.8)]">
               {title.split('').map((char, index) => (
                 <span
                   key={index}
                   className="inline-block transition-all duration-300 ease-out animate-disperse-and-gather hover:text-accent hover:-translate-y-2 hover:scale-110"
-                  style={{ animationDelay: `${index * 0.05}s`, whiteSpace: 'pre', '--angle': `${randomAngles[index]}deg` } as React.CSSProperties}
+                  style={{ 
+                    animationDelay: `${index * 0.05}s`, 
+                    whiteSpace: 'pre', 
+                    '--angle': `${randomAngles[index] ?? 0}deg` 
+                  } as React.CSSProperties}
                 >
                   {char}
                 </span>
