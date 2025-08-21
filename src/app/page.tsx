@@ -26,16 +26,16 @@ export default function Home() {
 
   return (
     <>
-      <div className="min-h-screen w-full bg-black font-body text-gray-200">
+      <div className="min-h-screen w-full bg-background font-body text-foreground">
         <header className="w-full max-w-7xl mx-auto flex items-center justify-between p-4 md:p-8">
           <FuegoLogo className="h-20 w-52" />
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-            <Link href="#" className="text-gray-200 hover:text-accent transition-colors border-b-2 border-accent pb-1">Home</Link>
-            <Link href="#" className="text-gray-400 hover:text-accent transition-colors">About</Link>
-            <Link href="#" className="text-gray-400 hover:text-accent transition-colors">Products</Link>
-            <Link href="#" className="text-gray-400 hover:text-accent transition-colors">Contact</Link>
+            <Link href="#" className="text-foreground hover:text-accent transition-colors border-b-2 border-accent pb-1">Home</Link>
+            <Link href="#" className="text-muted-foreground hover:text-accent transition-colors">About</Link>
+            <Link href="#" className="text-muted-foreground hover:text-accent transition-colors">Products</Link>
+            <Link href="#" className="text-muted-foreground hover:text-accent transition-colors">Contact</Link>
           </nav>
-          <Button variant="outline" className="md:hidden bg-transparent border-gray-600 text-gray-200 hover:bg-gray-800">Menu</Button>
+          <Button variant="outline" className="md:hidden">Menu</Button>
         </header>
         
         <main className="flex flex-col items-center justify-center p-4 md:p-8 text-center">
@@ -48,33 +48,33 @@ export default function Home() {
               className="object-contain w-full h-full animate-glow-white"
               data-ai-hint="pressure cooker"
             />
-            <Badge className="absolute top-[10%] left-[5%] bg-black/50 backdrop-blur-sm border-accent text-white animate-pulse">
+            <Badge className="absolute top-[10%] left-[5%] bg-background/50 backdrop-blur-sm border-accent text-foreground animate-pulse">
               <Bolt className="mr-2 h-4 w-4 text-accent" />
               HARAKA (70% Faster)
             </Badge>
-            <Badge className="absolute top-[40%] right-[-10%] bg-black/50 backdrop-blur-sm border-accent text-white animate-pulse animation-delay-2000">
+            <Badge className="absolute top-[40%] right-[-10%] bg-background/50 backdrop-blur-sm border-accent text-foreground animate-pulse animation-delay-2000">
               <Soup className="mr-2 h-4 w-4 text-accent" />
               AUTOMATIC Programs
             </Badge>
-            <Badge className="absolute bottom-[15%] left-[-5%] bg-black/50 backdrop-blur-sm border-accent text-white animate-pulse animation-delay-4000">
+            <Badge className="absolute bottom-[15%] left-[-5%] bg-background/50 backdrop-blur-sm border-accent text-foreground animate-pulse animation-delay-4000">
               <Lock className="mr-2 h-4 w-4 text-accent" />
               SAFI (Safety Lock)
             </Badge>
           </div>
           
           <div className="space-y-4 max-w-2xl">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight font-headline">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground tracking-tight font-headline">
                 UHODARI WA KUPIKIA
               </h1>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-300">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground/90">
                 FUMUA LADHA ZOTE KWA SEKUNDE
               </h2>
-              <p className="max-w-xl text-gray-400 mx-auto text-sm">
+              <p className="max-w-xl text-muted-foreground mx-auto text-sm">
                 Mfinyaniko wa Umeme wa Kisasa na Vipimo 10 vilivyoboreshwa. Pika kwa usahihi, weka joto, na ongoza kwa urahisi.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold">SOMA MAELEZO ZAIDI</Button>
-                <Button size="lg" variant="outline" className="text-gray-200 border-gray-200 hover:bg-gray-200 hover:text-black font-bold">NAUNUA SASA</Button>
+                <Button size="lg" variant="outline" className="font-bold">NUNUA SASA</Button>
               </div>
             </div>
 

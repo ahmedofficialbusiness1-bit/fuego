@@ -83,7 +83,7 @@ export function AISuggestionForm({ onSuggestion, onImageChange }: AISuggestionFo
   }
 
   return (
-    <Card className="w-full max-w-lg bg-white/60 backdrop-blur-sm border-gray-300 shadow-lg">
+    <Card className="w-full max-w-lg bg-card/60 backdrop-blur-sm border-border shadow-lg">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Sparkles className="text-accent" />
