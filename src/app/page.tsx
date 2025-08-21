@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/toaster";
 import type { SuggestCookingTimesOutput } from "@/ai/flows/suggest-cooking-times";
-import { Bolt, Lock, Soup } from "lucide-react";
+import { Bolt, Cpu, Lock, Soup } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -41,7 +41,7 @@ export default function Home() {
         </header>
 
         <main className="flex-1 flex flex-col items-center justify-center py-12 px-4 md:px-8 text-center">
-          <div className="relative w-full max-w-sm mx-auto aspect-square mb-8">
+          <div className="relative w-full max-w-2xl mx-auto aspect-square mb-8">
             <Image
               src="/1000786745-removebg-preview.png"
               alt="Fuego SmartCook"
@@ -70,7 +70,7 @@ export default function Home() {
               <h2 className="text-2xl md:text-3xl font-bold text-gray-300">
                 FUMUA LADHA ZOTE KWA SEKUNDE
               </h2>
-              <p className="max-w-lg text-gray-400 mx-auto">
+              <p className="max-w-lg text-gray-400 mx-auto text-base">
                 Mfinyaniko wa Umeme wa Kisasa na Vipimo 10 vilivyoboreshwa. Pika kwa usahihi, weka joto, na ongoza kwa urahisi.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
