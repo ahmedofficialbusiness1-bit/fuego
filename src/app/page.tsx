@@ -43,7 +43,7 @@ export default function Home() {
         <main className="flex-1 flex flex-col items-center justify-center py-12 px-4 md:px-8 text-center">
           <div className="relative w-full max-w-sm mx-auto aspect-square mb-8">
             <Image
-              src="/1000786745.png"
+              src="/1000786745-removebg-preview.png"
               alt="Fuego SmartCook"
               fill
               className="object-contain animate-glow"
