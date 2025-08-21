@@ -51,7 +51,7 @@ export default function Home() {
   return (
     <>
       <main className="min-h-screen w-full bg-background font-body text-foreground flex items-center justify-center p-4 overflow-hidden">
-        <div className="grid grid-cols-1 justify-items-center items-center max-w-7xl w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center items-center max-w-7xl w-full gap-16">
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
             <FuegoLogo className="h-10 w-auto" />
             <h1 className="text-4xl md:text-5xl font-extrabold text-primary tracking-tight font-headline">
@@ -64,6 +64,15 @@ export default function Home() {
               Experience the future of cooking. Fuego SmartCook adapts to your needs, delivering perfect meals every time with AI-powered precision.
             </p>
             <AISuggestionForm onSuggestion={handleSuggestion} onImageChange={handleImageChange} />
+          </div>
+          <div className="relative w-full max-w-md aspect-square">
+            <Image
+              src={imageSrc}
+              alt="Fuego SmartCook"
+              fill
+              className="object-contain"
+              data-ai-hint={imageHint}
+            />
           </div>
         </div>
       </main>
