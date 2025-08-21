@@ -2,22 +2,11 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
-import { Bolt, Soup, Drumstick, Wheat, Cloud, Flame } from 'lucide-react';
 
-import { cn } from '@/lib/utils';
 import { FuegoLogo } from '@/components/fuego-logo';
 import { AISuggestionForm } from '@/components/ai-suggestion-form';
 import type { SuggestCookingTimesOutput } from '@/ai/flows/suggest-cooking-times';
 import { Toaster } from "@/components/ui/toaster";
-
-const cookingPrograms = [
-  { name: 'Strong', icon: Bolt, position: 'top-10 left-10' },
-  { name: 'Keep Warm', icon: Flame, position: 'top-20 right-10' },
-  { name: 'Rice', icon: Wheat, position: 'top-1/2 -translate-y-1/2 left-0' },
-  { name: 'Soup', icon: Soup, position: 'top-1/2 -translate-y-1/2 right-0' },
-  { name: 'Chicken', icon: Drumstick, position: 'bottom-20 left-10' },
-  { name: 'Steam', icon: Cloud, position: 'bottom-10 right-20' },
-];
 
 export default function Home() {
   const [time, setTime] = useState(28 * 60); // 28 minutes in seconds
@@ -66,7 +55,6 @@ export default function Home() {
           <div className="relative flex items-center justify-center w-full aspect-square -mt-16 lg:mt-0">
              <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl"></div>
             
-
             <div className="relative w-[70%] h-[70%]">
               <Image
                 src={imageSrc}
