@@ -93,15 +93,17 @@ export default {
           '100%': { 'background-position': '16px 16px' },
         },
         'disperse-and-gather': {
-          '0%, 100%': {
+           '0%': {
             transform: 'translate(0, 0) scale(1)',
             opacity: '1',
-            color: 'hsl(var(--foreground))',
           },
           '50%': {
-            transform: 'translateX(calc(cos(var(--angle)) * 40px)) translateY(calc(sin(var(--angle)) * 40px)) scale(1.5) rotate(calc(var(--angle)))',
+            transform: 'translateX(calc(cos(var(--angle)) * 60px)) translateY(calc(sin(var(--angle)) * 60px)) scale(0.5) rotate(calc(var(--angle)))',
             opacity: '0.5',
-            color: 'hsl(var(--accent))',
+          },
+          '100%': {
+            transform: 'translate(0, 0) scale(1)',
+            opacity: '1',
           },
         },
       },

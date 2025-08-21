@@ -103,13 +103,14 @@ export default function Home() {
           </div>
           
           <div className="space-y-4 max-w-4xl">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter font-headline [text-shadow:0_8px_20px_rgba(0,0,0,0.5)]">
+           <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter font-headline [text-shadow:0_8px_20px_rgba(0,0,0,0.5)]">
               {title.split('').map((char, index) => (
                 <span
                   key={index}
-                  className="inline-block transition-all duration-300 ease-out hover:animate-disperse-and-gather"
+                  className="inline-block transition-all duration-300 ease-out hover:animate-disperse-and-gather hover:text-accent"
                   style={{ 
-                    '--angle': `${randomAngles[index] ?? 0}deg` 
+                    '--angle': `${randomAngles[index] ?? 0}deg`,
+                    whiteSpace: 'pre' 
                   } as React.CSSProperties}
                 >
                   {char}
