@@ -51,19 +51,7 @@ export default function Home() {
   return (
     <>
       <main className="min-h-screen w-full bg-background font-body text-foreground flex items-center justify-center p-4 overflow-hidden">
-        <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl w-full">
-          <div className="relative flex items-center justify-center w-full aspect-square -mt-16 lg:mt-0">
-            <Image
-              src={imageSrc}
-              alt="Fuego SmartCook Pressure Cooker"
-              width={600}
-              height={600}
-              priority
-              className="rounded-lg object-cover shadow-2xl z-10 aspect-square"
-              data-ai-hint={imageHint}
-            />
-          </div>
-
+        <div className="grid grid-cols-1 justify-items-center items-center max-w-7xl w-full">
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
             <FuegoLogo className="h-10 w-auto" />
             <h1 className="text-4xl md:text-5xl font-extrabold text-primary tracking-tight font-headline">
