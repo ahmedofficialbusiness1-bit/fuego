@@ -28,7 +28,7 @@ export default function Home() {
     <>
       <div className="min-h-screen w-full bg-gradient-to-br from-gray-900 via-blue-900 to-black font-body text-white">
         <header className="w-full max-w-7xl mx-auto flex items-center justify-between p-4 md:p-8">
-          <FuegoLogo className="h-10 w-36" />
+          <FuegoLogo className="h-12 w-40" />
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
             <Link href="#" className="text-white hover:text-accent transition-colors border-b-2 border-accent pb-1">Home</Link>
             <Link href="#" className="text-gray-400 hover:text-accent transition-colors">About</Link>
