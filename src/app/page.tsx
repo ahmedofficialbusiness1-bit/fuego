@@ -38,8 +38,7 @@ export default function Home() {
     setRotation({ x: 0, y: 0 });
   };
   
-  const fuegoTitle = "FUEGO";
-  const restOfTitle = " PRESSURE COOKER";
+  const title = "FUEGO PRESSURE COOKER";
   const subtitle = "FUMUA LADHA ZOTE KWA SEKUNDE";
 
   return (
@@ -94,9 +93,8 @@ export default function Home() {
           </div>
           
           <div className="space-y-4 max-w-4xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tighter font-headline">
-              <span className="fuego-animated inline-block">{fuegoTitle}</span>
-              {restOfTitle.split('').map((char, index) => (
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground tracking-tighter font-headline">
+              {title.split('').map((char, index) => (
                 <span
                   key={index}
                   className="inline-block transition-all duration-300 ease-out hover:text-accent hover:-translate-y-2 hover:scale-110 hover:rotate-3"
