@@ -72,7 +72,6 @@ export default function Home() {
               fill
               className="object-contain"
               data-ai-hint={imageHint}
-              onError={() => setImageSrc("https://placehold.co/600x600.png")}
             />
           </div>
         </div>
