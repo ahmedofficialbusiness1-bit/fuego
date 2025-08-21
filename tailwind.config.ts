@@ -92,11 +92,26 @@ export default {
           '0%': { 'background-position': '0 0' },
           '100%': { 'background-position': '16px 16px' },
         },
+        'disperse-and-gather': {
+          '0%, 100%': {
+            transform: 'translate(0, 0) scale(1)',
+            opacity: '1',
+          },
+          '33.33%': { // End of pause (5s / 15s total)
+             transform: 'translate(0, 0) scale(1)',
+            opacity: '1',
+          },
+          '66.66%': { // Middle of animation (dispersed)
+            transform: 'translateX(calc(cos(var(--angle)) * 60px)) translateY(calc(sin(var(--angle)) * 60px)) scale(1.5)',
+            opacity: '0',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'move-dots': 'move-dots 2s linear infinite',
+        'disperse-and-gather': 'disperse-and-gather 15s ease-in-out infinite',
       },
     },
   },
