@@ -36,9 +36,9 @@ export default function Home() {
       
       <main className="w-full">
         <section className="screen-section relative">
+          <FuegoLogo className="h-24 w-48 absolute top-8 left-8" />
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-6xl">
             <div className="md:w-1/2 text-center md:text-left">
-              <FuegoLogo className="h-24 w-48 mx-auto md:mx-0 mb-4" />
               <h1 className="text-4xl md:text-6xl font-extrabold text-foreground tracking-tighter">
                 {title}
               </h1>
