@@ -106,7 +106,7 @@ export default function Home() {
   return (
     <>
       <div id="dot-container"></div>
-      <div className="fixed inset-0 -z-20 h-full w-full bg-white" />
+      <div className="fixed inset-0 -z-20 h-full w-full bg-background" />
       <div className="min-h-screen w-full bg-transparent font-body text-foreground">
         <header className="w-full max-w-7xl mx-auto flex items-center justify-between p-4 md:p-8">
           <FuegoLogo className="h-28 w-64" />

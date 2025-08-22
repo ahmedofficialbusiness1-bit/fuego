@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 240 5% 96.1%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
@@ -72,7 +72,7 @@
   position: absolute;
   width: 2px;
   height: 2px;
-  background-color: hsl(var(--foreground));
+  background-color: hsl(var(--foreground) / 0.5);
   border-radius: 50%;
   transition: background-color 0.3s ease-out;
 }
