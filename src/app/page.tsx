@@ -19,12 +19,19 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 
 type Face = 'front' | 'right' | 'back' | 'left';
+type Ripple = {
+  id: number;
+  x: number;
+  y: number;
+};
 
 export default function Home() {
   const [suggestion, setSuggestion] =
     useState<SuggestCookingTimesOutput | null>(null);
   const [dishImage, setDishImage] = useState<string | null>(null);
   const [activeFace, setActiveFace] = useState<Face>('front');
+  const [ripples, setRipples] = useState<Ripple[]>([]);
+  let rippleIdCounter = 0;
 
   const sectionRefs = {
     front: useRef<HTMLDivElement>(null),
@@ -85,19 +92,44 @@ export default function Home() {
       }
     });
     
+    const handleMouseMove = (e: globalThis.MouseEvent) => {
+      const newRipple: Ripple = {
+        id: rippleIdCounter++,
+        x: e.clientX,
+        y: e.clientY,
+      };
+      setRipples((prevRipples) => [...prevRipples, newRipple]);
+
+      setTimeout(() => {
+        setRipples((prevRipples) =>
+          prevRipples.filter((r) => r.id !== newRipple.id)
+        );
+      }, 1000); 
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
     return () => {
       Object.values(sectionRefs).forEach((ref) => {
         if (ref.current) {
           observer.unobserve(ref.current);
         }
       });
+       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, [sectionRefs]);
 
 
   return (
     <>
-      <main className="w-full">
+      <main className="w-full relative overflow-hidden">
+        {ripples.map((ripple) => (
+          <div
+            key={ripple.id}
+            className="ripple"
+            style={{ left: `${ripple.x}px`, top: `${ripple.y}px` }}
+          />
+        ))}
         <section id="front" ref={sectionRefs.front} className="screen-section px-8">
           <FuegoLogo className="h-24 w-48 absolute top-8 left-8" />
           <div className="absolute top-8 right-8 z-10">
@@ -400,7 +432,7 @@ export default function Home() {
                         <li><strong>Power:</strong> 1000W</li>
                         <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
                         <li><strong>Color:</strong> Silver</li>
-                        <li><strong>Middle Housing:</strong> Cold Board/1.0mm Thickness</li>
+                        <li><strong>Middle Housing:</strong> Cold Board/1.0mm Thickenss</li>
                         <li><strong>Heater:</strong> 430g</li>
                         <li><strong>Lid:</strong> SS#210/0.8mm Thickness</li>
                         <li><strong>Inner Pot:</strong> 510g Non-Stick Aluminium Pot</li>
