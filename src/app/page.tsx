@@ -53,7 +53,7 @@ export default function Home() {
       <main className="w-full">
         <section className="screen-section relative">
           <div 
-            className="relative w-full max-w-4xl mx-auto h-[80vh] z-10"
+            className="relative w-full max-w-5xl mx-auto h-[80vh] z-10"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={{ perspective: '1000px' }}
