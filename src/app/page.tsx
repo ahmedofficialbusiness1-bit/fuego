@@ -136,7 +136,7 @@ export default function Home() {
         </section>
 
         <section id="right" ref={sectionRefs.right} className="screen-section">
-          <div className="grid md:grid-cols-5 items-center justify-center w-full max-w-full">
+          <div className="grid md:grid-cols-6 items-center justify-center w-full max-w-full">
             <div className="col-span-1 text-right">
               <h2 className="text-3xl font-bold tracking-tighter">Gundua Upishi wa Kisasa</h2>
               <p className="mt-4 text-sm text-muted-foreground">
@@ -207,6 +207,53 @@ export default function Home() {
                      <div>
                         <h3 className="font-bold text-sm">Picha 5: Keki</h3>
                         <p className="text-xs text-muted-foreground">Keki laini iliyopikwa kwa urahisi.</p>
+                    </div>
+                </div>
+            </div>
+            <div className="col-span-1 h-full flex flex-col items-center justify-around">
+                <div className="flex items-center gap-4 w-full">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                        <Image src="https://placehold.co/100x100.png" alt="Picha 6: Samaki" layout="fill" objectFit="cover" data-ai-hint="fish dish"/>
+                    </div>
+                    <div>
+                        <h3 className="font-bold text-sm">Picha 6: Samaki</h3>
+                        <p className="text-xs text-muted-foreground">Samaki wa kukaanga.</p>
+                    </div>
+                </div>
+                <div className="flex items-center gap-4 w-full">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                        <Image src="https://placehold.co/100x100.png" alt="Picha 7: Kuku" layout="fill" objectFit="cover" data-ai-hint="chicken dish"/>
+                    </div>
+                    <div>
+                        <h3 className="font-bold text-sm">Picha 7: Kuku</h3>
+                        <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
+                    </div>
+                </div>
+                 <div className="flex items-center gap-4 w-full">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                        <Image src="https://placehold.co/100x100.png" alt="Picha 8: Mboga za Majani" layout="fill" objectFit="cover" data-ai-hint="vegetable stir-fry"/>
+                    </div>
+                    <div>
+                        <h3 className="font-bold text-sm">Picha 8: Mboga</h3>
+                        <p className="text-xs text-muted-foreground">Mboga za majani za kukaanga.</p>
+                    </div>
+                </div>
+                <div className="flex items-center gap-4 w-full">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                        <Image src="https://placehold.co/100x100.png" alt="Picha 9: Viazi" layout="fill" objectFit="cover" data-ai-hint="roast potatoes"/>
+                    </div>
+                     <div>
+                        <h3 className="font-bold text-sm">Picha 9: Viazi</h3>
+                        <p className="text-xs text-muted-foreground">Viazi vya kukaanga.</p>
+                    </div>
+                </div>
+                 <div className="flex items-center gap-4 w-full">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                        <Image src="https://placehold.co/100x100.png" alt="Picha 10: Ugali" layout="fill" objectFit="cover" data-ai-hint="ugali"/>
+                    </div>
+                     <div>
+                        <h3 className="font-bold text-sm">Picha 10: Ugali</h3>
+                        <p className="text-xs text-muted-foreground">Ugali mlaini na wa moto.</p>
                     </div>
                 </div>
             </div>
@@ -296,3 +343,5 @@ export default function Home() {
     </>
   );
 }
+
+    
