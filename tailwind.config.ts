@@ -133,13 +133,25 @@ export default {
       }
       const colors = theme('textStrokeColor');
       if (colors) {
-        addUtilities(
-          Object.entries(colors).map(([key, value]) => ({
-            [`.${e(`text-stroke-${key}`)}`]: {
-              '-webkit-text-stroke-color': value,
-            },
-          }))
-        );
+        const newUtilities = {};
+        const flattenColorPalette = (colors: any, prefix = ''): any => {
+          return Object.keys(colors).reduce((acc, color) => {
+            const value = colors[color];
+            const newPrefix = prefix ? `${prefix}-${color}` : color;
+            if (typeof value === 'string') {
+                if (color === 'DEFAULT') {
+                    acc[`.${e(`text-stroke-${prefix}`)}`] = { '-webkit-text-stroke-color': value };
+                } else {
+                    acc[`.${e(`text-stroke-${newPrefix}`)}`] = { '-webkit-text-stroke-color': value };
+                }
+            } else if (typeof value === 'object' && value !== null) {
+              Object.assign(acc, flattenColorPalette(value, newPrefix));
+            }
+            return acc;
+          }, {});
+        };
+
+        addUtilities(flattenColorPalette(colors));
       }
     }),
   ],
