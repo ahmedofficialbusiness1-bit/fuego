@@ -13,7 +13,7 @@ interface NavigationProps {
 export function Navigation({ activeFace, setActiveFace }: NavigationProps) {
   const navItems: { face: Face; label: string }[] = [
     { face: 'front', label: 'Home' },
-    { face: 'right', label: 'AI Assistant' },
+    { face: 'right', label: 'Kuhusu Fuego' },
     { face: 'back', label: 'Features' },
     { face: 'left', label: 'Contact' },
   ];
