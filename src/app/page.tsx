@@ -221,94 +221,94 @@ export default function Home() {
             <div className="hidden md:flex md:col-span-1 h-full flex-col items-center justify-center gap-8 order-3">
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Picha 1: Chakula cha Wali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="rice dish"/>
+                        <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
                     </div>
                     <div>
-                        <h3 className="font-bold text-sm">Picha 1: Wali</h3>
-                        <p className="text-xs text-muted-foreground">Wali mtamu na wa kuchambuka.</p>
+                        <h3 className="font-bold text-sm">Kuku</h3>
+                        <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.5s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Picha 2: Chakula cha Nyama" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="meat stew"/>
+                        <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
                     </div>
                     <div>
-                        <h3 className="font-bold text-sm">Picha 2: Nyama</h3>
-                        <p className="text-xs text-muted-foreground">Rosti laini na lenye ladha.</p>
+                        <h3 className="font-bold text-sm">Kuku</h3>
+                        <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
                     </div>
                 </div>
                  <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.5s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Picha 3: Chakula cha Supu" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="soup"/>
+                        <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
                     </div>
                     <div>
-                        <h3 className="font-bold text-sm">Picha 3: Supu</h3>
-                        <p className="text-xs text-muted-foreground">Supu ya moto na yenye virutubisho.</p>
+                        <h3 className="font-bold text-sm">Kuku</h3>
+                        <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.5s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Picha 4: Chakula cha Maharage" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="bean stew"/>
+                        <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
                     </div>
                      <div>
-                        <h3 className="font-bold text-sm">Picha 4: Maharage</h3>
-                        <p className="text-xs text-muted-foreground">Maharage laini na ya kuvutia.</p>
+                        <h3 className="font-bold text-sm">Kuku</h3>
+                        <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
                     </div>
                 </div>
                  <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Picha 5: Keki" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="cake"/>
+                        <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
                     </div>
                      <div>
-                        <h3 className="font-bold text-sm">Picha 5: Keki</h3>
-                        <p className="text-xs text-muted-foreground">Keki laini iliyopikwa kwa urahisi.</p>
+                        <h3 className="font-bold text-sm">Kuku</h3>
+                        <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
                     </div>
                 </div>
             </div>
             <div className="hidden md:flex md:col-span-1 h-full flex-col items-center justify-center gap-8 order-4">
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.8s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Picha 6: Samaki" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="fish dish"/>
+                        <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
                     </div>
                     <div>
-                        <h3 className="font-bold text-sm">Picha 6: Samaki</h3>
-                        <p className="text-xs text-muted-foreground">Samaki wa kukaanga.</p>
+                        <h3 className="font-bold text-sm">Kuku</h3>
+                        <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.2s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Picha 7: Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
+                        <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
                     </div>
                     <div>
-                        <h3 className="font-bold text-sm">Picha 7: Kuku</h3>
+                        <h3 className="font-bold text-sm">Kuku</h3>
                         <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
                     </div>
                 </div>
                  <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.3s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Picha 8: Mboga za Majani" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="vegetable stir-fry"/>
+                        <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
                     </div>
                     <div>
-                        <h3 className="font-bold text-sm">Picha 8: Mboga</h3>
-                        <p className="text-xs text-muted-foreground">Mboga za majani za kukaanga.</p>
+                        <h3 className="font-bold text-sm">Kuku</h3>
+                        <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.8s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Picha 9: Viazi" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="roast potatoes"/>
+                        <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
                     </div>
                      <div>
-                        <h3 className="font-bold text-sm">Picha 9: Viazi</h3>
-                        <p className="text-xs text-muted-foreground">Viazi vya kukaanga.</p>
+                        <h3 className="font-bold text-sm">Kuku</h3>
+                        <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
                     </div>
                 </div>
                  <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.8s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Picha 10: Ugali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="ugali"/>
+                        <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
                     </div>
                      <div>
-                        <h3 className="font-bold text-sm">Picha 10: Ugali</h3>
-                        <p className="text-xs text-muted-foreground">Ugali mlaini na wa moto.</p>
+                        <h3 className="font-bold text-sm">Kuku</h3>
+                        <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
                     </div>
                 </div>
             </div>
