@@ -6,15 +6,17 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/toaster";
 import type { SuggestCookingTimesOutput } from "@/ai/flows/suggest-cooking-times";
-import { Bolt, Clock, Cpu, LifeBuoy, Lock, Mail, MessageSquare, Phone, Soup, User, Zap, ArrowRight } from "lucide-react";
+import { Bolt, Clock, Cpu, LifeBuoy, Lock, Mail, MessageSquare, Phone, Soup, User, Zap, ArrowRight, Salad, Utensils, ShieldCheck, HeartPulse, BrainCircuit, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import type { MouseEvent } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Navigation } from "@/components/ui/navigation";
+import { ScrollArea } from "@/components/ui/scroll-area";
+
 
 type Face = 'front' | 'right' | 'back' | 'left';
 
@@ -136,17 +138,63 @@ export default function Home() {
 
         <section id="right" ref={sectionRefs.right} className="screen-section px-8">
           <div className="grid md:grid-cols-6 items-center justify-center w-full max-w-full">
-            <div className="col-span-1">
-              <h2 className="text-3xl font-bold tracking-tighter">Gundua Upishi wa Kisasa</h2>
-              <p className="mt-4 text-sm text-muted-foreground">
-                Fuego SmartCook inabadilisha jinsi unavyopika. Kwa teknolojia yake ya hali ya juu, unaweza kupika milo mbalimbali kwa haraka, kwa urahisi, na kwa uhakika wa matokeo bora kila wakati. Sahau usumbufu wa jikoni na karibisha mapishi ya kisasa.
-              </p>
-               <Button size="lg" variant="outline" className="mt-6">
-                  Jifunze Zaidi <ArrowRight />
-                </Button>
+            <div className="col-span-2">
+                <h2 className="text-3xl font-bold tracking-tighter mb-6 text-center">Moyo wa jiko lako</h2>
+                <ScrollArea className="h-[70vh] w-full pr-4">
+                    <div className="space-y-4">
+                        <Card className="bg-card/60 backdrop-blur-sm">
+                            <CardHeader>
+                                <CardTitle className="flex items-center gap-2 text-base"><Clock className="text-accent" /> Hifadhi Muda Wako</CardTitle>
+                            </CardHeader>
+                            <CardContent className="text-xs text-muted-foreground">
+                                Fuego imeundwa kwa teknolojia ya kisasa inayopika haraka na salama. Haijalishi unapika wali, ugali, makande, maharage,keki, maandazi, supu au nyama ngumu kila kitu kinakamilika kwa muda mfupi bila kupoteza ladha fuego inapika zaidi ya vyakula 44.
+                            </CardContent>
+                        </Card>
+                         <Card className="bg-card/60 backdrop-blur-sm">
+                            <CardHeader>
+                                <CardTitle className="flex items-center gap-2 text-base"><HeartPulse className="text-accent" /> Pika Chakula Chenye Afya </CardTitle>
+                            </CardHeader>
+                            <CardContent className="text-xs text-muted-foreground">
+                                Kwa kutumia Fuego Pressure Cooker utaboresha afya yako kwani huhifadhi virutubisho na vitamini kwenye chakula chako. Hakuna haja ya mafuta mengi au kupika kwa muda mrefu unaopoteza ladha.
+                            </CardContent>
+                        </Card>
+                         <Card className="bg-card/60 backdrop-blur-sm">
+                            <CardHeader>
+                                <CardTitle className="flex items-center gap-2 text-base"><Utensils className="text-accent" /> Rafiki Yako Jikoni</CardTitle>
+                            </CardHeader>
+                            <CardContent className="text-xs text-muted-foreground">
+                                Kwa vitufe vya moja kwa moja (Rice, Beans, Meat, Soup, Chicken n.k.), huitaji kuwa mtaalamu wa mapishi. Bonyeza tu na acha Fuego ikufanyie kazi.
+                            </CardContent>
+                        </Card>
+                        <Card className="bg-card/60 backdrop-blur-sm">
+                            <CardHeader>
+                                <CardTitle className="flex items-center gap-2 text-base"><ShieldCheck className="text-accent" /> Usalama wa Kipekee</CardTitle>
+                            </CardHeader>
+                            <CardContent className="text-xs text-muted-foreground">
+                                Imetengenezwa kwa mfumo salama wa pressure release, lock system, kufunga vizuri na sensa za joto ili kuhakikisha hakuna ajali jikoni. Ni salama kutumia kila siku bila hofu.
+                            </CardContent>
+                        </Card>
+                         <Card className="bg-card/60 backdrop-blur-sm">
+                            <CardHeader>
+                                <CardTitle className="flex items-center gap-2 text-base"><Users className="text-accent" /> Urahisi kwa Kila Nyumba</CardTitle>
+                            </CardHeader>
+                            <CardContent className="text-xs text-muted-foreground">
+                                Iwe wewe ni mama anayetaka kuokoa muda, mwanafunzi, mfanyakazi au familia kubwa – Fuego inakupa suluhisho la Pamoja.
+                            </CardContent>
+                        </Card>
+                        <Card className="bg-card/60 backdrop-blur-sm">
+                            <CardHeader>
+                                <CardTitle className="flex items-center gap-2 text-base"><LifeBuoy className="text-accent" /> Warranty na Huduma</CardTitle>
+                            </CardHeader>
+                            <CardContent className="text-xs text-muted-foreground">
+                                Fuego ina warranty wa mwaka moja hivyo uko salama kutumia fuego bila ya kujali matatizo ya kiufundi na vile vile tunakupa huduma masaa 4 ikiwemo elimu juu ya matumizi.
+                            </CardContent>
+                        </Card>
+                    </div>
+                </ScrollArea>
             </div>
             
-            <div className="col-span-3 flex justify-center items-center">
+            <div className="col-span-2 flex justify-center items-center">
                <div className="relative w-full h-[90vh]">
                   <Image
                     src="/Adobe Express - file.png"
@@ -342,3 +390,5 @@ export default function Home() {
     </>
   );
 }
+
+    
