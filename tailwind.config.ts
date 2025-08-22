@@ -110,6 +110,13 @@ export default {
         'disperse-and-gather': 'disperse-and-gather 5s ease-in-out',
       },
     },
+    textStrokeWidth: {
+      '1': '1px',
+      '2': '2px',
+      '3': '3px',
+      '4': '4px',
+    },
+    textStrokeColor: (theme) => theme('colors'),
   },
   plugins: [
     require('tailwindcss-animate'),
