@@ -135,7 +135,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="right" ref={sectionRefs.right} className="screen-section">
+        <section id="right" ref={sectionRefs.right} className="screen-section px-8">
           <div className="grid md:grid-cols-6 items-center justify-center w-full max-w-full">
             <div className="col-span-1">
               <h2 className="text-3xl font-bold tracking-tighter">Gundua Upishi wa Kisasa</h2>
@@ -343,5 +343,3 @@ export default function Home() {
     </>
   );
 }
-
-    
