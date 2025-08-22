@@ -126,7 +126,7 @@ export default function Home() {
                 <h2 className="text-3xl font-headline font-bold tracking-tighter mb-6 text-center">Faida za Fuego</h2>
                 <ScrollArea className="h-[60vh] md:h-[70vh] w-full pr-4">
                     <div className="space-y-4">
-                        <Card className="bg-card/60 backdrop-blur-sm">
+                        <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-2 text-base"><Bolt className="text-accent" /> Punguza Gharama</CardTitle>
                             </CardHeader>
@@ -134,7 +134,7 @@ export default function Home() {
                                 Sahau gharama za mkaa na gesi zinazopanda kila siku! Fuego SmartCook inatumia umeme mdogo sana, ikikupunguzia bili na kukuwekea akiba. Ni uwekezaji bora kwa jiko la kisasa na familia yako.
                             </CardContent>
                         </Card>
-                        <Card className="bg-card/60 backdrop-blur-sm">
+                        <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-2 text-base"><Clock className="text-accent" /> Hifadhi Muda Wako</CardTitle>
                             </CardHeader>
@@ -142,7 +142,7 @@ export default function Home() {
                                 Fuego imeundwa kwa teknolojia ya kisasa inayopika haraka na salama. Haijalishi unapika wali, ugali, makande, maharage,keki, maandazi, supu au nyama ngumu kila kitu kinakamilika kwa muda mfupi bila kupoteza ladha fuego inapika zaidi ya vyakula 44.
                             </CardContent>
                         </Card>
-                         <Card className="bg-card/60 backdrop-blur-sm">
+                         <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-2 text-base"><HeartPulse className="text-accent" /> Pika Chakula Chenye Afya </CardTitle>
                             </CardHeader>
@@ -150,7 +150,7 @@ export default function Home() {
                                 Kwa kutumia Fuego Pressure Cooker utaboresha afya yako kwani huhifadhi virutubisho na vitamini kwenye chakula chako. Hakuna haja ya mafuta mengi au kupika kwa muda mrefu unaopoteza ladha.
                             </CardContent>
                         </Card>
-                         <Card className="bg-card/60 backdrop-blur-sm">
+                         <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-2 text-base"><Utensils className="text-accent" /> Rafiki Yako Jikoni</CardTitle>
                             </CardHeader>
@@ -158,7 +158,7 @@ export default function Home() {
                                 Kwa vitufe vya moja kwa moja (Rice, Beans, Meat, Soup, Chicken n.k.), huitaji kuwa mtaalamu wa mapishi. Bonyeza tu na acha Fuego ikufanyie kazi.
                             </CardContent>
                         </Card>
-                        <Card className="bg-card/60 backdrop-blur-sm">
+                        <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-2 text-base"><ShieldCheck className="text-accent" /> Usalama wa Kipekee</CardTitle>
                             </CardHeader>
@@ -166,7 +166,7 @@ export default function Home() {
                                 Imetengenezwa kwa mfumo salama wa pressure release, lock system, kufunga vizuri na sensa za joto ili kuhakikisha hakuna ajali jikoni. Ni salama kutumia kila siku bila hofu.
                             </CardContent>
                         </Card>
-                         <Card className="bg-card/60 backdrop-blur-sm">
+                         <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-2 text-base"><Users className="text-accent" /> Urahisi kwa Kila Nyumba</CardTitle>
                             </CardHeader>
@@ -174,7 +174,7 @@ export default function Home() {
                                 Iwe wewe ni mama anayetaka kuokoa muda, mwanafunzi, mfanyakazi au familia kubwa – Fuego inakupa suluhisho la Pamoja.
                             </CardContent>
                         </Card>
-                        <Card className="bg-card/60 backdrop-blur-sm">
+                        <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-2 text-base"><LifeBuoy className="text-accent" /> Warranty na Huduma</CardTitle>
                             </CardHeader>
@@ -374,7 +374,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-             <Card className="bg-card/60 backdrop-blur-sm">
+             <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
                 <CardHeader>
                     <CardTitle>Sifa za Kiufundi</CardTitle>
                 </CardHeader>
@@ -403,7 +403,7 @@ export default function Home() {
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Una maswali? Tuko hapa kukusaidia. Wasiliana nasi kupitia njia yoyote hapa chini.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
-            <Card className="bg-card/60 backdrop-blur-sm p-8 order-2 md:order-1">
+            <Card className="bg-accent/10 backdrop-blur-sm p-8 order-2 md:order-1 border-accent/30">
               <form className="space-y-4">
                 <div className="relative">
                   <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -444,3 +444,5 @@ export default function Home() {
     </>
   );
 }
+
+    
