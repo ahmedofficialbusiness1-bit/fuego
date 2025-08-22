@@ -120,7 +120,7 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="relative md:w-1/2 w-full h-[90vh]">
+            <div className="relative md:w-1/2 w-full h-[60vh] md:h-[90vh]">
               <Image
                 src="/Adobe Express - file.png"
                 alt="Fuego SmartCook"
@@ -137,10 +137,10 @@ export default function Home() {
         </section>
 
         <section id="right" ref={sectionRefs.right} className="screen-section px-8">
-          <div className="grid md:grid-cols-6 items-center justify-center w-full max-w-full">
-            <div className="col-span-2">
+          <div className="flex flex-col md:grid md:grid-cols-6 items-center justify-center w-full max-w-full h-full">
+            <div className="md:col-span-2 order-2 md:order-1">
                 <h2 className="text-3xl font-bold tracking-tighter mb-6 text-center">Moyo wa jiko lako</h2>
-                <ScrollArea className="h-[70vh] w-full pr-4">
+                <ScrollArea className="h-[60vh] md:h-[70vh] w-full pr-4">
                     <div className="space-y-4">
                         <Card className="bg-card/60 backdrop-blur-sm">
                             <CardHeader>
@@ -194,8 +194,8 @@ export default function Home() {
                 </ScrollArea>
             </div>
             
-            <div className="col-span-2 flex justify-center items-center">
-               <div className="relative w-full h-[90vh]">
+            <div className="md:col-span-2 flex justify-center items-center order-1 md:order-2 h-[40vh] md:h-auto">
+               <div className="relative w-full h-full md:h-[90vh]">
                   <Image
                     src="/Adobe Express - file.png"
                     alt="Fuego SmartCook"
@@ -210,7 +210,7 @@ export default function Home() {
                 </div>
             </div>
             
-            <div className="col-span-1 h-full flex flex-col items-center justify-center gap-8">
+            <div className="hidden md:flex md:col-span-1 h-full flex-col items-center justify-center gap-8 order-3">
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 1: Chakula cha Wali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="rice dish"/>
@@ -257,7 +257,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className="col-span-1 h-full flex flex-col items-center justify-center gap-8">
+            <div className="hidden md:flex md:col-span-1 h-full flex-col items-center justify-center gap-8 order-4">
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.8s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 6: Samaki" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="fish dish"/>
@@ -349,7 +349,7 @@ export default function Home() {
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Una maswali? Tuko hapa kukusaidia. Wasiliana nasi kupitia njia yoyote hapa chini.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
-            <Card className="bg-card/60 backdrop-blur-sm p-8">
+            <Card className="bg-card/60 backdrop-blur-sm p-8 order-2 md:order-1">
               <form className="space-y-4">
                 <div className="relative">
                   <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -365,7 +365,7 @@ export default function Home() {
                 <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">Tuma Ujumbe</Button>
               </form>
             </Card>
-            <div className="space-y-4 flex flex-col justify-center">
+            <div className="space-y-4 flex flex-col justify-center order-1 md:order-2">
               <div className="flex items-center gap-4">
                 <Phone className="w-6 h-6 text-accent" />
                 <span className="text-muted-foreground">+255 712 345 678</span>
