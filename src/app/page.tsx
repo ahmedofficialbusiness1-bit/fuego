@@ -42,7 +42,6 @@ export default function Home() {
   };
 
   const handleSetActiveFace = (face: Face) => {
-    setActiveFace(face);
     let ref;
     switch (face) {
       case 'front':
@@ -61,48 +60,17 @@ export default function Home() {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
   };
   
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5,
-    };
-
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const face = entry.target.id as Face;
-          setActiveFace(face);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    Object.values(sectionRefs).forEach((ref) => {
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-    });
-
-    return () => {
-      Object.values(sectionRefs).forEach((ref) => {
-        if (ref.current) {
-          observer.unobserve(ref.current);
-        }
-      });
-    };
-  }, [sectionRefs]);
-
 
   return (
     <>
-      <main className="w-full relative overflow-hidden">
-        <section id="front" ref={sectionRefs.front} className="screen-section px-8">
-          <FuegoLogo className="h-24 w-48 absolute top-8 left-8" />
-          <div className="absolute top-8 right-8 z-10">
+      <main className="w-full relative overflow-x-hidden">
+        <div className="fixed top-8 left-8 z-20">
+            <FuegoLogo className="h-24 w-48" />
+        </div>
+        <div className="fixed top-8 right-8 z-20">
             <Navigation activeFace={activeFace} setActiveFace={handleSetActiveFace} />
-          </div>
+        </div>
+        <section id="front" ref={sectionRefs.front} className="screen-section px-8">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-6xl">
             <div className="md:w-1/2 text-center md:text-left">
               <h1 className="text-4xl md:text-6xl font-headline font-black text-foreground tracking-tighter">

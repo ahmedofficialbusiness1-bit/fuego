@@ -54,21 +54,21 @@
     @apply border-border;
   }
   html {
-    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
   }
   body {
     @apply bg-background text-foreground;
     background-color: hsl(var(--background));
     overflow-y: scroll;
-    scroll-behavior: smooth;
   }
   .screen-section {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
-    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
   }
 }
