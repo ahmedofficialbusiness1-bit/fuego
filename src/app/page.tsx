@@ -33,10 +33,7 @@ export default function Home() {
   return (
     <>
       <div className="fixed inset-0 -z-20 h-full w-full bg-background" />
-      <header className="fixed top-0 left-0 w-full max-w-7xl mx-auto flex items-center justify-between p-4 md:p-8 z-50">
-        <FuegoLogo className="h-28 w-64" />
-      </header>
-
+      
       <main className="w-full">
         <section className="screen-section relative">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-6xl">
@@ -52,7 +49,7 @@ export default function Home() {
                 Nunua Sasa <ArrowRight />
               </Button>
             </div>
-            <div className="relative md:w-1/2 w-full h-[75vh]">
+            <div className="relative md:w-1/2 w-full h-[85vh]">
               <Image
                 src="/Adobe Express - file.png"
                 alt="Fuego SmartCook"
