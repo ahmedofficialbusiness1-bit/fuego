@@ -39,7 +39,7 @@ export default function Home() {
           <FuegoLogo className="h-24 w-48 absolute top-8 left-8" />
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-6xl">
             <div className="md:w-1/2 text-center md:text-left">
-              <h1 className="text-4xl md:text-6xl font-extrabold text-foreground tracking-tighter">
+              <h1 className="text-4xl md:text-6xl font-headline font-black text-foreground tracking-tighter">
                 {title}
               </h1>
               <p className="max-w-md mx-auto md:mx-0 mt-4 text-muted-foreground">
