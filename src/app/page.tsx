@@ -19,18 +19,12 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 
 type Face = 'front' | 'right' | 'back' | 'left';
-type Ripple = {
-  id: number;
-  x: number;
-  y: number;
-};
 
 export default function Home() {
   const [suggestion, setSuggestion] =
     useState<SuggestCookingTimesOutput | null>(null);
   const [dishImage, setDishImage] = useState<string | null>(null);
   const [activeFace, setActiveFace] = useState<Face>('front');
-  const [ripples, setRipples] = useState<Ripple[]>([]);
 
   const sectionRefs = {
     front: useRef<HTMLDivElement>(null),
@@ -90,23 +84,6 @@ export default function Home() {
         observer.observe(ref.current);
       }
     });
-    
-    const handleMouseMove = (e: globalThis.MouseEvent) => {
-      const newRipple: Ripple = {
-        id: Date.now() + Math.random(),
-        x: e.clientX,
-        y: e.clientY,
-      };
-      setRipples((prevRipples) => [...prevRipples, newRipple]);
-
-      setTimeout(() => {
-        setRipples((prevRipples) =>
-          prevRipples.filter((r) => r.id !== newRipple.id)
-        );
-      }, 1000); 
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
       Object.values(sectionRefs).forEach((ref) => {
@@ -114,7 +91,6 @@ export default function Home() {
           observer.unobserve(ref.current);
         }
       });
-       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, [sectionRefs]);
 
@@ -122,13 +98,6 @@ export default function Home() {
   return (
     <>
       <main className="w-full relative overflow-hidden">
-        {ripples.map((ripple) => (
-          <div
-            key={ripple.id}
-            className="ripple"
-            style={{ left: `${ripple.x}px`, top: `${ripple.y}px` }}
-          />
-        ))}
         <section id="front" ref={sectionRefs.front} className="screen-section px-8">
           <FuegoLogo className="h-24 w-48 absolute top-8 left-8" />
           <div className="absolute top-8 right-8 z-10">
