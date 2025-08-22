@@ -45,9 +45,14 @@ export default function Home() {
               <p className="max-w-md mx-auto md:mx-0 mt-4 text-muted-foreground">
                 The smart way to cook. Perfectly cooked meals, every single time. Effortless, fast, and intelligent.
               </p>
-              <Button size="lg" className="mt-8 bg-accent hover:bg-accent/90 text-accent-foreground">
-                Nunua Sasa <ArrowRight />
-              </Button>
+              <div className="flex items-center gap-4 mt-8 justify-center md:justify-start">
+                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                  Nunua Sasa <ArrowRight />
+                </Button>
+                <Button size="lg" variant="outline">
+                  Soma Zaidi
+                </Button>
+              </div>
             </div>
             <div className="relative md:w-1/2 w-full h-[85vh]">
               <Image
