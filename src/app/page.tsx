@@ -31,7 +31,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="fixed inset-0 -z-20 h-full w-full bg-background" />
+      <div className="fixed inset-0 -z-20 h-full w-full bg-gradient-to-br from-background via-primary to-accent" />
       
       <main className="w-full">
         <section className="screen-section relative">
