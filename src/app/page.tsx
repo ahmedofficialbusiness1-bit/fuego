@@ -14,7 +14,6 @@ import type { MouseEvent } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Navigation } from "@/components/ui/navigation";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 
@@ -24,14 +23,6 @@ export default function Home() {
   const [suggestion, setSuggestion] =
     useState<SuggestCookingTimesOutput | null>(null);
   const [dishImage, setDishImage] = useState<string | null>(null);
-  const [activeFace, setActiveFace] = useState<Face>('front');
-
-  const sectionRefs = {
-    front: useRef<HTMLDivElement>(null),
-    right: useRef<HTMLDivElement>(null),
-    back: useRef<HTMLDivElement>(null),
-    left: useRef<HTMLDivElement>(null),
-  };
 
   const handleSuggestion = (newSuggestion: SuggestCookingTimesOutput) => {
     setSuggestion(newSuggestion);
@@ -41,36 +32,14 @@ export default function Home() {
     setDishImage(dataUrl);
   };
 
-  const handleSetActiveFace = (face: Face) => {
-    let ref;
-    switch (face) {
-      case 'front':
-        ref = sectionRefs.front;
-        break;
-      case 'right':
-        ref = sectionRefs.right;
-        break;
-      case 'back':
-        ref = sectionRefs.back;
-        break;
-      case 'left':
-        ref = sectionRefs.left;
-        break;
-    }
-    ref.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-  
-
   return (
     <>
       <main className="w-full relative overflow-x-hidden">
         <div className="fixed top-8 left-8 z-20">
             <FuegoLogo className="h-24 w-48" />
         </div>
-        <div className="fixed top-8 right-8 z-20">
-            <Navigation activeFace={activeFace} setActiveFace={handleSetActiveFace} />
-        </div>
-        <section id="front" ref={sectionRefs.front} className="screen-section px-8">
+        
+        <section className="screen-section px-8">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-6xl">
             <div className="md:w-1/2 text-center md:text-left">
               <h1 className="text-4xl md:text-6xl font-headline font-black text-foreground tracking-tighter">
@@ -104,7 +73,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="right" ref={sectionRefs.right} className="screen-section px-8">
+        <section className="screen-section px-8">
           <div className="flex flex-col md:grid md:grid-cols-6 items-center justify-center w-full max-w-full h-full gap-4">
             <div className="md:col-span-2 order-2 md:order-1">
                 <h2 className="text-3xl font-headline font-bold tracking-tighter mb-6 text-center">Faida za Fuego</h2>
@@ -283,7 +252,7 @@ export default function Home() {
           </div>
         </section>
         
-        <section id="back" ref={sectionRefs.back} className="screen-section px-8">
+        <section className="screen-section px-8">
            <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Sifa za Fuego</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua sifa za kiufundi za Fuego SmartCook.</p>
@@ -381,7 +350,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="left" ref={sectionRefs.left} className="screen-section px-8">
+        <section className="screen-section px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Wasiliana Nasi</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Una maswali? Tuko hapa kukusaidia. Wasiliana nasi kupitia njia yoyote hapa chini.</p>
