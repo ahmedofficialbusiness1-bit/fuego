@@ -33,6 +33,9 @@ export default function Home() {
     const dotContainer = document.getElementById('dot-container');
     if (!dotContainer) return;
 
+    // Avoid adding dots if they already exist
+    if (dotContainer.childElementCount > 0) return;
+
     const gridSize = 20;
     const numDots = (window.innerWidth / gridSize) * (window.innerHeight / gridSize);
 
@@ -62,13 +65,14 @@ export default function Home() {
             
             const dx = mouseX - dotX;
             const dy = mouseY - dotY;
-            const distance = Math.sqrt(dx * dx + dy * dy);
+            const distance = Math.sqrt(dx * dx * dx + dy * dy);
 
             if (distance < magnetRadius) {
                 const angle = Math.atan2(dy, dx);
                 const force = (magnetRadius - distance) / magnetRadius;
-                const moveX = Math.cos(angle) * force * magnetStrength * 50;
-                const moveY = Math.sin(angle) * force * magnetStrength * 50;
+                // Invert the direction to repel instead of attract
+                const moveX = -Math.cos(angle) * force * magnetStrength * 50;
+                const moveY = -Math.sin(angle) * force * magnetStrength * 50;
                 el.style.transform = `translate(${moveX}px, ${moveY}px)`;
             } else {
                 el.style.transform = 'translate(0, 0)';
@@ -80,9 +84,6 @@ export default function Home() {
 
     return () => {
         window.removeEventListener('mousemove', handleMouseMove);
-        if(dotContainer) {
-            dotContainer.innerHTML = '';
-        }
     };
 }, []);
 
