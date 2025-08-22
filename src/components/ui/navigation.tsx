@@ -3,6 +3,7 @@
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 type Face = 'front' | 'right' | 'back' | 'left';
 
@@ -19,34 +20,31 @@ const navItems: { face: Face; label: string }[] = [
 ];
 
 export function Navigation({ activeFace, onNavigate }: NavigationProps) {
+  
   const handleClick = (face: Face) => {
     onNavigate(face);
-    const element = document.getElementById(face);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
   };
 
   return (
     <div className="flex flex-row gap-4">
       {navItems.map((item) => (
-        <Button
-          key={item.face}
-          variant={activeFace === item.face ? "default" : "outline"}
-          onClick={() => handleClick(item.face)}
-          className={cn(
-              "transition-all duration-300",
-              activeFace === item.face 
-                  ? 'bg-accent text-accent-foreground' 
-                  : 'bg-card/60 backdrop-blur-sm border-border hover:bg-accent/80'
-          )}
-          aria-label={item.label}
-        >
-          {item.label}
-        </Button>
+         <Link key={item.face} href={`#${item.face}`} passHref legacyBehavior>
+            <a onClick={() => handleClick(item.face)}>
+              <Button
+                variant={activeFace === item.face ? "default" : "outline"}
+                className={cn(
+                    "transition-all duration-300",
+                    activeFace === item.face 
+                        ? 'bg-accent text-accent-foreground' 
+                        : 'bg-card/60 backdrop-blur-sm border-border hover:bg-accent/80'
+                )}
+                aria-label={item.label}
+              >
+                {item.label}
+              </Button>
+            </a>
+        </Link>
       ))}
     </div>
   );
 }
-
-    
