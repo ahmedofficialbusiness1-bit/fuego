@@ -58,6 +58,9 @@
   }
   body {
     @apply bg-background text-foreground;
+    background: linear-gradient(-45deg, hsl(var(--background)), hsl(var(--primary)), hsl(var(--accent)), hsl(var(--background)));
+    background-size: 400% 400%;
+    animation: move-bg 15s ease infinite;
     overflow-y: scroll;
     scroll-behavior: smooth;
   }
