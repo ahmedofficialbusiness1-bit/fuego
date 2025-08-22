@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/toaster";
 import type { SuggestCookingTimesOutput } from "@/ai/flows/suggest-cooking-times";
-import { Bolt, Clock, Cpu, LifeBuoy, Lock, Mail, MessageSquare, Phone, Soup, User, Zap } from "lucide-react";
+import { Bolt, Clock, Cpu, LifeBuoy, Lock, Mail, MessageSquare, Phone, Soup, User, Zap, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -19,7 +19,6 @@ export default function Home() {
   const [suggestion, setSuggestion] =
     useState<SuggestCookingTimesOutput | null>(null);
   const [dishImage, setDishImage] = useState<string | null>(null);
-  const [rotation, setRotation] = useState({ x: 0, y: 0 });
 
   const handleSuggestion = (newSuggestion: SuggestCookingTimesOutput) => {
     setSuggestion(newSuggestion);
@@ -29,18 +28,6 @@ export default function Home() {
     setDishImage(dataUrl);
   };
 
-  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    const { clientX, clientY, currentTarget } = e;
-    const { left, top, width, height } = currentTarget.getBoundingClientRect();
-    const x = (clientX - left - width / 2) / (width / 2);
-    const y = (clientY - top - height / 2) / (height / 2);
-    setRotation({ x: -y * 10, y: x * 10 });
-  };
-
-  const handleMouseLeave = () => {
-    setRotation({ x: 0, y: 0 });
-  };
-  
   const title = "FUEGO PRESSURE COOKER";
 
   return (
@@ -52,30 +39,32 @@ export default function Home() {
 
       <main className="w-full">
         <section className="screen-section relative">
-          <div 
-            className="relative w-full max-w-5xl mx-auto h-[80vh] z-10"
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{ perspective: '1000px' }}
-          >
-            <Image
-              src="/Adobe Express - file.png"
-              alt="Fuego SmartCook"
-              fill
-              quality={100}
-              className="object-contain"
-              style={{
-                filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5))',
-                transition: 'transform 0.1s ease-out',
-                transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
-              }}
-              data-ai-hint="pressure cooker"
-            />
-          </div>
-          <div className="absolute inset-0 flex items-end justify-center pb-20 -z-10">
-              <h1 className="text-7xl md:text-9xl font-extrabold text-black/10 tracking-tighter [text-shadow:none]">
-                  {title}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-6xl">
+            <div className="md:w-1/2 text-center md:text-left">
+              <FuegoLogo className="h-24 w-48 mx-auto md:mx-0 mb-4" />
+              <h1 className="text-4xl md:text-6xl font-extrabold text-foreground tracking-tighter">
+                {title}
               </h1>
+              <p className="max-w-md mx-auto md:mx-0 mt-4 text-muted-foreground">
+                The smart way to cook. Perfectly cooked meals, every single time. Effortless, fast, and intelligent.
+              </p>
+              <Button size="lg" className="mt-8 bg-accent hover:bg-accent/90 text-accent-foreground">
+                Nunua Sasa <ArrowRight />
+              </Button>
+            </div>
+            <div className="relative md:w-1/2 w-full h-[60vh]">
+              <Image
+                src="/Adobe Express - file.png"
+                alt="Fuego SmartCook"
+                fill
+                quality={100}
+                className="object-contain"
+                style={{
+                  filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5))',
+                }}
+                data-ai-hint="pressure cooker"
+              />
+            </div>
           </div>
         </section>
 
