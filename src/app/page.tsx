@@ -16,6 +16,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { cn } from "@/lib/utils";
 
 
 type Face = 'front' | 'right' | 'back' | 'left';
@@ -26,44 +27,6 @@ export default function Home() {
   const [dishImage, setDishImage] = useState<string | null>(null);
 
   const [activeFace, setActiveFace] = useState<Face>('front');
-  
-  const frontRef = useRef<HTMLDivElement>(null);
-  const rightRef = useRef<HTMLDivElement>(null);
-  const backRef = useRef<HTMLDivElement>(null);
-  const leftRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5,
-    };
-
-    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveFace(entry.target.id as Face);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(handleIntersection, observerOptions);
-
-    const refs = [frontRef, rightRef, backRef, leftRef];
-    refs.forEach((ref) => {
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-    });
-
-    return () => {
-      refs.forEach((ref) => {
-        if (ref.current) {
-          observer.unobserve(ref.current);
-        }
-      });
-    };
-  }, []);
 
   const handleSuggestion = (newSuggestion: SuggestCookingTimesOutput) => {
     setSuggestion(newSuggestion);
@@ -79,13 +42,13 @@ export default function Home() {
 
   return (
     <>
-      <main className="w-full relative overflow-x-hidden">
+      <main className="w-full relative overflow-hidden h-screen">
         <header className="absolute top-0 left-0 right-0 z-20 flex justify-between items-center p-8">
             <FuegoLogo className="h-24 w-48" />
             <Navigation activeFace={activeFace} onNavigate={handleSetActiveFace} />
         </header>
         
-        <section id="front" ref={frontRef} className="screen-section px-8">
+        <section id="front" className={cn("screen-section px-8", activeFace === 'front' ? 'section-visible' : 'section-hidden')}>
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-6xl">
             <div className="md:w-1/2 text-center md:text-left">
               <h1 className="text-4xl md:text-6xl font-headline font-black text-foreground tracking-tighter">
@@ -119,7 +82,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="right" ref={rightRef} className="screen-section px-8">
+        <section id="right" className={cn("screen-section px-8", activeFace === 'right' ? 'section-visible' : 'section-hidden')}>
           <div className="flex flex-col md:grid md:grid-cols-6 items-center justify-center w-full max-w-full h-full gap-4">
             <div className="md:col-span-2 order-2 md:order-1">
                 <h2 className="text-3xl font-headline font-bold tracking-tighter mb-6 text-center">Faida za Fuego</h2>
@@ -298,7 +261,7 @@ export default function Home() {
           </div>
         </section>
         
-        <section id="back" ref={backRef} className="screen-section px-8">
+        <section id="back" className={cn("screen-section px-8", activeFace === 'back' ? 'section-visible' : 'section-hidden')}>
            <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Sifa za Fuego</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua sifa za kiufundi za Fuego SmartCook.</p>
@@ -396,7 +359,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="left" ref={leftRef} className="screen-section px-8">
+        <section id="left" className={cn("screen-section px-8", activeFace === 'left' ? 'section-visible' : 'section-hidden')}>
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Wasiliana Nasi</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Una maswali? Tuko hapa kukusaidia. Wasiliana nasi kupitia njia yoyote hapa chini.</p>
@@ -443,7 +406,5 @@ export default function Home() {
     </>
   );
 }
-
-    
 
     

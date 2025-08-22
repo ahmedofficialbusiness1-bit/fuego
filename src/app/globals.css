@@ -59,7 +59,7 @@
   body {
     @apply bg-background text-foreground;
     background-color: hsl(var(--background));
-    overflow-y: scroll;
+    overflow-y: hidden;
   }
   .screen-section {
     min-height: 100vh;
@@ -68,8 +68,44 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    scroll-snap-align: start;
     padding-top: 5rem;
     padding-bottom: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
   }
+}
+
+@keyframes bubble-float {
+  0%, 100% {
+    transform: translateY(-4%) scale(1.02);
+  }
+  50% {
+    transform: translateY(4%) scale(1);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.98); }
+}
+
+.section-visible {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 10;
+  animation: fade-in 0.5s forwards;
+}
+
+.section-hidden {
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  animation: fade-out 0.5s forwards;
 }
