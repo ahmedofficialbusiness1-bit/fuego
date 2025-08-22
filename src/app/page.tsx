@@ -321,7 +321,7 @@ export default function Home() {
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua sifa za kiufundi za Fuego SmartCook.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto items-center">
-            <div className="relative w-full h-[50vh]">
+            <div className="relative w-full h-[60vh]">
               <Image
                 src="/Adobe Express - file.png"
                 alt="Fuego SmartCook on a counter"
@@ -336,56 +336,56 @@ export default function Home() {
             </div>
             <div className="hidden md:flex flex-col justify-center items-center gap-6">
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
-                    <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Sehemu ya 1: Sufuria ya Ndani" layout="fill" className="object-cover" data-ai-hint="inner pot"/>
                     </div>
                     <div>
-                        <h3 className="font-bold text-sm">Sufuria ya Ndani</h3>
+                        <h3 className="font-bold text-xs">Sufuria ya Ndani</h3>
                         <p className="text-xs text-muted-foreground">Non-stick na rahisi kusafisha.</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.2s' }}>
-                    <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Sehemu ya 2: Elementi ya Kupasha Joto" layout="fill" className="object-cover" data-ai-hint="heating element"/>
                     </div>
                     <div>
-                        <h3 className="font-bold text-sm">Elementi ya Joto</h3>
+                        <h3 className="font-bold text-xs">Elementi ya Joto</h3>
                         <p className="text-xs text-muted-foreground">Inasambaza joto sawasawa.</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.4s' }}>
-                    <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Sehemu ya 3: Mfuniko wa Ndani" layout="fill" className="object-cover" data-ai-hint="lid seal"/>
                     </div>
                     <div>
-                        <h3 className="font-bold text-sm">Mfuniko wa Ndani</h3>
+                        <h3 className="font-bold text-xs">Mfuniko wa Ndani</h3>
                         <p className="text-xs text-muted-foreground">Huzuia mvuke kutoka.</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.6s' }}>
-                    <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Sehemu ya 4: Rack ya Kustimisha" layout="fill" className="object-cover" data-ai-hint="steam rack"/>
                     </div>
                     <div>
-                        <h3 className="font-bold text-sm">Rack ya Kustimisha</h3>
+                        <h3 className="font-bold text-xs">Rack ya Kustimisha</h3>
                         <p className="text-xs text-muted-foreground">Kwa mboga na vyakula vingine.</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.8s' }}>
-                    <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Sehemu ya 5: Valve ya Pressure" layout="fill" className="object-cover" data-ai-hint="pressure valve"/>
                     </div>
                     <div>
-                        <h3 className="font-bold text-sm">Valve ya Pressure</h3>
+                        <h3 className="font-bold text-xs">Valve ya Pressure</h3>
                         <p className="text-xs text-muted-foreground">Inadhibiti pressure kwa usalama.</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2s' }}>
-                    <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Sehemu ya 6: Paneli ya Kudhibiti" layout="fill" className="object-cover" data-ai-hint="control panel"/>
                     </div>
                     <div>
-                        <h3 className="font-bold text-sm">Paneli ya Kudhibiti</h3>
+                        <h3 className="font-bold text-xs">Paneli ya Kudhibiti</h3>
                         <p className="text-xs text-muted-foreground">Rahisi kutumia na kuelewa.</p>
                     </div>
                 </div>
