@@ -23,6 +23,7 @@ export default function Home() {
     useState<SuggestCookingTimesOutput | null>(null);
   const [dishImage, setDishImage] = useState<string | null>(null);
   const [activeFace, setActiveFace] = useState<Face>('front');
+  const [imageStyle, setImageStyle] = useState<React.CSSProperties>({});
 
   const sectionRefs = {
     front: useRef<HTMLDivElement>(null),
@@ -30,6 +31,9 @@ export default function Home() {
     back: useRef<HTMLDivElement>(null),
     left: useRef<HTMLDivElement>(null),
   };
+  
+  const imagePlaceholderFrontRef = useRef<HTMLDivElement>(null);
+  const imagePlaceholderRightRef = useRef<HTMLDivElement>(null);
 
   const handleSuggestion = (newSuggestion: SuggestCookingTimesOutput) => {
     setSuggestion(newSuggestion);
@@ -58,8 +62,36 @@ export default function Home() {
     }
     ref.current?.scrollIntoView({ behavior: 'smooth' });
   };
-
+  
   useEffect(() => {
+    const calculateStyle = () => {
+      let placeholderRef;
+      if (activeFace === 'front') {
+        placeholderRef = imagePlaceholderFrontRef;
+      } else if (activeFace === 'right') {
+        placeholderRef = imagePlaceholderRightRef;
+      } else {
+        // Hide image if not in front or right section
+        setImageStyle({ opacity: 0, visibility: 'hidden' });
+        return;
+      }
+
+      if (placeholderRef.current) {
+        const rect = placeholderRef.current.getBoundingClientRect();
+        setImageStyle({
+          position: 'fixed',
+          top: `${rect.top}px`,
+          left: `${rect.left}px`,
+          width: `${rect.width}px`,
+          height: `${rect.height}px`,
+          opacity: 1,
+          visibility: 'visible',
+        });
+      }
+    };
+
+    calculateStyle();
+
     const observerOptions = {
       root: null,
       rootMargin: '0px',
@@ -82,6 +114,9 @@ export default function Home() {
         observer.observe(ref.current);
       }
     });
+    
+    window.addEventListener('resize', calculateStyle);
+    window.addEventListener('scroll', calculateStyle);
 
     return () => {
       Object.values(sectionRefs).forEach((ref) => {
@@ -89,13 +124,28 @@ export default function Home() {
           observer.unobserve(ref.current);
         }
       });
+      window.removeEventListener('resize', calculateStyle);
+      window.removeEventListener('scroll', calculateStyle);
     };
-  }, [sectionRefs]);
+  }, [activeFace, sectionRefs]);
 
 
   return (
     <>
-      
+      <div style={imageStyle} className="z-50 transition-all duration-1000 ease-in-out">
+        <Image
+          src="/Adobe Express - file.png"
+          alt="Fuego SmartCook"
+          fill
+          quality={100}
+          className="object-contain"
+          style={{
+            filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5))',
+          }}
+          data-ai-hint="pressure cooker"
+        />
+      </div>
+
       <main className="w-full">
         <section id="front" ref={sectionRefs.front} className="screen-section px-8">
           <FuegoLogo className="h-24 w-48 absolute top-8 left-8" />
@@ -119,18 +169,8 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="relative md:w-1/2 w-full h-[90vh]">
-              <Image
-                src="/Adobe Express - file.png"
-                alt="Fuego SmartCook"
-                fill
-                quality={100}
-                className="object-contain"
-                style={{
-                  filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5))',
-                }}
-                data-ai-hint="pressure cooker"
-              />
+            <div ref={imagePlaceholderFrontRef} className="relative md:w-1/2 w-full h-[90vh]">
+              {/* Placeholder for the image */}
             </div>
           </div>
         </section>
@@ -147,19 +187,9 @@ export default function Home() {
                 </Button>
             </div>
             
-            <div className="col-span-3 flex justify-center items-center">
-              <div className="relative w-full h-[90vh]">
-                  <Image
-                    src="/Adobe Express - file.png"
-                    alt="Fuego SmartCook"
-                    fill
-                    quality={100}
-                    className="object-contain"
-                    style={{
-                      filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5))',
-                    }}
-                    data-ai-hint="pressure cooker"
-                  />
+            <div ref={imagePlaceholderRightRef} className="col-span-3 flex justify-center items-center">
+               <div className="relative w-full h-[90vh]">
+                  {/* Placeholder for the image */}
                 </div>
             </div>
             
@@ -343,5 +373,3 @@ export default function Home() {
     </>
   );
 }
-
-    
