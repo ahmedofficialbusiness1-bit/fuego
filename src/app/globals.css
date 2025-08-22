@@ -58,10 +58,44 @@
   }
 }
 
+#dot-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  overflow: hidden;
+}
+
+.dot {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: #000;
+  border-radius: 50%;
+  transition: transform 0.1s ease-out;
+}
+
 .animation-delay-2000 {
   animation-delay: 2s;
 }
 
 .animation-delay-4000 {
   animation-delay: 4s;
+}
+
+.group:hover .animate-disperse-and-gather {
+  animation: disperse-and-gather 5s ease-in-out;
+}
+
+@keyframes disperse-and-gather {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(calc(cos(var(--angle)) * 60px)) translateY(calc(sin(var(--angle)) * 60px)) scale(0.5) rotate(calc(var(--angle)));
+    opacity: 0.5;
+  }
 }

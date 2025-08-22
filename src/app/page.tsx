@@ -23,10 +23,69 @@ export default function Home() {
   const [randomAngles, setRandomAngles] = useState<number[]>([]);
 
   useEffect(() => {
+    // This now only runs on the client, after the initial render.
     setRandomAngles(
       Array.from({ length: title.length }, () => Math.random() * 360)
     );
   }, [title.length]);
+
+  useEffect(() => {
+    const dotContainer = document.getElementById('dot-container');
+    if (!dotContainer) return;
+
+    const gridSize = 20;
+    const numDots = (window.innerWidth / gridSize) * (window.innerHeight / gridSize);
+
+    for (let i = 0; i < numDots; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        const x = (i * gridSize) % window.innerWidth;
+        const y = Math.floor(i * gridSize / window.innerWidth) * gridSize;
+        dot.style.left = `${x}px`;
+        dot.style.top = `${y}px`;
+        dot.dataset.originalX = String(x);
+        dot.dataset.originalY = String(y);
+        dotContainer.appendChild(dot);
+    }
+    
+    const handleMouseMove = (e: globalThis.MouseEvent) => {
+        const dots = document.querySelectorAll('.dot');
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+        const magnetRadius = 150;
+        const magnetStrength = 0.5;
+
+        dots.forEach(dot => {
+            const el = dot as HTMLElement;
+            const dotX = parseFloat(el.dataset.originalX || '0');
+            const dotY = parseFloat(el.dataset.originalY || '0');
+            
+            const dx = mouseX - dotX;
+            const dy = mouseY - dotY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < magnetRadius) {
+                const angle = Math.atan2(dy, dx);
+                const force = (magnetRadius - distance) / magnetRadius;
+                const moveX = Math.cos(angle) * force * magnetStrength * 50;
+                const moveY = Math.sin(angle) * force * magnetStrength * 50;
+                el.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            } else {
+                el.style.transform = 'translate(0, 0)';
+            }
+        });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+        window.removeEventListener('mousemove', handleMouseMove);
+        if(dotContainer) {
+            dotContainer.innerHTML = '';
+        }
+    };
+}, []);
+
 
   const handleSuggestion = (newSuggestion: SuggestCookingTimesOutput) => {
     setSuggestion(newSuggestion);
@@ -52,7 +111,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="fixed inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px] animate-move-dots"></div>
+      <div id="dot-container"></div>
       <div className="fixed inset-0 -z-20 h-full w-full bg-gradient-to-t from-[#e5d5ca] to-slate-200" />
       <div className="min-h-screen w-full bg-transparent font-body text-foreground">
         <header className="w-full max-w-7xl mx-auto flex items-center justify-between p-4 md:p-8">
@@ -102,21 +161,21 @@ export default function Home() {
           </div>
           
           <div className="space-y-4 max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter font-headline [text-shadow:0_8px_20px_rgba(0,0,0,0.5)]">
-              {title.split('').map((char, index) => (
-                <span
-                  key={index}
-                  className="inline-block transition-all duration-300 ease-out group hover:text-accent hover:-translate-y-2 hover:scale-110"
-                  style={{ whiteSpace: 'pre' }}
-                >
-                  <span 
-                    className="inline-block group-hover:animate-disperse-and-gather"
-                    style={{'--angle': `${randomAngles[index]}deg`} as React.CSSProperties}
+             <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter font-headline [text-shadow:0_4px_15px_rgba(0,0,0,0.5)]">
+              <span className="group">
+                {title.split('').map((char, index) => (
+                  <span
+                    key={index}
+                    className="inline-block transition-all duration-300 ease-out group-hover:animate-disperse-and-gather hover:text-accent hover:-translate-y-2 hover:scale-110"
+                    style={{ 
+                      whiteSpace: 'pre',
+                      '--angle': `${randomAngles[index]}deg` 
+                    } as React.CSSProperties}
                   >
                     {char}
                   </span>
-                </span>
-              ))}
+                ))}
+              </span>
             </h1>
             <h2 className="text-xl md:text-2xl font-extrabold text-foreground/90 tracking-tight">
               {subtitle.split('').map((char, index) => (

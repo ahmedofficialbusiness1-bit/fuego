@@ -88,10 +88,6 @@ export default {
             height: '0',
           },
         },
-        'move-dots': {
-          '0%': { 'background-position': '0 0' },
-          '100%': { 'background-position': '16px 16px' },
-        },
         'disperse-and-gather': {
            '0%': {
             transform: 'translate(0, 0) scale(1)',
@@ -110,8 +106,7 @@ export default {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'move-dots': 'move-dots 2s linear infinite',
-        'disperse-and-gather': 'disperse-and-gather 2s ease-in-out',
+        'disperse-and-gather': 'disperse-and-gather 5s ease-in-out',
       },
     },
   },
