@@ -320,8 +320,8 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Sifa za Fuego</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua sifa za kiufundi za Fuego SmartCook.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl w-full mx-auto items-center">
-            <div className="relative w-full h-[50vh] md:col-span-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 max-w-7xl w-full mx-auto items-center">
+            <div className="relative w-full h-[80vh]">
               <Image
                 src="/Adobe Express - file.png"
                 alt="Fuego SmartCook on a counter"
@@ -390,27 +390,25 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-             <Card className="bg-card/60 backdrop-blur-sm md:col-span-1 h-full flex flex-col">
+             <Card className="bg-card/60 backdrop-blur-sm">
                 <CardHeader>
                     <CardTitle>Sifa za Kiufundi</CardTitle>
                 </CardHeader>
-                <ScrollArea className="flex-grow">
-                  <CardContent>
-                      <ul className="space-y-3 text-muted-foreground text-sm">
-                          <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
-                          <li><strong>Power:</strong> 1000W</li>
-                          <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
-                          <li><strong>Color:</strong> Silver</li>
-                          <li><strong>Middle Housing:</strong> Cold Board/1.0mm Thickness</li>
-                          <li><strong>Heater:</strong> 430g</li>
-                          <li><strong>Lid:</strong> SS#210/0.8mm Thickness</li>
-                          <li><strong>Inner Pot:</strong> 510g Non-Stick Aluminium Pot</li>
-                          <li><strong>Cable:</strong> 1.0M Copper cable with 13A UK Plug</li>
-                          <li><strong>Accessories:</strong> Measure Cup, Spoon, SS Steam Rack</li>
-                          <li><strong>Packaging:</strong> 4Pcs/Ctn, 3-Layer Giftbox + 5-Layer Cartonbox</li>
-                      </ul>
-                  </CardContent>
-                </ScrollArea>
+                <CardContent>
+                    <ul className="space-y-3 text-muted-foreground text-sm">
+                        <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
+                        <li><strong>Power:</strong> 1000W</li>
+                        <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
+                        <li><strong>Color:</strong> Silver</li>
+                        <li><strong>Middle Housing:</strong> Cold Board/1.0mm Thickness</li>
+                        <li><strong>Heater:</strong> 430g</li>
+                        <li><strong>Lid:</strong> SS#210/0.8mm Thickness</li>
+                        <li><strong>Inner Pot:</strong> 510g Non-Stick Aluminium Pot</li>
+                        <li><strong>Cable:</strong> 1.0M Copper cable with 13A UK Plug</li>
+                        <li><strong>Accessories:</strong> Measure Cup, Spoon, SS Steam Rack</li>
+                        <li><strong>Packaging:</strong> 4Pcs/Ctn, 3-Layer Giftbox + 5-Layer Cartonbox</li>
+                    </ul>
+                </CardContent>
             </Card>
           </div>
         </section>
