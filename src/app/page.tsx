@@ -106,10 +106,9 @@ export default function Home() {
                 {title.split('').map((char, index) => (
                   <span
                     key={index}
-                    className="inline-block transition-all duration-300 ease-out group-hover:animate-disperse-and-gather hover:text-accent hover:-translate-y-2 hover:scale-110"
+                    className="inline-block transition-all duration-300 ease-out hover:text-accent hover:-translate-y-2 hover:scale-110"
                     style={{ 
                       whiteSpace: 'pre',
-                      '--angle': `${randomAngles[index]}deg` 
                     } as React.CSSProperties}
                   >
                     {char}

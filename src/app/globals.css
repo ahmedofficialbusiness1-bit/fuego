@@ -55,6 +55,14 @@
   }
   body {
     @apply bg-background text-foreground;
+    background:
+      linear-gradient(to right, #365b72 50%, transparent 50%),
+      linear-gradient(to right, #98d3d8 50%, transparent 50%),
+      linear-gradient(to right, #365b72 50%, transparent 50%),
+      linear-gradient(to right, #98d3d8 50%, transparent 50%);
+    background-size: 200% 100%, 200% 100%, 200% 100%, 200% 100%;
+    background-position: 100% 0, 100% 0, 100% 0, 100% 0;
+    animation: wave 8s linear infinite;
   }
 }
 
@@ -66,17 +74,20 @@
   animation-delay: 4s;
 }
 
-.group:hover .group-hover\:animate-disperse-and-gather {
-  animation: disperse-and-gather 5s ease-in-out;
-}
-
-@keyframes disperse-and-gather {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 1;
+@keyframes wave {
+  0% {
+    background-position: 100% 0, 100% 0, 100% 0, 100% 0;
+  }
+  25% {
+    background-position: 50% 0, 75% 0, 100% 0, 100% 0;
   }
   50% {
-    transform: translateX(calc(cos(var(--angle)) * 60px)) translateY(calc(sin(var(--angle)) * 60px)) scale(0.5) rotate(calc(var(--angle)));
-    opacity: 0.5;
+    background-position: 0 0, 50% 0, 75% 0, 100% 0;
+  }
+  75% {
+    background-position: 0 0, 25% 0, 50% 0, 75% 0;
+  }
+  100% {
+    background-position: 0 0, 0 0, 0 0, 0 0;
   }
 }
