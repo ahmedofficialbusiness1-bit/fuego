@@ -71,18 +71,6 @@ export default function Home() {
               }}
               data-ai-hint="pressure cooker"
             />
-            <Badge className="absolute top-[10%] left-[5%] bg-background/50 backdrop-blur-sm border-accent text-foreground">
-              <Bolt className="mr-2 h-4 w-4 text-accent" />
-              HARAKA (70% Faster)
-            </Badge>
-            <Badge className="absolute top-[40%] right-[-10%] bg-background/50 backdrop-blur-sm border-accent text-foreground">
-              <Soup className="mr-2 h-4 w-4 text-accent" />
-              AUTOMATIC Programs
-            </Badge>
-            <Badge className="absolute bottom-[15%] left-[-5%] bg-background/50 backdrop-blur-sm border-accent text-foreground">
-              <Lock className="mr-2 h-4 w-4 text-accent" />
-              SAFI (Safety Lock)
-            </Badge>
           </div>
           <div className="absolute inset-0 flex items-end justify-center pb-20 -z-10">
               <h1 className="text-7xl md:text-9xl font-extrabold text-black/10 tracking-tighter [text-shadow:none]">
