@@ -100,7 +100,7 @@ export default function Home() {
       <main className="w-full">
         <section id="front" ref={sectionRefs.front} className="screen-section relative">
           <FuegoLogo className="h-24 w-48 absolute top-8 left-8" />
-          <div className="absolute top-8 left-1/2 -translate-x-1/2 z-10">
+          <div className="absolute top-8 right-8 z-10">
             <Navigation activeFace={activeFace} setActiveFace={handleSetActiveFace} />
           </div>
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-6xl">
