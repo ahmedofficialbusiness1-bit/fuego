@@ -97,7 +97,7 @@ export default function Home() {
     <>
       
       <main className="w-full">
-        <section id="front" ref={sectionRefs.front} className="screen-section relative">
+        <section id="front" ref={sectionRefs.front} className="screen-section px-8">
           <FuegoLogo className="h-24 w-48 absolute top-8 left-8" />
           <div className="absolute top-8 right-8 z-10">
             <Navigation activeFace={activeFace} setActiveFace={handleSetActiveFace} />
@@ -137,7 +137,7 @@ export default function Home() {
 
         <section id="right" ref={sectionRefs.right} className="screen-section">
           <div className="grid md:grid-cols-6 items-center justify-center w-full max-w-full">
-            <div className="col-span-1 text-right">
+            <div className="col-span-1 text-right px-4">
               <h2 className="text-3xl font-bold tracking-tighter">Gundua Upishi wa Kisasa</h2>
               <p className="mt-4 text-sm text-muted-foreground">
                 Fuego SmartCook inabadilisha jinsi unavyopika. Kwa teknolojia yake ya hali ya juu, unaweza kupika milo mbalimbali kwa haraka, kwa urahisi, na kwa uhakika wa matokeo bora kila wakati. Sahau usumbufu wa jikoni na karibisha mapishi ya kisasa.
@@ -163,7 +163,7 @@ export default function Home() {
                 </div>
             </div>
             
-            <div className="col-span-1 h-full flex flex-col items-center justify-around">
+            <div className="col-span-1 h-full flex flex-col items-center justify-around px-2">
                 <div className="flex items-center gap-4 w-full">
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 1: Chakula cha Wali" layout="fill" objectFit="cover" data-ai-hint="rice dish"/>
@@ -210,7 +210,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className="col-span-1 h-full flex flex-col items-center justify-around">
+            <div className="col-span-1 h-full flex flex-col items-center justify-around px-2">
                 <div className="flex items-center gap-4 w-full">
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 6: Samaki" layout="fill" objectFit="cover" data-ai-hint="fish dish"/>
@@ -260,7 +260,7 @@ export default function Home() {
           </div>
         </section>
         
-        <section id="back" ref={sectionRefs.back} className="screen-section">
+        <section id="back" ref={sectionRefs.back} className="screen-section px-8">
            <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter">Sifa za Kipekee</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua uwezo wa Fuego SmartCook unaofanya upishi kuwa rahisi na wa kufurahisha.</p>
@@ -296,7 +296,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="left" ref={sectionRefs.left} className="screen-section">
+        <section id="left" ref={sectionRefs.left} className="screen-section px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter">Wasiliana Nasi</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Una maswali? Tuko hapa kukusaidia. Wasiliana nasi kupitia njia yoyote hapa chini.</p>
@@ -343,5 +343,3 @@ export default function Home() {
     </>
   );
 }
-
-    
