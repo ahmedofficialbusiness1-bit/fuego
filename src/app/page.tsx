@@ -23,7 +23,6 @@ export default function Home() {
   const [randomAngles, setRandomAngles] = useState<number[]>([]);
 
   useEffect(() => {
-    // Generate random angles only on the client-side to avoid hydration errors
     setRandomAngles(
       Array.from({ length: title.length }, () => Math.random() * 360)
     );
@@ -67,7 +66,7 @@ export default function Home() {
           <Button variant="outline" className="md:hidden">Menu</Button>
         </header>
         
-        <main className="flex flex-col items-center justify-center p-4 md:p-8 text-center">
+        <main className="flex flex-col items-center p-4 md:p-8">
           <div 
             className="relative w-full max-w-2xl mx-auto aspect-square"
             onMouseMove={handleMouseMove}
@@ -102,16 +101,17 @@ export default function Home() {
             </Badge>
           </div>
           
-          <div className="space-y-4 max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter font-headline" style={{ textShadow: '0 4px 15px rgba(0,0,0,0.5)' }}>
+          <div className="space-y-4 max-w-4xl -mt-32">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter font-headline [text-shadow:0_8px_20px_rgba(0,0,0,0.5)]">
               {title.split('').map((char, index) => (
                 <span
                   key={index}
-                  className="inline-block transition-all duration-300 ease-out hover:text-accent group"
+                  className="inline-block transition-all duration-300 ease-out group hover:text-accent hover:-translate-y-2 hover:scale-110"
                   style={{
                     animationDelay: `${index * 0.05}s`,
                     whiteSpace: 'pre',
-                  }}
+                    '--angle': `${randomAngles[index]}deg`
+                  } as React.CSSProperties}
                 >
                   <span 
                     className="inline-block group-hover:animate-disperse-and-gather"
