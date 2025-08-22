@@ -42,7 +42,6 @@ export default function Home() {
   };
   
   const title = "FUEGO PRESSURE COOKER";
-  const subtitle = "FUMUA LADHA ZOTE KWA SEKUNDE";
 
   return (
     <>
@@ -60,9 +59,9 @@ export default function Home() {
         </header>
         
         <section className="screen-section wave-bg">
-          <main className="flex flex-col items-center p-4 md:p-8">
+          <main className="flex flex-col items-center justify-center p-4 md:p-8 h-full">
             <div 
-              className="relative w-full max-w-2xl mx-auto aspect-square"
+              className="relative w-full max-w-4xl mx-auto h-[70vh]"
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
               style={{ perspective: '1000px' }}
@@ -70,10 +69,9 @@ export default function Home() {
               <Image
                 src="/Adobe Express - file.png"
                 alt="Fuego SmartCook"
-                width={800}
-                height={800}
+                fill
                 quality={100}
-                className="object-contain w-full h-full"
+                className="object-contain"
                 style={{
                   filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5))',
                   transition: 'transform 0.1s ease-out',
@@ -95,20 +93,10 @@ export default function Home() {
               </Badge>
             </div>
             
-            <div className="space-y-4 max-w-4xl text-center">
+            <div className="space-y-4 max-w-4xl text-center mt-8">
               <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter [text-shadow:0_4px_15px_rgba(0,0,0,0.5)]">
                   {title}
               </h1>
-              <h2 className="text-xl md:text-2xl font-extrabold text-foreground/90 tracking-tight">
-                {subtitle}
-              </h2>
-              <p className="max-w-xl text-muted-foreground mx-auto text-sm">
-                Mfinyaniko wa Umeme wa Kisasa na Vipimo 10 vilivyoboreshwa. Pika kwa usahihi, weka joto, na ongoza kwa urahisi.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold">SOMA MAELEZO ZAIDI</Button>
-                <Button size="lg" variant="outline" className="font-bold">NUNUA SASA</Button>
-              </div>
             </div>
           </main>
         </section>
