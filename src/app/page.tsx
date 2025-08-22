@@ -15,7 +15,7 @@ import type { MouseEvent } from "react";
 export default function Home() {
   const [suggestion, setSuggestion] =
     useState<SuggestCookingTimesOutput | null>(null);
-  const [dishImage, setDishImage] = useState<string | null>('/Adobe Express - file.png');
+  const [dishImage, setDishImage] = useState<string | null>(null);
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   
   const title = "FUEGO PRESSURE COOKER";
@@ -74,14 +74,14 @@ export default function Home() {
             style={{ perspective: '1000px' }}
           >
             <Image
-              src="/1000786745-removebg-preview.png"
+              src="/Adobe Express - file.png"
               alt="Fuego SmartCook"
               width={800}
               height={800}
               quality={100}
               className="object-contain w-full h-full"
               style={{
-                filter: 'drop-shadow(0 20px 25px rgba(0, 0, 0, 0.4))',
+                filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5))',
                 transition: 'transform 0.1s ease-out',
                 transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
               }}
@@ -101,17 +101,13 @@ export default function Home() {
             </Badge>
           </div>
           
-          <div className="space-y-4 max-w-4xl -mt-32">
+          <div className="space-y-4 max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter font-headline [text-shadow:0_8px_20px_rgba(0,0,0,0.5)]">
               {title.split('').map((char, index) => (
                 <span
                   key={index}
                   className="inline-block transition-all duration-300 ease-out group hover:text-accent hover:-translate-y-2 hover:scale-110"
-                  style={{
-                    animationDelay: `${index * 0.05}s`,
-                    whiteSpace: 'pre',
-                    '--angle': `${randomAngles[index]}deg`
-                  } as React.CSSProperties}
+                  style={{ whiteSpace: 'pre' }}
                 >
                   <span 
                     className="inline-block group-hover:animate-disperse-and-gather"
