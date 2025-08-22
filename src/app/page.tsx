@@ -317,36 +317,42 @@ export default function Home() {
         
         <section id="back" ref={sectionRefs.back} className="screen-section px-8">
            <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Sifa za Kipekee</h2>
-            <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua uwezo wa Fuego SmartCook unaofanya upishi kuwa rahisi na wa kufurahisha.</p>
+            <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Sifa za Fuego</h2>
+            <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua sifa za kiufundi za Fuego SmartCook.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl w-full mx-auto items-center">
+            <div className="relative w-full h-[50vh]">
+              <Image
+                src="/Adobe Express - file.png"
+                alt="Fuego SmartCook on a counter"
+                fill
+                quality={100}
+                className="object-contain"
+                style={{
+                  filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.25))',
+                }}
+                data-ai-hint="pressure cooker kitchen"
+              />
+            </div>
              <Card className="bg-card/60 backdrop-blur-sm">
-              <CardHeader className="items-center">
-                <Zap className="w-10 h-10 text-accent mb-4" />
-                <CardTitle>Upishi wa Haraka</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center text-muted-foreground text-sm">
-                Punguza muda wa kupika hadi 70% ikilinganishwa na njia za kawaida. Zaidi ya ladha, ni kuhusu muda wako.
-              </CardContent>
-            </Card>
-            <Card className="bg-card/60 backdrop-blur-sm">
-              <CardHeader className="items-center">
-                <Cpu className="w-10 h-10 text-accent mb-4" />
-                <CardTitle>Programu za Akili</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center text-muted-foreground text-sm">
-                Programu 10 zilizowekwa tayari kwa ajili ya wali, supu, nyama, na zaidi. Chagua na uache Fuego ifanye mengine.
-              </CardContent>
-            </Card>
-            <Card className="bg-card/60 backdrop-blur-sm">
-              <CardHeader className="items-center">
-                <Clock className="w-10 h-10 text-accent mb-4" />
-                <CardTitle>Weka Joto Moja kwa Moja</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center text-muted-foreground text-sm">
-                Baada ya kupika, Fuego huweka chakula chako joto hadi uwe tayari kukila. Hakuna tena chakula baridi.
-              </CardContent>
+                <CardHeader>
+                    <CardTitle>Sifa za Kiufundi</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <ul className="space-y-3 text-muted-foreground text-sm">
+                        <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
+                        <li><strong>Power:</strong> 1000W</li>
+                        <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
+                        <li><strong>Color:</strong> Silver</li>
+                        <li><strong>Middle Housing:</strong> Cold Board/1.0mm Thickness</li>
+                        <li><strong>Heater:</strong> 430g</li>
+                        <li><strong>Lid:</strong> SS#210/0.8mm Thickness</li>
+                        <li><strong>Inner Pot:</strong> 510g Non-Stick Aluminium Pot</li>
+                        <li><strong>Cable:</strong> 1.0M Copper cable with 13A UK Plug</li>
+                        <li><strong>Accessories:</strong> Measure Cup, Spoon, SS Steam Rack</li>
+                        <li><strong>Packaging:</strong> 4Pcs/Ctn, 3-Layer Giftbox + 5-Layer Cartonbox</li>
+                    </ul>
+                </CardContent>
             </Card>
           </div>
         </section>
@@ -398,7 +404,3 @@ export default function Home() {
     </>
   );
 }
-
-    
-
-    
