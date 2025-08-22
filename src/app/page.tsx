@@ -10,16 +10,27 @@ import type { SuggestCookingTimesOutput } from "@/ai/flows/suggest-cooking-times
 import { Bolt, Clock, Cpu, LifeBuoy, Lock, Mail, MessageSquare, Phone, Soup, User, Zap, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import type { MouseEvent } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Navigation } from "@/components/ui/navigation";
+
+type Face = 'front' | 'right' | 'back' | 'left';
 
 export default function Home() {
   const [suggestion, setSuggestion] =
     useState<SuggestCookingTimesOutput | null>(null);
   const [dishImage, setDishImage] = useState<string | null>(null);
+  const [activeFace, setActiveFace] = useState<Face>('front');
+
+  const sectionRefs = {
+    front: useRef<HTMLDivElement>(null),
+    right: useRef<HTMLDivElement>(null),
+    back: useRef<HTMLDivElement>(null),
+    left: useRef<HTMLDivElement>(null),
+  };
 
   const handleSuggestion = (newSuggestion: SuggestCookingTimesOutput) => {
     setSuggestion(newSuggestion);
@@ -29,12 +40,69 @@ export default function Home() {
     setDishImage(dataUrl);
   };
 
+  const handleSetActiveFace = (face: Face) => {
+    setActiveFace(face);
+    let ref;
+    switch (face) {
+      case 'front':
+        ref = sectionRefs.front;
+        break;
+      case 'right':
+        ref = sectionRefs.right;
+        break;
+      case 'back':
+        ref = sectionRefs.back;
+        break;
+      case 'left':
+        ref = sectionRefs.left;
+        break;
+    }
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const face = entry.target.id as Face;
+          setActiveFace(face);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    Object.values(sectionRefs).forEach((ref) => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => {
+      Object.values(sectionRefs).forEach((ref) => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      });
+    };
+  }, [sectionRefs]);
+
+
   return (
     <>
       
       <main className="w-full">
-        <section className="screen-section relative">
+        <section id="front" ref={sectionRefs.front} className="screen-section relative">
           <FuegoLogo className="h-24 w-48 absolute top-8 left-8" />
+          <div className="absolute top-8 left-1/2 -translate-x-1/2 z-10">
+            <Navigation activeFace={activeFace} setActiveFace={handleSetActiveFace} />
+          </div>
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-6xl">
             <div className="md:w-1/2 text-center md:text-left">
               <h1 className="text-4xl md:text-6xl font-headline font-black text-foreground tracking-tighter">
@@ -68,11 +136,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="screen-section">
+        <section id="right" ref={sectionRefs.right} className="screen-section">
           <AISuggestionForm onSuggestion={handleSuggestion} onImageChange={handleImageChange} />
         </section>
         
-        <section className="screen-section">
+        <section id="back" ref={sectionRefs.back} className="screen-section">
            <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter">Sifa za Kipekee</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua uwezo wa Fuego SmartCook unaofanya upishi kuwa rahisi na wa kufurahisha.</p>
@@ -108,7 +176,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="screen-section">
+        <section id="left" ref={sectionRefs.left} className="screen-section">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter">Wasiliana Nasi</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Una maswali? Tuko hapa kukusaidia. Wasiliana nasi kupitia njia yoyote hapa chini.</p>
