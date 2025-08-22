@@ -50,20 +50,16 @@
 }
 
 @layer base {
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+  
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
-    background: linear-gradient(
-      180deg,
-      hsl(var(--primary) / 0.1),
-      hsl(var(--primary) / 0.2),
-      hsl(var(--primary) / 0.1),
-      hsl(var(--background))
-    );
-    background-size: 100% 400%;
-    animation: move-bg 10s linear infinite;
   }
 }
 
@@ -75,6 +71,18 @@
   animation-delay: 4s;
 }
 
+.wave-bg {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--primary) / 0.1),
+      hsl(var(--primary) / 0.2),
+      hsl(var(--primary) / 0.1),
+      hsl(var(--background))
+    );
+    background-size: 100% 400%;
+    animation: move-bg 10s linear infinite;
+}
+
 @keyframes move-bg {
   0% {
     background-position: 0% 0%;
@@ -82,4 +90,16 @@
   100% {
     background-position: 0% 100%;
   }
+}
+
+.screen-section {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: 2rem;
 }

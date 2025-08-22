@@ -6,28 +6,20 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/toaster";
 import type { SuggestCookingTimesOutput } from "@/ai/flows/suggest-cooking-times";
-import { Bolt, Lock, Soup } from "lucide-react";
+import { Bolt, Clock, Cpu, LifeBuoy, Lock, Mail, MessageSquare, Phone, Soup, User, Zap } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import type { MouseEvent } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function Home() {
   const [suggestion, setSuggestion] =
     useState<SuggestCookingTimesOutput | null>(null);
   const [dishImage, setDishImage] = useState<string | null>(null);
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
-  
-  const title = "FUEGO PRESSURE COOKER";
-  
-  const [randomAngles, setRandomAngles] = useState<number[]>([]);
-
-  useEffect(() => {
-    // This now only runs on the client, after the initial render.
-    setRandomAngles(
-      Array.from({ length: title.length }, () => Math.random() * 360)
-    );
-  }, [title.length]);
 
   const handleSuggestion = (newSuggestion: SuggestCookingTimesOutput) => {
     setSuggestion(newSuggestion);
@@ -49,13 +41,14 @@ export default function Home() {
     setRotation({ x: 0, y: 0 });
   };
   
+  const title = "FUEGO PRESSURE COOKER";
   const subtitle = "FUMUA LADHA ZOTE KWA SEKUNDE";
 
   return (
     <>
       <div className="fixed inset-0 -z-20 h-full w-full bg-background" />
       <div className="min-h-screen w-full bg-transparent font-body text-foreground">
-        <header className="w-full max-w-7xl mx-auto flex items-center justify-between p-4 md:p-8">
+        <header className="fixed top-0 left-0 w-full max-w-7xl mx-auto flex items-center justify-between p-4 md:p-8 z-50">
           <FuegoLogo className="h-28 w-64" />
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
             <Link href="#" className="text-foreground hover:text-accent transition-colors border-b-2 border-accent pb-1">Home</Link>
@@ -66,79 +59,144 @@ export default function Home() {
           <Button variant="outline" className="md:hidden">Menu</Button>
         </header>
         
-        <main className="flex flex-col items-center p-4 md:p-8">
-          <div 
-            className="relative w-full max-w-2xl mx-auto aspect-square"
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{ perspective: '1000px' }}
-          >
-            <Image
-              src="/Adobe Express - file.png"
-              alt="Fuego SmartCook"
-              width={800}
-              height={800}
-              quality={100}
-              className="object-contain w-full h-full"
-              style={{
-                filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5))',
-                transition: 'transform 0.1s ease-out',
-                transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
-              }}
-              data-ai-hint="pressure cooker"
-            />
-            <Badge className="absolute top-[10%] left-[5%] bg-background/50 backdrop-blur-sm border-accent text-foreground animate-pulse">
-              <Bolt className="mr-2 h-4 w-4 text-accent" />
-              HARAKA (70% Faster)
-            </Badge>
-            <Badge className="absolute top-[40%] right-[-10%] bg-background/50 backdrop-blur-sm border-accent text-foreground animate-pulse animation-delay-2000">
-              <Soup className="mr-2 h-4 w-4 text-accent" />
-              AUTOMATIC Programs
-            </Badge>
-            <Badge className="absolute bottom-[15%] left-[-5%] bg-background/50 backdrop-blur-sm border-accent text-foreground animate-pulse animation-delay-4000">
-              <Lock className="mr-2 h-4 w-4 text-accent" />
-              SAFI (Safety Lock)
-            </Badge>
-          </div>
-          
-          <div className="space-y-4 max-w-4xl text-center">
-             <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter [text-shadow:0_4px_15px_rgba(0,0,0,0.5)] group">
-                {title.split('').map((char, index) => (
-                  <span
-                    key={index}
-                    className="inline-block transition-all duration-300 ease-out hover:text-accent hover:-translate-y-2 hover:scale-110"
-                    style={{ 
-                      whiteSpace: 'pre',
-                    } as React.CSSProperties}
-                  >
-                    {char}
-                  </span>
-                ))}
-            </h1>
-            <h2 className="text-xl md:text-2xl font-extrabold text-foreground/90 tracking-tight">
-              {subtitle.split('').map((char, index) => (
-                <span
-                  key={index}
-                  className="inline-block transition-all duration-300 ease-out hover:text-accent hover:-translate-y-2 hover:scale-110"
-                  style={{ whiteSpace: 'pre' }}
-                >
-                  {char}
-                </span>
-              ))}
-            </h2>
-            <p className="max-w-xl text-muted-foreground mx-auto text-sm">
-              Mfinyaniko wa Umeme wa Kisasa na Vipimo 10 vilivyoboreshwa. Pika kwa usahihi, weka joto, na ongoza kwa urahisi.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold">SOMA MAELEZO ZAIDI</Button>
-              <Button size="lg" variant="outline" className="font-bold">NUNUA SASA</Button>
+        <section className="screen-section wave-bg">
+          <main className="flex flex-col items-center p-4 md:p-8">
+            <div 
+              className="relative w-full max-w-2xl mx-auto aspect-square"
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              style={{ perspective: '1000px' }}
+            >
+              <Image
+                src="/Adobe Express - file.png"
+                alt="Fuego SmartCook"
+                width={800}
+                height={800}
+                quality={100}
+                className="object-contain w-full h-full"
+                style={{
+                  filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5))',
+                  transition: 'transform 0.1s ease-out',
+                  transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
+                }}
+                data-ai-hint="pressure cooker"
+              />
+              <Badge className="absolute top-[10%] left-[5%] bg-background/50 backdrop-blur-sm border-accent text-foreground animate-pulse">
+                <Bolt className="mr-2 h-4 w-4 text-accent" />
+                HARAKA (70% Faster)
+              </Badge>
+              <Badge className="absolute top-[40%] right-[-10%] bg-background/50 backdrop-blur-sm border-accent text-foreground animate-pulse animation-delay-2000">
+                <Soup className="mr-2 h-4 w-4 text-accent" />
+                AUTOMATIC Programs
+              </Badge>
+              <Badge className="absolute bottom-[15%] left-[-5%] bg-background/50 backdrop-blur-sm border-accent text-foreground animate-pulse animation-delay-4000">
+                <Lock className="mr-2 h-4 w-4 text-accent" />
+                SAFI (Safety Lock)
+              </Badge>
             </div>
-          </div>
+            
+            <div className="space-y-4 max-w-4xl text-center">
+              <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter [text-shadow:0_4px_15px_rgba(0,0,0,0.5)]">
+                  {title}
+              </h1>
+              <h2 className="text-xl md:text-2xl font-extrabold text-foreground/90 tracking-tight">
+                {subtitle}
+              </h2>
+              <p className="max-w-xl text-muted-foreground mx-auto text-sm">
+                Mfinyaniko wa Umeme wa Kisasa na Vipimo 10 vilivyoboreshwa. Pika kwa usahihi, weka joto, na ongoza kwa urahisi.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold">SOMA MAELEZO ZAIDI</Button>
+                <Button size="lg" variant="outline" className="font-bold">NUNUA SASA</Button>
+              </div>
+            </div>
+          </main>
+        </section>
 
-            <div className="w-full max-w-lg mt-12">
-                <AISuggestionForm onSuggestion={handleSuggestion} onImageChange={handleImageChange} />
+        <section className="screen-section">
+          <div className="w-full max-w-lg">
+            <AISuggestionForm onSuggestion={handleSuggestion} onImageChange={handleImageChange} />
+          </div>
+        </section>
+
+        <section className="screen-section">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter">Sifa za Kipekee</h2>
+            <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua uwezo wa Fuego SmartCook unaofanya upishi kuwa rahisi na wa kufurahisha.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <Card className="bg-card/60 backdrop-blur-sm">
+              <CardHeader className="items-center">
+                <Zap className="w-10 h-10 text-accent mb-4" />
+                <CardTitle>Upishi wa Haraka</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center text-muted-foreground text-sm">
+                Punguza muda wa kupika hadi 70% ikilinganishwa na njia za kawaida. Zaidi ya ladha, ni kuhusu muda wako.
+              </CardContent>
+            </Card>
+            <Card className="bg-card/60 backdrop-blur-sm">
+              <CardHeader className="items-center">
+                <Cpu className="w-10 h-10 text-accent mb-4" />
+                <CardTitle>Programu za Akili</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center text-muted-foreground text-sm">
+                Programu 10 zilizowekwa tayari kwa ajili ya wali, supu, nyama, na zaidi. Chagua na uache Fuego ifanye mengine.
+              </CardContent>
+            </Card>
+            <Card className="bg-card/60 backdrop-blur-sm">
+              <CardHeader className="items-center">
+                <Clock className="w-10 h-10 text-accent mb-4" />
+                <CardTitle>Weka Joto Moja kwa Moja</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center text-muted-foreground text-sm">
+                Baada ya kupika, Fuego huweka chakula chako joto hadi uwe tayari kukila. Hakuna tena chakula baridi.
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section className="screen-section">
+           <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter">Wasiliana Nasi</h2>
+            <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Una maswali? Tuko hapa kukusaidia. Wasiliana nasi kupitia njia yoyote hapa chini.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
+            <Card className="bg-card/60 backdrop-blur-sm p-8">
+              <form className="space-y-4">
+                 <div className="relative">
+                  <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <Input placeholder="Jina lako" className="pl-10" />
+                </div>
+                <div className="relative">
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <Input type="email" placeholder="Barua pepe yako" className="pl-10" />
+                </div>
+                <div className="relative">
+                  <Textarea placeholder="Ujumbe wako..." rows={5} />
+                </div>
+                <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">Tuma Ujumbe</Button>
+              </form>
+            </Card>
+            <div className="space-y-4 flex flex-col justify-center">
+              <div className="flex items-center gap-4">
+                <Phone className="w-6 h-6 text-accent" />
+                <span className="text-muted-foreground">+255 712 345 678</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <Mail className="w-6 h-6 text-accent" />
+                <span className="text-muted-foreground">msaada@fuego.co.tz</span>
+              </div>
+               <div className="flex items-center gap-4">
+                <MessageSquare className="w-6 h-6 text-accent" />
+                <span className="text-muted-foreground">Chat na sisi moja kwa moja</span>
+              </div>
+               <div className="flex items-center gap-4">
+                <LifeBuoy className="w-6 h-6 text-accent" />
+                <span className="text-muted-foreground">Tembelea kituo chetu cha usaidizi</span>
+              </div>
             </div>
-        </main>
+          </div>
+        </section>
       </div>
       <Toaster />
     </>
