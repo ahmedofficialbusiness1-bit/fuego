@@ -1,3 +1,4 @@
+
 "use client";
 
 import { cn } from "@/lib/utils";
@@ -27,25 +28,25 @@ export function Navigation({ activeFace, onNavigate }: NavigationProps) {
   };
 
   return (
-    <div className="fixed top-8 right-8 z-20">
-      <div className="flex flex-row gap-4">
-        {navItems.map((item) => (
-          <Button
-            key={item.face}
-            variant={activeFace === item.face ? "default" : "outline"}
-            onClick={() => handleClick(item.face)}
-            className={cn(
-                "transition-all duration-300",
-                activeFace === item.face 
-                    ? 'bg-accent text-accent-foreground' 
-                    : 'bg-card/60 backdrop-blur-sm border-border hover:bg-accent/80'
-            )}
-            aria-label={item.label}
-          >
-            {item.label}
-          </Button>
-        ))}
-      </div>
+    <div className="flex flex-row gap-4">
+      {navItems.map((item) => (
+        <Button
+          key={item.face}
+          variant={activeFace === item.face ? "default" : "outline"}
+          onClick={() => handleClick(item.face)}
+          className={cn(
+              "transition-all duration-300",
+              activeFace === item.face 
+                  ? 'bg-accent text-accent-foreground' 
+                  : 'bg-card/60 backdrop-blur-sm border-border hover:bg-accent/80'
+          )}
+          aria-label={item.label}
+        >
+          {item.label}
+        </Button>
+      ))}
     </div>
   );
 }
+
+    

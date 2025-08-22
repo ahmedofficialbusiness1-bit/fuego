@@ -80,11 +80,10 @@ export default function Home() {
   return (
     <>
       <main className="w-full relative overflow-x-hidden">
-        <div className="fixed top-8 left-8 z-20">
+        <header className="absolute top-0 left-0 right-0 z-20 flex justify-between items-center p-8">
             <FuegoLogo className="h-24 w-48" />
-        </div>
-
-        <Navigation activeFace={activeFace} onNavigate={handleSetActiveFace} />
+            <Navigation activeFace={activeFace} onNavigate={handleSetActiveFace} />
+        </header>
         
         <section id="front" ref={frontRef} className="screen-section px-8">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-6xl">
@@ -444,5 +443,7 @@ export default function Home() {
     </>
   );
 }
+
+    
 
     
