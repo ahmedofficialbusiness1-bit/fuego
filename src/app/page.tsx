@@ -137,7 +137,7 @@ export default function Home() {
 
         <section id="right" ref={sectionRefs.right} className="screen-section">
           <div className="grid md:grid-cols-6 items-center justify-center w-full max-w-full">
-            <div className="col-span-1 text-right px-4">
+            <div className="col-span-1 text-right">
               <h2 className="text-3xl font-bold tracking-tighter">Gundua Upishi wa Kisasa</h2>
               <p className="mt-4 text-sm text-muted-foreground">
                 Fuego SmartCook inabadilisha jinsi unavyopika. Kwa teknolojia yake ya hali ya juu, unaweza kupika milo mbalimbali kwa haraka, kwa urahisi, na kwa uhakika wa matokeo bora kila wakati. Sahau usumbufu wa jikoni na karibisha mapishi ya kisasa.
@@ -163,7 +163,7 @@ export default function Home() {
                 </div>
             </div>
             
-            <div className="col-span-1 h-full flex flex-col items-center justify-around px-2">
+            <div className="col-span-1 h-full flex flex-col items-center justify-around">
                 <div className="flex items-center gap-4 w-full">
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 1: Chakula cha Wali" layout="fill" objectFit="cover" data-ai-hint="rice dish"/>
@@ -210,7 +210,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className="col-span-1 h-full flex flex-col items-center justify-around px-2">
+            <div className="col-span-1 h-full flex flex-col items-center justify-around">
                 <div className="flex items-center gap-4 w-full">
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 6: Samaki" layout="fill" objectFit="cover" data-ai-hint="fish dish"/>
@@ -343,3 +343,5 @@ export default function Home() {
     </>
   );
 }
+
+    
