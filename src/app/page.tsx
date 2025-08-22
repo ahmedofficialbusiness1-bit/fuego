@@ -144,6 +144,14 @@ export default function Home() {
                     <div className="space-y-4">
                         <Card className="bg-card/60 backdrop-blur-sm">
                             <CardHeader>
+                                <CardTitle className="flex items-center gap-2 text-base"><Bolt className="text-accent" /> Punguza Gharama</CardTitle>
+                            </CardHeader>
+                            <CardContent className="text-xs text-muted-foreground">
+                                Sahau gharama za mkaa na gesi zinazopanda kila siku! Fuego SmartCook inatumia umeme mdogo sana, ikikupunguzia bili na kukuwekea akiba. Ni uwekezaji bora kwa jiko la kisasa na familia yako.
+                            </CardContent>
+                        </Card>
+                        <Card className="bg-card/60 backdrop-blur-sm">
+                            <CardHeader>
                                 <CardTitle className="flex items-center gap-2 text-base"><Clock className="text-accent" /> Hifadhi Muda Wako</CardTitle>
                             </CardHeader>
                             <CardContent className="text-xs text-muted-foreground">
@@ -390,5 +398,7 @@ export default function Home() {
     </>
   );
 }
+
+    
 
     
