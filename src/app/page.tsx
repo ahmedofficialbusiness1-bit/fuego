@@ -1,3 +1,4 @@
+
 "use client";
 
 import { AISuggestionForm } from "@/components/ai-suggestion-form";
@@ -28,8 +29,6 @@ export default function Home() {
     setDishImage(dataUrl);
   };
 
-  const title = "FUEGO PRESSURE COOKER";
-
   return (
     <>
       <div className="fixed inset-0 -z-20 h-full w-full bg-background" />
@@ -40,7 +39,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-6xl">
             <div className="md:w-1/2 text-center md:text-left">
               <h1 className="text-4xl md:text-6xl font-headline font-black text-foreground tracking-tighter">
-                {title}
+                <span className="text-accent">FUEGO</span> PRESSURE COOKER
               </h1>
               <p className="max-w-md mx-auto md:mx-0 mt-4 text-muted-foreground">
                 The smart way to cook. Perfectly cooked meals, every single time. Effortless, fast, and intelligent.
