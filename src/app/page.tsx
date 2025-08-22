@@ -163,7 +163,7 @@ export default function Home() {
                 </div>
             </div>
             
-            <div className="col-span-1 h-full flex flex-col items-center justify-around">
+            <div className="col-span-1 h-full flex flex-col items-center justify-center gap-8">
                 <div className="flex items-center gap-4 w-full">
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 1: Chakula cha Wali" layout="fill" objectFit="cover" data-ai-hint="rice dish"/>
@@ -210,7 +210,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className="col-span-1 h-full flex flex-col items-center justify-around">
+            <div className="col-span-1 h-full flex flex-col items-center justify-center gap-8">
                 <div className="flex items-center gap-4 w-full">
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 6: Samaki" layout="fill" objectFit="cover" data-ai-hint="fish dish"/>
