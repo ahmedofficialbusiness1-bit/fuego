@@ -29,59 +29,6 @@ export default function Home() {
     );
   }, [title.length]);
 
-  useEffect(() => {
-    const dotContainer = document.getElementById('dot-container');
-    if (!dotContainer) return;
-
-    if (dotContainer.childElementCount > 0) return;
-
-    const gridSize = 20;
-    const numDots = (window.innerWidth / gridSize) * (window.innerHeight / gridSize);
-
-    for (let i = 0; i < numDots; i++) {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        const x = (i * gridSize) % window.innerWidth;
-        const y = Math.floor(i * gridSize / window.innerWidth) * gridSize;
-        dot.style.left = `${x}px`;
-        dot.style.top = `${y}px`;
-        dot.dataset.originalX = String(x);
-        dot.dataset.originalY = String(y);
-        dot.style.animationDelay = `${Math.random() * 5}s`;
-        dotContainer.appendChild(dot);
-    }
-    
-    const handleMouseMove = (e: globalThis.MouseEvent) => {
-        const dots = document.querySelectorAll('.dot');
-        const mouseX = e.clientX;
-        const mouseY = e.clientY;
-        const magnetRadius = 150;
-
-        dots.forEach(dot => {
-            const el = dot as HTMLElement;
-            const dotX = parseFloat(el.dataset.originalX || '0');
-            const dotY = parseFloat(el.dataset.originalY || '0');
-            
-            const dx = mouseX - dotX;
-            const dy = mouseY - dotY;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance < magnetRadius) {
-                el.classList.add('highlighted');
-            } else {
-                el.classList.remove('highlighted');
-            }
-        });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-        window.removeEventListener('mousemove', handleMouseMove);
-    };
-}, []);
-
-
   const handleSuggestion = (newSuggestion: SuggestCookingTimesOutput) => {
     setSuggestion(newSuggestion);
   };
@@ -106,7 +53,6 @@ export default function Home() {
 
   return (
     <>
-      <div id="dot-container"></div>
       <div className="fixed inset-0 -z-20 h-full w-full bg-background" />
       <div className="min-h-screen w-full bg-transparent font-body text-foreground">
         <header className="w-full max-w-7xl mx-auto flex items-center justify-between p-4 md:p-8">
