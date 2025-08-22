@@ -61,7 +61,7 @@ export default function Home() {
         <section className="screen-section wave-bg">
           <main className="flex flex-col items-center justify-center p-4 md:p-8 h-full">
             <div 
-              className="relative w-full max-w-4xl mx-auto h-[70vh]"
+              className="relative w-full max-w-4xl mx-auto h-[80vh]"
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
               style={{ perspective: '1000px' }}
@@ -94,7 +94,7 @@ export default function Home() {
             </div>
             
             <div className="space-y-4 max-w-4xl text-center mt-8">
-              <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter [text-shadow:0_4px_15px_rgba(0,0,0,0.5)]">
+              <h1 className="text-3xl md:text-4xl font-extrabold text-foreground tracking-tighter [text-shadow:0_4px_15px_rgba(0,0,0,0.5)]">
                   {title}
               </h1>
             </div>
