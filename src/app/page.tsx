@@ -31,7 +31,6 @@ export default function Home() {
   const [dishImage, setDishImage] = useState<string | null>(null);
   const [activeFace, setActiveFace] = useState<Face>('front');
   const [ripples, setRipples] = useState<Ripple[]>([]);
-  let rippleIdCounter = 0;
 
   const sectionRefs = {
     front: useRef<HTMLDivElement>(null),
@@ -94,7 +93,7 @@ export default function Home() {
     
     const handleMouseMove = (e: globalThis.MouseEvent) => {
       const newRipple: Ripple = {
-        id: rippleIdCounter++,
+        id: Date.now() + Math.random(),
         x: e.clientX,
         y: e.clientY,
       };
@@ -352,7 +351,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Sifa za Fuego</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua sifa za kiufundi za Fuego SmartCook.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 max-w-7xl w-full mx-auto items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto items-center">
             <div className="relative w-full h-[80vh]">
               <Image
                 src="/Adobe Express - file.png"
