@@ -2,6 +2,7 @@
 "use client";
 
 import { FuegoLogo } from "@/components/fuego-logo";
+import { Navigation } from "@/components/ui/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/toaster";
@@ -24,12 +25,56 @@ export default function Home() {
     useState<SuggestCookingTimesOutput | null>(null);
   const [dishImage, setDishImage] = useState<string | null>(null);
 
+  const [activeFace, setActiveFace] = useState<Face>('front');
+  
+  const frontRef = useRef<HTMLDivElement>(null);
+  const rightRef = useRef<HTMLDivElement>(null);
+  const backRef = useRef<HTMLDivElement>(null);
+  const leftRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveFace(entry.target.id as Face);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+    const refs = [frontRef, rightRef, backRef, leftRef];
+    refs.forEach((ref) => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => {
+      refs.forEach((ref) => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      });
+    };
+  }, []);
+
   const handleSuggestion = (newSuggestion: SuggestCookingTimesOutput) => {
     setSuggestion(newSuggestion);
   };
 
   const handleImageChange = (dataUrl: string) => {
     setDishImage(dataUrl);
+  };
+  
+  const handleSetActiveFace = (face: Face) => {
+    setActiveFace(face);
   };
 
   return (
@@ -38,8 +83,10 @@ export default function Home() {
         <div className="fixed top-8 left-8 z-20">
             <FuegoLogo className="h-24 w-48" />
         </div>
+
+        <Navigation activeFace={activeFace} onNavigate={handleSetActiveFace} />
         
-        <section className="screen-section px-8">
+        <section id="front" ref={frontRef} className="screen-section px-8">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-6xl">
             <div className="md:w-1/2 text-center md:text-left">
               <h1 className="text-4xl md:text-6xl font-headline font-black text-foreground tracking-tighter">
@@ -73,7 +120,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="screen-section px-8">
+        <section id="right" ref={rightRef} className="screen-section px-8">
           <div className="flex flex-col md:grid md:grid-cols-6 items-center justify-center w-full max-w-full h-full gap-4">
             <div className="md:col-span-2 order-2 md:order-1">
                 <h2 className="text-3xl font-headline font-bold tracking-tighter mb-6 text-center">Faida za Fuego</h2>
@@ -252,7 +299,7 @@ export default function Home() {
           </div>
         </section>
         
-        <section className="screen-section px-8">
+        <section id="back" ref={backRef} className="screen-section px-8">
            <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Sifa za Fuego</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua sifa za kiufundi za Fuego SmartCook.</p>
@@ -350,7 +397,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="screen-section px-8">
+        <section id="left" ref={leftRef} className="screen-section px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Wasiliana Nasi</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Una maswali? Tuko hapa kukusaidia. Wasiliana nasi kupitia njia yoyote hapa chini.</p>
