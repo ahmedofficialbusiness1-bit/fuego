@@ -110,49 +110,8 @@ export default {
         'disperse-and-gather': 'disperse-and-gather 5s ease-in-out',
       },
     },
-    textStrokeWidth: {
-      '1': '1px',
-      '2': '2px',
-      '3': '3px',
-      '4': '4px',
-    },
-    textStrokeColor: (theme) => theme('colors'),
   },
   plugins: [
     require('tailwindcss-animate'),
-    plugin(function ({ addUtilities, theme, e }) {
-      const values = theme('textStrokeWidth');
-      if (values) {
-        addUtilities(
-          Object.entries(values).map(([key, value]) => ({
-            [`.${e(`text-stroke-${key}`)}`]: {
-              '-webkit-text-stroke-width': value,
-            },
-          }))
-        );
-      }
-      const colors = theme('textStrokeColor');
-      if (colors) {
-        const newUtilities = {};
-        const flattenColorPalette = (colors: any, prefix = ''): any => {
-          return Object.keys(colors).reduce((acc, color) => {
-            const value = colors[color];
-            const newPrefix = prefix ? `${prefix}-${color}` : color;
-            if (typeof value === 'string') {
-                if (color === 'DEFAULT') {
-                    acc[`.${e(`text-stroke-${prefix}`)}`] = { '-webkit-text-stroke-color': value };
-                } else {
-                    acc[`.${e(`text-stroke-${newPrefix}`)}`] = { '-webkit-text-stroke-color': value };
-                }
-            } else if (typeof value === 'object' && value !== null) {
-              Object.assign(acc, flattenColorPalette(value, newPrefix));
-            }
-            return acc;
-          }, {});
-        };
-
-        addUtilities(flattenColorPalette(colors));
-      }
-    }),
   ],
 } satisfies Config;
