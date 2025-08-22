@@ -9,7 +9,7 @@ import type { SuggestCookingTimesOutput } from "@/ai/flows/suggest-cooking-times
 import { Bolt, Lock, Soup } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import type { MouseEvent } from "react";
 
 export default function Home() {
@@ -23,6 +23,7 @@ export default function Home() {
   const [randomAngles, setRandomAngles] = useState<number[]>([]);
 
   useEffect(() => {
+    // Generate random angles only on the client-side to avoid hydration errors
     setRandomAngles(
       Array.from({ length: title.length }, () => Math.random() * 360)
     );
@@ -74,14 +75,14 @@ export default function Home() {
             style={{ perspective: '1000px' }}
           >
             <Image
-              src={dishImage || '/Adobe Express - file.png'}
+              src="/1000786745-removebg-preview.png"
               alt="Fuego SmartCook"
               width={800}
               height={800}
               quality={100}
               className="object-contain w-full h-full"
               style={{
-                filter: 'drop-shadow(0 0 20px hsl(var(--accent)))',
+                filter: 'drop-shadow(0 20px 25px rgba(0, 0, 0, 0.4))',
                 transition: 'transform 0.1s ease-out',
                 transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
               }}
@@ -101,19 +102,23 @@ export default function Home() {
             </Badge>
           </div>
           
-          <div className="space-y-4 max-w-4xl mt-4">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter font-headline" style={{ textShadow: '0 8px 20px rgba(0,0,0,0.5)' }}>
+          <div className="space-y-4 max-w-4xl">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter font-headline" style={{ textShadow: '0 4px 15px rgba(0,0,0,0.5)' }}>
               {title.split('').map((char, index) => (
                 <span
                   key={index}
-                  className="inline-block transition-all duration-300 ease-out hover:text-accent hover:animate-disperse-and-gather"
+                  className="inline-block transition-all duration-300 ease-out hover:text-accent group"
                   style={{
                     animationDelay: `${index * 0.05}s`,
-                    whiteSpace: char === ' ' ? 'pre' : 'normal',
-                    '--angle': `${randomAngles[index]}deg`,
-                  } as React.CSSProperties}
+                    whiteSpace: 'pre',
+                  }}
                 >
-                  {char}
+                  <span 
+                    className="inline-block group-hover:animate-disperse-and-gather"
+                    style={{'--angle': `${randomAngles[index]}deg`} as React.CSSProperties}
+                  >
+                    {char}
+                  </span>
                 </span>
               ))}
             </h1>
