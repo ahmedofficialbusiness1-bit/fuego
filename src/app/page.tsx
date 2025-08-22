@@ -47,6 +47,7 @@ export default function Home() {
         dot.style.top = `${y}px`;
         dot.dataset.originalX = String(x);
         dot.dataset.originalY = String(y);
+        dot.style.animationDelay = `${Math.random() * 5}s`;
         dotContainer.appendChild(dot);
     }
     

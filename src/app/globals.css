@@ -75,6 +75,7 @@
   background-color: hsl(var(--foreground) / 0.5);
   border-radius: 50%;
   transition: background-color 0.3s ease-out;
+  animation: float 5s ease-in-out infinite;
 }
 
 .dot.highlighted {
@@ -102,5 +103,14 @@
   50% {
     transform: translateX(calc(cos(var(--angle)) * 60px)) translateY(calc(sin(var(--angle)) * 60px)) scale(0.5) rotate(calc(var(--angle)));
     opacity: 0.5;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
   }
 }
