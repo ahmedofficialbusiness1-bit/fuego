@@ -68,7 +68,7 @@ export default function Home() {
         
         <main className="flex flex-col items-center justify-center p-4 md:p-8 text-center">
           <div 
-            className="relative w-full max-w-2xl mx-auto aspect-square mb-8"
+            className="relative w-full max-w-2xl mx-auto aspect-square"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={{ perspective: '1000px' }}
@@ -101,15 +101,16 @@ export default function Home() {
             </Badge>
           </div>
           
-          <div className="space-y-4 max-w-4xl">
-           <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter font-headline [text-shadow:0_4px_6px_rgba(0,0,0,0.4)]">
+          <div className="space-y-4 max-w-4xl mt-4">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter font-headline" style={{ textShadow: '0 8px 20px rgba(0,0,0,0.5)' }}>
               {title.split('').map((char, index) => (
                 <span
                   key={index}
-                  className="inline-block transition-all duration-300 ease-out hover:animate-disperse-and-gather hover:text-accent"
+                  className="inline-block transition-all duration-300 ease-out hover:text-accent hover:animate-disperse-and-gather"
                   style={{
-                    '--angle': `${randomAngles[index] ?? 0}deg`,
-                     whiteSpace: char === ' ' ? 'pre' : 'normal',
+                    animationDelay: `${index * 0.05}s`,
+                    whiteSpace: char === ' ' ? 'pre' : 'normal',
+                    '--angle': `${randomAngles[index]}deg`,
                   } as React.CSSProperties}
                 >
                   {char}
