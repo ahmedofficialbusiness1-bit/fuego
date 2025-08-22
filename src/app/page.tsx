@@ -50,7 +50,7 @@ export default function Home() {
                   Nunua Sasa <ArrowRight />
                 </Button>
                 <Button size="lg" variant="outline">
-                  Soma Zaidi
+                  Soma Zaidi <ArrowRight />
                 </Button>
               </div>
             </div>
