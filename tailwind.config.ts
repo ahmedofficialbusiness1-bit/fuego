@@ -107,6 +107,14 @@ export default {
           '0%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
           '100%': { backgroundPosition: '0% 50%' },
+        },
+        'bubble-float': {
+          '0%, 100%': {
+            transform: 'translateY(-4%) scale(1.02)',
+          },
+          '50%': {
+            transform: 'translateY(4%) scale(1)',
+          },
         }
       },
       animation: {
@@ -114,6 +122,7 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'disperse-and-gather': 'disperse-and-gather 5s ease-in-out',
         'move-bg': 'move-bg 15s ease infinite',
+        'bubble-float': 'bubble-float 8s ease-in-out infinite',
       },
     },
   },

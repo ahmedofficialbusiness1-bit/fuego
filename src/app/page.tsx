@@ -163,7 +163,7 @@ export default function Home() {
             </div>
             
             <div className="col-span-1 h-full flex flex-col items-center justify-center gap-8">
-                <div className="flex items-center gap-4 w-full">
+                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 1: Chakula cha Wali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="rice dish"/>
                     </div>
@@ -172,7 +172,7 @@ export default function Home() {
                         <p className="text-xs text-muted-foreground">Wali mtamu na wa kuchambuka.</p>
                     </div>
                 </div>
-                <div className="flex items-center gap-4 w-full">
+                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.5s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 2: Chakula cha Nyama" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="meat stew"/>
                     </div>
@@ -181,7 +181,7 @@ export default function Home() {
                         <p className="text-xs text-muted-foreground">Rosti laini na lenye ladha.</p>
                     </div>
                 </div>
-                 <div className="flex items-center gap-4 w-full">
+                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.5s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 3: Chakula cha Supu" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="soup"/>
                     </div>
@@ -190,7 +190,7 @@ export default function Home() {
                         <p className="text-xs text-muted-foreground">Supu ya moto na yenye virutubisho.</p>
                     </div>
                 </div>
-                <div className="flex items-center gap-4 w-full">
+                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.5s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 4: Chakula cha Maharage" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="bean stew"/>
                     </div>
@@ -199,7 +199,7 @@ export default function Home() {
                         <p className="text-xs text-muted-foreground">Maharage laini na ya kuvutia.</p>
                     </div>
                 </div>
-                 <div className="flex items-center gap-4 w-full">
+                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 5: Keki" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="cake"/>
                     </div>
@@ -210,7 +210,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="col-span-1 h-full flex flex-col items-center justify-center gap-8">
-                <div className="flex items-center gap-4 w-full">
+                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.8s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 6: Samaki" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="fish dish"/>
                     </div>
@@ -219,7 +219,7 @@ export default function Home() {
                         <p className="text-xs text-muted-foreground">Samaki wa kukaanga.</p>
                     </div>
                 </div>
-                <div className="flex items-center gap-4 w-full">
+                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.2s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 7: Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
                     </div>
@@ -228,7 +228,7 @@ export default function Home() {
                         <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
                     </div>
                 </div>
-                 <div className="flex items-center gap-4 w-full">
+                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.3s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 8: Mboga za Majani" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="vegetable stir-fry"/>
                     </div>
@@ -237,7 +237,7 @@ export default function Home() {
                         <p className="text-xs text-muted-foreground">Mboga za majani za kukaanga.</p>
                     </div>
                 </div>
-                <div className="flex items-center gap-4 w-full">
+                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.8s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 9: Viazi" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="roast potatoes"/>
                     </div>
@@ -246,7 +246,7 @@ export default function Home() {
                         <p className="text-xs text-muted-foreground">Viazi vya kukaanga.</p>
                     </div>
                 </div>
-                 <div className="flex items-center gap-4 w-full">
+                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.8s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 10: Ugali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="ugali"/>
                     </div>
