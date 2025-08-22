@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0% / 0; /* Transparent to show animation */
+    --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
@@ -72,10 +72,15 @@
   position: absolute;
   width: 2px;
   height: 2px;
-  background-color: #000;
+  background-color: hsl(var(--foreground));
   border-radius: 50%;
-  transition: transform 0.5s ease-out;
+  transition: background-color 0.3s ease-out;
 }
+
+.dot.highlighted {
+  background-color: hsl(var(--accent));
+}
+
 
 .animation-delay-2000 {
   animation-delay: 2s;
@@ -85,7 +90,7 @@
   animation-delay: 4s;
 }
 
-.group:hover .animate-disperse-and-gather {
+.group:hover .group-hover\:animate-disperse-and-gather {
   animation: disperse-and-gather 5s ease-in-out;
 }
 

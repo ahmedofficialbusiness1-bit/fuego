@@ -33,7 +33,6 @@ export default function Home() {
     const dotContainer = document.getElementById('dot-container');
     if (!dotContainer) return;
 
-    // Avoid adding dots if they already exist
     if (dotContainer.childElementCount > 0) return;
 
     const gridSize = 20;
@@ -56,7 +55,6 @@ export default function Home() {
         const mouseX = e.clientX;
         const mouseY = e.clientY;
         const magnetRadius = 150;
-        const magnetStrength = 0.5;
 
         dots.forEach(dot => {
             const el = dot as HTMLElement;
@@ -68,14 +66,9 @@ export default function Home() {
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < magnetRadius) {
-                const angle = Math.atan2(dy, dx);
-                const force = (magnetRadius - distance) / magnetRadius;
-                // Invert the direction to repel instead of attract
-                const moveX = -Math.cos(angle) * force * magnetStrength * 50;
-                const moveY = -Math.sin(angle) * force * magnetStrength * 50;
-                el.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                el.classList.add('highlighted');
             } else {
-                el.style.transform = 'translate(0, 0)';
+                el.classList.remove('highlighted');
             }
         });
     };
@@ -161,9 +154,8 @@ export default function Home() {
             </Badge>
           </div>
           
-          <div className="space-y-4 max-w-4xl">
-             <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter font-headline [text-shadow:0_4px_15px_rgba(0,0,0,0.5)]">
-              <span className="group">
+          <div className="space-y-4 max-w-4xl text-center">
+             <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter [text-shadow:0_4px_15px_rgba(0,0,0,0.5)] group">
                 {title.split('').map((char, index) => (
                   <span
                     key={index}
@@ -176,7 +168,6 @@ export default function Home() {
                     {char}
                   </span>
                 ))}
-              </span>
             </h1>
             <h2 className="text-xl md:text-2xl font-extrabold text-foreground/90 tracking-tight">
               {subtitle.split('').map((char, index) => (
