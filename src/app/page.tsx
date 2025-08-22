@@ -139,7 +139,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 items-center justify-center gap-12 w-full max-w-7xl">
             <div className="col-span-1 text-right">
               <h2 className="text-3xl font-bold tracking-tighter">Gundua Upishi wa Kisasa</h2>
-              <p className="mt-4 text-muted-foreground">
+              <p className="mt-4 text-sm text-muted-foreground">
                 Fuego SmartCook inabadilisha jinsi unavyopika. Kwa teknolojia yake ya hali ya juu, unaweza kupika milo mbalimbali kwa haraka, kwa urahisi, na kwa uhakika wa matokeo bora kila wakati. Sahau usumbufu wa jikoni na karibisha mapishi ya kisasa.
               </p>
                <Button size="lg" variant="outline" className="mt-6">
@@ -165,48 +165,48 @@ export default function Home() {
             
             <div className="col-span-1 h-full flex flex-col items-center justify-around">
                 <div className="flex items-center gap-4 w-full">
-                    <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 1: Chakula cha Wali" layout="fill" objectFit="cover" data-ai-hint="rice dish"/>
                     </div>
                     <div>
-                        <h3 className="font-bold">Picha 1: Wali</h3>
-                        <p className="text-sm text-muted-foreground">Wali mtamu na wa kuchambuka.</p>
+                        <h3 className="font-bold text-sm">Picha 1: Wali</h3>
+                        <p className="text-xs text-muted-foreground">Wali mtamu na wa kuchambuka.</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full">
-                    <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 2: Chakula cha Nyama" layout="fill" objectFit="cover" data-ai-hint="meat stew"/>
                     </div>
                     <div>
-                        <h3 className="font-bold">Picha 2: Nyama</h3>
-                        <p className="text-sm text-muted-foreground">Rosti laini na lenye ladha.</p>
+                        <h3 className="font-bold text-sm">Picha 2: Nyama</h3>
+                        <p className="text-xs text-muted-foreground">Rosti laini na lenye ladha.</p>
                     </div>
                 </div>
                  <div className="flex items-center gap-4 w-full">
-                    <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 3: Chakula cha Supu" layout="fill" objectFit="cover" data-ai-hint="soup"/>
                     </div>
                     <div>
-                        <h3 className="font-bold">Picha 3: Supu</h3>
-                        <p className="text-sm text-muted-foreground">Supu ya moto na yenye virutubisho.</p>
+                        <h3 className="font-bold text-sm">Picha 3: Supu</h3>
+                        <p className="text-xs text-muted-foreground">Supu ya moto na yenye virutubisho.</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full">
-                    <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 4: Chakula cha Maharage" layout="fill" objectFit="cover" data-ai-hint="bean stew"/>
                     </div>
                      <div>
-                        <h3 className="font-bold">Picha 4: Maharage</h3>
-                        <p className="text-sm text-muted-foreground">Maharage laini na ya kuvutia.</p>
+                        <h3 className="font-bold text-sm">Picha 4: Maharage</h3>
+                        <p className="text-xs text-muted-foreground">Maharage laini na ya kuvutia.</p>
                     </div>
                 </div>
                  <div className="flex items-center gap-4 w-full">
-                    <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Picha 5: Keki" layout="fill" objectFit="cover" data-ai-hint="cake"/>
                     </div>
                      <div>
-                        <h3 className="font-bold">Picha 5: Keki</h3>
-                        <p className="text-sm text-muted-foreground">Keki laini iliyopikwa kwa urahisi.</p>
+                        <h3 className="font-bold text-sm">Picha 5: Keki</h3>
+                        <p className="text-xs text-muted-foreground">Keki laini iliyopikwa kwa urahisi.</p>
                     </div>
                 </div>
             </div>
