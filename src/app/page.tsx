@@ -39,7 +39,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-6xl">
             <div className="md:w-1/2 text-center md:text-left">
               <h1 className="text-4xl md:text-6xl font-headline font-black text-foreground tracking-tighter">
-                <span className="text-accent">FUEGO</span> PRESSURE COOKER
+                FUEGO PRESSURE COOKER
               </h1>
               <p className="max-w-md mx-auto md:mx-0 mt-4 text-muted-foreground">
                 The smart way to cook. Perfectly cooked meals, every single time. Effortless, fast, and intelligent.
