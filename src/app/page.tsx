@@ -52,7 +52,7 @@ export default function Home() {
                 Nunua Sasa <ArrowRight />
               </Button>
             </div>
-            <div className="relative md:w-1/2 w-full h-[60vh]">
+            <div className="relative md:w-1/2 w-full h-[75vh]">
               <Image
                 src="/Adobe Express - file.png"
                 alt="Fuego SmartCook"
