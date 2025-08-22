@@ -1,4 +1,5 @@
 import type {Config} from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
 
 export default {
   darkMode: ['class'],
@@ -110,5 +111,29 @@ export default {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    plugin(function ({ addUtilities, theme, e }) {
+      const values = theme('textStrokeWidth');
+      if (values) {
+        addUtilities(
+          Object.entries(values).map(([key, value]) => ({
+            [`.${e(`text-stroke-${key}`)}`]: {
+              '-webkit-text-stroke-width': value,
+            },
+          }))
+        );
+      }
+      const colors = theme('textStrokeColor');
+      if (colors) {
+        addUtilities(
+          Object.entries(colors).map(([key, value]) => ({
+            [`.${e(`text-stroke-${key}`)}`]: {
+              '-webkit-text-stroke-color': value,
+            },
+          }))
+        );
+      }
+    }),
+  ],
 } satisfies Config;
