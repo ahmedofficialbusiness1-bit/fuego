@@ -65,7 +65,7 @@ export default function Home() {
             
             const dx = mouseX - dotX;
             const dy = mouseY - dotY;
-            const distance = Math.sqrt(dx * dx * dx + dy * dy);
+            const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < magnetRadius) {
                 const angle = Math.atan2(dy, dx);
@@ -113,7 +113,7 @@ export default function Home() {
   return (
     <>
       <div id="dot-container"></div>
-      <div className="fixed inset-0 -z-20 h-full w-full bg-gradient-to-t from-[#e5d5ca] to-slate-200" />
+      <div className="fixed inset-0 -z-20 h-full w-full bg-white" />
       <div className="min-h-screen w-full bg-transparent font-body text-foreground">
         <header className="w-full max-w-7xl mx-auto flex items-center justify-between p-4 md:p-8">
           <FuegoLogo className="h-28 w-64" />
