@@ -320,8 +320,8 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Sifa za Fuego</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua sifa za kiufundi za Fuego SmartCook.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto items-center">
-            <div className="relative w-full h-[60vh]">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl w-full mx-auto items-center">
+            <div className="relative w-full h-[60vh] md:col-span-2">
               <Image
                 src="/Adobe Express - file.png"
                 alt="Fuego SmartCook on a counter"
@@ -334,9 +334,9 @@ export default function Home() {
                 data-ai-hint="pressure cooker kitchen"
               />
             </div>
-            <div className="hidden md:flex flex-col justify-center items-center gap-6">
+            <div className="hidden md:flex flex-col justify-center items-center gap-4">
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Sehemu ya 1: Sufuria ya Ndani" layout="fill" className="object-cover" data-ai-hint="inner pot"/>
                     </div>
                     <div>
@@ -345,7 +345,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.2s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Sehemu ya 2: Elementi ya Kupasha Joto" layout="fill" className="object-cover" data-ai-hint="heating element"/>
                     </div>
                     <div>
@@ -354,7 +354,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.4s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Sehemu ya 3: Mfuniko wa Ndani" layout="fill" className="object-cover" data-ai-hint="lid seal"/>
                     </div>
                     <div>
@@ -363,7 +363,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.6s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Sehemu ya 4: Rack ya Kustimisha" layout="fill" className="object-cover" data-ai-hint="steam rack"/>
                     </div>
                     <div>
@@ -372,7 +372,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.8s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Sehemu ya 5: Valve ya Pressure" layout="fill" className="object-cover" data-ai-hint="pressure valve"/>
                     </div>
                     <div>
@@ -381,7 +381,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Sehemu ya 6: Paneli ya Kudhibiti" layout="fill" className="object-cover" data-ai-hint="control panel"/>
                     </div>
                     <div>
@@ -390,7 +390,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-             <Card className="bg-card/60 backdrop-blur-sm">
+             <Card className="bg-card/60 backdrop-blur-sm md:col-span-1">
                 <CardHeader>
                     <CardTitle>Sifa za Kiufundi</CardTitle>
                 </CardHeader>
@@ -460,5 +460,7 @@ export default function Home() {
     </>
   );
 }
+
+    
 
     
