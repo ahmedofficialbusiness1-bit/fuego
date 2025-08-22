@@ -137,7 +137,7 @@ export default function Home() {
 
         <section id="right" ref={sectionRefs.right} className="screen-section">
           <div className="grid md:grid-cols-6 items-center justify-center w-full max-w-full">
-            <div className="col-span-1 text-right">
+            <div className="col-span-1">
               <h2 className="text-3xl font-bold tracking-tighter">Gundua Upishi wa Kisasa</h2>
               <p className="mt-4 text-sm text-muted-foreground">
                 Fuego SmartCook inabadilisha jinsi unavyopika. Kwa teknolojia yake ya hali ya juu, unaweza kupika milo mbalimbali kwa haraka, kwa urahisi, na kwa uhakika wa matokeo bora kila wakati. Sahau usumbufu wa jikoni na karibisha mapishi ya kisasa.
@@ -343,3 +343,5 @@ export default function Home() {
     </>
   );
 }
+
+    
