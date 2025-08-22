@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 60 6% 80%; /* #cecdc7 */
+    --background: 210 14% 83%; /* #D3D3D3 */
     --foreground: 240 10% 3.9%;
-    --card: 60 6% 85%;
+    --card: 210 14% 83%;
     --card-foreground: 240 10% 3.9%;
-    --popover: 60 6% 85%;
+    --popover: 210 14% 83%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 240 10% 3.9%;
+    --primary: 210 14% 50%; /* #708090 */
     --primary-foreground: 0 0% 98%;
-    --secondary: 60 6% 90%;
+    --secondary: 210 14% 90%;
     --secondary-foreground: 240 10% 3.9%;
-    --muted: 60 6% 87%;
+    --muted: 210 14% 87%;
     --muted-foreground: 240 5% 44.9%;
-    --accent: 45 83% 58%; /* #eeba2b */
+    --accent: 39 100% 50%; /* #FFA500 */
     --accent-foreground: 24 9.8% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 60 6% 75%;
-    --input: 60 6% 75%;
-    --ring: 45 83% 58%;
+    --border: 210 14% 75%;
+    --input: 210 14% 75%;
+    --ring: 39 100% 50%;
     --radius: 0.5rem;
   }
 
@@ -39,13 +39,13 @@
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
-    --accent: 45 83% 58%; /* #eeba2b */
+    --accent: 39 100% 50%;
     --accent-foreground: 24 9.8% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 45 83% 58%;
+    --ring: 39 100% 50%;
   }
 }
 
@@ -56,10 +56,10 @@
   body {
     @apply bg-background text-foreground;
     background:
-      linear-gradient(to right, #365b72 50%, transparent 50%),
-      linear-gradient(to right, #98d3d8 50%, transparent 50%),
-      linear-gradient(to right, #365b72 50%, transparent 50%),
-      linear-gradient(to right, #98d3d8 50%, transparent 50%);
+      linear-gradient(to right, hsl(var(--primary) / 0.8) 50%, transparent 50%),
+      linear-gradient(to right, hsl(var(--primary) / 0.5) 50%, transparent 50%),
+      linear-gradient(to right, hsl(var(--primary) / 0.3) 50%, transparent 50%),
+      linear-gradient(to right, hsl(var(--primary) / 0.1) 50%, transparent 50%);
     background-size: 200% 100%, 200% 100%, 200% 100%, 200% 100%;
     background-position: 100% 0, 100% 0, 100% 0, 100% 0;
     animation: wave 8s linear infinite;
