@@ -137,7 +137,7 @@ export default function Home() {
         </section>
 
         <section id="right" ref={sectionRefs.right} className="screen-section px-8">
-          <div className="flex flex-col md:grid md:grid-cols-6 items-center justify-center w-full max-w-full h-full">
+          <div className="flex flex-col md:grid md:grid-cols-6 items-center justify-center w-full max-w-full h-full gap-4">
             <div className="md:col-span-2 order-2 md:order-1">
                 <h2 className="text-3xl font-headline font-bold tracking-tighter mb-6 text-center">Faida za Fuego</h2>
                 <ScrollArea className="h-[60vh] md:h-[70vh] w-full pr-4">
@@ -203,7 +203,7 @@ export default function Home() {
             </div>
             
             <div className="md:col-span-2 flex justify-center items-center order-1 md:order-2 h-[40vh] md:h-auto">
-               <div className="relative w-full h-full md:h-[90vh]">
+               <div className="relative w-full h-full md:h-[70vh]">
                   <Image
                     src="/Adobe Express - file.png"
                     alt="Fuego SmartCook"
@@ -316,12 +316,12 @@ export default function Home() {
         </section>
         
         <section id="back" ref={sectionRefs.back} className="screen-section px-8">
-           <div className="text-center mb-12">
+           <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Sifa za Fuego</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua sifa za kiufundi za Fuego SmartCook.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl w-full mx-auto items-center">
-            <div className="relative w-full h-[80vh] md:col-span-2">
+            <div className="relative w-full h-[65vh] md:col-span-2">
               <Image
                 src="/Adobe Express - file.png"
                 alt="Fuego SmartCook on a counter"
@@ -390,25 +390,27 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-             <Card className="bg-card/60 backdrop-blur-sm md:col-span-1">
+             <Card className="bg-card/60 backdrop-blur-sm md:col-span-1 h-full flex flex-col">
                 <CardHeader>
                     <CardTitle>Sifa za Kiufundi</CardTitle>
                 </CardHeader>
-                <CardContent>
-                    <ul className="space-y-3 text-muted-foreground text-sm">
-                        <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
-                        <li><strong>Power:</strong> 1000W</li>
-                        <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
-                        <li><strong>Color:</strong> Silver</li>
-                        <li><strong>Middle Housing:</strong> Cold Board/1.0mm Thickness</li>
-                        <li><strong>Heater:</strong> 430g</li>
-                        <li><strong>Lid:</strong> SS#210/0.8mm Thickness</li>
-                        <li><strong>Inner Pot:</strong> 510g Non-Stick Aluminium Pot</li>
-                        <li><strong>Cable:</strong> 1.0M Copper cable with 13A UK Plug</li>
-                        <li><strong>Accessories:</strong> Measure Cup, Spoon, SS Steam Rack</li>
-                        <li><strong>Packaging:</strong> 4Pcs/Ctn, 3-Layer Giftbox + 5-Layer Cartonbox</li>
-                    </ul>
-                </CardContent>
+                <ScrollArea className="flex-grow">
+                  <CardContent>
+                      <ul className="space-y-3 text-muted-foreground text-sm">
+                          <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
+                          <li><strong>Power:</strong> 1000W</li>
+                          <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
+                          <li><strong>Color:</strong> Silver</li>
+                          <li><strong>Middle Housing:</strong> Cold Board/1.0mm Thickness</li>
+                          <li><strong>Heater:</strong> 430g</li>
+                          <li><strong>Lid:</strong> SS#210/0.8mm Thickness</li>
+                          <li><strong>Inner Pot:</strong> 510g Non-Stick Aluminium Pot</li>
+                          <li><strong>Cable:</strong> 1.0M Copper cable with 13A UK Plug</li>
+                          <li><strong>Accessories:</strong> Measure Cup, Spoon, SS Steam Rack</li>
+                          <li><strong>Packaging:</strong> 4Pcs/Ctn, 3-Layer Giftbox + 5-Layer Cartonbox</li>
+                      </ul>
+                  </CardContent>
+                </ScrollArea>
             </Card>
           </div>
         </section>
@@ -460,11 +462,3 @@ export default function Home() {
     </>
   );
 }
-
-    
-
-    
-
-
-
-    
