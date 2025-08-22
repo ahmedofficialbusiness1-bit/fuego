@@ -139,7 +139,7 @@ export default function Home() {
         <section id="right" ref={sectionRefs.right} className="screen-section px-8">
           <div className="flex flex-col md:grid md:grid-cols-6 items-center justify-center w-full max-w-full h-full">
             <div className="md:col-span-2 order-2 md:order-1">
-                <h2 className="text-3xl font-bold tracking-tighter mb-6 text-center">Moyo wa jiko lako</h2>
+                <h2 className="text-3xl font-headline font-bold tracking-tighter mb-6 text-center">Moyo wa jiko lako</h2>
                 <ScrollArea className="h-[60vh] md:h-[70vh] w-full pr-4">
                     <div className="space-y-4">
                         <Card className="bg-card/60 backdrop-blur-sm">
@@ -309,7 +309,7 @@ export default function Home() {
         
         <section id="back" ref={sectionRefs.back} className="screen-section px-8">
            <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter">Sifa za Kipekee</h2>
+            <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Sifa za Kipekee</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua uwezo wa Fuego SmartCook unaofanya upishi kuwa rahisi na wa kufurahisha.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -345,7 +345,7 @@ export default function Home() {
 
         <section id="left" ref={sectionRefs.left} className="screen-section px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tighter">Wasiliana Nasi</h2>
+            <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Wasiliana Nasi</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Una maswali? Tuko hapa kukusaidia. Wasiliana nasi kupitia njia yoyote hapa chini.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
