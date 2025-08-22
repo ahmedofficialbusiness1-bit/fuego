@@ -94,7 +94,7 @@ export default function Home() {
             </div>
             
             <div className="space-y-4 max-w-4xl text-center mt-8">
-              <h1 className="text-3xl md:text-4xl font-extrabold text-foreground tracking-tighter [text-shadow:0_4px_15px_rgba(0,0,0,0.5)]">
+              <h1 className="text-3xl md:text-4xl font-extrabold text-accent tracking-tighter [text-shadow:0_4px_15px_rgba(238,186,43,0.5)]">
                   {title}
               </h1>
             </div>

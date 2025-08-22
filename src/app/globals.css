@@ -16,13 +16,13 @@
     --secondary-foreground: 240 10% 3.9%;
     --muted: 210 14% 87%;
     --muted-foreground: 240 5% 44.9%;
-    --accent: 39 100% 50%; /* #FFA500 */
+    --accent: 45 83% 58%; /* #eeba2b */
     --accent-foreground: 24 9.8% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 210 14% 75%;
     --input: 210 14% 75%;
-    --ring: 39 100% 50%;
+    --ring: 45 83% 58%;
     --radius: 0.5rem;
   }
 
@@ -39,13 +39,13 @@
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
-    --accent: 39 100% 50%;
+    --accent: 45 83% 58%;
     --accent-foreground: 24 9.8% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 39 100% 50%;
+    --ring: 45 83% 58%;
   }
 }
 
@@ -74,9 +74,9 @@
 .wave-bg {
     background: linear-gradient(
       180deg,
-      hsl(var(--primary) / 0.1),
-      hsl(var(--primary) / 0.2),
-      hsl(var(--primary) / 0.1),
+      hsl(var(--accent) / 0.1),
+      hsl(var(--accent) / 0.2),
+      hsl(var(--accent) / 0.1),
       hsl(var(--background))
     );
     background-size: 100% 400%;
