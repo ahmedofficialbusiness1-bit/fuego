@@ -58,10 +58,10 @@ export default function Home() {
           <Button variant="outline" className="md:hidden">Menu</Button>
         </header>
         
-        <section className="screen-section wave-bg">
-          <main className="flex flex-col items-center justify-center p-4 md:p-8 h-full">
+        <section className="screen-section">
+          <main className="relative flex flex-col items-center justify-center p-4 md:p-8 h-full w-full">
             <div 
-              className="relative w-full max-w-4xl mx-auto h-[80vh]"
+              className="relative w-full max-w-4xl mx-auto h-[80vh] z-10"
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
               style={{ perspective: '1000px' }}
@@ -93,10 +93,10 @@ export default function Home() {
               </Badge>
             </div>
             
-            <div className="space-y-4 max-w-4xl text-center mt-8">
-              <h1 className="text-3xl md:text-4xl font-extrabold text-accent tracking-tighter [text-shadow:0_4px_15px_rgba(238,186,43,0.5)]">
-                  {title}
-              </h1>
+            <div className="absolute inset-0 flex items-end justify-center pb-20">
+                <h1 className="text-7xl md:text-9xl font-extrabold text-black/10 tracking-tighter [text-shadow:none]">
+                    {title}
+                </h1>
             </div>
           </main>
         </section>
