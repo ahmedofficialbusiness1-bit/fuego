@@ -22,7 +22,7 @@ export function Toaster() {
             {...props}
             onOpenChange={(open) => {
               if (!open) {
-                dismiss(id)
+                dismiss(id);
               }
             }}
           >
