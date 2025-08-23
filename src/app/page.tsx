@@ -145,7 +145,7 @@ export default function Home() {
                             const dialogKey = `faida-${index}`;
                             return (
                                 <Dialog key={item.title} open={openDialogKey === dialogKey} onOpenChange={(isOpen) => !isOpen && setOpenDialogKey(null)}>
-                                  <div onMouseEnter={() => setOpenDialogKey(dialogKey)} onMouseLeave={() => setOpenDialogKey(null)}>
+                                  <div onMouseEnter={() => setOpenDialogKey(dialogKey)}>
                                       <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50">
                                           <CardHeader>
                                               <CardTitle className="flex items-center gap-2 text-base"><Icon className="text-accent" /> {item.title}</CardTitle>
@@ -369,7 +369,7 @@ export default function Home() {
             
              <div className="order-3 md:order-3">
                <Dialog open={openDialogKey === 'sifa-kiufundi'} onOpenChange={(isOpen) => !isOpen && setOpenDialogKey(null)}>
-                  <div onMouseEnter={() => setOpenDialogKey('sifa-kiufundi')} onMouseLeave={() => setOpenDialogKey(null)}>
+                  <div onMouseEnter={() => setOpenDialogKey('sifa-kiufundi')}>
                     <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50">
                         <CardHeader>
                             <CardTitle>Sifa za Kiufundi</CardTitle>
@@ -426,7 +426,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
             <div className="order-2 md:order-1">
               <Dialog open={openDialogKey === 'mawasiliano-form'} onOpenChange={(isOpen) => !isOpen && setOpenDialogKey(null)}>
-                <div onMouseEnter={() => setOpenDialogKey('mawasiliano-form')} onMouseLeave={() => setOpenDialogKey(null)}>
+                <div onMouseEnter={() => setOpenDialogKey('mawasiliano-form')}>
                   <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm p-8 border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50">
                       <div className="space-y-4">
                         <div className="relative">
@@ -496,5 +496,3 @@ export default function Home() {
     </>
   );
 }
-
-    
