@@ -12,7 +12,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef, useCallback } from "react";
 import type { MouseEvent, Dispatch, SetStateAction } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -155,6 +155,8 @@ export default function Home() {
                                     </div>
                                   </DialogTrigger>
                                   <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
+                                    <DialogTitle className="sr-only">{item.title}</DialogTitle>
+                                    <DialogDescription className="sr-only">{item.text}</DialogDescription>
                                     <Card className="bg-transparent border-0 shadow-none">
                                       <CardHeader>
                                         <CardTitle className="flex items-center gap-4 text-2xl"><Icon className="text-accent w-8 h-8" /> {item.title}</CardTitle>
@@ -296,7 +298,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto items-start">
             
-            <div className="order-1 md:order-1 flex justify-start">
+            <div className="order-1 md:order-1 flex justify-center">
                 <div className="relative">
                      <Badge className="absolute -top-4 left-8 z-10 bg-accent text-accent-foreground text-base px-4 py-1 animate-fade-in shadow-lg" style={{ animationDelay: '0.5s' }}>
                         Warranty Mwaka 1
@@ -316,7 +318,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="hidden md:flex flex-col gap-8 order-2 md:order-2 justify-start">
+            <div className="hidden md:flex flex-col gap-8 order-2 md:order-2 justify-start pt-8">
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
                     <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Uimara" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="steel texture"/>
@@ -390,6 +392,8 @@ export default function Home() {
                     </div>
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
+                    <DialogTitle className="sr-only">Sifa za Kiufundi</DialogTitle>
+                    <DialogDescription className="sr-only">Detailed technical specifications of the Fuego SmartCook.</DialogDescription>
                     <Card className="bg-transparent border-0 shadow-none">
                       <CardHeader>
                           <CardTitle className="text-2xl">Sifa za Kiufundi</CardTitle>
@@ -422,22 +426,53 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
             <div className="order-2 md:order-1">
-                <Card className="bg-accent/10 backdrop-blur-sm p-8 border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50">
-                  <form className="space-y-4">
-                    <div className="relative">
-                      <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                      <Input placeholder="Jina lako" className="pl-10" />
-                    </div>
-                    <div className="relative">
-                      <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                      <Input type="email" placeholder="Barua pepe yako" className="pl-10" />
-                    </div>
-                    <div className="relative">
-                      <Textarea placeholder="Ujumbe wako..." rows={5} />
-                    </div>
-                    <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">Tuma Ujumbe</Button>
-                  </form>
-                </Card>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <div className="cursor-pointer">
+                    <Card className="bg-accent/10 backdrop-blur-sm p-8 border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50">
+                        <div className="space-y-4">
+                          <div className="relative">
+                            <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                            <Input placeholder="Jina lako" className="pl-10 pointer-events-none" />
+                          </div>
+                          <div className="relative">
+                            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                            <Input type="email" placeholder="Barua pepe yako" className="pl-10 pointer-events-none" />
+                          </div>
+                          <div className="relative">
+                            <Textarea placeholder="Ujumbe wako..." rows={5} className="pointer-events-none" />
+                          </div>
+                          <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground pointer-events-none">Tuma Ujumbe</Button>
+                        </div>
+                    </Card>
+                  </div>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
+                  <DialogTitle className="sr-only">Contact Form</DialogTitle>
+                  <DialogDescription className="sr-only">Fill out this form to send us a message.</DialogDescription>
+                  <Card className="bg-transparent border-0 shadow-none">
+                    <CardHeader>
+                      <CardTitle className="text-2xl">Tuandikie Ujumbe</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                       <form className="space-y-4">
+                        <div className="relative">
+                          <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                          <Input placeholder="Jina lako" className="pl-10" />
+                        </div>
+                        <div className="relative">
+                          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                          <Input type="email" placeholder="Barua pepe yako" className="pl-10" />
+                        </div>
+                        <div className="relative">
+                          <Textarea placeholder="Ujumbe wako..." rows={5} />
+                        </div>
+                        <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">Tuma Ujumbe</Button>
+                      </form>
+                    </CardContent>
+                  </Card>
+                </DialogContent>
+              </Dialog>
             </div>
             <div className="space-y-4 flex flex-col justify-center order-1 md:order-2">
               <div className="flex items-center gap-4">
