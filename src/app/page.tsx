@@ -32,7 +32,10 @@ export default function Home() {
   
   const transformTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (
+    e: MouseEvent<HTMLDivElement>,
+    setter: Dispatch<SetStateAction<string>>
+  ) => {
     if (transformTimeoutRef.current) {
       clearTimeout(transformTimeoutRef.current);
       transformTimeoutRef.current = null;
@@ -45,13 +48,15 @@ export default function Home() {
     const rotateY = (x / width - 0.5) * 15;
     
     const newTransform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
-    setImageTransform(newTransform);
+    setter(newTransform);
   };
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = (
+    setter: Dispatch<SetStateAction<string>>
+  ) => {
      transformTimeoutRef.current = setTimeout(() => {
         const resetTransform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-        setImageTransform(resetTransform);
+        setter(resetTransform);
      }, 300);
   };
   
@@ -102,8 +107,8 @@ export default function Home() {
             </div>
             <div
                 className="relative md:w-1/2 w-full h-[60vh] md:h-[90vh]"
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
+                onMouseMove={(e) => handleMouseMove(e, setImageTransform)}
+                onMouseLeave={() => handleMouseLeave(setImageTransform)}
               >
               <Image
                 src="/Adobe Express - file.png"
@@ -135,7 +140,7 @@ export default function Home() {
                             { icon: ShieldCheck, title: 'Usalama wa Kipekee', text: 'Imetengenezwa kwa mfumo salama wa pressure release, lock system, kufunga vizuri na sensa za joto ili kuhakikisha hakuna ajali jikoni. Ni salama kutumia kila siku bila hofu.' },
                             { icon: Users, title: 'Urahisi kwa Kila Nyumba', text: 'Iwe wewe ni mama anayetaka kuokoa muda, mwanafunzi, mfanyakazi au familia kubwa – Fuego inakupa suluhisho la Pamoja.' },
                             { icon: LifeBuoy, title: 'Warranty na Huduma', text: 'Fuego ina warranty wa mwaka moja hivyo uko salama kutumia fuego bila ya kujali matatizo ya kiufundi na vile vile tunakupa huduma masaa 4 ikiwemo elimu juu ya matumizi.' },
-                        ].map(item => {
+                        ].map((item, index) => {
                             const Icon = item.icon;
                             return (
                                 <div key={item.title}>
@@ -157,8 +162,8 @@ export default function Home() {
             <div className="md:col-span-2 flex justify-center items-center order-1 md:order-2 h-[40vh] md:h-auto">
                <div 
                   className="relative w-full h-full md:h-[60vh]"
-                  onMouseMove={handleMouseMove}
-                  onMouseLeave={handleMouseLeave}
+                  onMouseMove={(e) => handleMouseMove(e, setImageTransform)}
+                  onMouseLeave={() => handleMouseLeave(setImageTransform)}
                 >
                   <Image
                     src="/Adobe Express - file.png"
@@ -279,7 +284,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto items-start">
             
-             <div className="order-1 md:order-1 flex items-start">
+             <div className="order-1 md:order-1 flex items-start justify-center">
                 <div className="relative">
                      <Badge className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 bg-accent text-accent-foreground text-sm px-4 py-1 animate-fade-in" style={{ animationDelay: '0.5s' }}>
                         Warranty Mwaka 1
