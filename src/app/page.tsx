@@ -264,20 +264,20 @@ Rahisi, haraka, na chenye Ladha.
                         </div>
                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.8s' }}>
                             <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="https://placehold.co/100x100.png" alt="Viazi" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="potato dish"/>
+                                <Image src="/mboga.png" alt="Mboga" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="vegetable dish"/>
                             </div>
                              <div>
-                                <h3 className="font-bold text-sm">Viazi</h3>
-                                <p className="text-xs text-muted-foreground">Viazi vya kukaanga.</p>
+                                <h3 className="font-bold text-sm">Mboga</h3>
+                                <p className="text-xs text-muted-foreground">inapika mboga za aina zote.</p>
                             </div>
                         </div>
                          <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.8s' }}>
                             <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="https://placehold.co/100x100.png" alt="Ugali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="ugali dish"/>
+                                <Image src="/maandazi.png" alt="Maandazi" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="maandazi pastry"/>
                             </div>
                              <div>
-                                <h3 className="font-bold text-sm">Ugali</h3>
-                                <p className="text-xs text-muted-foreground">Ugali na samaki.</p>
+                                <h3 className="font-bold text-sm">Maandazi</h3>
+                                <p className="text-xs text-muted-foreground">ina bake kila kitu.</p>
                             </div>
                         </div>
                     </div>
@@ -485,6 +485,7 @@ Rahisi, haraka, na chenye Ladha.
     
 
     
+
 
 
 
