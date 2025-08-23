@@ -284,108 +284,89 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Sifa za Fuego</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua sifa za kiufundi na ubora wa Fuego SmartCook.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto items-start">
-            
-            <div className="order-1 md:order-1 flex justify-center">
-                <div className="relative">
-                    <Badge className="absolute -top-4 left-8 z-10 bg-accent text-accent-foreground text-base px-4 py-1 animate-fade-in shadow-lg">
-                        Warranty Mwaka 1
-                    </Badge>
-                    <Image
-                        src="/Adobe Express - file.png"
-                        alt="Fuego SmartCook on a counter"
-                        width={500}
-                        height={500}
-                        quality={100}
-                        className="object-contain"
-                        style={{
-                        filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.25))',
-                        }}
-                        data-ai-hint="pressure cooker kitchen"
-                    />
-                </div>
+          <div className="flex flex-col gap-8 max-w-7xl w-full mx-auto items-center">
+            <div className="flex flex-col md:flex-row items-start gap-8 w-full">
+              <div className="w-full md:w-1/3 flex justify-center">
+                  <div className="relative">
+                      <Badge className="absolute -top-4 left-8 z-10 bg-accent text-accent-foreground text-base px-4 py-1 animate-fade-in shadow-lg">
+                          Warranty Mwaka 1
+                      </Badge>
+                      <Image
+                          src="/Adobe Express - file.png"
+                          alt="Fuego SmartCook on a counter"
+                          width={500}
+                          height={500}
+                          quality={100}
+                          className="object-contain"
+                          style={{
+                          filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.25))',
+                          }}
+                          data-ai-hint="pressure cooker kitchen"
+                      />
+                  </div>
+              </div>
+
+              <div className="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  <div className="flex flex-col gap-8 justify-center">
+                      <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
+                          <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
+                              <Image src="https://placehold.co/100x100.png" alt="Uimara" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="steel texture"/>
+                          </div>
+                          <div>
+                              <h3 className="font-bold text-sm">Uimara wa Hali ya Juu</h3>
+                              <p className="text-xs text-muted-foreground">Imetengenezwa kwa SS#410.</p>
+                          </div>
+                      </div>
+                      <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.5s' }}>
+                          <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
+                              <Image src="https://placehold.co/100x100.png" alt="Joto" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="thermometer heat"/>
+                          </div>
+                          <div>
+                              <h3 className="font-bold text-sm">Inapika kwa Joto Sahihi</h3>
+                              <p className="text-xs text-muted-foreground">Heater ya 430g.</p>
+                          </div>
+                      </div>
+                      <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.5s' }}>
+                          <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
+                              <Image src="https://placehold.co/100x100.png" alt="Ukubwa" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="cooking pot"/>
+                          </div>
+                          <div>
+                              <h3 className="font-bold text-sm">Sufuria Kubwa</h3>
+                              <p className="text-xs text-muted-foreground">Lita 6, isiyo na non-stick.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div className="flex flex-col gap-8 justify-center">
+                      <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.0s' }}>
+                          <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
+                              <Image src="https://placehold.co/100x100.png" alt="Waya" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="power cable"/>
+                          </div>
+                          <div>
+                              <h3 className="font-bold text-sm">Waya Imara</h3>
+                              <p className="text-xs text-muted-foreground">1.0M Copper cable.</p>
+                          </div>
+                      </div>
+                      <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.0s' }}>
+                          <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
+                              <Image src="https://placehold.co/100x100.png" alt="Vifaa" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="measuring cup spoon"/>
+                          </div>
+                          <div>
+                              <h3 className="font-bold text-sm">Vifaa vya Ziada</h3>
+                              <p className="text-xs text-muted-foreground">Kikombe, kijiko, na rack.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
             </div>
 
-            <div className="hidden md:flex flex-col gap-8 order-2 md:order-2 justify-center">
-                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Uimara" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="steel texture"/>
-                    </div>
-                    <div>
-                        <h3 className="font-bold text-sm">Uimara wa Hali ya Juu</h3>
-                        <p className="text-xs text-muted-foreground">Imetengenezwa kwa SS#410.</p>
-                    </div>
-                </div>
-                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.5s' }}>
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
-                         <Image src="https://placehold.co/100x100.png" alt="Joto" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="thermometer heat"/>
-                    </div>
-                    <div>
-                        <h3 className="font-bold text-sm">Inapika kwa Joto Sahihi</h3>
-                        <p className="text-xs text-muted-foreground">Heater ya 430g.</p>
-                    </div>
-                </div>
-                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.5s' }}>
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
-                         <Image src="https://placehold.co/100x100.png" alt="Ukubwa" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="cooking pot"/>
-                    </div>
-                    <div>
-                        <h3 className="font-bold text-sm">Sufuria Kubwa</h3>
-                        <p className="text-xs text-muted-foreground">Lita 6, isiyo na non-stick.</p>
-                    </div>
-                </div>
-                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.0s' }}>
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
-                         <Image src="https://placehold.co/100x100.png" alt="Waya" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="power cable"/>
-                    </div>
-                    <div>
-                        <h3 className="font-bold text-sm">Waya Imara</h3>
-                        <p className="text-xs text-muted-foreground">1.0M Copper cable.</p>
-                    </div>
-                </div>
-                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.0s' }}>
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
-                         <Image src="https://placehold.co/100x100.png" alt="Vifaa" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="measuring cup spoon"/>
-                    </div>
-                    <div>
-                        <h3 className="font-bold text-sm">Vifaa vya Ziada</h3>
-                        <p className="text-xs text-muted-foreground">Kikombe, kijiko, na rack.</p>
-                    </div>
-                </div>
-            </div>
-            
-             <div className="order-3 md:order-3">
-               <Dialog>
-                 <DialogTrigger asChild>
-                    <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105 hover:z-20">
-                        <CardHeader>
-                            <CardTitle>Sifa za Kiufundi</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <ul className="space-y-3 text-muted-foreground text-xs">
-                                <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
-                                <li><strong>Power:</strong> 1000W</li>
-                                <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
-                                <li><strong>Color:</strong> Silver</li>
-                                <li><strong>Middle Housing:</strong> Cold Board/1.0mm Thickenss</li>
-                                <li><strong>Heater:</strong> 430g</li>
-                                <li><strong>Lid:</strong> SS#210/0.8mm Thickness</li>
-                                <li><strong>Inner Pot:</strong> 510g Non-Stick Aluminium Pot</li>
-                                <li><strong>Cable:</strong> 1.0M Copper cable with 13A UK Plug</li>
-                                <li><strong>Accessories:</strong> Measure Cup, Spoon, SS Steam Rack</li>
-                            </ul>
-                        </CardContent>
-                    </Card>
-                  </DialogTrigger>
-                  <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
-                    <DialogTitle className="sr-only">Sifa za Kiufundi</DialogTitle>
-                    <DialogDescription className="sr-only">Detailed technical specifications of the Fuego SmartCook.</DialogDescription>
-                    <Card className="bg-transparent border-0 shadow-none">
+            <Dialog>
+              <DialogTrigger asChild>
+                  <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105 hover:z-20 w-full max-w-4xl">
                       <CardHeader>
-                          <CardTitle className="text-2xl">Sifa za Kiufundi</CardTitle>
+                          <CardTitle>Sifa za Kiufundi</CardTitle>
                       </CardHeader>
                       <CardContent>
-                          <ul className="space-y-4 text-base text-foreground">
+                          <ul className="space-y-3 text-muted-foreground text-xs columns-2">
                               <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
                               <li><strong>Power:</strong> 1000W</li>
                               <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
@@ -398,10 +379,32 @@ export default function Home() {
                               <li><strong>Accessories:</strong> Measure Cup, Spoon, SS Steam Rack</li>
                           </ul>
                       </CardContent>
-                    </Card>
-                  </DialogContent>
-                </Dialog>
-            </div>
+                  </Card>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
+                  <DialogTitle className="sr-only">Sifa za Kiufundi</DialogTitle>
+                  <DialogDescription className="sr-only">Detailed technical specifications of the Fuego SmartCook.</DialogDescription>
+                  <Card className="bg-transparent border-0 shadow-none">
+                    <CardHeader>
+                        <CardTitle className="text-2xl">Sifa za Kiufundi</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <ul className="space-y-4 text-base text-foreground">
+                            <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
+                            <li><strong>Power:</strong> 1000W</li>
+                            <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
+                            <li><strong>Color:</strong> Silver</li>
+                            <li><strong>Middle Housing:</strong> Cold Board/1.0mm Thickenss</li>
+                            <li><strong>Heater:</strong> 430g</li>
+                            <li><strong>Lid:</strong> SS#210/0.8mm Thickness</li>
+                            <li><strong>Inner Pot:</strong> 510g Non-Stick Aluminium Pot</li>
+                            <li><strong>Cable:</strong> 1.0M Copper cable with 13A UK Plug</li>
+                            <li><strong>Accessories:</strong> Measure Cup, Spoon, SS Steam Rack</li>
+                        </ul>
+                    </CardContent>
+                  </Card>
+                </DialogContent>
+              </Dialog>
           </div>
         </section>
 
