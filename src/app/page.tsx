@@ -268,7 +268,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto items-start">
             
-            <div className="relative w-full h-[70vh] order-1 md:order-1">
+            <div className="relative w-full order-1 md:order-1">
               <Image
                 src="/Adobe Express - file.png"
                 alt="Fuego SmartCook on a counter"
@@ -401,5 +401,3 @@ export default function Home() {
     </>
   );
 }
-
-    
