@@ -44,7 +44,7 @@ export default function Home() {
     <>
       <main className="w-full relative overflow-hidden h-screen">
         <header className="absolute top-0 left-0 right-0 z-20 flex justify-between items-center p-8">
-            <FuegoLogo className="h-24 w-48" />
+            <FuegoLogo className="h-12 w-24" />
             <Navigation activeFace={activeFace} onNavigate={handleSetActiveFace} />
         </header>
         
@@ -406,5 +406,3 @@ export default function Home() {
     </>
   );
 }
-
-    
