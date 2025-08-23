@@ -128,35 +128,32 @@ export default function Home() {
                             { icon: ShieldCheck, title: 'Usalama wa Kipekee', text: 'Imetengenezwa kwa mfumo salama wa pressure release, lock system, kufunga vizuri na sensa za joto ili kuhakikisha hakuna ajali jikoni. Ni salama kutumia kila siku bila hofu.' },
                             { icon: Users, title: 'Urahisi kwa Kila Nyumba', text: 'Iwe wewe ni mama anayetaka kuokoa muda, mwanafunzi, mfanyakazi au familia kubwa – Fuego inakupa suluhisho la Pamoja.' },
                             { icon: LifeBuoy, title: 'Warranty na Huduma', text: 'Fuego ina warranty wa mwaka moja hivyo uko salama kutumia fuego bila ya kujali matatizo ya kiufundi na vile vile tunakupa huduma masaa 4 ikiwemo elimu juu ya matumizi.' },
-                        ].map((item, index) => {
-                            const Icon = item.icon;
-                            return (
-                                <Dialog key={item.title}>
-                                  <DialogTrigger asChild>
-                                      <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105 hover:z-20">
-                                          <CardHeader>
-                                              <CardTitle className="flex items-center gap-2 text-base"><Icon className="text-accent" /> {item.title}</CardTitle>
-                                          </CardHeader>
-                                          <CardContent className="text-xs text-muted-foreground">
-                                              {item.text}
-                                          </CardContent>
-                                      </Card>
-                                  </DialogTrigger>
-                                  <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
-                                    <DialogTitle className="sr-only">{item.title}</DialogTitle>
-                                    <DialogDescription className="sr-only">{item.text}</DialogDescription>
-                                    <Card className="bg-transparent border-0 shadow-none">
+                        ].map((item, index) => (
+                            <Dialog key={item.title}>
+                              <DialogTrigger asChild>
+                                  <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105 hover:z-20">
                                       <CardHeader>
-                                        <CardTitle className="flex items-center gap-4 text-2xl"><Icon className="text-accent w-8 h-8" /> {item.title}</CardTitle>
+                                          <CardTitle className="flex items-center gap-2 text-base"><item.icon className="text-accent" /> {item.title}</CardTitle>
                                       </CardHeader>
-                                      <CardContent className="text-base text-foreground">
-                                        {item.text}
+                                      <CardContent className="text-xs text-muted-foreground">
+                                          {item.text}
                                       </CardContent>
-                                    </Card>
-                                  </DialogContent>
-                                </Dialog>
-                            );
-                        })}
+                                  </Card>
+                              </DialogTrigger>
+                              <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
+                                <DialogTitle className="sr-only">{item.title}</DialogTitle>
+                                <DialogDescription className="sr-only">{item.text}</DialogDescription>
+                                <Card className="bg-transparent border-0 shadow-none">
+                                  <CardHeader>
+                                    <CardTitle className="flex items-center gap-4 text-2xl"><item.icon className="text-accent w-8 h-8" /> {item.title}</CardTitle>
+                                  </CardHeader>
+                                  <CardContent className="text-base text-foreground">
+                                    {item.text}
+                                  </CardContent>
+                                </Card>
+                              </DialogContent>
+                            </Dialog>
+                        ))}
                     </div>
                 </ScrollArea>
             </div>
@@ -194,85 +191,85 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.5s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
+                        <Image src="https://placehold.co/100x100.png" alt="Maharage" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="beans dish"/>
                     </div>
                     <div>
-                        <h3 className="font-bold text-sm">Kuku</h3>
-                        <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
+                        <h3 className="font-bold text-sm">Maharage</h3>
+                        <p className="text-xs text-muted-foreground">Maharage ya nazi.</p>
                     </div>
                 </div>
                  <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.5s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
+                        <Image src="https://placehold.co/100x100.png" alt="Wali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="rice dish"/>
                     </div>
                     <div>
-                        <h3 className="font-bold text-sm">Kuku</h3>
-                        <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
+                        <h3 className="font-bold text-sm">Wali</h3>
+                        <p className="text-xs text-muted-foreground">Wali wa kukaanga.</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.5s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
+                        <Image src="https://placehold.co/100x100.png" alt="Supu" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="soup bowl"/>
                     </div>
                      <div>
-                        <h3 className="font-bold text-sm">Kuku</h3>
-                        <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
+                        <h3 className="font-bold text-sm">Supu</h3>
+                        <p className="text-xs text-muted-foreground">Supu ya kuku.</p>
                     </div>
                 </div>
                  <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
+                        <Image src="https://placehold.co/100x100.png" alt="Keki" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="cake slice"/>
                     </div>
                      <div>
-                        <h3 className="font-bold text-sm">Kuku</h3>
-                        <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
+                        <h3 className="font-bold text-sm">Keki</h3>
+                        <p className="text-xs text-muted-foreground">Keki ya vanilla.</p>
                     </div>
                 </div>
             </div>
             <div className="hidden md:flex md:col-span-1 h-full flex-col items-center justify-center gap-8 order-4">
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.8s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
+                        <Image src="https://placehold.co/100x100.png" alt="Nyama" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="beef stew"/>
                     </div>
                     <div>
-                        <h3 className="font-bold text-sm">Kuku</h3>
-                        <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
+                        <h3 className="font-bold text-sm">Nyama</h3>
+                        <p className="text-xs text-muted-foreground">Nyama ya kuchoma.</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.2s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
+                        <Image src="https://placehold.co/100x100.png" alt="Ndizi" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="plantain dish"/>
                     </div>
                     <div>
-                        <h3 className="font-bold text-sm">Kuku</h3>
-                        <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
+                        <h3 className="font-bold text-sm">Ndizi</h3>
+                        <p className="text-xs text-muted-foreground">Ndizi za kukaanga.</p>
                     </div>
                 </div>
                  <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.3s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
+                        <Image src="https://placehold.co/100x100.png" alt="Makande" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="maize beans"/>
                     </div>
                     <div>
-                        <h3 className="font-bold text-sm">Kuku</h3>
-                        <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
+                        <h3 className="font-bold text-sm">Makande</h3>
+                        <p className="text-xs text-muted-foreground">Makande ya nazi.</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.8s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
+                        <Image src="https://placehold.co/100x100.png" alt="Viazi" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="potato dish"/>
                     </div>
                      <div>
-                        <h3 className="font-bold text-sm">Kuku</h3>
-                        <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
+                        <h3 className="font-bold text-sm">Viazi</h3>
+                        <p className="text-xs text-muted-foreground">Viazi vya kukaanga.</p>
                     </div>
                 </div>
                  <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.8s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
+                        <Image src="https://placehold.co/100x100.png" alt="Ugali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="ugali dish"/>
                     </div>
                      <div>
-                        <h3 className="font-bold text-sm">Kuku</h3>
-                        <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
+                        <h3 className="font-bold text-sm">Ugali</h3>
+                        <p className="text-xs text-muted-foreground">Ugali na samaki.</p>
                     </div>
                 </div>
             </div>
