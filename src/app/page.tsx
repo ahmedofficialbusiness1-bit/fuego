@@ -306,20 +306,20 @@ Rahisi, haraka, na chenye Ladha.
                 <div className="flex flex-col gap-8 justify-center">
                     <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
                         <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
-                            <Image src="https://placehold.co/100x100.png" alt="Uimara" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="steel texture"/>
+                            <Image src="https://placehold.co/100x100.png" alt="Kikombe" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="measuring cup"/>
                         </div>
                         <div>
-                            <h3 className="font-bold text-sm">Uimara wa Hali ya Juu</h3>
-                            <p className="text-xs text-muted-foreground">Imetengenezwa kwa SS#410.</p>
+                            <h3 className="font-bold text-sm">Kikombe</h3>
+                            <p className="text-xs text-muted-foreground">Inakuja na kikombe.</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.5s' }}>
                         <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
-                            <Image src="https://placehold.co/100x100.png" alt="Joto" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="thermometer heat"/>
+                            <Image src="https://placehold.co/100x100.png" alt="Kijiko" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="spoon"/>
                         </div>
                         <div>
-                            <h3 className="font-bold text-sm">Inapika kwa Joto Sahihi</h3>
-                            <p className="text-xs text-muted-foreground">Heater ya 430g.</p>
+                            <h3 className="font-bold text-sm">Kijiko</h3>
+                            <p className="text-xs text-muted-foreground">Inakuja na kijiko.</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.5s' }}>
@@ -344,11 +344,11 @@ Rahisi, haraka, na chenye Ladha.
                     </div>
                     <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.0s' }}>
                         <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
-                            <Image src="https://placehold.co/100x100.png" alt="Vifaa" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="measuring cup spoon"/>
+                            <Image src="https://placehold.co/100x100.png" alt="Steam Rack" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="steam rack"/>
                         </div>
                         <div>
-                            <h3 className="font-bold text-sm">Vifaa vya Ziada</h3>
-                            <p className="text-xs text-muted-foreground">Kikombe, kijiko, na rack.</p>
+                            <h3 className="font-bold text-sm">Steam Rack</h3>
+                            <p className="text-xs text-muted-foreground">Inakuja na Steam Rack kwa ajili ya kuoka.</p>
                         </div>
                     </div>
                 </div>
