@@ -283,27 +283,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-8 max-w-7xl w-full mx-auto items-center">
             <div className="flex flex-col md:flex-row items-start gap-8 w-full">
-              <div className="w-full md:w-1/3 flex justify-center">
-                  <div className="relative">
-                      <Badge className="absolute -top-4 left-8 z-10 bg-accent text-accent-foreground text-base px-4 py-1 animate-fade-in shadow-lg">
-                          Warranty Mwaka 1
-                      </Badge>
-                      <Image
-                          src="/Adobe Express - file.png"
-                          alt="Fuego SmartCook on a counter"
-                          width={500}
-                          height={500}
-                          quality={100}
-                          className="object-contain"
-                          style={{
-                          filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.25))',
-                          }}
-                          data-ai-hint="pressure cooker kitchen"
-                      />
-                  </div>
-              </div>
-
-              <div className="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-8">
                   <div className="flex flex-col gap-8 justify-center">
                       <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
                           <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
