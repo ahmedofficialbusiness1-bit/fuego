@@ -308,21 +308,24 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto items-start">
             
-             <div className="order-1 md:order-1">
-              <div className="relative w-full">
-                  <Image
-                    src="/Adobe Express - file.png"
-                    alt="Fuego SmartCook on a counter"
-                    width={500}
-                    height={500}
-                    quality={100}
-                    className="object-contain"
-                    style={{
-                      filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.25))',
-                    }}
-                    data-ai-hint="pressure cooker kitchen"
-                  />
-              </div>
+             <div className="order-1 md:order-1 flex items-start justify-center">
+                <div className="relative">
+                     <Badge className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 bg-accent text-accent-foreground animate-fade-in" style={{ animationDelay: '0.5s' }}>
+                        Warranty Mwaka 1
+                    </Badge>
+                    <Image
+                        src="/Adobe Express - file.png"
+                        alt="Fuego SmartCook on a counter"
+                        width={500}
+                        height={500}
+                        quality={100}
+                        className="object-contain"
+                        style={{
+                        filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.25))',
+                        }}
+                        data-ai-hint="pressure cooker kitchen"
+                    />
+                </div>
             </div>
 
             <div className="hidden md:flex flex-col gap-8 order-2 md:order-2 justify-start pt-8">
@@ -444,5 +447,3 @@ export default function Home() {
     </>
   );
 }
-
-    
