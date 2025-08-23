@@ -198,7 +198,7 @@ Rahisi, haraka, na chenye Ladha.
                             </div>
                         </div>
                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.5s' }}>
-                            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
+                            <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-accent">
                                 <Image src="/maharage2.png" alt="Maharage" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="beans dish"/>
                             </div>
                             <div>
@@ -485,6 +485,7 @@ Rahisi, haraka, na chenye Ladha.
     
 
     
+
 
 
 
