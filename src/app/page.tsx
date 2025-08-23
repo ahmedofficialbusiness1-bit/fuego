@@ -186,7 +186,7 @@ Rahisi, haraka, na chenye Ladha.
             
             <div className="md:col-span-2 flex-col order-3 md:order-3">
                 <h3 className="text-lg font-headline font-bold text-center mb-4">Baadhi ya vyakula unavyoweza kupika</h3>
-                <div className="hidden md:grid grid-cols-2 gap-4 h-full">
+                <div className="grid grid-cols-2 gap-4 h-full">
                     <div className="flex flex-col items-center justify-center gap-8">
                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
                             <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
@@ -485,6 +485,7 @@ Rahisi, haraka, na chenye Ladha.
     
 
     
+
 
 
 
