@@ -267,7 +267,7 @@ export default function Home() {
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua sifa za kiufundi za Fuego SmartCook.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto items-start">
-            <div className="relative w-full h-[80vh]">
+            <div className="relative w-full h-[70vh]">
               <Image
                 src="/Adobe Express - file.png"
                 alt="Fuego SmartCook on a counter"
