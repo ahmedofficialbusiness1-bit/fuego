@@ -268,7 +268,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto items-start">
             
-            <div className="relative w-full h-[70vh] order-1">
+            <div className="relative w-full h-[70vh] order-1 md:order-1">
               <Image
                 src="/Adobe Express - file.png"
                 alt="Fuego SmartCook on a counter"
@@ -282,9 +282,9 @@ export default function Home() {
               />
             </div>
 
-            <div className="hidden md:flex flex-col items-center justify-center gap-8 order-2">
+            <div className="hidden md:flex flex-col items-center justify-center gap-8 order-2 md:order-2">
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Uimara" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="steel texture"/>
                     </div>
                     <div>
@@ -293,7 +293,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.5s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
                          <Image src="https://placehold.co/100x100.png" alt="Joto" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="thermometer heat"/>
                     </div>
                     <div>
@@ -302,7 +302,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.5s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
                          <Image src="https://placehold.co/100x100.png" alt="Ukubwa" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="cooking pot"/>
                     </div>
                     <div>
@@ -311,7 +311,7 @@ export default function Home() {
                     </div>
                 </div>
                  <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.0s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
                          <Image src="https://placehold.co/100x100.png" alt="Waya" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="power cable"/>
                     </div>
                     <div>
@@ -320,7 +320,7 @@ export default function Home() {
                     </div>
                 </div>
                  <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.0s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
                          <Image src="https://placehold.co/100x100.png" alt="Vifaa" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="measuring cup spoon"/>
                     </div>
                     <div>
@@ -330,7 +330,7 @@ export default function Home() {
                 </div>
             </div>
             
-             <div className="order-3">
+             <div className="order-3 md:order-3">
                 <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
                     <CardHeader>
                         <CardTitle>Sifa za Kiufundi</CardTitle>
