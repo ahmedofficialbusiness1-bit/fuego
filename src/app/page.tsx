@@ -291,15 +291,7 @@ Rahisi, haraka, na chenye Ladha.
             <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Sifa za Ziada</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Sifa za kiufundi na ubora wa Fuego smartcooker</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 max-w-7xl w-full mx-auto items-center relative">
-              <svg className="absolute top-0 left-0 w-full h-full hidden md:block" aria-hidden="true">
-                  <line x1="20%" y1="50%" x2="40%" y2="20%" stroke="hsl(var(--border))" strokeWidth="2" strokeDasharray="5,5" />
-                  <line x1="20%" y1="50%" x2="40%" y2="50%" stroke="hsl(var(--border))" strokeWidth="2" strokeDasharray="5,5" />
-                  <line x1="20%" y1="50%" x2="40%" y2="80%" stroke="hsl(var(--border))" strokeWidth="2" strokeDasharray="5,5" />
-                  <line x1="80%" y1="50%" x2="60%" y2="35%" stroke="hsl(var(--border))" strokeWidth="2" strokeDasharray="5,5" />
-                  <line x1="80%" y1="50%" x2="60%" y2="65%" stroke="hsl(var(--border))" strokeWidth="2" strokeDasharray="5,5" />
-              </svg>
-
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 max-w-7xl w-full mx-auto items-center">
               <div className="md:col-span-2 flex flex-col gap-8 justify-between h-full">
                   <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
                       <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
