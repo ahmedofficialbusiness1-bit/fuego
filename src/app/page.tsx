@@ -2,7 +2,6 @@
 "use client";
 
 import { FuegoLogo } from "@/components/fuego-logo";
-import { Navigation } from "@/components/ui/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/toaster";
@@ -17,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
+import { Navigation } from "@/components/ui/navigation";
 
 
 type Face = 'front' | 'right' | 'back' | 'left';
@@ -44,7 +44,7 @@ export default function Home() {
     <>
       <main className="w-full relative overflow-hidden h-screen">
         <header className="absolute top-0 left-0 right-0 z-20 flex justify-between items-center p-8">
-            <FuegoLogo className="h-8 w-16" />
+            <FuegoLogo className="h-8 w-auto" />
             <Navigation activeFace={activeFace} onNavigate={handleSetActiveFace} />
         </header>
         
@@ -267,7 +267,7 @@ export default function Home() {
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua sifa za kiufundi za Fuego SmartCook.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto items-start">
-            <div className="relative w-full h-[70vh]">
+            <div className="relative w-full h-[70vh] md:col-span-2">
               <Image
                 src="/Adobe Express - file.png"
                 alt="Fuego SmartCook on a counter"
@@ -280,63 +280,8 @@ export default function Home() {
                 data-ai-hint="pressure cooker kitchen"
               />
             </div>
-            <div className="hidden md:flex flex-col justify-center items-center gap-4">
-                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
-                    <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Sehemu ya 1: Sufuria ya Ndani" layout="fill" className="object-cover" data-ai-hint="inner pot"/>
-                    </div>
-                    <div>
-                        <h3 className="font-bold text-xs">Sufuria ya Ndani</h3>
-                        <p className="text-xs text-muted-foreground">Non-stick na rahisi kusafisha.</p>
-                    </div>
-                </div>
-                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.2s' }}>
-                    <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Sehemu ya 2: Elementi ya Kupasha Joto" layout="fill" className="object-cover" data-ai-hint="heating element"/>
-                    </div>
-                    <div>
-                        <h3 className="font-bold text-xs">Elementi ya Joto</h3>
-                        <p className="text-xs text-muted-foreground">Inasambaza joto sawasawa.</p>
-                    </div>
-                </div>
-                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.4s' }}>
-                    <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Sehemu ya 3: Mfuniko wa Ndani" layout="fill" className="object-cover" data-ai-hint="lid seal"/>
-                    </div>
-                    <div>
-                        <h3 className="font-bold text-xs">Mfuniko wa Ndani</h3>
-                        <p className="text-xs text-muted-foreground">Huzuia mvuke kutoka.</p>
-                    </div>
-                </div>
-                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.6s' }}>
-                    <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Sehemu ya 4: Rack ya Kustimisha" layout="fill" className="object-cover" data-ai-hint="steam rack"/>
-                    </div>
-                    <div>
-                        <h3 className="font-bold text-xs">Rack ya Kustimisha</h3>
-                        <p className="text-xs text-muted-foreground">Kwa mboga na vyakula vingine.</p>
-                    </div>
-                </div>
-                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.8s' }}>
-                    <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Sehemu ya 5: Valve ya Pressure" layout="fill" className="object-cover" data-ai-hint="pressure valve"/>
-                    </div>
-                    <div>
-                        <h3 className="font-bold text-xs">Valve ya Pressure</h3>
-                        <p className="text-xs text-muted-foreground">Inadhibiti pressure kwa usalama.</p>
-                    </div>
-                </div>
-                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2s' }}>
-                    <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Sehemu ya 6: Paneli ya Kudhibiti" layout="fill" className="object-cover" data-ai-hint="control panel"/>
-                    </div>
-                    <div>
-                        <h3 className="font-bold text-xs">Paneli ya Kudhibiti</h3>
-                        <p className="text-xs text-muted-foreground">Rahisi kutumia na kuelewa.</p>
-                    </div>
-                </div>
-            </div>
-             <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
+            
+             <Card className="bg-accent/10 backdrop-blur-sm border-accent/30 md:col-span-1">
                 <CardHeader>
                     <CardTitle>Sifa za Kiufundi</CardTitle>
                 </CardHeader>
