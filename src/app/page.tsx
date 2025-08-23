@@ -82,9 +82,10 @@ export default function Home() {
                 FUEGO PRESSURE COOKER
               </h1>
               <p className="max-w-md mx-auto md:mx-0 mt-6 text-muted-foreground">
-                The smart way to cook. Perfectly cooked meals, every single time. Effortless, fast, and intelligent.
+                Njia ya kisasa ya kupika. Chakula kinapikwa kwa ubora kila wakati. Rahisi, haraka, na chenye Ladha.
               </p>
-              <div className="flex items-center gap-4 mt-8 justify-center md:justify-start">
+              <h2 className="mt-8 mb-4 font-headline text-xl font-bold text-accent text-center md:text-left">Ni Jiko Fanisi</h2>
+              <div className="flex items-center gap-4 mt-4 justify-center md:justify-start">
                 <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                   Nunua Sasa <ArrowRight />
                 </Button>
@@ -92,7 +93,6 @@ export default function Home() {
                   Soma Zaidi <ArrowRight />
                 </Button>
               </div>
-              <p className="mt-4 text-sm text-muted-foreground text-center md:text-left">Ni Jiko Fanisi</p>
             </div>
             <div
                 className="relative md:w-1/2 w-full h-[60vh] md:h-[90vh]"
