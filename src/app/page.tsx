@@ -189,7 +189,7 @@ Rahisi, haraka, na chenye Ladha.
                 <div className="hidden md:grid grid-cols-2 gap-4 h-full">
                     <div className="flex flex-col items-center justify-center gap-8">
                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
-                            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
                                 <Image src="/ugali.png" alt="Ugali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="ugali dish"/>
                             </div>
                             <div>
@@ -198,7 +198,7 @@ Rahisi, haraka, na chenye Ladha.
                             </div>
                         </div>
                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.5s' }}>
-                            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
                                 <Image src="/maharage.png" alt="Maharage" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="beans dish"/>
                             </div>
                             <div>
@@ -207,8 +207,8 @@ Rahisi, haraka, na chenye Ladha.
                             </div>
                         </div>
                          <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.5s' }}>
-                            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="/wali.png" alt="Wali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="rice dish"/>
+                            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
+                                <Image src="/wali2.png" alt="Wali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="rice dish"/>
                             </div>
                             <div>
                                 <h3 className="font-bold text-sm">Wali</h3>
@@ -216,7 +216,7 @@ Rahisi, haraka, na chenye Ladha.
                             </div>
                         </div>
                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.5s' }}>
-                            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
                                 <Image src="https://placehold.co/100x100.png" alt="Supu" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="soup bowl"/>
                             </div>
                              <div>
@@ -225,7 +225,7 @@ Rahisi, haraka, na chenye Ladha.
                             </div>
                         </div>
                          <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1s' }}>
-                            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
                                 <Image src="https://placehold.co/100x100.png" alt="Keki" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="cake slice"/>
                             </div>
                              <div>
@@ -236,7 +236,7 @@ Rahisi, haraka, na chenye Ladha.
                     </div>
                     <div className="flex flex-col items-center justify-center gap-8">
                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.8s' }}>
-                            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
                                 <Image src="/kuku.png" alt="Nyama" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
                             </div>
                             <div>
@@ -245,7 +245,7 @@ Rahisi, haraka, na chenye Ladha.
                             </div>
                         </div>
                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.2s' }}>
-                            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
                                 <Image src="https://placehold.co/100x100.png" alt="Ndizi" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="plantain dish"/>
                             </div>
                             <div>
@@ -254,7 +254,7 @@ Rahisi, haraka, na chenye Ladha.
                             </div>
                         </div>
                          <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.3s' }}>
-                            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
                                 <Image src="https://placehold.co/100x100.png" alt="Makande" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="maize beans"/>
                             </div>
                             <div>
@@ -263,7 +263,7 @@ Rahisi, haraka, na chenye Ladha.
                             </div>
                         </div>
                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.8s' }}>
-                            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
                                 <Image src="https://placehold.co/100x100.png" alt="Viazi" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="potato dish"/>
                             </div>
                              <div>
@@ -272,7 +272,7 @@ Rahisi, haraka, na chenye Ladha.
                             </div>
                         </div>
                          <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.8s' }}>
-                            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
                                 <Image src="https://placehold.co/100x100.png" alt="Ugali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="ugali dish"/>
                             </div>
                              <div>
@@ -485,6 +485,7 @@ Rahisi, haraka, na chenye Ladha.
     
 
     
+
 
 
 
