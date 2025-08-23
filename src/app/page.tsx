@@ -120,7 +120,7 @@ Rahisi, haraka, na chenye Ladha.
         </section>
 
         <section id="faida" className="min-h-screen flex items-center justify-center px-8 pt-16 pb-16 bg-secondary/30">
-          <div className="flex flex-col md:grid md:grid-cols-6 items-center justify-center w-full max-w-full h-full gap-4">
+          <div className="flex flex-col md:grid md:grid-cols-6 items-center justify-center w-full max-w-7xl mx-auto h-full gap-4">
             <div className="md:col-span-2 order-2 md:order-1">
                 <h2 className="text-3xl font-headline font-bold tracking-tighter mb-6 text-center">Faida za Fuego</h2>
                 <ScrollArea className="h-[60vh] md:h-[70vh] w-full pr-4">
@@ -485,6 +485,7 @@ Rahisi, haraka, na chenye Ladha.
     
 
     
+
 
 
 
