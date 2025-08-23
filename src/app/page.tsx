@@ -344,7 +344,7 @@ Rahisi, haraka, na chenye Ladha.
                     </div>
                     <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.0s' }}>
                         <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
-                            <Image src="https://placehold.co/100x100.png" alt="Steam Rack" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="steam rack"/>
+                            <Image src="/rack.png" alt="Steam Rack" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="steam rack"/>
                         </div>
                         <div>
                             <h3 className="font-bold text-sm">Steam Rack</h3>
