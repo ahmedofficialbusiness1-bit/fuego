@@ -29,14 +29,13 @@ export default function Home() {
   const [activeFace, setActiveFace] = useState<Face>('front');
   
   const [imageTransform, setImageTransform] = useState('');
-  const [cardTransforms, setCardTransforms] = useState<{[key: string]: string}>({});
+  
+  const transformTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const transformTimeoutRef = useRef<{[key: string]: NodeJS.Timeout | null}>({});
-
-  const handleMouseMove = (e: MouseEvent<HTMLDivElement>, key: string, setTransform: Dispatch<SetStateAction<any>>) => {
-    if (transformTimeoutRef.current[key]) {
-      clearTimeout(transformTimeoutRef.current[key]!);
-      transformTimeoutRef.current[key] = null;
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    if (transformTimeoutRef.current) {
+      clearTimeout(transformTimeoutRef.current);
+      transformTimeoutRef.current = null;
     }
     const { clientX, clientY, currentTarget } = e;
     const { left, top, width, height } = currentTarget.getBoundingClientRect();
@@ -46,22 +45,13 @@ export default function Home() {
     const rotateY = (x / width - 0.5) * 15;
     
     const newTransform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
-    
-    if (key.startsWith('card')) {
-        setCardTransforms(prev => ({...prev, [key]: newTransform}));
-    } else {
-        setImageTransform(newTransform);
-    }
+    setImageTransform(newTransform);
   };
 
-  const handleMouseLeave = (key: string, setTransform: Dispatch<SetStateAction<any>>) => {
-     transformTimeoutRef.current[key] = setTimeout(() => {
+  const handleMouseLeave = () => {
+     transformTimeoutRef.current = setTimeout(() => {
         const resetTransform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-        if (key.startsWith('card')) {
-            setCardTransforms(prev => ({...prev, [key]: resetTransform}));
-        } else {
-            setImageTransform(resetTransform);
-        }
+        setImageTransform(resetTransform);
      }, 300);
   };
   
@@ -78,11 +68,9 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const timeouts = transformTimeoutRef.current;
+    const timeout = transformTimeoutRef.current;
     return () => {
-      Object.values(timeouts).forEach(timeout => {
         if (timeout) clearTimeout(timeout);
-      });
     };
   }, []);
 
@@ -114,8 +102,8 @@ export default function Home() {
             </div>
             <div
                 className="relative md:w-1/2 w-full h-[60vh] md:h-[90vh]"
-                onMouseMove={(e) => handleMouseMove(e, 'image-front', setImageTransform)}
-                onMouseLeave={() => handleMouseLeave('image-front', setImageTransform)}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
               >
               <Image
                 src="/Adobe Express - file.png"
@@ -140,18 +128,18 @@ export default function Home() {
                 <ScrollArea className="h-[60vh] md:h-[70vh] w-full pr-4">
                     <div className="space-y-4">
                         {[
-                            { key: 'card-cost', icon: Bolt, title: 'Punguza Gharama', text: 'Sahau gharama za mkaa na gesi zinazopanda kila siku! Fuego SmartCook inatumia umeme mdogo sana, ikikupunguzia bili na kukuwekea akiba. Ni uwekezaji bora kwa jiko la kisasa na familia yako.' },
-                            { key: 'card-time', icon: Clock, title: 'Hifadhi Muda Wako', text: 'Fuego imeundwa kwa teknolojia ya kisasa inayopika haraka na salama. Haijalishi unapika wali, ugali, makande, maharage,keki, maandazi, supu au nyama ngumu kila kitu kinakamilika kwa muda mfupi bila kupoteza ladha fuego inapika zaidi ya vyakula 44.' },
-                            { key: 'card-health', icon: HeartPulse, title: 'Pika Chakula Chenye Afya', text: 'Kwa kutumia Fuego Pressure Cooker utaboresha afya yako kwani huhifadhi virutubisho na vitamini kwenye chakula chako. Hakuna haja ya mafuta mengi au kupika kwa muda mrefu unaopoteza ladha.' },
-                            { key: 'card-friend', icon: Utensils, title: 'Rafiki Yako Jikoni', text: 'Kwa vitufe vya moja kwa moja (Rice, Beans, Meat, Soup, Chicken n.k.), huitaji kuwa mtaalamu wa mapishi. Bonyeza tu na acha Fuego ikufanyie kazi.' },
-                            { key: 'card-safety', icon: ShieldCheck, title: 'Usalama wa Kipekee', text: 'Imetengenezwa kwa mfumo salama wa pressure release, lock system, kufunga vizuri na sensa za joto ili kuhakikisha hakuna ajali jikoni. Ni salama kutumia kila siku bila hofu.' },
-                            { key: 'card-ease', icon: Users, title: 'Urahisi kwa Kila Nyumba', text: 'Iwe wewe ni mama anayetaka kuokoa muda, mwanafunzi, mfanyakazi au familia kubwa – Fuego inakupa suluhisho la Pamoja.' },
-                            { key: 'card-warranty', icon: LifeBuoy, title: 'Warranty na Huduma', text: 'Fuego ina warranty wa mwaka moja hivyo uko salama kutumia fuego bila ya kujali matatizo ya kiufundi na vile vile tunakupa huduma masaa 4 ikiwemo elimu juu ya matumizi.' },
+                            { icon: Bolt, title: 'Punguza Gharama', text: 'Sahau gharama za mkaa na gesi zinazopanda kila siku! Fuego SmartCook inatumia umeme mdogo sana, ikikupunguzia bili na kukuwekea akiba. Ni uwekezaji bora kwa jiko la kisasa na familia yako.' },
+                            { icon: Clock, title: 'Hifadhi Muda Wako', text: 'Fuego imeundwa kwa teknolojia ya kisasa inayopika haraka na salama. Haijalishi unapika wali, ugali, makande, maharage,keki, maandazi, supu au nyama ngumu kila kitu kinakamilika kwa muda mfupi bila kupoteza ladha fuego inapika zaidi ya vyakula 44.' },
+                            { icon: HeartPulse, title: 'Pika Chakula Chenye Afya', text: 'Kwa kutumia Fuego Pressure Cooker utaboresha afya yako kwani huhifadhi virutubisho na vitamini kwenye chakula chako. Hakuna haja ya mafuta mengi au kupika kwa muda mrefu unaopoteza ladha.' },
+                            { icon: Utensils, title: 'Rafiki Yako Jikoni', text: 'Kwa vitufe vya moja kwa moja (Rice, Beans, Meat, Soup, Chicken n.k.), huitaji kuwa mtaalamu wa mapishi. Bonyeza tu na acha Fuego ikufanyie kazi.' },
+                            { icon: ShieldCheck, title: 'Usalama wa Kipekee', text: 'Imetengenezwa kwa mfumo salama wa pressure release, lock system, kufunga vizuri na sensa za joto ili kuhakikisha hakuna ajali jikoni. Ni salama kutumia kila siku bila hofu.' },
+                            { icon: Users, title: 'Urahisi kwa Kila Nyumba', text: 'Iwe wewe ni mama anayetaka kuokoa muda, mwanafunzi, mfanyakazi au familia kubwa – Fuego inakupa suluhisho la Pamoja.' },
+                            { icon: LifeBuoy, title: 'Warranty na Huduma', text: 'Fuego ina warranty wa mwaka moja hivyo uko salama kutumia fuego bila ya kujali matatizo ya kiufundi na vile vile tunakupa huduma masaa 4 ikiwemo elimu juu ya matumizi.' },
                         ].map(item => {
                             const Icon = item.icon;
                             return (
-                                <div key={item.key} onMouseMove={(e) => handleMouseMove(e, item.key, setCardTransforms as any)} onMouseLeave={() => handleMouseLeave(item.key, setCardTransforms as any)} className="transition-transform duration-300 ease-out" style={{transform: cardTransforms[item.key]}}>
-                                    <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
+                                <div key={item.title}>
+                                    <Card className="bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 hover:shadow-accent/50">
                                         <CardHeader>
                                             <CardTitle className="flex items-center gap-2 text-base"><Icon className="text-accent" /> {item.title}</CardTitle>
                                         </CardHeader>
@@ -169,8 +157,8 @@ export default function Home() {
             <div className="md:col-span-2 flex justify-center items-center order-1 md:order-2 h-[40vh] md:h-auto">
                <div 
                   className="relative w-full h-full md:h-[60vh]"
-                  onMouseMove={(e) => handleMouseMove(e, 'image-right', setImageTransform)}
-                  onMouseLeave={() => handleMouseLeave('image-right', setImageTransform)}
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
                 >
                   <Image
                     src="/Adobe Express - file.png"
@@ -187,7 +175,7 @@ export default function Home() {
                 </div>
             </div>
             
-            <div className="hidden md:flex md:col-span-1 h-full flex-col items-center justify-center gap-8 order-3">
+            <div className="hidden md:flex md:col-span-1 h-full flex-col items-center justify-start gap-8 order-3">
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
@@ -234,7 +222,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className="hidden md:flex md:col-span-1 h-full flex-col items-center justify-center gap-8 order-4">
+            <div className="hidden md:flex md:col-span-1 h-full flex-col items-center justify-start gap-8 order-4">
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.8s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
@@ -293,7 +281,7 @@ export default function Home() {
             
              <div className="order-1 md:order-1 flex items-start">
                 <div className="relative">
-                     <Badge className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 bg-accent text-accent-foreground text-sm px-4 py-1">
+                     <Badge className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 bg-accent text-accent-foreground text-sm px-4 py-1 animate-fade-in" style={{ animationDelay: '0.5s' }}>
                         Warranty Mwaka 1
                     </Badge>
                     <Image
@@ -360,8 +348,8 @@ export default function Home() {
             </div>
             
              <div className="order-3 md:order-3">
-                <div onMouseMove={(e) => handleMouseMove(e, 'card-specs', setCardTransforms as any)} onMouseLeave={() => handleMouseLeave('card-specs', setCardTransforms as any)} className="transition-transform duration-300 ease-out" style={{transform: cardTransforms['card-specs']}}>
-                    <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
+                <div>
+                    <Card className="bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 hover:shadow-accent/50">
                         <CardHeader>
                             <CardTitle>Sifa za Kiufundi</CardTitle>
                         </CardHeader>
@@ -391,8 +379,8 @@ export default function Home() {
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Una maswali? Tuko hapa kukusaidia. Wasiliana nasi kupitia njia yoyote hapa chini.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
-            <div onMouseMove={(e) => handleMouseMove(e, 'card-contact', setCardTransforms as any)} onMouseLeave={() => handleMouseLeave('card-contact', setCardTransforms as any)} className="transition-transform duration-300 ease-out order-2 md:order-1" style={{transform: cardTransforms['card-contact']}}>
-                <Card className="bg-accent/10 backdrop-blur-sm p-8 border-accent/30">
+            <div className="order-2 md:order-1">
+                <Card className="bg-accent/10 backdrop-blur-sm p-8 border-accent/30 shadow-2xl transition-all duration-300 hover:shadow-accent/50">
                   <form className="space-y-4">
                     <div className="relative">
                       <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -434,7 +422,3 @@ export default function Home() {
     </>
   );
 }
-
-    
-
-    
