@@ -310,20 +310,17 @@ export default function Home() {
             
              <div 
               className="flex items-start order-1 md:order-1"
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
             >
-              <div className="relative w-full h-full">
+              <div className="relative w-full">
                   <Image
                     src="/Adobe Express - file.png"
                     alt="Fuego SmartCook on a counter"
                     width={500}
                     height={500}
                     quality={100}
-                    className="object-contain transition-transform duration-300 ease-out"
+                    className="object-contain"
                     style={{
                       filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.25))',
-                      transform: imageTransform,
                     }}
                     data-ai-hint="pressure cooker kitchen"
                   />
@@ -449,3 +446,5 @@ export default function Home() {
     </>
   );
 }
+
+    
