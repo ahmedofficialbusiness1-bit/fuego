@@ -279,7 +279,7 @@ export default function Home() {
         
         <section id="sifa" className="min-h-screen flex flex-col items-center justify-center px-8 pt-16 pb-16">
           <div className="text-center mb-8 w-full max-w-7xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Sifa za Fuego</h2>
+            <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Sifa za Ziada</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua sifa za kiufundi na ubora wa Fuego SmartCook.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl w-full mx-auto items-center">
