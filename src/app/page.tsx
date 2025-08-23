@@ -306,7 +306,7 @@ Rahisi, haraka, na chenye Ladha.
               <div className="flex flex-col gap-8 justify-center h-full">
                   <div className="grid grid-cols-2 gap-8">
                       <div className="flex flex-col items-center text-center gap-4 animate-bubble-float" style={{ animationDelay: '0s' }}>
-                          <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
+                          <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
                               <Image src="/cup.png" alt="Kikombe" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="measuring cup"/>
                           </div>
                           <div>
@@ -315,7 +315,7 @@ Rahisi, haraka, na chenye Ladha.
                           </div>
                       </div>
                       <div className="flex flex-col items-center text-center gap-4 animate-bubble-float" style={{ animationDelay: '0.5s' }}>
-                          <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
+                          <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
                               <Image src="/spoon.png" alt="Kijiko" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="spoon"/>
                           </div>
                           <div>
@@ -324,7 +324,7 @@ Rahisi, haraka, na chenye Ladha.
                           </div>
                       </div>
                       <div className="flex flex-col items-center text-center gap-4 animate-bubble-float" style={{ animationDelay: '1.0s' }}>
-                          <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
+                          <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
                               <Image src="/rack.png" alt="Steam Rack" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="steam rack"/>
                           </div>
                           <div>
@@ -333,7 +333,7 @@ Rahisi, haraka, na chenye Ladha.
                           </div>
                       </div>
                        <div className="flex flex-col items-center text-center gap-4 animate-bubble-float" style={{ animationDelay: '1.5s' }}>
-                          <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
+                          <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
                               <Image src="/wire.png" alt="Waya" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="power cable"/>
                           </div>
                           <div>
@@ -342,7 +342,7 @@ Rahisi, haraka, na chenye Ladha.
                           </div>
                       </div>
                        <div className="flex flex-col items-center text-center gap-4 animate-bubble-float" style={{ animationDelay: '2.0s' }}>
-                          <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
+                          <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
                               <Image src="/pot2.png" alt="Sufuria Kubwa" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="cooking pot"/>
                           </div>
                           <div>
