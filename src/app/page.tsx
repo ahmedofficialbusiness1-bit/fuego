@@ -184,9 +184,9 @@ Rahisi, haraka, na chenye Ladha.
                 </div>
             </div>
             
-            <div className="hidden md:flex md:col-span-2 flex-col order-3 md:order-3">
+            <div className="md:col-span-2 flex-col order-3 md:order-3">
                 <h3 className="text-lg font-headline font-bold text-center mb-4">Baadhi ya vyakula unavyoweza kupika</h3>
-                <div className="grid grid-cols-2 gap-4 h-full">
+                <div className="hidden md:grid grid-cols-2 gap-4 h-full">
                     <div className="flex flex-col items-center justify-center gap-8">
                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
                             <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
@@ -324,7 +324,7 @@ Rahisi, haraka, na chenye Ladha.
                     </div>
                     <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.5s' }}>
                         <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
-                            <Image src="/pot.png" alt="Sufuria Kubwa" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="cooking pot"/>
+                            <Image src="/pot2.png" alt="Sufuria Kubwa" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="cooking pot"/>
                         </div>
                         <div>
                             <h3 className="font-bold text-sm">Sufuria Kubwa</h3>
