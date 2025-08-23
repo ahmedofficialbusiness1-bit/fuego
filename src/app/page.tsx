@@ -33,8 +33,7 @@ export default function Home() {
   const transformTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseMove = (
-    e: MouseEvent<HTMLDivElement>,
-    setter: Dispatch<SetStateAction<string>>
+    e: MouseEvent<HTMLDivElement>
   ) => {
     if (transformTimeoutRef.current) {
       clearTimeout(transformTimeoutRef.current);
@@ -48,15 +47,13 @@ export default function Home() {
     const rotateY = (x / width - 0.5) * 15;
     
     const newTransform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
-    setter(newTransform);
+    setImageTransform(newTransform);
   };
 
-  const handleMouseLeave = (
-    setter: Dispatch<SetStateAction<string>>
-  ) => {
+  const handleMouseLeave = () => {
      transformTimeoutRef.current = setTimeout(() => {
         const resetTransform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-        setter(resetTransform);
+        setImageTransform(resetTransform);
      }, 300);
   };
   
@@ -107,8 +104,8 @@ export default function Home() {
             </div>
             <div
                 className="relative md:w-1/2 w-full h-[60vh] md:h-[90vh]"
-                onMouseMove={(e) => handleMouseMove(e, setImageTransform)}
-                onMouseLeave={() => handleMouseLeave(setImageTransform)}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
               >
               <Image
                 src="/Adobe Express - file.png"
@@ -162,8 +159,8 @@ export default function Home() {
             <div className="md:col-span-2 flex justify-center items-center order-1 md:order-2 h-[40vh] md:h-auto">
                <div 
                   className="relative w-full h-full md:h-[60vh]"
-                  onMouseMove={(e) => handleMouseMove(e, setImageTransform)}
-                  onMouseLeave={() => handleMouseLeave(setImageTransform)}
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
                 >
                   <Image
                     src="/Adobe Express - file.png"
