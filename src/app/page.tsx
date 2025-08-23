@@ -283,7 +283,7 @@ export default function Home() {
             
             <div className="order-1 md:order-1 flex justify-start">
                 <div className="relative">
-                     <Badge className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 bg-accent text-accent-foreground text-lg px-6 py-2 animate-fade-in shadow-lg" style={{ animationDelay: '0.5s' }}>
+                     <Badge className="absolute -top-4 left-8 z-10 bg-accent text-accent-foreground text-base px-4 py-1 animate-fade-in shadow-lg" style={{ animationDelay: '0.5s' }}>
                         Warranty Mwaka 1
                     </Badge>
                     <Image
@@ -350,27 +350,25 @@ export default function Home() {
             </div>
             
              <div className="order-3 md:order-3">
-                <div>
-                    <Card className="bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 hover:shadow-accent/50">
-                        <CardHeader>
-                            <CardTitle>Sifa za Kiufundi</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <ul className="space-y-3 text-muted-foreground text-xs">
-                                <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
-                                <li><strong>Power:</strong> 1000W</li>
-                                <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
-                                <li><strong>Color:</strong> Silver</li>
-                                <li><strong>Middle Housing:</strong> Cold Board/1.0mm Thickenss</li>
-                                <li><strong>Heater:</strong> 430g</li>
-                                <li><strong>Lid:</strong> SS#210/0.8mm Thickness</li>
-                                <li><strong>Inner Pot:</strong> 510g Non-Stick Aluminium Pot</li>
-                                <li><strong>Cable:</strong> 1.0M Copper cable with 13A UK Plug</li>
-                                <li><strong>Accessories:</strong> Measure Cup, Spoon, SS Steam Rack</li>
-                            </ul>
-                        </CardContent>
-                    </Card>
-                </div>
+                <Card className="bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 hover:shadow-accent/50">
+                    <CardHeader>
+                        <CardTitle>Sifa za Kiufundi</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <ul className="space-y-3 text-muted-foreground text-xs">
+                            <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
+                            <li><strong>Power:</strong> 1000W</li>
+                            <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
+                            <li><strong>Color:</strong> Silver</li>
+                            <li><strong>Middle Housing:</strong> Cold Board/1.0mm Thickenss</li>
+                            <li><strong>Heater:</strong> 430g</li>
+                            <li><strong>Lid:</strong> SS#210/0.8mm Thickness</li>
+                            <li><strong>Inner Pot:</strong> 510g Non-Stick Aluminium Pot</li>
+                            <li><strong>Cable:</strong> 1.0M Copper cable with 13A UK Plug</li>
+                            <li><strong>Accessories:</strong> Measure Cup, Spoon, SS Steam Rack</li>
+                        </ul>
+                    </CardContent>
+                </Card>
             </div>
           </div>
         </section>
