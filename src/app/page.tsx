@@ -309,14 +309,16 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto items-start">
             
             <div 
-              className="flex flex-col items-center gap-4 relative w-full order-1 md:order-1"
+              className="relative w-full order-1 md:order-1"
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
             >
-              <Badge variant="default" className="gap-2 bg-accent text-accent-foreground text-base mb-4 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-                <Award />
-                Warranty Mwaka 1
-              </Badge>
+              <div className="text-center mb-4">
+                  <Badge variant="default" className="gap-2 bg-accent text-accent-foreground text-base animate-fade-in" style={{ animationDelay: '0.5s' }}>
+                    <Award />
+                    Warranty Mwaka 1
+                  </Badge>
+              </div>
               <Image
                 src="/Adobe Express - file.png"
                 alt="Fuego SmartCook on a counter"
