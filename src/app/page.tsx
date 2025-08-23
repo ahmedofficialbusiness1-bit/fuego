@@ -84,7 +84,7 @@ export default function Home() {
               <p className="max-w-md mx-auto md:mx-0 mt-6 text-muted-foreground">
                 Njia ya kisasa ya kupika. Chakula kinapikwa kwa ubora kila wakati. Rahisi, haraka, na chenye Ladha.
               </p>
-              <h2 className="mt-8 mb-4 font-headline text-xl font-bold text-accent text-center md:text-left">Ni Jiko Fanisi</h2>
+              <h2 className="mt-8 mb-4 font-headline text-3xl font-bold text-foreground text-center md:text-left">Ni Jiko Fanisi</h2>
               <div className="flex items-center gap-4 mt-4 justify-center md:justify-start">
                 <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                   Nunua Sasa <ArrowRight />
