@@ -12,6 +12,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef, useCallback } from "react";
 import type { MouseEvent, Dispatch, SetStateAction } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -140,16 +141,30 @@ export default function Home() {
                         ].map((item, index) => {
                             const Icon = item.icon;
                             return (
-                                <div key={item.title}>
-                                    <Card className="bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-accent/50 hover:z-20">
-                                        <CardHeader>
-                                            <CardTitle className="flex items-center gap-2 text-base"><Icon className="text-accent" /> {item.title}</CardTitle>
-                                        </CardHeader>
-                                        <CardContent className="text-xs text-muted-foreground">
-                                            {item.text}
-                                        </CardContent>
+                                <Dialog key={item.title}>
+                                  <DialogTrigger asChild>
+                                    <div className="cursor-pointer">
+                                      <Card className="bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50">
+                                          <CardHeader>
+                                              <CardTitle className="flex items-center gap-2 text-base"><Icon className="text-accent" /> {item.title}</CardTitle>
+                                          </CardHeader>
+                                          <CardContent className="text-xs text-muted-foreground">
+                                              {item.text}
+                                          </CardContent>
+                                      </Card>
+                                    </div>
+                                  </DialogTrigger>
+                                  <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
+                                    <Card className="bg-transparent border-0 shadow-none">
+                                      <CardHeader>
+                                        <CardTitle className="flex items-center gap-4 text-2xl"><Icon className="text-accent w-8 h-8" /> {item.title}</CardTitle>
+                                      </CardHeader>
+                                      <CardContent className="text-base text-foreground">
+                                        {item.text}
+                                      </CardContent>
                                     </Card>
-                                </div>
+                                  </DialogContent>
+                                </Dialog>
                             );
                         })}
                     </div>
@@ -350,25 +365,52 @@ export default function Home() {
             </div>
             
              <div className="order-3 md:order-3">
-                <Card className="bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-accent/50 hover:z-20">
-                    <CardHeader>
-                        <CardTitle>Sifa za Kiufundi</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <ul className="space-y-3 text-muted-foreground text-xs">
-                            <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
-                            <li><strong>Power:</strong> 1000W</li>
-                            <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
-                            <li><strong>Color:</strong> Silver</li>
-                            <li><strong>Middle Housing:</strong> Cold Board/1.0mm Thickenss</li>
-                            <li><strong>Heater:</strong> 430g</li>
-                            <li><strong>Lid:</strong> SS#210/0.8mm Thickness</li>
-                            <li><strong>Inner Pot:</strong> 510g Non-Stick Aluminium Pot</li>
-                            <li><strong>Cable:</strong> 1.0M Copper cable with 13A UK Plug</li>
-                            <li><strong>Accessories:</strong> Measure Cup, Spoon, SS Steam Rack</li>
-                        </ul>
-                    </CardContent>
-                </Card>
+               <Dialog>
+                  <DialogTrigger asChild>
+                    <div className="cursor-pointer">
+                      <Card className="bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50">
+                          <CardHeader>
+                              <CardTitle>Sifa za Kiufundi</CardTitle>
+                          </CardHeader>
+                          <CardContent>
+                              <ul className="space-y-3 text-muted-foreground text-xs">
+                                  <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
+                                  <li><strong>Power:</strong> 1000W</li>
+                                  <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
+                                  <li><strong>Color:</strong> Silver</li>
+                                  <li><strong>Middle Housing:</strong> Cold Board/1.0mm Thickenss</li>
+                                  <li><strong>Heater:</strong> 430g</li>
+                                  <li><strong>Lid:</strong> SS#210/0.8mm Thickness</li>
+                                  <li><strong>Inner Pot:</strong> 510g Non-Stick Aluminium Pot</li>
+                                  <li><strong>Cable:</strong> 1.0M Copper cable with 13A UK Plug</li>
+                                  <li><strong>Accessories:</strong> Measure Cup, Spoon, SS Steam Rack</li>
+                              </ul>
+                          </CardContent>
+                      </Card>
+                    </div>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
+                    <Card className="bg-transparent border-0 shadow-none">
+                      <CardHeader>
+                          <CardTitle className="text-2xl">Sifa za Kiufundi</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                          <ul className="space-y-4 text-base text-foreground">
+                              <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
+                              <li><strong>Power:</strong> 1000W</li>
+                              <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
+                              <li><strong>Color:</strong> Silver</li>
+                              <li><strong>Middle Housing:</strong> Cold Board/1.0mm Thickenss</li>
+                              <li><strong>Heater:</strong> 430g</li>
+                              <li><strong>Lid:</strong> SS#210/0.8mm Thickness</li>
+                              <li><strong>Inner Pot:</strong> 510g Non-Stick Aluminium Pot</li>
+                              <li><strong>Cable:</strong> 1.0M Copper cable with 13A UK Plug</li>
+                              <li><strong>Accessories:</strong> Measure Cup, Spoon, SS Steam Rack</li>
+                          </ul>
+                      </CardContent>
+                    </Card>
+                  </DialogContent>
+                </Dialog>
             </div>
           </div>
         </section>
@@ -380,7 +422,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
             <div className="order-2 md:order-1">
-                <Card className="bg-accent/10 backdrop-blur-sm p-8 border-accent/30 shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-accent/50 hover:z-20">
+                <Card className="bg-accent/10 backdrop-blur-sm p-8 border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50">
                   <form className="space-y-4">
                     <div className="relative">
                       <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
