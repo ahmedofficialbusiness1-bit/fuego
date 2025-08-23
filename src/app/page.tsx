@@ -149,7 +149,7 @@ export default function Home() {
             </div>
             
             <div className="md:col-span-2 flex justify-center items-center order-1 md:order-2 h-[40vh] md:h-auto">
-               <div className="relative w-full h-full md:h-[70vh]">
+               <div className="relative w-full h-full md:h-[60vh]">
                   <Image
                     src="/Adobe Express - file.png"
                     alt="Fuego SmartCook"
