@@ -308,24 +308,26 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto items-start">
             
-            <div 
-              className="relative w-full order-1 md:order-1 self-start"
+             <div 
+              className="flex items-start order-1 md:order-1 h-full"
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
             >
-              <Image
-                src="/Adobe Express - file.png"
-                alt="Fuego SmartCook on a counter"
-                width={500}
-                height={500}
-                quality={100}
-                className="object-contain transition-transform duration-300 ease-out"
-                style={{
-                  filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.25))',
-                   transform: imageTransform,
-                }}
-                data-ai-hint="pressure cooker kitchen"
-              />
+              <div className="relative w-full h-full">
+                  <Image
+                    src="/Adobe Express - file.png"
+                    alt="Fuego SmartCook on a counter"
+                    width={500}
+                    height={500}
+                    quality={100}
+                    className="object-contain transition-transform duration-300 ease-out"
+                    style={{
+                      filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.25))',
+                      transform: imageTransform,
+                    }}
+                    data-ai-hint="pressure cooker kitchen"
+                  />
+              </div>
             </div>
 
             <div className="hidden md:flex flex-col items-center justify-center gap-8 order-2 md:order-2">
@@ -447,5 +449,3 @@ export default function Home() {
     </>
   );
 }
-
-    
