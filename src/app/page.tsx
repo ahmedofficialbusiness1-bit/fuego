@@ -313,12 +313,6 @@ export default function Home() {
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
             >
-              <div className="text-center mb-4">
-                  <Badge variant="default" className="gap-2 bg-accent text-accent-foreground text-base animate-fade-in" style={{ animationDelay: '0.5s' }}>
-                    <Award />
-                    Warranty Mwaka 1
-                  </Badge>
-              </div>
               <Image
                 src="/Adobe Express - file.png"
                 alt="Fuego SmartCook on a counter"
