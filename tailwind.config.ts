@@ -115,6 +115,10 @@ export default {
           '50%': {
             transform: 'translateY(4%) scale(1)',
           },
+        },
+        'fade-in': {
+          'from': { opacity: '0', transform: 'scale(0.98) translateY(-10px)' },
+          'to': { opacity: '1', transform: 'scale(1) translateY(0)' },
         }
       },
       animation: {
@@ -123,6 +127,7 @@ export default {
         'disperse-and-gather': 'disperse-and-gather 5s ease-in-out',
         'move-bg': 'move-bg 15s ease infinite',
         'bubble-float': 'bubble-float 8s ease-in-out infinite',
+        'fade-in': 'fade-in 0.5s ease-in-out forwards',
       },
     },
   },
@@ -130,3 +135,5 @@ export default {
     require('tailwindcss-animate'),
   ],
 } satisfies Config;
+
+    
