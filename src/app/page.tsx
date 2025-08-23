@@ -217,20 +217,20 @@ Rahisi, haraka, na chenye Ladha.
                         </div>
                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.5s' }}>
                             <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="https://placehold.co/100x100.png" alt="Supu" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="soup bowl"/>
+                                <Image src="/supu.png" alt="Supu" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="soup bowl"/>
                             </div>
                              <div>
                                 <h3 className="font-bold text-sm">Supu</h3>
-                                <p className="text-xs text-muted-foreground">Supu ya kuku.</p>
+                                <p className="text-xs text-muted-foreground">Unapika supu aina zote.</p>
                             </div>
                         </div>
                          <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1s' }}>
                             <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="https://placehold.co/100x100.png" alt="Keki" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="cake slice"/>
+                                <Image src="/keki.png" alt="Keki" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="cake slice"/>
                             </div>
                              <div>
                                 <h3 className="font-bold text-sm">Keki</h3>
-                                <p className="text-xs text-muted-foreground">Keki ya vanilla.</p>
+                                <p className="text-xs text-muted-foreground">Unapika keki aina zote.</p>
                             </div>
                         </div>
                     </div>
@@ -246,20 +246,20 @@ Rahisi, haraka, na chenye Ladha.
                         </div>
                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.2s' }}>
                             <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="https://placehold.co/100x100.png" alt="Ndizi" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="plantain dish"/>
+                                <Image src="/ndizi.png" alt="Ndizi" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="plantain dish"/>
                             </div>
                             <div>
                                 <h3 className="font-bold text-sm">Ndizi</h3>
-                                <p className="text-xs text-muted-foreground">Ndizi za kukaanga.</p>
+                                <p className="text-xs text-muted-foreground">Unapika vyakula vyote jamii ya ndizi.</p>
                             </div>
                         </div>
                          <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.3s' }}>
                             <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="https://placehold.co/100x100.png" alt="Makande" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="maize beans"/>
+                                <Image src="/mchuzi.png" alt="Mchuzi" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="maize beans"/>
                             </div>
                             <div>
-                                <h3 className="font-bold text-sm">Makande</h3>
-                                <p className="text-xs text-muted-foreground">Makande ya nazi.</p>
+                                <h3 className="font-bold text-sm">Mchuzi</h3>
+                                <p className="text-xs text-muted-foreground">Unapika mchuzi wa aina yoyote.</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.8s' }}>
@@ -485,6 +485,7 @@ Rahisi, haraka, na chenye Ladha.
     
 
     
+
 
 
 
