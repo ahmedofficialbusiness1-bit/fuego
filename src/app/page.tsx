@@ -308,7 +308,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto items-start">
             
-             <div className="order-1 md:order-1 flex items-start justify-center">
+             <div className="order-1 md:order-1 flex items-start">
                 <div className="relative">
                      <Badge className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 bg-accent text-accent-foreground animate-fade-in" style={{ animationDelay: '0.5s' }}>
                         Warranty Mwaka 1
@@ -328,7 +328,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="hidden md:flex flex-col gap-8 order-2 md:order-2 justify-start pt-8">
+            <div className="hidden md:flex flex-col gap-8 order-2 md:order-2 justify-start">
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
                     <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Uimara" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="steel texture"/>
@@ -447,5 +447,7 @@ export default function Home() {
     </>
   );
 }
+
+    
 
     
