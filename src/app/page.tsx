@@ -305,50 +305,50 @@ Rahisi, haraka, na chenye Ladha.
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-8 justify-center">
                     <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
-                        <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
+                        <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent">
                             <Image src="/cup.png" alt="Kikombe" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="measuring cup"/>
                         </div>
                         <div>
-                            <h3 className="font-bold text-sm">Kikombe</h3>
-                            <p className="text-xs text-muted-foreground">Inakuja na kikombe.</p>
+                            <h3 className="font-bold text-base">Kikombe</h3>
+                            <p className="text-sm text-muted-foreground">Inakuja na kikombe.</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.5s' }}>
-                        <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
+                        <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent">
                             <Image src="/spoon.png" alt="Kijiko" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="spoon"/>
                         </div>
                         <div>
-                            <h3 className="font-bold text-sm">Kijiko</h3>
-                            <p className="text-xs text-muted-foreground">Inakuja na kijiko.</p>
+                            <h3 className="font-bold text-base">Kijiko</h3>
+                            <p className="text-sm text-muted-foreground">Inakuja na kijiko.</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.5s' }}>
-                        <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
+                        <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent">
                             <Image src="/pot2.png" alt="Sufuria Kubwa" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="cooking pot"/>
                         </div>
                         <div>
-                            <h3 className="font-bold text-sm">Sufuria Kubwa</h3>
-                            <p className="text-xs text-muted-foreground">Lita 6, isiyo na non-stick.</p>
+                            <h3 className="font-bold text-base">Sufuria Kubwa</h3>
+                            <p className="text-sm text-muted-foreground">Lita 6, isiyo na non-stick.</p>
                         </div>
                     </div>
                 </div>
                 <div className="flex flex-col gap-8 justify-center">
                     <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.0s' }}>
-                        <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
+                        <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent">
                             <Image src="/wire.png" alt="Waya" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="power cable"/>
                         </div>
                         <div>
-                            <h3 className="font-bold text-sm">Waya Imara</h3>
-                            <p className="text-xs text-muted-foreground">1.0M Copper cable.</p>
+                            <h3 className="font-bold text-base">Waya Imara</h3>
+                            <p className="text-sm text-muted-foreground">1.0M Copper cable.</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.0s' }}>
-                        <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
+                        <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent">
                             <Image src="/rack.png" alt="Steam Rack" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="steam rack"/>
                         </div>
                         <div>
-                            <h3 className="font-bold text-sm">Steam Rack</h3>
-                            <p className="text-xs text-muted-foreground">Inakuja na Steam Rack kwa ajili ya kuoka.</p>
+                            <h3 className="font-bold text-base">Steam Rack</h3>
+                            <p className="text-sm text-muted-foreground">Inakuja na Steam Rack kwa ajili ya kuoka.</p>
                         </div>
                     </div>
                 </div>
