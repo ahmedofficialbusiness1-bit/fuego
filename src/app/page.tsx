@@ -92,6 +92,7 @@ export default function Home() {
                   Soma Zaidi <ArrowRight />
                 </Button>
               </div>
+              <p className="mt-4 text-sm text-muted-foreground text-center md:text-left">Ni Jiko Fanisi</p>
             </div>
             <div
                 className="relative md:w-1/2 w-full h-[60vh] md:h-[90vh]"
