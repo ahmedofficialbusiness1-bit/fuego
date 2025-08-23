@@ -183,9 +183,9 @@ export default function Home() {
                 </ScrollArea>
             </div>
             
-            <div className="md:col-span-2 flex justify-center items-center order-1 md:order-2 h-[40vh] md:h-auto">
+            <div className="md:col-span-2 flex justify-center items-center order-1 md:order-2 h-[40vh] md:h-[60vh]">
                <div 
-                  className="relative w-full h-full md:h-[60vh]"
+                  className="relative w-full h-full"
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -309,7 +309,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto items-start">
             
             <div 
-              className="relative w-full order-1 md:order-1"
+              className="relative w-full order-1 md:order-1 self-start"
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
             >
@@ -447,3 +447,5 @@ export default function Home() {
     </>
   );
 }
+
+    
