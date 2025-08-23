@@ -44,7 +44,7 @@ export default function Home() {
     <>
       <main className="w-full relative overflow-hidden h-screen">
         <header className="absolute top-0 left-0 right-0 z-20 flex justify-between items-center p-8">
-            <FuegoLogo className="h-12 w-24" />
+            <FuegoLogo className="h-8 w-16" />
             <Navigation activeFace={activeFace} onNavigate={handleSetActiveFace} />
         </header>
         
@@ -341,7 +341,7 @@ export default function Home() {
                     <CardTitle>Sifa za Kiufundi</CardTitle>
                 </CardHeader>
                 <CardContent>
-                    <ul className="space-y-3 text-muted-foreground text-sm">
+                    <ul className="space-y-3 text-muted-foreground text-xs">
                         <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
                         <li><strong>Power:</strong> 1000W</li>
                         <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
