@@ -292,7 +292,7 @@ Rahisi, haraka, na chenye Ladha.
               <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Sifa za kiufundi na ubora wa Fuego smartcooker</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl w-full mx-auto items-center">
-              <div className="relative w-full h-[50vh] md:h-[70vh]">
+              <div className="relative w-full h-[70vh]">
                   <Image
                       src="/Adobe Express - file.png"
                       alt="Fuego SmartCook Sifa"
@@ -481,5 +481,3 @@ Rahisi, haraka, na chenye Ladha.
     </>
   );
 }
-
-    
