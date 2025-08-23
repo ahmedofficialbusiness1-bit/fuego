@@ -306,7 +306,7 @@ Rahisi, haraka, na chenye Ladha.
                 <div className="flex flex-col gap-8 justify-center">
                     <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
                         <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
-                            <Image src="https://placehold.co/100x100.png" alt="Kikombe" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="measuring cup"/>
+                            <Image src="/cup.png" alt="Kikombe" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="measuring cup"/>
                         </div>
                         <div>
                             <h3 className="font-bold text-sm">Kikombe</h3>
@@ -315,7 +315,7 @@ Rahisi, haraka, na chenye Ladha.
                     </div>
                     <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.5s' }}>
                         <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
-                            <Image src="https://placehold.co/100x100.png" alt="Kijiko" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="spoon"/>
+                            <Image src="/spoon.png" alt="Kijiko" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="spoon"/>
                         </div>
                         <div>
                             <h3 className="font-bold text-sm">Kijiko</h3>
@@ -335,7 +335,7 @@ Rahisi, haraka, na chenye Ladha.
                 <div className="flex flex-col gap-8 justify-center">
                     <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.0s' }}>
                         <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
-                            <Image src="https://placehold.co/100x100.png" alt="Waya" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="power cable"/>
+                            <Image src="/wire.png" alt="Waya" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="power cable"/>
                         </div>
                         <div>
                             <h3 className="font-bold text-sm">Waya Imara</h3>
