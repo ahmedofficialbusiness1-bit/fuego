@@ -20,17 +20,11 @@ import { cn } from "@/lib/utils";
 import { Navigation } from "@/components/ui/navigation";
 
 
-type Face = 'front' | 'right' | 'back' | 'left';
-
 export default function Home() {
   const [suggestion, setSuggestion] =
     useState<SuggestCookingTimesOutput | null>(null);
   const [dishImage, setDishImage] = useState<string | null>(null);
-
-  const [activeFace, setActiveFace] = useState<Face>('front');
-  
   const [imageTransform, setImageTransform] = useState('');
-  
   const transformTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseMove = (
@@ -66,10 +60,6 @@ export default function Home() {
     setDishImage(dataUrl);
   };
   
-  const handleSetActiveFace = (face: Face) => {
-    setActiveFace(face);
-  };
-
   useEffect(() => {
     const timeout = transformTimeoutRef.current;
     return () => {
@@ -79,13 +69,13 @@ export default function Home() {
 
   return (
     <>
-      <main className="w-full relative overflow-hidden h-screen">
-        <header className="absolute top-0 left-0 right-0 z-20 flex justify-between items-center p-8">
+      <main className="w-full relative flex flex-col">
+        <header className="sticky top-0 left-0 right-0 z-20 flex justify-between items-center p-4 bg-background/80 backdrop-blur-sm">
             <FuegoLogo className="h-8 w-auto" />
-            <Navigation activeFace={activeFace} onNavigate={handleSetActiveFace} />
+            <Navigation />
         </header>
         
-        <section id="front" className={cn("screen-section px-8", activeFace === 'front' ? 'section-visible' : 'section-hidden')}>
+        <section id="nyumbani" className="min-h-screen flex items-center justify-center px-8 pt-16 pb-16">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-6xl">
             <div className="md:w-1/2 text-center md:text-left">
               <h1 className="text-4xl md:text-6xl font-headline font-black text-foreground tracking-tighter">
@@ -124,7 +114,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="right" className={cn("screen-section px-8", activeFace === 'right' ? 'section-visible' : 'section-hidden')}>
+        <section id="faida" className="min-h-screen flex items-center justify-center px-8 pt-16 pb-16 bg-secondary/30">
           <div className="flex flex-col md:grid md:grid-cols-6 items-center justify-center w-full max-w-full h-full gap-4">
             <div className="md:col-span-2 order-2 md:order-1">
                 <h2 className="text-3xl font-headline font-bold tracking-tighter mb-6 text-center">Faida za Fuego</h2>
@@ -192,7 +182,7 @@ export default function Home() {
                 </div>
             </div>
             
-            <div className="hidden md:flex md:col-span-1 h-full flex-col items-center justify-start gap-8 order-3">
+            <div className="hidden md:flex md:col-span-1 h-full flex-col items-center justify-center gap-8 order-3">
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
@@ -239,7 +229,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className="hidden md:flex md:col-span-1 h-full flex-col items-center justify-start gap-8 order-4">
+            <div className="hidden md:flex md:col-span-1 h-full flex-col items-center justify-center gap-8 order-4">
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.8s' }}>
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
@@ -289,7 +279,7 @@ export default function Home() {
           </div>
         </section>
         
-        <section id="back" className={cn("screen-section px-8", activeFace === 'back' ? 'section-visible' : 'section-hidden')}>
+        <section id="sifa" className="min-h-screen flex flex-col items-center justify-center px-8 pt-16 pb-16">
           <div className="text-center mb-8 w-full max-w-7xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Sifa za Fuego</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua sifa za kiufundi na ubora wa Fuego SmartCook.</p>
@@ -298,7 +288,7 @@ export default function Home() {
             
             <div className="order-1 md:order-1 flex justify-center">
                 <div className="relative">
-                     <Badge className="absolute -top-4 left-8 z-10 bg-accent text-accent-foreground text-base px-4 py-1 animate-fade-in shadow-lg">
+                    <Badge className="absolute -top-4 left-8 z-10 bg-accent text-accent-foreground text-base px-4 py-1 animate-fade-in shadow-lg">
                         Warranty Mwaka 1
                     </Badge>
                     <Image
@@ -316,7 +306,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="hidden md:flex flex-col gap-8 order-2 md:order-2">
+            <div className="hidden md:flex flex-col gap-8 order-2 md:order-2 justify-center">
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
                     <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Uimara" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="steel texture"/>
@@ -415,7 +405,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="left" className={cn("screen-section px-8", activeFace === 'left' ? 'section-visible' : 'section-hidden')}>
+        <section id="mawasiliano" className="min-h-screen flex flex-col items-center justify-center px-8 pt-16 pb-16 bg-secondary/30">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Wasiliana Nasi</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Una maswali? Tuko hapa kukusaidia. Wasiliana nasi kupitia njia yoyote hapa chini.</p>
