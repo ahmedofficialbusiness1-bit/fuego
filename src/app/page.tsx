@@ -268,37 +268,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto items-start">
             
-            <div className="hidden md:flex flex-col items-center justify-center gap-8 order-1">
-                <Card className="w-full bg-transparent border-0 shadow-none animate-bubble-float" style={{ animationDelay: '0s' }}>
-                    <CardHeader className="flex-row items-center gap-4">
-                        <Wrench className="w-8 h-8 text-accent" />
-                        <div>
-                            <CardTitle className="text-sm">Uimara wa Hali ya Juu</CardTitle>
-                            <CardDescription className="text-xs">Imetengenezwa kwa SS#410/0.3mm.</CardDescription>
-                        </div>
-                    </CardHeader>
-                </Card>
-                <Card className="w-full bg-transparent border-0 shadow-none animate-bubble-float" style={{ animationDelay: '1.5s' }}>
-                    <CardHeader className="flex-row items-center gap-4">
-                        <Thermometer className="w-8 h-8 text-accent" />
-                        <div>
-                            <CardTitle className="text-sm">Inapika kwa Joto Sahihi</CardTitle>
-                            <CardDescription className="text-xs">Heater ya 430g kwa matokeo bora.</CardDescription>
-                        </div>
-                    </CardHeader>
-                </Card>
-                <Card className="w-full bg-transparent border-0 shadow-none animate-bubble-float" style={{ animationDelay: '0.5s' }}>
-                    <CardHeader className="flex-row items-center gap-4">
-                        <Scaling className="w-8 h-8 text-accent" />
-                        <div>
-                            <CardTitle className="text-sm">Sufuria Kubwa</CardTitle>
-                            <CardDescription className="text-xs">Lita 6, isiyo na non-stick.</CardDescription>
-                        </div>
-                    </CardHeader>
-                </Card>
-            </div>
-
-            <div className="relative w-full h-[70vh] order-2">
+            <div className="relative w-full h-[70vh] order-1">
               <Image
                 src="/Adobe Express - file.png"
                 alt="Fuego SmartCook on a counter"
@@ -310,6 +280,54 @@ export default function Home() {
                 }}
                 data-ai-hint="pressure cooker kitchen"
               />
+            </div>
+
+            <div className="hidden md:flex flex-col items-center justify-center gap-8 order-2">
+                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                        <Image src="https://placehold.co/100x100.png" alt="Uimara" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="steel texture"/>
+                    </div>
+                    <div>
+                        <h3 className="font-bold text-sm">Uimara wa Hali ya Juu</h3>
+                        <p className="text-xs text-muted-foreground">Imetengenezwa kwa SS#410.</p>
+                    </div>
+                </div>
+                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.5s' }}>
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                         <Image src="https://placehold.co/100x100.png" alt="Joto" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="thermometer heat"/>
+                    </div>
+                    <div>
+                        <h3 className="font-bold text-sm">Inapika kwa Joto Sahihi</h3>
+                        <p className="text-xs text-muted-foreground">Heater ya 430g.</p>
+                    </div>
+                </div>
+                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.5s' }}>
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                         <Image src="https://placehold.co/100x100.png" alt="Ukubwa" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="cooking pot"/>
+                    </div>
+                    <div>
+                        <h3 className="font-bold text-sm">Sufuria Kubwa</h3>
+                        <p className="text-xs text-muted-foreground">Lita 6, isiyo na non-stick.</p>
+                    </div>
+                </div>
+                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.0s' }}>
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                         <Image src="https://placehold.co/100x100.png" alt="Waya" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="power cable"/>
+                    </div>
+                    <div>
+                        <h3 className="font-bold text-sm">Waya Imara</h3>
+                        <p className="text-xs text-muted-foreground">1.0M Copper cable.</p>
+                    </div>
+                </div>
+                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.0s' }}>
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                         <Image src="https://placehold.co/100x100.png" alt="Vifaa" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="measuring cup spoon"/>
+                    </div>
+                    <div>
+                        <h3 className="font-bold text-sm">Vifaa vya Ziada</h3>
+                        <p className="text-xs text-muted-foreground">Kikombe, kijiko, na rack.</p>
+                    </div>
+                </div>
             </div>
             
              <div className="order-3">
@@ -383,3 +401,5 @@ export default function Home() {
     </>
   );
 }
+
+    
