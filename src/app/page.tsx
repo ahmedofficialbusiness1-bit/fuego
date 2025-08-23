@@ -141,7 +141,7 @@ export default function Home() {
                             const Icon = item.icon;
                             return (
                                 <div key={item.title}>
-                                    <Card className="bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 hover:shadow-accent/50">
+                                    <Card className="bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-accent/50 hover:z-20">
                                         <CardHeader>
                                             <CardTitle className="flex items-center gap-2 text-base"><Icon className="text-accent" /> {item.title}</CardTitle>
                                         </CardHeader>
@@ -350,7 +350,7 @@ export default function Home() {
             </div>
             
              <div className="order-3 md:order-3">
-                <Card className="bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 hover:shadow-accent/50">
+                <Card className="bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-accent/50 hover:z-20">
                     <CardHeader>
                         <CardTitle>Sifa za Kiufundi</CardTitle>
                     </CardHeader>
@@ -380,7 +380,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
             <div className="order-2 md:order-1">
-                <Card className="bg-accent/10 backdrop-blur-sm p-8 border-accent/30 shadow-2xl transition-all duration-300 hover:shadow-accent/50">
+                <Card className="bg-accent/10 backdrop-blur-sm p-8 border-accent/30 shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-accent/50 hover:z-20">
                   <form className="space-y-4">
                     <div className="relative">
                       <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
