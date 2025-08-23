@@ -190,29 +190,29 @@ Rahisi, haraka, na chenye Ladha.
                     <div className="flex flex-col items-center justify-center gap-8">
                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
                             <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
+                                <Image src="/ugali.png" alt="Ugali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="ugali dish"/>
                             </div>
                             <div>
-                                <h3 className="font-bold text-sm">Kuku</h3>
-                                <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
+                                <h3 className="font-bold text-sm">Ugali</h3>
+                                <p className="text-xs text-muted-foreground">Unapika vyakula vyote jamii ya ugali.</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.5s' }}>
                             <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="https://placehold.co/100x100.png" alt="Maharage" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="beans dish"/>
+                                <Image src="/maharage.png" alt="Maharage" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="beans dish"/>
                             </div>
                             <div>
                                 <h3 className="font-bold text-sm">Maharage</h3>
-                                <p className="text-xs text-muted-foreground">Maharage ya nazi.</p>
+                                <p className="text-xs text-muted-foreground">Unapika vyakula vyote jamii ya maharage yakiwemo makande.</p>
                             </div>
                         </div>
                          <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.5s' }}>
                             <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="https://placehold.co/100x100.png" alt="Wali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="rice dish"/>
+                                <Image src="/wali.png" alt="Wali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="rice dish"/>
                             </div>
                             <div>
                                 <h3 className="font-bold text-sm">Wali</h3>
-                                <p className="text-xs text-muted-foreground">Wali wa kukaanga.</p>
+                                <p className="text-xs text-muted-foreground">Unapika wali wa aina yoyote.</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.5s' }}>
@@ -237,11 +237,11 @@ Rahisi, haraka, na chenye Ladha.
                     <div className="flex flex-col items-center justify-center gap-8">
                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.8s' }}>
                             <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="https://placehold.co/100x100.png" alt="Nyama" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="beef stew"/>
+                                <Image src="/kuku.png" alt="Nyama" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
                             </div>
                             <div>
                                 <h3 className="font-bold text-sm">Nyama</h3>
-                                <p className="text-xs text-muted-foreground">Nyama ya kuchoma.</p>
+                                <p className="text-xs text-muted-foreground">Unapika nyama na kuku wa aina zote.</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.2s' }}>
@@ -485,4 +485,5 @@ Rahisi, haraka, na chenye Ladha.
     
 
     
+
 
