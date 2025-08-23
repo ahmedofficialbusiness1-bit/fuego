@@ -27,6 +27,8 @@ export default function Home() {
   const [dishImage, setDishImage] = useState<string | null>(null);
 
   const [activeFace, setActiveFace] = useState<Face>('front');
+  const [imageTransform, setImageTransform] = useState('');
+  const transformTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleSuggestion = (newSuggestion: SuggestCookingTimesOutput) => {
     setSuggestion(newSuggestion);
@@ -39,6 +41,34 @@ export default function Home() {
   const handleSetActiveFace = (face: Face) => {
     setActiveFace(face);
   };
+
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    if (transformTimeoutRef.current) {
+      clearTimeout(transformTimeoutRef.current);
+      transformTimeoutRef.current = null;
+    }
+    const { clientX, clientY, currentTarget } = e;
+    const { left, top, width, height } = currentTarget.getBoundingClientRect();
+    const x = clientX - left;
+    const y = clientY - top;
+    const rotateX = (y / height - 0.5) * -15; // Invert for natural feel
+    const rotateY = (x / width - 0.5) * 15;
+    setImageTransform(`perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`);
+  };
+
+  const handleMouseLeave = () => {
+     transformTimeoutRef.current = setTimeout(() => {
+        setImageTransform('perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)');
+     }, 300);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (transformTimeoutRef.current) {
+        clearTimeout(transformTimeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <>
@@ -66,15 +96,20 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="relative md:w-1/2 w-full h-[60vh] md:h-[90vh]">
+            <div
+                className="relative md:w-1/2 w-full h-[60vh] md:h-[90vh]"
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+              >
               <Image
                 src="/Adobe Express - file.png"
                 alt="Fuego SmartCook"
                 fill
                 quality={100}
-                className="object-contain"
+                className="object-contain transition-transform duration-300 ease-out"
                 style={{
                   filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5))',
+                  transform: imageTransform,
                 }}
                 data-ai-hint="pressure cooker"
               />
@@ -149,15 +184,20 @@ export default function Home() {
             </div>
             
             <div className="md:col-span-2 flex justify-center items-center order-1 md:order-2 h-[40vh] md:h-auto">
-               <div className="relative w-full h-full md:h-[60vh]">
+               <div 
+                  className="relative w-full h-full md:h-[60vh]"
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
+                >
                   <Image
                     src="/Adobe Express - file.png"
                     alt="Fuego SmartCook"
                     fill
                     quality={100}
-                    className="object-contain"
+                    className="object-contain transition-transform duration-300 ease-out"
                     style={{
                       filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5))',
+                       transform: imageTransform,
                     }}
                     data-ai-hint="pressure cooker"
                   />
@@ -268,7 +308,11 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto items-start">
             
-            <div className="flex flex-col items-center gap-4 relative w-full order-1 md:order-1 h-[70vh]">
+            <div 
+              className="flex flex-col items-center gap-4 relative w-full order-1 md:order-1"
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+            >
               <Badge variant="default" className="gap-2 bg-accent text-accent-foreground text-base mb-4 animate-fade-in" style={{ animationDelay: '0.5s' }}>
                 <Award />
                 Warranty Mwaka 1
@@ -276,11 +320,13 @@ export default function Home() {
               <Image
                 src="/Adobe Express - file.png"
                 alt="Fuego SmartCook on a counter"
-                fill
+                width={500}
+                height={500}
                 quality={100}
-                className="object-contain"
+                className="object-contain transition-transform duration-300 ease-out"
                 style={{
                   filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.25))',
+                   transform: imageTransform,
                 }}
                 data-ai-hint="pressure cooker kitchen"
               />
