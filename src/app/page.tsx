@@ -281,9 +281,9 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto items-start">
             
-             <div className="order-1 md:order-1 flex items-start justify-center">
+            <div className="order-1 md:order-1 flex justify-center">
                 <div className="relative">
-                     <Badge className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 bg-accent text-accent-foreground text-sm px-4 py-1 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+                     <Badge className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 bg-accent text-accent-foreground text-lg px-6 py-2 animate-fade-in shadow-lg" style={{ animationDelay: '0.5s' }}>
                         Warranty Mwaka 1
                     </Badge>
                     <Image
