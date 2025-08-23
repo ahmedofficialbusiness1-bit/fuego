@@ -31,8 +31,6 @@ export default function Home() {
   
   const [imageTransform, setImageTransform] = useState('');
   
-  const [openDialogKey, setOpenDialogKey] = useState<string | null>(null);
-
   const transformTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseMove = (
@@ -142,11 +140,10 @@ export default function Home() {
                             { icon: LifeBuoy, title: 'Warranty na Huduma', text: 'Fuego ina warranty wa mwaka moja hivyo uko salama kutumia fuego bila ya kujali matatizo ya kiufundi na vile vile tunakupa huduma masaa 4 ikiwemo elimu juu ya matumizi.' },
                         ].map((item, index) => {
                             const Icon = item.icon;
-                            const dialogKey = `faida-${index}`;
                             return (
-                                <Dialog key={item.title} open={openDialogKey === dialogKey} onOpenChange={(isOpen) => !isOpen && setOpenDialogKey(null)}>
-                                  <div onMouseEnter={() => setOpenDialogKey(dialogKey)}>
-                                      <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50">
+                                <Dialog key={item.title}>
+                                  <DialogTrigger asChild>
+                                      <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105 hover:z-20">
                                           <CardHeader>
                                               <CardTitle className="flex items-center gap-2 text-base"><Icon className="text-accent" /> {item.title}</CardTitle>
                                           </CardHeader>
@@ -154,7 +151,7 @@ export default function Home() {
                                               {item.text}
                                           </CardContent>
                                       </Card>
-                                  </div>
+                                  </DialogTrigger>
                                   <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
                                     <DialogTitle className="sr-only">{item.title}</DialogTitle>
                                     <DialogDescription className="sr-only">{item.text}</DialogDescription>
@@ -368,9 +365,9 @@ export default function Home() {
             </div>
             
              <div className="order-3 md:order-3">
-               <Dialog open={openDialogKey === 'sifa-kiufundi'} onOpenChange={(isOpen) => !isOpen && setOpenDialogKey(null)}>
-                  <div onMouseEnter={() => setOpenDialogKey('sifa-kiufundi')}>
-                    <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50">
+               <Dialog>
+                 <DialogTrigger asChild>
+                    <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105 hover:z-20">
                         <CardHeader>
                             <CardTitle>Sifa za Kiufundi</CardTitle>
                         </CardHeader>
@@ -389,7 +386,7 @@ export default function Home() {
                             </ul>
                         </CardContent>
                     </Card>
-                  </div>
+                  </DialogTrigger>
                   <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
                     <DialogTitle className="sr-only">Sifa za Kiufundi</DialogTitle>
                     <DialogDescription className="sr-only">Detailed technical specifications of the Fuego SmartCook.</DialogDescription>
@@ -425,9 +422,9 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
             <div className="order-2 md:order-1">
-              <Dialog open={openDialogKey === 'mawasiliano-form'} onOpenChange={(isOpen) => !isOpen && setOpenDialogKey(null)}>
-                <div onMouseEnter={() => setOpenDialogKey('mawasiliano-form')}>
-                  <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm p-8 border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50">
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm p-8 border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105 hover:z-20">
                       <div className="space-y-4">
                         <div className="relative">
                           <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -443,7 +440,7 @@ export default function Home() {
                         <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground pointer-events-none">Tuma Ujumbe</Button>
                       </div>
                   </Card>
-                </div>
+                </DialogTrigger>
                 <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
                   <DialogTitle className="sr-only">Contact Form</DialogTitle>
                   <DialogDescription className="sr-only">Fill out this form to send us a message.</DialogDescription>
