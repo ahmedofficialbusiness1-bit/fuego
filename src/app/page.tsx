@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/toaster";
 import type { SuggestCookingTimesOutput } from "@/ai/flows/suggest-cooking-times";
-import { Bolt, Clock, Cpu, LifeBuoy, Lock, Mail, MessageSquare, Phone, Soup, User, Zap, ArrowRight, Salad, Utensils, ShieldCheck, HeartPulse, BrainCircuit, Users, Thermometer, Scaling, Wrench } from "lucide-react";
+import { Bolt, Clock, Cpu, LifeBuoy, Lock, Mail, MessageSquare, Phone, Soup, User, Zap, ArrowRight, Salad, Utensils, ShieldCheck, HeartPulse, BrainCircuit, Users, Thermometer, Scaling, Wrench, Award } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
@@ -268,7 +268,11 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto items-start">
             
-            <div className="relative w-full order-1 md:order-1 h-[70vh]">
+            <div className="flex flex-col items-center gap-4 relative w-full order-1 md:order-1 h-[70vh]">
+              <Badge variant="default" className="gap-2 bg-accent text-accent-foreground text-base mb-4">
+                <Award />
+                Warranty Mwaka 1
+              </Badge>
               <Image
                 src="/Adobe Express - file.png"
                 alt="Fuego SmartCook on a counter"
