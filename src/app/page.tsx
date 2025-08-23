@@ -31,6 +31,8 @@ export default function Home() {
   
   const [imageTransform, setImageTransform] = useState('');
   
+  const [openDialogKey, setOpenDialogKey] = useState<string | null>(null);
+
   const transformTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseMove = (
@@ -140,11 +142,11 @@ export default function Home() {
                             { icon: LifeBuoy, title: 'Warranty na Huduma', text: 'Fuego ina warranty wa mwaka moja hivyo uko salama kutumia fuego bila ya kujali matatizo ya kiufundi na vile vile tunakupa huduma masaa 4 ikiwemo elimu juu ya matumizi.' },
                         ].map((item, index) => {
                             const Icon = item.icon;
+                            const dialogKey = `faida-${index}`;
                             return (
-                                <Dialog key={item.title}>
-                                  <DialogTrigger asChild>
-                                    <div className="cursor-pointer">
-                                      <Card className="bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50">
+                                <Dialog key={item.title} open={openDialogKey === dialogKey} onOpenChange={(isOpen) => !isOpen && setOpenDialogKey(null)}>
+                                  <div onMouseEnter={() => setOpenDialogKey(dialogKey)} onMouseLeave={() => setOpenDialogKey(null)}>
+                                      <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50">
                                           <CardHeader>
                                               <CardTitle className="flex items-center gap-2 text-base"><Icon className="text-accent" /> {item.title}</CardTitle>
                                           </CardHeader>
@@ -152,8 +154,7 @@ export default function Home() {
                                               {item.text}
                                           </CardContent>
                                       </Card>
-                                    </div>
-                                  </DialogTrigger>
+                                  </div>
                                   <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
                                     <DialogTitle className="sr-only">{item.title}</DialogTitle>
                                     <DialogDescription className="sr-only">{item.text}</DialogDescription>
@@ -300,7 +301,7 @@ export default function Home() {
             
             <div className="order-1 md:order-1 flex justify-center">
                 <div className="relative">
-                     <Badge className="absolute -top-4 left-8 z-10 bg-accent text-accent-foreground text-base px-4 py-1 animate-fade-in shadow-lg" style={{ animationDelay: '0.5s' }}>
+                     <Badge className="absolute -top-4 left-8 z-10 bg-accent text-accent-foreground text-base px-4 py-1 animate-fade-in shadow-lg">
                         Warranty Mwaka 1
                     </Badge>
                     <Image
@@ -318,7 +319,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="hidden md:flex flex-col gap-8 order-2 md:order-2 justify-start pt-8">
+            <div className="hidden md:flex flex-col gap-8 order-2 md:order-2">
                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
                     <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-accent">
                         <Image src="https://placehold.co/100x100.png" alt="Uimara" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="steel texture"/>
@@ -367,30 +368,28 @@ export default function Home() {
             </div>
             
              <div className="order-3 md:order-3">
-               <Dialog>
-                  <DialogTrigger asChild>
-                    <div className="cursor-pointer">
-                      <Card className="bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50">
-                          <CardHeader>
-                              <CardTitle>Sifa za Kiufundi</CardTitle>
-                          </CardHeader>
-                          <CardContent>
-                              <ul className="space-y-3 text-muted-foreground text-xs">
-                                  <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
-                                  <li><strong>Power:</strong> 1000W</li>
-                                  <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
-                                  <li><strong>Color:</strong> Silver</li>
-                                  <li><strong>Middle Housing:</strong> Cold Board/1.0mm Thickenss</li>
-                                  <li><strong>Heater:</strong> 430g</li>
-                                  <li><strong>Lid:</strong> SS#210/0.8mm Thickness</li>
-                                  <li><strong>Inner Pot:</strong> 510g Non-Stick Aluminium Pot</li>
-                                  <li><strong>Cable:</strong> 1.0M Copper cable with 13A UK Plug</li>
-                                  <li><strong>Accessories:</strong> Measure Cup, Spoon, SS Steam Rack</li>
-                              </ul>
-                          </CardContent>
-                      </Card>
-                    </div>
-                  </DialogTrigger>
+               <Dialog open={openDialogKey === 'sifa-kiufundi'} onOpenChange={(isOpen) => !isOpen && setOpenDialogKey(null)}>
+                  <div onMouseEnter={() => setOpenDialogKey('sifa-kiufundi')} onMouseLeave={() => setOpenDialogKey(null)}>
+                    <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50">
+                        <CardHeader>
+                            <CardTitle>Sifa za Kiufundi</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <ul className="space-y-3 text-muted-foreground text-xs">
+                                <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
+                                <li><strong>Power:</strong> 1000W</li>
+                                <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
+                                <li><strong>Color:</strong> Silver</li>
+                                <li><strong>Middle Housing:</strong> Cold Board/1.0mm Thickenss</li>
+                                <li><strong>Heater:</strong> 430g</li>
+                                <li><strong>Lid:</strong> SS#210/0.8mm Thickness</li>
+                                <li><strong>Inner Pot:</strong> 510g Non-Stick Aluminium Pot</li>
+                                <li><strong>Cable:</strong> 1.0M Copper cable with 13A UK Plug</li>
+                                <li><strong>Accessories:</strong> Measure Cup, Spoon, SS Steam Rack</li>
+                            </ul>
+                        </CardContent>
+                    </Card>
+                  </div>
                   <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
                     <DialogTitle className="sr-only">Sifa za Kiufundi</DialogTitle>
                     <DialogDescription className="sr-only">Detailed technical specifications of the Fuego SmartCook.</DialogDescription>
@@ -426,27 +425,25 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
             <div className="order-2 md:order-1">
-              <Dialog>
-                <DialogTrigger asChild>
-                  <div className="cursor-pointer">
-                    <Card className="bg-accent/10 backdrop-blur-sm p-8 border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50">
-                        <div className="space-y-4">
-                          <div className="relative">
-                            <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                            <Input placeholder="Jina lako" className="pl-10 pointer-events-none" />
-                          </div>
-                          <div className="relative">
-                            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                            <Input type="email" placeholder="Barua pepe yako" className="pl-10 pointer-events-none" />
-                          </div>
-                          <div className="relative">
-                            <Textarea placeholder="Ujumbe wako..." rows={5} className="pointer-events-none" />
-                          </div>
-                          <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground pointer-events-none">Tuma Ujumbe</Button>
+              <Dialog open={openDialogKey === 'mawasiliano-form'} onOpenChange={(isOpen) => !isOpen && setOpenDialogKey(null)}>
+                <div onMouseEnter={() => setOpenDialogKey('mawasiliano-form')} onMouseLeave={() => setOpenDialogKey(null)}>
+                  <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm p-8 border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50">
+                      <div className="space-y-4">
+                        <div className="relative">
+                          <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                          <Input placeholder="Jina lako" className="pl-10 pointer-events-none" />
                         </div>
-                    </Card>
-                  </div>
-                </DialogTrigger>
+                        <div className="relative">
+                          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                          <Input type="email" placeholder="Barua pepe yako" className="pl-10 pointer-events-none" />
+                        </div>
+                        <div className="relative">
+                          <Textarea placeholder="Ujumbe wako..." rows={5} className="pointer-events-none" />
+                        </div>
+                        <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground pointer-events-none">Tuma Ujumbe</Button>
+                      </div>
+                  </Card>
+                </div>
                 <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
                   <DialogTitle className="sr-only">Contact Form</DialogTitle>
                   <DialogDescription className="sr-only">Fill out this form to send us a message.</DialogDescription>
@@ -499,3 +496,5 @@ export default function Home() {
     </>
   );
 }
+
+    
