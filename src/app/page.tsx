@@ -310,7 +310,7 @@ export default function Home() {
             
              <div className="order-1 md:order-1 flex items-start">
                 <div className="relative">
-                     <Badge className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 bg-accent text-accent-foreground animate-fade-in" style={{ animationDelay: '0.5s' }}>
+                     <Badge className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 bg-accent text-accent-foreground text-sm px-4 py-1">
                         Warranty Mwaka 1
                     </Badge>
                     <Image
