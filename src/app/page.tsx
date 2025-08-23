@@ -262,12 +262,43 @@ export default function Home() {
         </section>
         
         <section id="back" className={cn("screen-section px-8", activeFace === 'back' ? 'section-visible' : 'section-hidden')}>
-           <div className="text-center mb-8">
+          <div className="text-center mb-8 w-full max-w-7xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Sifa za Fuego</h2>
-            <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua sifa za kiufundi za Fuego SmartCook.</p>
+            <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Gundua sifa za kiufundi na ubora wa Fuego SmartCook.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full mx-auto items-start">
-            <div className="relative w-full h-[70vh]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full mx-auto items-start">
+            
+            <div className="hidden md:flex flex-col items-center justify-center gap-8 order-1">
+                <Card className="w-full bg-transparent border-0 shadow-none animate-bubble-float" style={{ animationDelay: '0s' }}>
+                    <CardHeader className="flex-row items-center gap-4">
+                        <Wrench className="w-8 h-8 text-accent" />
+                        <div>
+                            <CardTitle className="text-sm">Uimara wa Hali ya Juu</CardTitle>
+                            <CardDescription className="text-xs">Imetengenezwa kwa SS#410/0.3mm.</CardDescription>
+                        </div>
+                    </CardHeader>
+                </Card>
+                <Card className="w-full bg-transparent border-0 shadow-none animate-bubble-float" style={{ animationDelay: '1.5s' }}>
+                    <CardHeader className="flex-row items-center gap-4">
+                        <Thermometer className="w-8 h-8 text-accent" />
+                        <div>
+                            <CardTitle className="text-sm">Inapika kwa Joto Sahihi</CardTitle>
+                            <CardDescription className="text-xs">Heater ya 430g kwa matokeo bora.</CardDescription>
+                        </div>
+                    </CardHeader>
+                </Card>
+                <Card className="w-full bg-transparent border-0 shadow-none animate-bubble-float" style={{ animationDelay: '0.5s' }}>
+                    <CardHeader className="flex-row items-center gap-4">
+                        <Scaling className="w-8 h-8 text-accent" />
+                        <div>
+                            <CardTitle className="text-sm">Sufuria Kubwa</CardTitle>
+                            <CardDescription className="text-xs">Lita 6, isiyo na non-stick.</CardDescription>
+                        </div>
+                    </CardHeader>
+                </Card>
+            </div>
+
+            <div className="relative w-full h-[70vh] order-2">
               <Image
                 src="/Adobe Express - file.png"
                 alt="Fuego SmartCook on a counter"
@@ -281,26 +312,27 @@ export default function Home() {
               />
             </div>
             
-             <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
-                <CardHeader>
-                    <CardTitle>Sifa za Kiufundi</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <ul className="space-y-3 text-muted-foreground text-xs">
-                        <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
-                        <li><strong>Power:</strong> 1000W</li>
-                        <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
-                        <li><strong>Color:</strong> Silver</li>
-                        <li><strong>Middle Housing:</strong> Cold Board/1.0mm Thickenss</li>
-                        <li><strong>Heater:</strong> 430g</li>
-                        <li><strong>Lid:</strong> SS#210/0.8mm Thickness</li>
-                        <li><strong>Inner Pot:</strong> 510g Non-Stick Aluminium Pot</li>
-                        <li><strong>Cable:</strong> 1.0M Copper cable with 13A UK Plug</li>
-                        <li><strong>Accessories:</strong> Measure Cup, Spoon, SS Steam Rack</li>
-                        <li><strong>Packaging:</strong> 4Pcs/Ctn, 3-Layer Giftbox + 5-Layer Cartonbox</li>
-                    </ul>
-                </CardContent>
-            </Card>
+             <div className="order-3">
+                <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
+                    <CardHeader>
+                        <CardTitle>Sifa za Kiufundi</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <ul className="space-y-3 text-muted-foreground text-xs">
+                            <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
+                            <li><strong>Power:</strong> 1000W</li>
+                            <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
+                            <li><strong>Color:</strong> Silver</li>
+                            <li><strong>Middle Housing:</strong> Cold Board/1.0mm Thickenss</li>
+                            <li><strong>Heater:</strong> 430g</li>
+                            <li><strong>Lid:</strong> SS#210/0.8mm Thickness</li>
+                            <li><strong>Inner Pot:</strong> 510g Non-Stick Aluminium Pot</li>
+                            <li><strong>Cable:</strong> 1.0M Copper cable with 13A UK Plug</li>
+                            <li><strong>Accessories:</strong> Measure Cup, Spoon, SS Steam Rack</li>
+                        </ul>
+                    </CardContent>
+                </Card>
+            </div>
           </div>
         </section>
 
