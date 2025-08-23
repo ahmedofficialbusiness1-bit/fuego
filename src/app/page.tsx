@@ -9,8 +9,8 @@ import type { SuggestCookingTimesOutput } from "@/ai/flows/suggest-cooking-times
 import { Bolt, Clock, Cpu, LifeBuoy, Lock, Mail, MessageSquare, Phone, Soup, User, Zap, ArrowRight, Salad, Utensils, ShieldCheck, HeartPulse, BrainCircuit, Users, Thermometer, Scaling, Wrench, Award } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
-import type { MouseEvent } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
+import type { MouseEvent, Dispatch, SetStateAction } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -27,9 +27,44 @@ export default function Home() {
   const [dishImage, setDishImage] = useState<string | null>(null);
 
   const [activeFace, setActiveFace] = useState<Face>('front');
+  
   const [imageTransform, setImageTransform] = useState('');
-  const transformTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [cardTransforms, setCardTransforms] = useState<{[key: string]: string}>({});
 
+  const transformTimeoutRef = useRef<{[key: string]: NodeJS.Timeout | null}>({});
+
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>, key: string, setTransform: Dispatch<SetStateAction<any>>) => {
+    if (transformTimeoutRef.current[key]) {
+      clearTimeout(transformTimeoutRef.current[key]!);
+      transformTimeoutRef.current[key] = null;
+    }
+    const { clientX, clientY, currentTarget } = e;
+    const { left, top, width, height } = currentTarget.getBoundingClientRect();
+    const x = clientX - left;
+    const y = clientY - top;
+    const rotateX = (y / height - 0.5) * -15; 
+    const rotateY = (x / width - 0.5) * 15;
+    
+    const newTransform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+    
+    if (key.startsWith('card')) {
+        setCardTransforms(prev => ({...prev, [key]: newTransform}));
+    } else {
+        setImageTransform(newTransform);
+    }
+  };
+
+  const handleMouseLeave = (key: string, setTransform: Dispatch<SetStateAction<any>>) => {
+     transformTimeoutRef.current[key] = setTimeout(() => {
+        const resetTransform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+        if (key.startsWith('card')) {
+            setCardTransforms(prev => ({...prev, [key]: resetTransform}));
+        } else {
+            setImageTransform(resetTransform);
+        }
+     }, 300);
+  };
+  
   const handleSuggestion = (newSuggestion: SuggestCookingTimesOutput) => {
     setSuggestion(newSuggestion);
   };
@@ -42,31 +77,12 @@ export default function Home() {
     setActiveFace(face);
   };
 
-  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    if (transformTimeoutRef.current) {
-      clearTimeout(transformTimeoutRef.current);
-      transformTimeoutRef.current = null;
-    }
-    const { clientX, clientY, currentTarget } = e;
-    const { left, top, width, height } = currentTarget.getBoundingClientRect();
-    const x = clientX - left;
-    const y = clientY - top;
-    const rotateX = (y / height - 0.5) * -15; // Invert for natural feel
-    const rotateY = (x / width - 0.5) * 15;
-    setImageTransform(`perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`);
-  };
-
-  const handleMouseLeave = () => {
-     transformTimeoutRef.current = setTimeout(() => {
-        setImageTransform('perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)');
-     }, 300);
-  };
-
   useEffect(() => {
+    const timeouts = transformTimeoutRef.current;
     return () => {
-      if (transformTimeoutRef.current) {
-        clearTimeout(transformTimeoutRef.current);
-      }
+      Object.values(timeouts).forEach(timeout => {
+        if (timeout) clearTimeout(timeout);
+      });
     };
   }, []);
 
@@ -98,8 +114,8 @@ export default function Home() {
             </div>
             <div
                 className="relative md:w-1/2 w-full h-[60vh] md:h-[90vh]"
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
+                onMouseMove={(e) => handleMouseMove(e, 'image-front', setImageTransform)}
+                onMouseLeave={() => handleMouseLeave('image-front', setImageTransform)}
               >
               <Image
                 src="/Adobe Express - file.png"
@@ -123,62 +139,29 @@ export default function Home() {
                 <h2 className="text-3xl font-headline font-bold tracking-tighter mb-6 text-center">Faida za Fuego</h2>
                 <ScrollArea className="h-[60vh] md:h-[70vh] w-full pr-4">
                     <div className="space-y-4">
-                        <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
-                            <CardHeader>
-                                <CardTitle className="flex items-center gap-2 text-base"><Bolt className="text-accent" /> Punguza Gharama</CardTitle>
-                            </CardHeader>
-                            <CardContent className="text-xs text-muted-foreground">
-                                Sahau gharama za mkaa na gesi zinazopanda kila siku! Fuego SmartCook inatumia umeme mdogo sana, ikikupunguzia bili na kukuwekea akiba. Ni uwekezaji bora kwa jiko la kisasa na familia yako.
-                            </CardContent>
-                        </Card>
-                        <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
-                            <CardHeader>
-                                <CardTitle className="flex items-center gap-2 text-base"><Clock className="text-accent" /> Hifadhi Muda Wako</CardTitle>
-                            </CardHeader>
-                            <CardContent className="text-xs text-muted-foreground">
-                                Fuego imeundwa kwa teknolojia ya kisasa inayopika haraka na salama. Haijalishi unapika wali, ugali, makande, maharage,keki, maandazi, supu au nyama ngumu kila kitu kinakamilika kwa muda mfupi bila kupoteza ladha fuego inapika zaidi ya vyakula 44.
-                            </CardContent>
-                        </Card>
-                         <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
-                            <CardHeader>
-                                <CardTitle className="flex items-center gap-2 text-base"><HeartPulse className="text-accent" /> Pika Chakula Chenye Afya </CardTitle>
-                            </CardHeader>
-                            <CardContent className="text-xs text-muted-foreground">
-                                Kwa kutumia Fuego Pressure Cooker utaboresha afya yako kwani huhifadhi virutubisho na vitamini kwenye chakula chako. Hakuna haja ya mafuta mengi au kupika kwa muda mrefu unaopoteza ladha.
-                            </CardContent>
-                        </Card>
-                         <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
-                            <CardHeader>
-                                <CardTitle className="flex items-center gap-2 text-base"><Utensils className="text-accent" /> Rafiki Yako Jikoni</CardTitle>
-                            </CardHeader>
-                            <CardContent className="text-xs text-muted-foreground">
-                                Kwa vitufe vya moja kwa moja (Rice, Beans, Meat, Soup, Chicken n.k.), huitaji kuwa mtaalamu wa mapishi. Bonyeza tu na acha Fuego ikufanyie kazi.
-                            </CardContent>
-                        </Card>
-                        <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
-                            <CardHeader>
-                                <CardTitle className="flex items-center gap-2 text-base"><ShieldCheck className="text-accent" /> Usalama wa Kipekee</CardTitle>
-                            </CardHeader>
-                            <CardContent className="text-xs text-muted-foreground">
-                                Imetengenezwa kwa mfumo salama wa pressure release, lock system, kufunga vizuri na sensa za joto ili kuhakikisha hakuna ajali jikoni. Ni salama kutumia kila siku bila hofu.
-                            </CardContent>
-                        </Card>
-                         <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
-                            <CardHeader>
-                                <CardTitle className="flex items-center gap-2 text-base"><Users className="text-accent" /> Urahisi kwa Kila Nyumba</CardTitle>
-                            </CardHeader>
-                            <CardContent className="text-xs text-muted-foreground">
-                                Iwe wewe ni mama anayetaka kuokoa muda, mwanafunzi, mfanyakazi au familia kubwa – Fuego inakupa suluhisho la Pamoja.
-                            </CardContent>
-                        </Card>
-                        <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
-                            <CardHeader>
-                                <CardTitle className="flex items-center gap-2 text-base"><LifeBuoy className="text-accent" /> Warranty na Huduma</CardTitle>
-                            </CardHeader>
-                            <CardContent className="text-xs text-muted-foreground">
-                                Fuego ina warranty wa mwaka moja hivyo uko salama kutumia fuego bila ya kujali matatizo ya kiufundi na vile vile tunakupa huduma masaa 4 ikiwemo elimu juu ya matumizi.
-                            </CardContent>
-                        </Card>
+                        {[
+                            { key: 'card-cost', icon: Bolt, title: 'Punguza Gharama', text: 'Sahau gharama za mkaa na gesi zinazopanda kila siku! Fuego SmartCook inatumia umeme mdogo sana, ikikupunguzia bili na kukuwekea akiba. Ni uwekezaji bora kwa jiko la kisasa na familia yako.' },
+                            { key: 'card-time', icon: Clock, title: 'Hifadhi Muda Wako', text: 'Fuego imeundwa kwa teknolojia ya kisasa inayopika haraka na salama. Haijalishi unapika wali, ugali, makande, maharage,keki, maandazi, supu au nyama ngumu kila kitu kinakamilika kwa muda mfupi bila kupoteza ladha fuego inapika zaidi ya vyakula 44.' },
+                            { key: 'card-health', icon: HeartPulse, title: 'Pika Chakula Chenye Afya', text: 'Kwa kutumia Fuego Pressure Cooker utaboresha afya yako kwani huhifadhi virutubisho na vitamini kwenye chakula chako. Hakuna haja ya mafuta mengi au kupika kwa muda mrefu unaopoteza ladha.' },
+                            { key: 'card-friend', icon: Utensils, title: 'Rafiki Yako Jikoni', text: 'Kwa vitufe vya moja kwa moja (Rice, Beans, Meat, Soup, Chicken n.k.), huitaji kuwa mtaalamu wa mapishi. Bonyeza tu na acha Fuego ikufanyie kazi.' },
+                            { key: 'card-safety', icon: ShieldCheck, title: 'Usalama wa Kipekee', text: 'Imetengenezwa kwa mfumo salama wa pressure release, lock system, kufunga vizuri na sensa za joto ili kuhakikisha hakuna ajali jikoni. Ni salama kutumia kila siku bila hofu.' },
+                            { key: 'card-ease', icon: Users, title: 'Urahisi kwa Kila Nyumba', text: 'Iwe wewe ni mama anayetaka kuokoa muda, mwanafunzi, mfanyakazi au familia kubwa – Fuego inakupa suluhisho la Pamoja.' },
+                            { key: 'card-warranty', icon: LifeBuoy, title: 'Warranty na Huduma', text: 'Fuego ina warranty wa mwaka moja hivyo uko salama kutumia fuego bila ya kujali matatizo ya kiufundi na vile vile tunakupa huduma masaa 4 ikiwemo elimu juu ya matumizi.' },
+                        ].map(item => {
+                            const Icon = item.icon;
+                            return (
+                                <div key={item.key} onMouseMove={(e) => handleMouseMove(e, item.key, setCardTransforms as any)} onMouseLeave={() => handleMouseLeave(item.key, setCardTransforms as any)} className="transition-transform duration-300 ease-out" style={{transform: cardTransforms[item.key]}}>
+                                    <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
+                                        <CardHeader>
+                                            <CardTitle className="flex items-center gap-2 text-base"><Icon className="text-accent" /> {item.title}</CardTitle>
+                                        </CardHeader>
+                                        <CardContent className="text-xs text-muted-foreground">
+                                            {item.text}
+                                        </CardContent>
+                                    </Card>
+                                </div>
+                            );
+                        })}
                     </div>
                 </ScrollArea>
             </div>
@@ -186,8 +169,8 @@ export default function Home() {
             <div className="md:col-span-2 flex justify-center items-center order-1 md:order-2 h-[40vh] md:h-auto">
                <div 
                   className="relative w-full h-full md:h-[60vh]"
-                  onMouseMove={handleMouseMove}
-                  onMouseLeave={handleMouseLeave}
+                  onMouseMove={(e) => handleMouseMove(e, 'image-right', setImageTransform)}
+                  onMouseLeave={() => handleMouseLeave('image-right', setImageTransform)}
                 >
                   <Image
                     src="/Adobe Express - file.png"
@@ -377,25 +360,27 @@ export default function Home() {
             </div>
             
              <div className="order-3 md:order-3">
-                <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
-                    <CardHeader>
-                        <CardTitle>Sifa za Kiufundi</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <ul className="space-y-3 text-muted-foreground text-xs">
-                            <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
-                            <li><strong>Power:</strong> 1000W</li>
-                            <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
-                            <li><strong>Color:</strong> Silver</li>
-                            <li><strong>Middle Housing:</strong> Cold Board/1.0mm Thickenss</li>
-                            <li><strong>Heater:</strong> 430g</li>
-                            <li><strong>Lid:</strong> SS#210/0.8mm Thickness</li>
-                            <li><strong>Inner Pot:</strong> 510g Non-Stick Aluminium Pot</li>
-                            <li><strong>Cable:</strong> 1.0M Copper cable with 13A UK Plug</li>
-                            <li><strong>Accessories:</strong> Measure Cup, Spoon, SS Steam Rack</li>
-                        </ul>
-                    </CardContent>
-                </Card>
+                <div onMouseMove={(e) => handleMouseMove(e, 'card-specs', setCardTransforms as any)} onMouseLeave={() => handleMouseLeave('card-specs', setCardTransforms as any)} className="transition-transform duration-300 ease-out" style={{transform: cardTransforms['card-specs']}}>
+                    <Card className="bg-accent/10 backdrop-blur-sm border-accent/30">
+                        <CardHeader>
+                            <CardTitle>Sifa za Kiufundi</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <ul className="space-y-3 text-muted-foreground text-xs">
+                                <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
+                                <li><strong>Power:</strong> 1000W</li>
+                                <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
+                                <li><strong>Color:</strong> Silver</li>
+                                <li><strong>Middle Housing:</strong> Cold Board/1.0mm Thickenss</li>
+                                <li><strong>Heater:</strong> 430g</li>
+                                <li><strong>Lid:</strong> SS#210/0.8mm Thickness</li>
+                                <li><strong>Inner Pot:</strong> 510g Non-Stick Aluminium Pot</li>
+                                <li><strong>Cable:</strong> 1.0M Copper cable with 13A UK Plug</li>
+                                <li><strong>Accessories:</strong> Measure Cup, Spoon, SS Steam Rack</li>
+                            </ul>
+                        </CardContent>
+                    </Card>
+                </div>
             </div>
           </div>
         </section>
@@ -406,22 +391,24 @@ export default function Home() {
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Una maswali? Tuko hapa kukusaidia. Wasiliana nasi kupitia njia yoyote hapa chini.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
-            <Card className="bg-accent/10 backdrop-blur-sm p-8 order-2 md:order-1 border-accent/30">
-              <form className="space-y-4">
-                <div className="relative">
-                  <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                  <Input placeholder="Jina lako" className="pl-10" />
-                </div>
-                <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                  <Input type="email" placeholder="Barua pepe yako" className="pl-10" />
-                </div>
-                <div className="relative">
-                  <Textarea placeholder="Ujumbe wako..." rows={5} />
-                </div>
-                <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">Tuma Ujumbe</Button>
-              </form>
-            </Card>
+            <div onMouseMove={(e) => handleMouseMove(e, 'card-contact', setCardTransforms as any)} onMouseLeave={() => handleMouseLeave('card-contact', setCardTransforms as any)} className="transition-transform duration-300 ease-out order-2 md:order-1" style={{transform: cardTransforms['card-contact']}}>
+                <Card className="bg-accent/10 backdrop-blur-sm p-8 border-accent/30">
+                  <form className="space-y-4">
+                    <div className="relative">
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                      <Input placeholder="Jina lako" className="pl-10" />
+                    </div>
+                    <div className="relative">
+                      <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                      <Input type="email" placeholder="Barua pepe yako" className="pl-10" />
+                    </div>
+                    <div className="relative">
+                      <Textarea placeholder="Ujumbe wako..." rows={5} />
+                    </div>
+                    <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">Tuma Ujumbe</Button>
+                  </form>
+                </Card>
+            </div>
             <div className="space-y-4 flex flex-col justify-center order-1 md:order-2">
               <div className="flex items-center gap-4">
                 <Phone className="w-6 h-6 text-accent" />
