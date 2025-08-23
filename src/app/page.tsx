@@ -180,97 +180,102 @@ export default function Home() {
                 </div>
             </div>
             
-            <div className="hidden md:flex md:col-span-1 h-full flex-col items-center justify-center gap-8 order-3">
-                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
+            <div className="hidden md:flex md:col-span-2 flex-col order-3 md:order-3">
+                <h3 className="text-lg font-headline font-bold text-center mb-4">Baadhi ya vyakula unavyoweza kupika</h3>
+                <div className="grid grid-cols-2 gap-4 h-full">
+                    <div className="flex flex-col items-center justify-center gap-8">
+                        <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
+                            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                                <Image src="https://placehold.co/100x100.png" alt="Kuku" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
+                            </div>
+                            <div>
+                                <h3 className="font-bold text-sm">Kuku</h3>
+                                <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.5s' }}>
+                            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                                <Image src="https://placehold.co/100x100.png" alt="Maharage" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="beans dish"/>
+                            </div>
+                            <div>
+                                <h3 className="font-bold text-sm">Maharage</h3>
+                                <p className="text-xs text-muted-foreground">Maharage ya nazi.</p>
+                            </div>
+                        </div>
+                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.5s' }}>
+                            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                                <Image src="https://placehold.co/100x100.png" alt="Wali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="rice dish"/>
+                            </div>
+                            <div>
+                                <h3 className="font-bold text-sm">Wali</h3>
+                                <p className="text-xs text-muted-foreground">Wali wa kukaanga.</p>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.5s' }}>
+                            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                                <Image src="https://placehold.co/100x100.png" alt="Supu" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="soup bowl"/>
+                            </div>
+                             <div>
+                                <h3 className="font-bold text-sm">Supu</h3>
+                                <p className="text-xs text-muted-foreground">Supu ya kuku.</p>
+                            </div>
+                        </div>
+                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1s' }}>
+                            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                                <Image src="https://placehold.co/100x100.png" alt="Keki" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="cake slice"/>
+                            </div>
+                             <div>
+                                <h3 className="font-bold text-sm">Keki</h3>
+                                <p className="text-xs text-muted-foreground">Keki ya vanilla.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <h3 className="font-bold text-sm">Kuku</h3>
-                        <p className="text-xs text-muted-foreground">Kuku wa kuchoma.</p>
-                    </div>
-                </div>
-                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.5s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Maharage" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="beans dish"/>
-                    </div>
-                    <div>
-                        <h3 className="font-bold text-sm">Maharage</h3>
-                        <p className="text-xs text-muted-foreground">Maharage ya nazi.</p>
-                    </div>
-                </div>
-                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.5s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Wali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="rice dish"/>
-                    </div>
-                    <div>
-                        <h3 className="font-bold text-sm">Wali</h3>
-                        <p className="text-xs text-muted-foreground">Wali wa kukaanga.</p>
-                    </div>
-                </div>
-                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.5s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Supu" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="soup bowl"/>
-                    </div>
-                     <div>
-                        <h3 className="font-bold text-sm">Supu</h3>
-                        <p className="text-xs text-muted-foreground">Supu ya kuku.</p>
-                    </div>
-                </div>
-                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Keki" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="cake slice"/>
-                    </div>
-                     <div>
-                        <h3 className="font-bold text-sm">Keki</h3>
-                        <p className="text-xs text-muted-foreground">Keki ya vanilla.</p>
-                    </div>
-                </div>
-            </div>
-            <div className="hidden md:flex md:col-span-1 h-full flex-col items-center justify-center gap-8 order-4">
-                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.8s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Nyama" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="beef stew"/>
-                    </div>
-                    <div>
-                        <h3 className="font-bold text-sm">Nyama</h3>
-                        <p className="text-xs text-muted-foreground">Nyama ya kuchoma.</p>
-                    </div>
-                </div>
-                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.2s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Ndizi" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="plantain dish"/>
-                    </div>
-                    <div>
-                        <h3 className="font-bold text-sm">Ndizi</h3>
-                        <p className="text-xs text-muted-foreground">Ndizi za kukaanga.</p>
-                    </div>
-                </div>
-                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.3s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Makande" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="maize beans"/>
-                    </div>
-                    <div>
-                        <h3 className="font-bold text-sm">Makande</h3>
-                        <p className="text-xs text-muted-foreground">Makande ya nazi.</p>
-                    </div>
-                </div>
-                <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.8s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Viazi" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="potato dish"/>
-                    </div>
-                     <div>
-                        <h3 className="font-bold text-sm">Viazi</h3>
-                        <p className="text-xs text-muted-foreground">Viazi vya kukaanga.</p>
-                    </div>
-                </div>
-                 <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.8s' }}>
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-                        <Image src="https://placehold.co/100x100.png" alt="Ugali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="ugali dish"/>
-                    </div>
-                     <div>
-                        <h3 className="font-bold text-sm">Ugali</h3>
-                        <p className="text-xs text-muted-foreground">Ugali na samaki.</p>
+                    <div className="flex flex-col items-center justify-center gap-8">
+                        <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.8s' }}>
+                            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                                <Image src="https://placehold.co/100x100.png" alt="Nyama" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="beef stew"/>
+                            </div>
+                            <div>
+                                <h3 className="font-bold text-sm">Nyama</h3>
+                                <p className="text-xs text-muted-foreground">Nyama ya kuchoma.</p>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.2s' }}>
+                            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                                <Image src="https://placehold.co/100x100.png" alt="Ndizi" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="plantain dish"/>
+                            </div>
+                            <div>
+                                <h3 className="font-bold text-sm">Ndizi</h3>
+                                <p className="text-xs text-muted-foreground">Ndizi za kukaanga.</p>
+                            </div>
+                        </div>
+                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.3s' }}>
+                            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                                <Image src="https://placehold.co/100x100.png" alt="Makande" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="maize beans"/>
+                            </div>
+                            <div>
+                                <h3 className="font-bold text-sm">Makande</h3>
+                                <p className="text-xs text-muted-foreground">Makande ya nazi.</p>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.8s' }}>
+                            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                                <Image src="https://placehold.co/100x100.png" alt="Viazi" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="potato dish"/>
+                            </div>
+                             <div>
+                                <h3 className="font-bold text-sm">Viazi</h3>
+                                <p className="text-xs text-muted-foreground">Viazi vya kukaanga.</p>
+                            </div>
+                        </div>
+                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.8s' }}>
+                            <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+                                <Image src="https://placehold.co/100x100.png" alt="Ugali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="ugali dish"/>
+                            </div>
+                             <div>
+                                <h3 className="font-bold text-sm">Ugali</h3>
+                                <p className="text-xs text-muted-foreground">Ugali na samaki.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
