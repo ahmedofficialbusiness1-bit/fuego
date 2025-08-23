@@ -86,7 +86,7 @@ export default function Home() {
 Chakula kinapikwa kwa ubora kila wakati.
 Rahisi, haraka, na chenye Ladha.
               </p>
-              <h2 className="mt-8 mb-4 font-headline text-3xl font-bold text-foreground text-center md:text-left">Ni Jiko Fanisi</h2>
+              <h2 className="mt-8 font-headline text-3xl font-bold text-foreground text-center md:text-left">Ni Jiko Fanisi</h2>
               <div className="flex items-center gap-4 mt-4 justify-center md:justify-start">
                 <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                   Nunua Sasa <ArrowRight />
@@ -287,74 +287,73 @@ Rahisi, haraka, na chenye Ladha.
         </section>
         
         <section id="sifa" className="min-h-screen flex flex-col items-center justify-center px-8 pt-16 pb-16 overflow-hidden">
-          <div className="text-center mb-8 w-full max-w-7xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Sifa za Ziada</h2>
-            <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Sifa za kiufundi na ubora wa Fuego smartcooker</p>
+          <div className="text-center mb-12 w-full max-w-7xl mx-auto">
+              <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Sifa za Ziada</h2>
+              <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Sifa za kiufundi na ubora wa Fuego smartcooker</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 max-w-7xl w-full mx-auto items-center">
-              <div className="md:col-span-2 flex flex-col gap-8 justify-between h-full">
-                  <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
-                      <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
-                          <Image src="/cup.png" alt="Kikombe" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="measuring cup"/>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl w-full mx-auto items-center">
+              <div className="relative w-full h-[50vh] md:h-[70vh]">
+                  <Image
+                      src="/Adobe Express - file.png"
+                      alt="Fuego SmartCook Sifa"
+                      fill
+                      quality={100}
+                      className="object-contain"
+                      data-ai-hint="pressure cooker"
+                  />
+              </div>
+
+              <div className="flex flex-col gap-8 justify-center h-full">
+                  <div className="grid grid-cols-2 gap-8">
+                      <div className="flex flex-col items-center text-center gap-4 animate-bubble-float" style={{ animationDelay: '0s' }}>
+                          <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
+                              <Image src="/cup.png" alt="Kikombe" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="measuring cup"/>
+                          </div>
+                          <div>
+                              <h3 className="font-bold text-base">Kikombe</h3>
+                              <p className="text-sm text-muted-foreground">Inakuja na kikombe.</p>
+                          </div>
                       </div>
-                      <div>
-                          <h3 className="font-bold text-base">Kikombe</h3>
-                          <p className="text-sm text-muted-foreground">Inakuja na kikombe.</p>
+                      <div className="flex flex-col items-center text-center gap-4 animate-bubble-float" style={{ animationDelay: '0.5s' }}>
+                          <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
+                              <Image src="/spoon.png" alt="Kijiko" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="spoon"/>
+                          </div>
+                          <div>
+                              <h3 className="font-bold text-base">Kijiko</h3>
+                              <p className="text-sm text-muted-foreground">Inakuja na kijiko.</p>
+                          </div>
                       </div>
-                  </div>
-                   <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.0s' }}>
-                      <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
-                          <Image src="/rack.png" alt="Steam Rack" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="steam rack"/>
+                      <div className="flex flex-col items-center text-center gap-4 animate-bubble-float" style={{ animationDelay: '1.0s' }}>
+                          <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
+                              <Image src="/rack.png" alt="Steam Rack" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="steam rack"/>
+                          </div>
+                          <div>
+                              <h3 className="font-bold text-base">Steam Rack</h3>
+                              <p className="text-sm text-muted-foreground">Inakuja na Steam Rack kwa ajili ya kuoka.</p>
+                          </div>
                       </div>
-                      <div>
-                          <h3 className="font-bold text-base">Steam Rack</h3>
-                          <p className="text-sm text-muted-foreground">Inakuja na Steam Rack kwa ajili ya kuoka.</p>
+                       <div className="flex flex-col items-center text-center gap-4 animate-bubble-float" style={{ animationDelay: '1.5s' }}>
+                          <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
+                              <Image src="/wire.png" alt="Waya" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="power cable"/>
+                          </div>
+                          <div>
+                              <h3 className="font-bold text-base">Waya Imara</h3>
+                              <p className="text-sm text-muted-foreground">1.0M Copper cable.</p>
+                          </div>
                       </div>
-                  </div>
-                  <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.5s' }}>
-                      <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
-                          <Image src="/pot2.png" alt="Sufuria Kubwa" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="cooking pot"/>
-                      </div>
-                      <div>
-                          <h3 className="font-bold text-base">Sufuria Kubwa</h3>
-                          <p className="text-sm text-muted-foreground">Lita 6, isiyo na non-stick.</p>
+                       <div className="flex flex-col items-center text-center gap-4 animate-bubble-float" style={{ animationDelay: '2.0s' }}>
+                          <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
+                              <Image src="/pot2.png" alt="Sufuria Kubwa" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="cooking pot"/>
+                          </div>
+                          <div>
+                              <h3 className="font-bold text-base">Sufuria Kubwa</h3>
+                              <p className="text-sm text-muted-foreground">Lita 6, isiyo na non-stick.</p>
+                          </div>
                       </div>
                   </div>
               </div>
-
-              <div className="relative w-full h-[50vh] md:h-[70vh] md:col-span-1">
-                <Image
-                  src="/Adobe Express - file.png"
-                  alt="Fuego SmartCook Sifa"
-                  fill
-                  quality={100}
-                  className="object-contain"
-                  data-ai-hint="pressure cooker"
-                />
-              </div>
-
-              <div className="md:col-span-2 flex flex-col gap-8 justify-between h-full">
-                  <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.5s' }}>
-                      <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
-                          <Image src="/spoon.png" alt="Kijiko" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="spoon"/>
-                      </div>
-                      <div>
-                          <h3 className="font-bold text-base">Kijiko</h3>
-                          <p className="text-sm text-muted-foreground">Inakuja na kijiko.</p>
-                      </div>
-                  </div>
-                  <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.0s' }}>
-                      <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
-                          <Image src="/wire.png" alt="Waya" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="power cable"/>
-                      </div>
-                      <div>
-                          <h3 className="font-bold text-base">Waya Imara</h3>
-                          <p className="text-sm text-muted-foreground">1.0M Copper cable.</p>
-                      </div>
-                  </div>
-              </div>
-
-              <div className="md:col-span-5 mt-8">
+          </div>
+          <div className="mt-12 w-full max-w-4xl">
               <Dialog>
                 <DialogTrigger asChild>
                     <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105 hover:z-20 w-full">
@@ -402,7 +401,6 @@ Rahisi, haraka, na chenye Ladha.
                   </DialogContent>
                 </Dialog>
             </div>
-          </div>
         </section>
 
         <section id="mawasiliano" className="min-h-screen flex flex-col items-center justify-center px-8 pt-16 pb-16 bg-secondary/30">
@@ -483,3 +481,5 @@ Rahisi, haraka, na chenye Ladha.
     </>
   );
 }
+
+    
