@@ -311,7 +311,7 @@ Rahisi, haraka, na chenye Ladha.
                           </div>
                           <div>
                               <h3 className="font-bold text-base">Kikombe</h3>
-                              <p className="text-sm text-muted-foreground">Inakuja na kikombe.</p>
+                              <p className="text-sm text-muted-foreground">Inakuja na kikombe cha kupimia.</p>
                           </div>
                       </div>
                       <div className="flex flex-col items-center text-center gap-4 animate-bubble-float" style={{ animationDelay: '0.5s' }}>
@@ -338,7 +338,7 @@ Rahisi, haraka, na chenye Ladha.
                           </div>
                           <div>
                               <h3 className="font-bold text-base">Waya Imara</h3>
-                              <p className="text-sm text-muted-foreground">1.0M Copper cable.</p>
+                              <p className="text-sm text-muted-foreground">1.0M Copper cable, yenye pini tatu.</p>
                           </div>
                       </div>
                        <div className="flex flex-col items-center text-center gap-4 animate-bubble-float" style={{ animationDelay: '2.0s' }}>
@@ -347,7 +347,7 @@ Rahisi, haraka, na chenye Ladha.
                           </div>
                           <div>
                               <h3 className="font-bold text-base">Sufuria Kubwa</h3>
-                              <p className="text-sm text-muted-foreground">Lita 6, isiyo na non-stick.</p>
+                              <p className="text-sm text-muted-foreground">Lita 6, non-stick Aluminium.</p>
                           </div>
                       </div>
                   </div>
@@ -485,3 +485,4 @@ Rahisi, haraka, na chenye Ladha.
     
 
     
+
