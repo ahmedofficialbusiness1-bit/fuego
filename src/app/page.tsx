@@ -132,7 +132,7 @@ Rahisi, haraka, na chenye Ladha.
           </div>
         </section>
 
-        <section id="faida" className="min-h-screen flex flex-col items-center justify-center px-8 pt-16 pb-16 bg-secondary/30">
+        <section id="faida" className="min-h-screen flex flex-col items-center justify-center px-8 pt-16 pb-16 bg-secondary">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center w-full max-w-7xl mx-auto h-full gap-12">
             <div 
               className="relative w-full h-[70vh] order-1 md:order-1"
@@ -227,57 +227,57 @@ Rahisi, haraka, na chenye Ladha.
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                       <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                           <CardHeader className="p-0">
-                              <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
+                              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
                                   <Image src="/cup.png" alt="Kikombe" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="measuring cup"/>
                               </div>
                           </CardHeader>
                           <CardContent className="p-0 mt-2">
-                              <CardTitle className="font-bold text-base">Kikombe</CardTitle>
-                              <CardDescription className="text-sm mt-1">Inakuja na kikombe cha kupimia.</CardDescription>
+                              <CardTitle className="font-bold text-sm">Kikombe</CardTitle>
+                              <CardDescription className="text-xs mt-1">Inakuja na kikombe cha kupimia.</CardDescription>
                           </CardContent>
                       </Card>
                       <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                           <CardHeader className="p-0">
-                              <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
+                              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
                                   <Image src="/spoon.png" alt="Kijiko" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="spoon"/>
                               </div>
                           </CardHeader>
                           <CardContent className="p-0 mt-2">
-                              <CardTitle className="font-bold text-base">Kijiko</CardTitle>
-                              <CardDescription className="text-sm mt-1">Inakuja na kijiko.</CardDescription>
+                              <CardTitle className="font-bold text-sm">Kijiko</CardTitle>
+                              <CardDescription className="text-xs mt-1">Inakuja na kijiko.</CardDescription>
                           </CardContent>
                       </Card>
                       <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                            <CardHeader className="p-0">
-                              <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
+                              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
                                   <Image src="/rack.png" alt="Steam Rack" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="steam rack"/>
                               </div>
                           </CardHeader>
                           <CardContent className="p-0 mt-2">
-                              <CardTitle className="font-bold text-base">Steam Rack</CardTitle>
-                              <CardDescription className="text-sm mt-1">Inakuja na Steam Rack kwa ajili ya kuoka.</CardDescription>
+                              <CardTitle className="font-bold text-sm">Steam Rack</CardTitle>
+                              <CardDescription className="text-xs mt-1">Inakuja na Steam Rack kwa ajili ya kuoka.</CardDescription>
                           </CardContent>
                       </Card>
                        <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                            <CardHeader className="p-0">
-                              <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
+                              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
                                   <Image src="/wire.png" alt="Waya" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="power cable"/>
                               </div>
                           </CardHeader>
                           <CardContent className="p-0 mt-2">
-                              <CardTitle className="font-bold text-base">Waya Imara</CardTitle>
-                              <CardDescription className="text-sm mt-1">1.0M Copper cable, yenye pini tatu.</CardDescription>
+                              <CardTitle className="font-bold text-sm">Waya Imara</CardTitle>
+                              <CardDescription className="text-xs mt-1">1.0M Copper cable, yenye pini tatu.</CardDescription>
                           </CardContent>
                       </Card>
                        <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                            <CardHeader className="p-0">
-                              <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
+                              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
                                   <Image src="/pot2.png" alt="Sufuria Kubwa" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="cooking pot"/>
                               </div>
                           </CardHeader>
                           <CardContent className="p-0 mt-2">
-                              <CardTitle className="font-bold text-base">Sufuria Kubwa</CardTitle>
-                              <CardDescription className="text-sm mt-1">Lita 6, non-stick Aluminium.</CardDescription>
+                              <CardTitle className="font-bold text-sm">Sufuria Kubwa</CardTitle>
+                              <CardDescription className="text-xs mt-1">Lita 6, non-stick Aluminium.</CardDescription>
                           </CardContent>
                       </Card>
                   </div>
@@ -343,7 +343,7 @@ Rahisi, haraka, na chenye Ladha.
             </div>
         </section>
 
-        <section id="mawasiliano" className="min-h-screen flex flex-col items-center justify-center px-8 pt-16 pb-16 bg-secondary/30">
+        <section id="mawasiliano" className="min-h-screen flex flex-col items-center justify-center px-8 pt-16 pb-16 bg-secondary">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Wasiliana Nasi</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Una maswali? Tuko hapa kukusaidia. Wasiliana nasi kupitia njia yoyote hapa chini.</p>
@@ -441,6 +441,7 @@ Rahisi, haraka, na chenye Ladha.
 
 
     
+
 
 
 
