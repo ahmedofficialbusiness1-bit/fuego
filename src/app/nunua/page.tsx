@@ -37,7 +37,7 @@ const RetailForm = ({
         <form className="space-y-6">
           <div className="space-y-2">
             <Label htmlFor="fullName">Jina Kamili</Label>
-            <Input id="fullName" placeholder="Weka jina lako kamili" />
+            <Input id="fullName" placeholder="Weka jina lako kamili" required />
           </div>
 
           <fieldset className="space-y-4 rounded-lg border p-4">
@@ -45,31 +45,31 @@ const RetailForm = ({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                     <Label htmlFor="street">Mtaa</Label>
-                    <Input id="street" placeholder="Mtaa / Eneo" />
+                    <Input id="street" placeholder="Mtaa / Eneo" required />
                 </div>
                 <div className="space-y-2">
                     <Label htmlFor="district">Wilaya</Label>
-                    <Input id="district" placeholder="Wilaya unayoishi" />
+                    <Input id="district" placeholder="Wilaya unayoishi" required />
                 </div>
                  <div className="space-y-2">
                     <Label htmlFor="region">Mkoa</Label>
-                    <Input id="region" placeholder="Mkoa" />
+                    <Input id="region" placeholder="Mkoa" required />
                 </div>
                  <div className="space-y-2">
                     <Label htmlFor="country">Nchi</Label>
-                    <Input id="country" placeholder="Nchi" />
+                    <Input id="country" placeholder="Nchi" required />
                 </div>
             </div>
           </fieldset>
           
           <div className="space-y-2">
             <Label htmlFor="phone">Namba ya Simu</Label>
-            <Input id="phone" type="tel" placeholder="Weka namba yako ya simu" />
+            <Input id="phone" type="tel" placeholder="Weka namba yako ya simu" required />
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="quantity">Idadi ya Bidhaa</Label>
-            <Input id="quantity" type="number" min="1" placeholder="Weka idadi" value={quantity} onChange={handleQuantityChange} />
+            <Input id="quantity" type="number" min="1" placeholder="Weka idadi" value={quantity} onChange={handleQuantityChange} required />
           </div>
 
           <div className="p-4 rounded-lg bg-muted space-y-3">
@@ -90,10 +90,6 @@ const RetailForm = ({
             <Label>Njia ya Malipo</Label>
             <RadioGroup value={selectedPaymentMethod} onValueChange={handlePaymentMethodChange} className="space-y-2">
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="cash" id="r1" />
-                <Label htmlFor="r1">Cash On Delivery</Label>
-              </div>
-              <div className="flex items-center space-x-2">
                 <RadioGroupItem value="lipa" id="r2" />
                 <Label htmlFor="r2">Lipa Namba</Label>
               </div>
@@ -105,12 +101,6 @@ const RetailForm = ({
           </div>
           
           <div className="p-4 rounded-lg bg-muted text-sm space-y-3">
-            {selectedPaymentMethod === 'cash' && (
-                <div>
-                    <h3 className="font-bold mb-2">Maelezo ya Cash on Delivery</h3>
-                    <p>Huduma hii ni kwa ajili ya Unguja tu. Gharama za usafiri ni bure kwa maeneo ya Unguja mjini tu.</p>
-                </div>
-            )}
             {selectedPaymentMethod === 'lipa' && (
                 <div className="space-y-2">
                     <h3 className="font-bold mb-2">Maelezo ya Lipa Namba</h3>
@@ -149,7 +139,7 @@ export default function NunuaPage() {
   const [formToShow, setFormToShow] = useState<FormToShow>(null);
   const [quantity, setQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(PRICE_PER_ITEM);
-  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("cash");
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("lipa");
 
   const handleQuantityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newQuantity = parseInt(event.target.value, 10) || 0;
