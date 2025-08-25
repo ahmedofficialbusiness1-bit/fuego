@@ -108,7 +108,7 @@ const RetailForm = ({
             {selectedPaymentMethod === 'cash' && (
                 <div>
                     <h3 className="font-bold mb-2">Maelezo ya Cash on Delivery</h3>
-                    <p>Hii ni kwa Unguja pekee yake, na gharama za delivery ni juu yetu kwa maeneo ya Unguja mjini pekee.</p>
+                    <p>Huduma hii ni kwa ajili ya Unguja tu. Gharama za usafiri ni bure kwa maeneo ya Unguja mjini tu.</p>
                 </div>
             )}
             {selectedPaymentMethod === 'lipa' && (
