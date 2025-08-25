@@ -129,6 +129,11 @@ const RetailForm = ({
                     <p>Benki: <strong className="text-accent">NBC Bank</strong></p>
                     <p>Jina la Akaunti: <strong className="text-accent">Mlandege Home Store</strong></p>
                     <p>Namba ya Akaunti: <strong className="text-accent">[Weka Namba Hapa]</strong></p>
+                    <p>Tafadhali piga picha ya skrini (screenshot) malipo yako na upakie hapa chini.</p>
+                    <div className="relative flex items-center">
+                        <Upload className="absolute left-3 w-5 h-5 text-muted-foreground" />
+                        <Input type="file" className="pl-10" />
+                    </div>
                 </div>
             )}
           </div>
