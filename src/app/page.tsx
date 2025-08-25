@@ -314,7 +314,7 @@ Rahisi, haraka, na chenye Ladha.
             </div>
         </section>
 
-        <section id="mawasiliano" className="min-h-screen flex flex-col items-center justify-center px-8 pt-16 pb-16 bg-secondary">
+        <section id="mawasiliano" className="min-h-screen flex flex-col items-center justify-center px-8 pt-16 pb-16 bg-[#322d29]">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Wasiliana Nasi</h2>
             <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Una maswali? Tuko hapa kukusaidia. Wasiliana nasi kupitia njia yoyote hapa chini.</p>
@@ -391,3 +391,5 @@ Rahisi, haraka, na chenye Ladha.
     
   );
 }
+
+    
