@@ -116,7 +116,7 @@ const RetailForm = ({
                     <h3 className="font-bold mb-2">Maelezo ya Lipa Namba</h3>
                     <p>1. Fanya malipo kwenye Lipa Namba: <strong className="text-accent">123456</strong> (Jina: Mlandege Home Store)</p>
                     <p>2. Mtandao: <strong className="text-accent">Mixx by Yas</strong></p>
-                    <p>3. Screenshot malipo yako na upload hapa chini.</p>
+                    <p>3. Tafadhali piga picha ya skrini (screenshot) malipo yako na upakie hapa chini.</p>
                     <div className="relative flex items-center">
                         <Upload className="absolute left-3 w-5 h-5 text-muted-foreground" />
                         <Input type="file" className="pl-10" />
