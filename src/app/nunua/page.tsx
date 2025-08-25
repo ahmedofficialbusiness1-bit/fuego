@@ -15,18 +15,7 @@ type FormToShow = "jumla" | "rejareja" | null;
 
 const PRICE_PER_ITEM = 150000;
 
-export default function NunuaPage() {
-  const [formToShow, setFormToShow] = useState<FormToShow>(null);
-  const [quantity, setQuantity] = useState(1);
-  const [totalPrice, setTotalPrice] = useState(PRICE_PER_ITEM);
-
-  const handleQuantityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newQuantity = parseInt(event.target.value, 10) || 0;
-    setQuantity(newQuantity);
-    setTotalPrice(newQuantity * PRICE_PER_ITEM);
-  };
-
-  const RetailForm = () => (
+const RetailForm = ({ quantity, handleQuantityChange, totalPrice }: { quantity: number; handleQuantityChange: (event: React.ChangeEvent<HTMLInputElement>) => void; totalPrice: number; }) => (
     <Card className="w-full max-w-2xl bg-white text-black">
       <CardHeader>
         <CardTitle>Fomu ya Ununuzi wa Rejareja</CardTitle>
@@ -107,7 +96,19 @@ export default function NunuaPage() {
         </form>
       </CardContent>
     </Card>
-  );
+);
+
+export default function NunuaPage() {
+  const [formToShow, setFormToShow] = useState<FormToShow>(null);
+  const [quantity, setQuantity] = useState(1);
+  const [totalPrice, setTotalPrice] = useState(PRICE_PER_ITEM);
+
+  const handleQuantityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newQuantity = parseInt(event.target.value, 10) || 0;
+    setQuantity(newQuantity);
+    setTotalPrice(newQuantity * PRICE_PER_ITEM);
+  };
+
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
@@ -147,7 +148,7 @@ export default function NunuaPage() {
                 </Card>
             )}
 
-            {formToShow === "rejareja" && <RetailForm />}
+            {formToShow === "rejareja" && <RetailForm quantity={quantity} handleQuantityChange={handleQuantityChange} totalPrice={totalPrice} />}
             
 
         </main>
