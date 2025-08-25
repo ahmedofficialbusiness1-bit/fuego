@@ -223,17 +223,6 @@ Rahisi, haraka, na chenye Ladha.
               <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Sifa za kiufundi na ubora wa Fuego smartcooker</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl w-full mx-auto items-center">
-              <div className="relative w-full h-[70vh]">
-                  <Image
-                      src="/Adobe Express - file.png"
-                      alt="Fuego SmartCook Sifa"
-                      fill
-                      quality={100}
-                      className="object-contain"
-                      data-ai-hint="pressure cooker"
-                  />
-              </div>
-
               <div className="flex flex-col gap-8 justify-center h-full">
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                       <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
@@ -292,6 +281,16 @@ Rahisi, haraka, na chenye Ladha.
                           </CardContent>
                       </Card>
                   </div>
+              </div>
+              <div className="relative w-full h-[70vh]">
+                  <Image
+                      src="/Adobe Express - file.png"
+                      alt="Fuego SmartCook Sifa"
+                      fill
+                      quality={100}
+                      className="object-contain"
+                      data-ai-hint="pressure cooker"
+                  />
               </div>
           </div>
           <div className="mt-12 w-full max-w-4xl">
@@ -442,6 +441,7 @@ Rahisi, haraka, na chenye Ladha.
 
 
     
+
 
 
 
