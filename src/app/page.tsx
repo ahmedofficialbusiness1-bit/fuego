@@ -24,34 +24,7 @@ export default function Home() {
   const [suggestion, setSuggestion] =
     useState<SuggestCookingTimesOutput | null>(null);
   const [dishImage, setDishImage] = useState<string | null>(null);
-  const [imageTransform, setImageTransform] = useState('');
-  const transformTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const handleMouseMove = (
-    e: MouseEvent<HTMLDivElement>
-  ) => {
-    if (transformTimeoutRef.current) {
-      clearTimeout(transformTimeoutRef.current);
-      transformTimeoutRef.current = null;
-    }
-    const { clientX, clientY, currentTarget } = e;
-    const { left, top, width, height } = currentTarget.getBoundingClientRect();
-    const x = clientX - left;
-    const y = clientY - top;
-    const rotateX = (y / height - 0.5) * -15; 
-    const rotateY = (x / width - 0.5) * 15;
-    
-    const newTransform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
-    setImageTransform(newTransform);
-  };
-
-  const handleMouseLeave = () => {
-     transformTimeoutRef.current = setTimeout(() => {
-        const resetTransform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-        setImageTransform(resetTransform);
-     }, 300);
-  };
-  
   const handleSuggestion = (newSuggestion: SuggestCookingTimesOutput) => {
     setSuggestion(newSuggestion);
   };
@@ -59,13 +32,6 @@ export default function Home() {
   const handleImageChange = (dataUrl: string) => {
     setDishImage(dataUrl);
   };
-  
-  useEffect(() => {
-    const timeout = transformTimeoutRef.current;
-    return () => {
-        if (timeout) clearTimeout(timeout);
-    };
-  }, []);
 
   const foodItems = [
     { name: 'Ugali', description: 'Unapika vyakula vyote jamii ya ugali.', image: '/ugali.png', hint: 'ugali dish' },
@@ -113,18 +79,15 @@ Rahisi, haraka, na chenye Ladha.
             </div>
             <div
                 className="relative md:w-1/2 w-full h-[60vh] md:h-[90vh]"
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
               >
               <Image
                 src="/Adobe Express - file.png"
                 alt="Fuego SmartCook"
                 fill
                 quality={100}
-                className="object-contain transition-transform duration-300 ease-out animate-bubble-float"
+                className="object-contain"
                 style={{
                   filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5))',
-                  transform: imageTransform,
                 }}
                 data-ai-hint="pressure cooker"
               />
@@ -136,18 +99,15 @@ Rahisi, haraka, na chenye Ladha.
           <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center w-full max-w-7xl mx-auto h-full gap-12">
             <div 
               className="relative w-full h-[70vh] order-1 md:order-1"
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
             >
               <Image
-                src="/jiko2.jpg"
+                src="/Adobe Express - file.png"
                 alt="Fuego SmartCook"
                 fill
                 quality={100}
-                className="object-contain transition-transform duration-300 ease-out"
+                className="object-contain"
                 style={{
                   filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5))',
-                   transform: imageTransform,
                 }}
                 data-ai-hint="pressure cooker"
               />
@@ -295,7 +255,7 @@ Rahisi, haraka, na chenye Ladha.
               </div>
               <div className="relative w-full h-[70vh]">
                   <Image
-                      src="/jiko.jpg"
+                      src="/Adobe Express - file.png"
                       alt="Fuego SmartCook Sifa"
                       fill
                       quality={100}
