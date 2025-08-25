@@ -67,9 +67,11 @@ Rahisi, haraka, na chenye Ladha.
               </p>
               <h2 className="mt-8 font-headline text-3xl font-bold text-foreground text-center md:text-left">Ni Jiko Fanisi</h2>
               <div className="flex items-center gap-4 mt-4 justify-center md:justify-start">
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                  Nunua Sasa <ArrowRight />
-                </Button>
+                <Link href="/nunua">
+                  <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                    Nunua Sasa <ArrowRight />
+                  </Button>
+                </Link>
                 <Link href="#faida">
                   <Button size="lg" variant="outline">
                     Soma Zaidi <ArrowRight />
