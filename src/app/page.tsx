@@ -133,87 +133,86 @@ Rahisi, haraka, na chenye Ladha.
         </section>
 
         <section id="faida" className="min-h-screen flex items-center justify-center px-8 pt-16 pb-16 bg-secondary/30">
-          <div className="flex flex-col md:grid md:grid-cols-6 items-center justify-center w-full max-w-7xl mx-auto h-full gap-4">
-            <div className="md:col-span-2 order-2 md:order-1">
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center w-full max-w-7xl mx-auto h-full gap-12">
+            <div 
+              className="relative w-full h-[70vh] order-1 md:order-1"
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+            >
+              <Image
+                src="/Adobe Express - file.png"
+                alt="Fuego SmartCook"
+                fill
+                quality={100}
+                className="object-contain transition-transform duration-300 ease-out"
+                style={{
+                  filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5))',
+                   transform: imageTransform,
+                }}
+                data-ai-hint="pressure cooker"
+              />
+            </div>
+
+            <div className="flex flex-col gap-8 order-2 md:order-2">
+              <div>
                 <h2 className="text-3xl font-headline font-bold tracking-tighter mb-6 text-center">Faida za Fuego</h2>
-                <ScrollArea className="h-[60vh] md:h-[70vh] w-full pr-4">
-                    <div className="space-y-4">
-                        {[
-                            { icon: Bolt, title: 'Punguza Gharama', text: 'Sahau gharama za mkaa na gesi zinazopanda kila siku! Fuego SmartCook inatumia umeme mdogo sana, ikikupunguzia bili na kukuwekea akiba. Ni uwekezaji bora kwa jiko la kisasa na familia yako.' },
-                            { icon: Clock, title: 'Hifadhi Muda Wako', text: 'Fuego imeundwa kwa teknolojia ya kisasa inayopika haraka na salama. Haijalishi unapika wali, ugali, makande, maharage,keki, maandazi, supu au nyama ngumu kila kitu kinakamilika kwa muda mfupi bila kupoteza ladha fuego inapika zaidi ya vyakula 44.' },
-                            { icon: HeartPulse, title: 'Pika Chakula Chenye Afya', text: 'Kwa kutumia Fuego Pressure Cooker utaboresha afya yako kwani huhifadhi virutubisho na vitamini kwenye chakula chako. Hakuna haja ya mafuta mengi au kupika kwa muda mrefu unaopoteza ladha.' },
-                            { icon: Utensils, title: 'Rafiki Yako Jikoni', text: 'Kwa vitufe vya moja kwa moja (Rice, Beans, Meat, Soup, Chicken n.k.), huitaji kuwa mtaalamu wa mapishi. Bonyeza tu na acha Fuego ikufanyie kazi.' },
-                            { icon: ShieldCheck, title: 'Usalama wa Kipekee', text: 'Imetengenezwa kwa mfumo salama wa pressure release, lock system, kufunga vizuri na sensa za joto ili kuhakikisha hakuna ajali jikoni. Ni salama kutumia kila siku bila hofu.' },
-                            { icon: Users, title: 'Urahisi kwa Kila Nyumba', text: 'Iwe wewe ni mama anayetaka kuokoa muda, mwanafunzi, mfanyakazi au familia kubwa – Fuego inakupa suluhisho la Pamoja.' },
-                            { icon: LifeBuoy, title: 'Warranty na Huduma', text: 'Fuego ina warranty wa mwaka moja hivyo uko salama kutumia fuego bila ya kujali matatizo ya kiufundi na vile vile tunakupa huduma masaa 4 ikiwemo elimu juu ya matumizi.' },
-                        ].map((item, index) => (
-                            <Dialog key={item.title}>
-                              <DialogTrigger asChild>
-                                  <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105 hover:z-20">
-                                      <CardHeader>
-                                          <CardTitle className="flex items-center gap-2 text-base"><item.icon className="text-accent" /> {item.title}</CardTitle>
-                                      </CardHeader>
-                                      <CardContent className="text-xs text-muted-foreground">
-                                          {item.text}
-                                      </CardContent>
-                                  </Card>
-                              </DialogTrigger>
-                              <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
-                                <DialogTitle className="sr-only">{item.title}</DialogTitle>
-                                <DialogDescription className="sr-only">{item.text}</DialogDescription>
-                                <Card className="bg-transparent border-0 shadow-none">
+                <div className="space-y-4">
+                    {[
+                        { icon: Bolt, title: 'Punguza Gharama', text: 'Sahau gharama za mkaa na gesi zinazopanda kila siku! Fuego SmartCook inatumia umeme mdogo sana, ikikupunguzia bili na kukuwekea akiba. Ni uwekezaji bora kwa jiko la kisasa na familia yako.' },
+                        { icon: Clock, title: 'Hifadhi Muda Wako', text: 'Fuego imeundwa kwa teknolojia ya kisasa inayopika haraka na salama. Haijalishi unapika wali, ugali, makande, maharage,keki, maandazi, supu au nyama ngumu kila kitu kinakamilika kwa muda mfupi bila kupoteza ladha fuego inapika zaidi ya vyakula 44.' },
+                        { icon: HeartPulse, title: 'Pika Chakula Chenye Afya', text: 'Kwa kutumia Fuego Pressure Cooker utaboresha afya yako kwani huhifadhi virutubisho na vitamini kwenye chakula chako. Hakuna haja ya mafuta mengi au kupika kwa muda mrefu unaopoteza ladha.' },
+                        { icon: Utensils, title: 'Rafiki Yako Jikoni', text: 'Kwa vitufe vya moja kwa moja (Rice, Beans, Meat, Soup, Chicken n.k.), huitaji kuwa mtaalamu wa mapishi. Bonyeza tu na acha Fuego ikufanyie kazi.' },
+                        { icon: ShieldCheck, title: 'Usalama wa Kipekee', text: 'Imetengenezwa kwa mfumo salama wa pressure release, lock system, kufunga vizuri na sensa za joto ili kuhakikisha hakuna ajali jikoni. Ni salama kutumia kila siku bila hofu.' },
+                        { icon: Users, title: 'Urahisi kwa Kila Nyumba', text: 'Iwe wewe ni mama anayetaka kuokoa muda, mwanafunzi, mfanyakazi au familia kubwa – Fuego inakupa suluhisho la Pamoja.' },
+                        { icon: LifeBuoy, title: 'Warranty na Huduma', text: 'Fuego ina warranty wa mwaka moja hivyo uko salama kutumia fuego bila ya kujali matatizo ya kiufundi na vile vile tunakupa huduma masaa 4 ikiwemo elimu juu ya matumizi.' },
+                    ].map((item, index) => (
+                        <Dialog key={item.title}>
+                          <DialogTrigger asChild>
+                              <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105 hover:z-20">
                                   <CardHeader>
-                                    <CardTitle className="flex items-center gap-4 text-2xl"><item.icon className="text-accent w-8 h-8" /> {item.title}</CardTitle>
+                                      <CardTitle className="flex items-center gap-2 text-base"><item.icon className="text-accent" /> {item.title}</CardTitle>
                                   </CardHeader>
-                                  <CardContent className="text-base text-foreground">
-                                    {item.text}
+                                  <CardContent className="text-xs text-muted-foreground">
+                                      {item.text}
                                   </CardContent>
-                                </Card>
-                              </DialogContent>
-                            </Dialog>
-                        ))}
-                    </div>
-                </ScrollArea>
-            </div>
-            
-            <div className="md:col-span-2 flex justify-center items-center order-1 md:order-2 h-[40vh] md:h-auto">
-               <div 
-                  className="relative w-full h-full md:h-[60vh]"
-                  onMouseMove={handleMouseMove}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <Image
-                    src="/Adobe Express - file.png"
-                    alt="Fuego SmartCook"
-                    fill
-                    quality={100}
-                    className="object-contain transition-transform duration-300 ease-out"
-                    style={{
-                      filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5))',
-                       transform: imageTransform,
-                    }}
-                    data-ai-hint="pressure cooker"
-                  />
+                              </Card>
+                          </DialogTrigger>
+                          <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
+                            <DialogTitle className="sr-only">{item.title}</DialogTitle>
+                            <DialogDescription className="sr-only">{item.text}</DialogDescription>
+                            <Card className="bg-transparent border-0 shadow-none">
+                              <CardHeader>
+                                <CardTitle className="flex items-center gap-4 text-2xl"><item.icon className="text-accent w-8 h-8" /> {item.title}</CardTitle>
+                              </CardHeader>
+                              <CardContent className="text-base text-foreground">
+                                {item.text}
+                              </CardContent>
+                            </Card>
+                          </DialogContent>
+                        </Dialog>
+                    ))}
                 </div>
-            </div>
-            
-             <div className="md:col-span-2 flex-col order-3 md:order-3">
-              <h3 className="text-lg font-headline font-bold text-center mb-4">Baadhi ya vyakula unavyoweza kupika</h3>
-              <div className="grid grid-cols-2 gap-4 h-full">
-                {foodItems.map((food, index) => (
-                  <Card key={index} className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
-                    <CardHeader className="p-0">
-                        <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
-                            <Image src={food.image} alt={food.name} width={100} height={100} className="object-cover w-full h-full" data-ai-hint={food.hint}/>
-                        </div>
-                    </CardHeader>
-                    <CardContent className="p-0 mt-2">
-                        <CardTitle className="font-bold text-sm">{food.name}</CardTitle>
-                        <CardDescription className="text-xs mt-1">{food.description}</CardDescription>
-                    </CardContent>
-                  </Card>
-                ))}
               </div>
+
+              <div>
+                <h3 className="text-lg font-headline font-bold text-center mb-4">Baadhi ya vyakula unavyoweza kupika</h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 h-full">
+                  {foodItems.map((food, index) => (
+                    <Card key={index} className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
+                      <CardHeader className="p-0">
+                          <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
+                              <Image src={food.image} alt={food.name} width={100} height={100} className="object-cover w-full h-full" data-ai-hint={food.hint}/>
+                          </div>
+                      </CardHeader>
+                      <CardContent className="p-0 mt-2">
+                          <CardTitle className="font-bold text-sm">{food.name}</CardTitle>
+                          <CardDescription className="text-xs mt-1">{food.description}</CardDescription>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
@@ -237,7 +236,7 @@ Rahisi, haraka, na chenye Ladha.
 
               <div className="flex flex-col gap-8 justify-center h-full">
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                      <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105" style={{ animationDelay: '0s' }}>
+                      <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                           <CardHeader className="p-0">
                               <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
                                   <Image src="/cup.png" alt="Kikombe" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="measuring cup"/>
@@ -248,7 +247,7 @@ Rahisi, haraka, na chenye Ladha.
                               <CardDescription className="text-sm mt-1">Inakuja na kikombe cha kupimia.</CardDescription>
                           </CardContent>
                       </Card>
-                      <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105" style={{ animationDelay: '0.5s' }}>
+                      <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                           <CardHeader className="p-0">
                               <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
                                   <Image src="/spoon.png" alt="Kijiko" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="spoon"/>
@@ -259,7 +258,7 @@ Rahisi, haraka, na chenye Ladha.
                               <CardDescription className="text-sm mt-1">Inakuja na kijiko.</CardDescription>
                           </CardContent>
                       </Card>
-                      <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105" style={{ animationDelay: '1.0s' }}>
+                      <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                            <CardHeader className="p-0">
                               <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
                                   <Image src="/rack.png" alt="Steam Rack" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="steam rack"/>
@@ -270,7 +269,7 @@ Rahisi, haraka, na chenye Ladha.
                               <CardDescription className="text-sm mt-1">Inakuja na Steam Rack kwa ajili ya kuoka.</CardDescription>
                           </CardContent>
                       </Card>
-                       <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105" style={{ animationDelay: '1.5s' }}>
+                       <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                            <CardHeader className="p-0">
                               <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
                                   <Image src="/wire.png" alt="Waya" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="power cable"/>
@@ -281,7 +280,7 @@ Rahisi, haraka, na chenye Ladha.
                               <CardDescription className="text-sm mt-1">1.0M Copper cable, yenye pini tatu.</CardDescription>
                           </CardContent>
                       </Card>
-                       <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105" style={{ animationDelay: '2.0s' }}>
+                       <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                            <CardHeader className="p-0">
                               <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
                                   <Image src="/pot2.png" alt="Sufuria Kubwa" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="cooking pot"/>
