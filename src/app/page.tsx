@@ -304,52 +304,62 @@ Rahisi, haraka, na chenye Ladha.
               </div>
 
               <div className="flex flex-col gap-8 justify-center h-full">
-                  <div className="grid grid-cols-2 gap-8">
-                      <div className="flex flex-col items-center text-center gap-4 animate-bubble-float" style={{ animationDelay: '0s' }}>
-                          <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
-                              <Image src="/cup.png" alt="Kikombe" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="measuring cup"/>
-                          </div>
-                          <div>
-                              <h3 className="font-bold text-base">Kikombe</h3>
-                              <p className="text-sm text-muted-foreground">Inakuja na kikombe cha kupimia.</p>
-                          </div>
-                      </div>
-                      <div className="flex flex-col items-center text-center gap-4 animate-bubble-float" style={{ animationDelay: '0.5s' }}>
-                          <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
-                              <Image src="/spoon.png" alt="Kijiko" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="spoon"/>
-                          </div>
-                          <div>
-                              <h3 className="font-bold text-base">Kijiko</h3>
-                              <p className="text-sm text-muted-foreground">Inakuja na kijiko.</p>
-                          </div>
-                      </div>
-                      <div className="flex flex-col items-center text-center gap-4 animate-bubble-float" style={{ animationDelay: '1.0s' }}>
-                          <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
-                              <Image src="/rack.png" alt="Steam Rack" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="steam rack"/>
-                          </div>
-                          <div>
-                              <h3 className="font-bold text-base">Steam Rack</h3>
-                              <p className="text-sm text-muted-foreground">Inakuja na Steam Rack kwa ajili ya kuoka.</p>
-                          </div>
-                      </div>
-                       <div className="flex flex-col items-center text-center gap-4 animate-bubble-float" style={{ animationDelay: '1.5s' }}>
-                          <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
-                              <Image src="/wire.png" alt="Waya" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="power cable"/>
-                          </div>
-                          <div>
-                              <h3 className="font-bold text-base">Waya Imara</h3>
-                              <p className="text-sm text-muted-foreground">1.0M Copper cable, yenye pini tatu.</p>
-                          </div>
-                      </div>
-                       <div className="flex flex-col items-center text-center gap-4 animate-bubble-float" style={{ animationDelay: '2.0s' }}>
-                          <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10">
-                              <Image src="/pot2.png" alt="Sufuria Kubwa" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="cooking pot"/>
-                          </div>
-                          <div>
-                              <h3 className="font-bold text-base">Sufuria Kubwa</h3>
-                              <p className="text-sm text-muted-foreground">Lita 6, non-stick Aluminium.</p>
-                          </div>
-                      </div>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                      <Card className="flex flex-col items-center text-center gap-2 animate-bubble-float p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105" style={{ animationDelay: '0s' }}>
+                          <CardHeader className="p-0">
+                              <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
+                                  <Image src="/cup.png" alt="Kikombe" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="measuring cup"/>
+                              </div>
+                          </CardHeader>
+                          <CardContent className="p-0 mt-2">
+                              <CardTitle className="font-bold text-base">Kikombe</CardTitle>
+                              <CardDescription className="text-sm mt-1">Inakuja na kikombe cha kupimia.</CardDescription>
+                          </CardContent>
+                      </Card>
+                      <Card className="flex flex-col items-center text-center gap-2 animate-bubble-float p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105" style={{ animationDelay: '0.5s' }}>
+                          <CardHeader className="p-0">
+                              <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
+                                  <Image src="/spoon.png" alt="Kijiko" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="spoon"/>
+                              </div>
+                          </CardHeader>
+                          <CardContent className="p-0 mt-2">
+                              <CardTitle className="font-bold text-base">Kijiko</CardTitle>
+                              <CardDescription className="text-sm mt-1">Inakuja na kijiko.</CardDescription>
+                          </CardContent>
+                      </Card>
+                      <Card className="flex flex-col items-center text-center gap-2 animate-bubble-float p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105" style={{ animationDelay: '1.0s' }}>
+                           <CardHeader className="p-0">
+                              <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
+                                  <Image src="/rack.png" alt="Steam Rack" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="steam rack"/>
+                              </div>
+                          </CardHeader>
+                          <CardContent className="p-0 mt-2">
+                              <CardTitle className="font-bold text-base">Steam Rack</CardTitle>
+                              <CardDescription className="text-sm mt-1">Inakuja na Steam Rack kwa ajili ya kuoka.</CardDescription>
+                          </CardContent>
+                      </Card>
+                       <Card className="flex flex-col items-center text-center gap-2 animate-bubble-float p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105" style={{ animationDelay: '1.5s' }}>
+                           <CardHeader className="p-0">
+                              <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
+                                  <Image src="/wire.png" alt="Waya" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="power cable"/>
+                              </div>
+                          </CardHeader>
+                          <CardContent className="p-0 mt-2">
+                              <CardTitle className="font-bold text-base">Waya Imara</CardTitle>
+                              <CardDescription className="text-sm mt-1">1.0M Copper cable, yenye pini tatu.</CardDescription>
+                          </CardContent>
+                      </Card>
+                       <Card className="flex flex-col items-center text-center gap-2 animate-bubble-float p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105" style={{ animationDelay: '2.0s' }}>
+                           <CardHeader className="p-0">
+                              <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
+                                  <Image src="/pot2.png" alt="Sufuria Kubwa" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="cooking pot"/>
+                              </div>
+                          </CardHeader>
+                          <CardContent className="p-0 mt-2">
+                              <CardTitle className="font-bold text-base">Sufuria Kubwa</CardTitle>
+                              <CardDescription className="text-sm mt-1">Lita 6, non-stick Aluminium.</CardDescription>
+                          </CardContent>
+                      </Card>
                   </div>
               </div>
           </div>
@@ -485,6 +495,8 @@ Rahisi, haraka, na chenye Ladha.
     
 
     
+
+
 
 
 
