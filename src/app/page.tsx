@@ -140,7 +140,7 @@ Rahisi, haraka, na chenye Ladha.
               onMouseLeave={handleMouseLeave}
             >
               <Image
-                src="/Adobe Express - file.png"
+                src="/jiko2.jpg"
                 alt="Fuego SmartCook"
                 fill
                 quality={100}
@@ -284,7 +284,7 @@ Rahisi, haraka, na chenye Ladha.
               </div>
               <div className="relative w-full h-[70vh]">
                   <Image
-                      src="/Adobe Express - file.png"
+                      src="/jiko.jpg"
                       alt="Fuego SmartCook Sifa"
                       fill
                       quality={100}
@@ -441,6 +441,7 @@ Rahisi, haraka, na chenye Ladha.
 
 
     
+
 
 
 
