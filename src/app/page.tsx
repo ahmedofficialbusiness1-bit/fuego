@@ -95,7 +95,7 @@ Rahisi, haraka, na chenye Ladha.
           </div>
         </section>
 
-        <section id="faida" className="min-h-screen flex flex-col items-center justify-center px-8 pt-16 pb-16 bg-secondary">
+        <section id="faida" className="min-h-screen flex flex-col items-center justify-center px-8 pt-16 pb-16 bg-white text-black">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center w-full max-w-7xl mx-auto h-full gap-12">
             <div 
               className="relative w-full h-[70vh] order-1 md:order-1"
@@ -129,7 +129,7 @@ Rahisi, haraka, na chenye Ladha.
                       ].map((item, index) => (
                           <Dialog key={item.title}>
                             <DialogTrigger asChild>
-                                <Card className="cursor-pointer bg-card shadow-2xl transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105 hover:z-20">
+                                <Card className="cursor-pointer bg-card shadow-2xl transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105 hover:z-20 text-black">
                                     <CardHeader>
                                         <CardTitle className="flex items-center gap-2 text-base"><item.icon className="text-accent" /> {item.title}</CardTitle>
                                     </CardHeader>
@@ -161,7 +161,7 @@ Rahisi, haraka, na chenye Ladha.
             <h3 className="text-lg font-headline font-bold text-center mb-4">Baadhi ya vyakula unavyoweza kupika</h3>
             <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
               {foodItems.map((food, index) => (
-                <Card key={index} className="flex flex-col items-center text-center gap-2 p-4 bg-card shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
+                <Card key={index} className="flex flex-col items-center text-center gap-2 p-4 bg-card shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105 text-black">
                   <CardHeader className="p-0">
                       <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
                           <Image src={food.image} alt={food.name} width={100} height={100} className="object-cover w-full h-full" data-ai-hint={food.hint}/>
