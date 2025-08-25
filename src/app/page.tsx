@@ -351,14 +351,14 @@ Rahisi, haraka, na chenye Ladha.
                        <form className="space-y-4">
                         <div className="relative">
                           <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                          <Input placeholder="Jina lako" className="pl-10" />
+                          <Input placeholder="Jina lako" className="pl-10 bg-white text-black" />
                         </div>
                         <div className="relative">
                           <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                          <Input type="email" placeholder="Barua pepe yako" className="pl-10" />
+                          <Input type="email" placeholder="Barua pepe yako" className="pl-10 bg-white text-black" />
                         </div>
                         <div className="relative">
-                          <Textarea placeholder="Ujumbe wako..." rows={5} />
+                          <Textarea placeholder="Ujumbe wako..." rows={5} className="bg-white text-black" />
                         </div>
                         <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">Tuma Ujumbe</Button>
                       </form>
@@ -391,7 +391,3 @@ Rahisi, haraka, na chenye Ladha.
     
   );
 }
-
-    
-
-    
