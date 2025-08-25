@@ -17,7 +17,7 @@ export default function NunuaPage() {
   const [formToShow, setFormToShow] = useState<FormToShow>(null);
 
   const WholesaleForm = () => (
-    <Card className="w-full max-w-2xl">
+    <Card className="w-full max-w-2xl bg-white text-black">
       <CardHeader>
         <CardTitle>Fomu ya Ununuzi wa Jumla</CardTitle>
         <CardDescription>Jaza fomu hii ili kuweka oda yako ya jumla.</CardDescription>
@@ -114,7 +114,7 @@ export default function NunuaPage() {
             {formToShow === "jumla" && <WholesaleForm />}
             
             {formToShow === 'rejareja' && (
-                <Card>
+                <Card className="bg-white text-black">
                     <CardHeader>
                         <CardTitle>Inakuja Hivi Karibuni</CardTitle>
                     </CardHeader>
