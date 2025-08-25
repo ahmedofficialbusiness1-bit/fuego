@@ -185,7 +185,7 @@ Rahisi, haraka, na chenye Ladha.
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl w-full mx-auto items-center">
               <div className="flex flex-col gap-8 justify-center h-full">
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                      <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
+                      <Card className="flex flex-col items-center text-center gap-2 p-4 bg-white text-black shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                           <CardHeader className="p-0">
                               <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
                                   <Image src="/cup.png" alt="Kikombe" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="measuring cup"/>
@@ -196,7 +196,7 @@ Rahisi, haraka, na chenye Ladha.
                               <CardDescription className="text-xs mt-1">Inakuja na kikombe cha kupimia.</CardDescription>
                           </CardContent>
                       </Card>
-                      <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
+                      <Card className="flex flex-col items-center text-center gap-2 p-4 bg-white text-black shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                           <CardHeader className="p-0">
                               <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
                                   <Image src="/spoon.png" alt="Kijiko" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="spoon"/>
@@ -207,7 +207,7 @@ Rahisi, haraka, na chenye Ladha.
                               <CardDescription className="text-xs mt-1">Inakuja na kijiko.</CardDescription>
                           </CardContent>
                       </Card>
-                      <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
+                      <Card className="flex flex-col items-center text-center gap-2 p-4 bg-white text-black shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                            <CardHeader className="p-0">
                               <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
                                   <Image src="/rack.png" alt="Steam Rack" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="steam rack"/>
@@ -218,7 +218,7 @@ Rahisi, haraka, na chenye Ladha.
                               <CardDescription className="text-xs mt-1">Inakuja na Steam Rack kwa ajili ya kuoka.</CardDescription>
                           </CardContent>
                       </Card>
-                       <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
+                       <Card className="flex flex-col items-center text-center gap-2 p-4 bg-white text-black shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                            <CardHeader className="p-0">
                               <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
                                   <Image src="/wire.png" alt="Waya" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="power cable"/>
@@ -229,7 +229,7 @@ Rahisi, haraka, na chenye Ladha.
                               <CardDescription className="text-xs mt-1">1.0M Copper cable, yenye pini tatu.</CardDescription>
                           </CardContent>
                       </Card>
-                       <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
+                       <Card className="flex flex-col items-center text-center gap-2 p-4 bg-white text-black shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                            <CardHeader className="p-0">
                               <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
                                   <Image src="/pot2.png" alt="Sufuria Kubwa" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="cooking pot"/>
@@ -240,7 +240,7 @@ Rahisi, haraka, na chenye Ladha.
                               <CardDescription className="text-xs mt-1">Lita 6, non-stick Aluminium.</CardDescription>
                           </CardContent>
                       </Card>
-                       <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
+                       <Card className="flex flex-col items-center text-center gap-2 p-4 bg-white text-black shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                            <CardHeader className="p-0">
                               <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto flex items-center justify-center">
                                 <Award className="w-8 h-8 text-accent" />
@@ -267,7 +267,7 @@ Rahisi, haraka, na chenye Ladha.
           <div className="mt-12 w-full max-w-4xl">
               <Dialog>
                 <DialogTrigger asChild>
-                    <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105 hover:z-20 w-full">
+                    <Card className="cursor-pointer bg-white text-black shadow-2xl transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105 hover:z-20 w-full">
                         <CardHeader>
                             <CardTitle>Sifa za Kiufundi</CardTitle>
                         </CardHeader>
