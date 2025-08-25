@@ -47,7 +47,7 @@ export default function Home() {
   ];
 
   return (
-    <>
+    
       <main className="w-full relative flex flex-col">
         <header className="sticky top-0 left-0 right-0 z-20 flex justify-between items-center p-4 bg-background/80 backdrop-blur-sm">
             <FuegoLogo className="h-8 w-auto" />
@@ -341,7 +341,7 @@ Rahisi, haraka, na chenye Ladha.
                   </Card>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
-                  <DialogTitle className="sr-only">Contact Form</DialogTitle>
+                  <DialogTitle>Tuandikie Ujumbe</DialogTitle>
                   <DialogDescription className="sr-only">Fill out this form to send us a message.</DialogDescription>
                   <Card className="bg-transparent border-0 shadow-none">
                     <CardHeader>
@@ -388,7 +388,6 @@ Rahisi, haraka, na chenye Ladha.
           </div>
         </section>
       </main>
-      <Toaster />
-    </>
+    
   );
 }
