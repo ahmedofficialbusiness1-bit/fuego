@@ -13,14 +13,24 @@ import { ArrowLeft } from "lucide-react";
 
 type FormToShow = "jumla" | "rejareja" | null;
 
+const PRICE_PER_ITEM = 150000;
+
 export default function NunuaPage() {
   const [formToShow, setFormToShow] = useState<FormToShow>(null);
+  const [quantity, setQuantity] = useState(1);
+  const [totalPrice, setTotalPrice] = useState(PRICE_PER_ITEM);
 
-  const WholesaleForm = () => (
+  const handleQuantityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newQuantity = parseInt(event.target.value, 10) || 0;
+    setQuantity(newQuantity);
+    setTotalPrice(newQuantity * PRICE_PER_ITEM);
+  };
+
+  const RetailForm = () => (
     <Card className="w-full max-w-2xl bg-white text-black">
       <CardHeader>
-        <CardTitle>Fomu ya Ununuzi wa Jumla</CardTitle>
-        <CardDescription>Jaza fomu hii ili kuweka oda yako ya jumla.</CardDescription>
+        <CardTitle>Fomu ya Ununuzi wa Rejareja</CardTitle>
+        <CardDescription>Jaza fomu hii ili kuweka oda yako ya rejareja.</CardDescription>
       </CardHeader>
       <CardContent>
         <form className="space-y-6">
@@ -58,7 +68,11 @@ export default function NunuaPage() {
 
           <div className="space-y-2">
             <Label htmlFor="quantity">Idadi ya Bidhaa</Label>
-            <Input id="quantity" type="number" min="1" placeholder="Weka idadi" />
+            <Input id="quantity" type="number" min="1" placeholder="Weka idadi" value={quantity} onChange={handleQuantityChange} />
+          </div>
+
+          <div className="p-4 rounded-lg bg-muted">
+            <p className="text-lg font-bold text-center">Jumla ya Bei: {totalPrice.toLocaleString('en-US')} TZS</p>
           </div>
 
           <div className="space-y-3">
@@ -111,19 +125,20 @@ export default function NunuaPage() {
                 </div>
             )}
 
-            {formToShow === "jumla" && <WholesaleForm />}
-            
-            {formToShow === 'rejareja' && (
+            {formToShow === 'jumla' && (
                 <Card className="bg-white text-black">
                     <CardHeader>
                         <CardTitle>Inakuja Hivi Karibuni</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <p>Sehemu ya ununuzi wa rejareja bado inatengenezwa.</p>
+                        <p>Sehemu ya ununuzi wa jumla bado inatengenezwa.</p>
                         <Button onClick={() => setFormToShow(null)} variant="link" className="px-0">Rudi nyuma</Button>
                     </CardContent>
                 </Card>
             )}
+
+            {formToShow === "rejareja" && <RetailForm />}
+            
 
         </main>
     </div>
