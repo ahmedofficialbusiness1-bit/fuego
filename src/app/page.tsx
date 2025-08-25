@@ -121,7 +121,7 @@ Rahisi, haraka, na chenye Ladha.
                 alt="Fuego SmartCook"
                 fill
                 quality={100}
-                className="object-contain transition-transform duration-300 ease-out"
+                className="object-contain transition-transform duration-300 ease-out animate-bubble-float"
                 style={{
                   filter: 'drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5))',
                   transform: imageTransform,
@@ -280,6 +280,17 @@ Rahisi, haraka, na chenye Ladha.
                               <CardDescription className="text-xs mt-1">Lita 6, non-stick Aluminium.</CardDescription>
                           </CardContent>
                       </Card>
+                       <Card className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
+                           <CardHeader className="p-0">
+                              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
+                                  <Image src="/book.png" alt="Kitabu" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="recipe book"/>
+                              </div>
+                          </CardHeader>
+                          <CardContent className="p-0 mt-2">
+                              <CardTitle className="font-bold text-sm">Kitabu cha Mapishi</CardTitle>
+                              <CardDescription className="text-xs mt-1">Kitabu chenye mapishi 40+.</CardDescription>
+                          </CardContent>
+                      </Card>
                   </div>
               </div>
               <div className="relative w-full h-[70vh]">
@@ -421,31 +432,3 @@ Rahisi, haraka, na chenye Ladha.
     </>
   );
 }
-
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
