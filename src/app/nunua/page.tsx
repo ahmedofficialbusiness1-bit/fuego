@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { FuegoLogo } from "@/components/fuego-logo";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Award, ShieldCheck } from "lucide-react";
 
 type FormToShow = "jumla" | "rejareja" | null;
 
@@ -71,8 +71,18 @@ export default function NunuaPage() {
             <Input id="quantity" type="number" min="1" placeholder="Weka idadi" value={quantity} onChange={handleQuantityChange} />
           </div>
 
-          <div className="p-4 rounded-lg bg-muted">
+          <div className="p-4 rounded-lg bg-muted space-y-3">
             <p className="text-lg font-bold text-center">Jumla ya Bei: {totalPrice.toLocaleString('en-US')} TZS</p>
+            <div className="flex justify-around text-sm text-muted-foreground border-t border-border pt-3">
+                <div className="flex items-center gap-2">
+                    <ShieldCheck className="w-5 h-5 text-accent" />
+                    <span>Warranty: Mwaka Mmoja</span>
+                </div>
+                <div className="flex items-center gap-2">
+                    <Award className="w-5 h-5 text-accent" />
+                    <span>Guarantee: 100% Asilia</span>
+                </div>
+            </div>
           </div>
 
           <div className="space-y-3">
