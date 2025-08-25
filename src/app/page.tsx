@@ -314,10 +314,10 @@ Rahisi, haraka, na chenye Ladha.
             </div>
         </section>
 
-        <section id="mawasiliano" className="min-h-screen flex flex-col items-center justify-center px-8 pt-16 pb-16 bg-[#322d29]">
+        <section id="mawasiliano" className="min-h-screen flex flex-col items-center justify-center px-8 pt-16 pb-16 bg-[#322d29] text-white">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-headline font-extrabold text-foreground tracking-tighter">Wasiliana Nasi</h2>
-            <p className="max-w-xl text-muted-foreground mx-auto text-sm mt-4">Una maswali? Tuko hapa kukusaidia. Wasiliana nasi kupitia njia yoyote hapa chini.</p>
+            <h2 className="text-4xl md:text-5xl font-headline font-extrabold tracking-tighter">Wasiliana Nasi</h2>
+            <p className="max-w-xl text-gray-300 mx-auto text-sm mt-4">Una maswali? Tuko hapa kukusaidia. Wasiliana nasi kupitia njia yoyote hapa chini.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
             <div className="order-2 md:order-1">
@@ -370,19 +370,19 @@ Rahisi, haraka, na chenye Ladha.
             <div className="space-y-4 flex flex-col justify-center order-1 md:order-2">
               <div className="flex items-center gap-4">
                 <Phone className="w-6 h-6 text-accent" />
-                <span className="text-muted-foreground">+255 712 345 678</span>
+                <span className="text-gray-300">+255 712 345 678</span>
               </div>
               <div className="flex items-center gap-4">
                 <Mail className="w-6 h-6 text-accent" />
-                <span className="text-muted-foreground">msaada@fuego.co.tz</span>
+                <span className="text-gray-300">msaada@fuego.co.tz</span>
               </div>
               <div className="flex items-center gap-4">
                 <MessageSquare className="w-6 h-6 text-accent" />
-                <span className="text-muted-foreground">Chat na sisi moja kwa moja</span>
+                <span className="text-gray-300">Chat na sisi moja kwa moja</span>
               </div>
               <div className="flex items-center gap-4">
                 <LifeBuoy className="w-6 h-6 text-accent" />
-                <span className="text-muted-foreground">Tembelea kituo chetu cha usaidizi</span>
+                <span className="text-gray-300">Tembelea kituo chetu cha usaidizi</span>
               </div>
             </div>
           </div>
