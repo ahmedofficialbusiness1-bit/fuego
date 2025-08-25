@@ -187,7 +187,7 @@ Rahisi, haraka, na chenye Ladha.
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                       <Card className="flex flex-col items-center text-center gap-2 p-4 bg-white text-black shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                           <CardHeader className="p-0">
-                              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-[#899481] z-10 mx-auto">
+                              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-black z-10 mx-auto">
                                   <Image src="/cup.png" alt="Kikombe" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="measuring cup"/>
                               </div>
                           </CardHeader>
@@ -198,7 +198,7 @@ Rahisi, haraka, na chenye Ladha.
                       </Card>
                       <Card className="flex flex-col items-center text-center gap-2 p-4 bg-white text-black shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                           <CardHeader className="p-0">
-                              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-[#899481] z-10 mx-auto">
+                              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-black z-10 mx-auto">
                                   <Image src="/spoon.png" alt="Kijiko" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="spoon"/>
                               </div>
                           </CardHeader>
@@ -209,7 +209,7 @@ Rahisi, haraka, na chenye Ladha.
                       </Card>
                       <Card className="flex flex-col items-center text-center gap-2 p-4 bg-white text-black shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                            <CardHeader className="p-0">
-                              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-[#899481] z-10 mx-auto">
+                              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-black z-10 mx-auto">
                                   <Image src="/rack.png" alt="Steam Rack" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="steam rack"/>
                               </div>
                           </CardHeader>
@@ -220,7 +220,7 @@ Rahisi, haraka, na chenye Ladha.
                       </Card>
                        <Card className="flex flex-col items-center text-center gap-2 p-4 bg-white text-black shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                            <CardHeader className="p-0">
-                              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-[#899481] z-10 mx-auto">
+                              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-black z-10 mx-auto">
                                   <Image src="/wire.png" alt="Waya" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="power cable"/>
                               </div>
                           </CardHeader>
@@ -231,7 +231,7 @@ Rahisi, haraka, na chenye Ladha.
                       </Card>
                        <Card className="flex flex-col items-center text-center gap-2 p-4 bg-white text-black shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                            <CardHeader className="p-0">
-                              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-[#899481] z-10 mx-auto">
+                              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-black z-10 mx-auto">
                                   <Image src="/pot2.png" alt="Sufuria Kubwa" width={100} height={100} className="object-contain w-full h-full p-2" data-ai-hint="cooking pot"/>
                               </div>
                           </CardHeader>
@@ -242,8 +242,8 @@ Rahisi, haraka, na chenye Ladha.
                       </Card>
                        <Card className="flex flex-col items-center text-center gap-2 p-4 bg-white text-black shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                            <CardHeader className="p-0">
-                              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-[#899481] z-10 mx-auto flex items-center justify-center">
-                                <Award className="w-8 h-8 text-accent" />
+                              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-accent bg-black z-10 mx-auto flex items-center justify-center">
+                                <Award className="w-8 h-8 text-white" />
                               </div>
                           </CardHeader>
                           <CardContent className="p-0 mt-2">
