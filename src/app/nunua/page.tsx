@@ -80,7 +80,7 @@ export default function NunuaPage() {
                 </div>
                 <div className="flex items-center gap-2">
                     <Award className="w-5 h-5 text-accent" />
-                    <span>Guarantee: 100% Asilia</span>
+                    <span>Guarantee: 100%</span>
                 </div>
             </div>
           </div>
