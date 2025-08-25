@@ -161,7 +161,7 @@ Rahisi, haraka, na chenye Ladha.
             <h3 className="text-lg font-headline font-bold text-center mb-4">Baadhi ya vyakula unavyoweza kupika</h3>
             <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
               {foodItems.map((food, index) => (
-                <Card key={index} className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
+                <Card key={index} className="flex flex-col items-center text-center gap-2 p-4 bg-card shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                   <CardHeader className="p-0">
                       <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
                           <Image src={food.image} alt={food.name} width={100} height={100} className="object-cover w-full h-full" data-ai-hint={food.hint}/>
