@@ -194,9 +194,9 @@ Rahisi, haraka, na chenye Ladha.
                 </div>
               </div>
 
-              <div>
+              <div className="flex flex-col items-center">
                 <h3 className="text-lg font-headline font-bold text-center mb-4">Baadhi ya vyakula unavyoweza kupika</h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 h-full">
+                <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
                   {foodItems.map((food, index) => (
                     <Card key={index} className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
                       <CardHeader className="p-0">
@@ -442,3 +442,4 @@ Rahisi, haraka, na chenye Ladha.
 
 
     
+
