@@ -274,7 +274,7 @@ Rahisi, haraka, na chenye Ladha.
                             <CardTitle>Sifa za Kiufundi</CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <ul className="space-y-3 text-muted-foreground text-xs columns-2">
+                            <ul className="space-y-3 text-muted-foreground text-xs columns-2 list-disc list-inside">
                                 <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
                                 <li><strong>Power:</strong> 1000W</li>
                                 <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
@@ -297,7 +297,7 @@ Rahisi, haraka, na chenye Ladha.
                           <CardTitle className="text-2xl">Sifa za Kiufundi</CardTitle>
                       </CardHeader>
                       <CardContent>
-                          <ul className="space-y-4 text-base text-foreground">
+                          <ul className="space-y-4 text-base text-foreground list-disc pl-5">
                               <li><strong>Voltage/Hz:</strong> 220V - 240V, 50/60Hz</li>
                               <li><strong>Power:</strong> 1000W</li>
                               <li><strong>Outer Housing:</strong> SS#410/0.3mm Thickness</li>
@@ -434,5 +434,6 @@ Rahisi, haraka, na chenye Ladha.
 }
 
     
+
 
 
