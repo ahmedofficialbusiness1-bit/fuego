@@ -132,7 +132,7 @@ Rahisi, haraka, na chenye Ladha.
           </div>
         </section>
 
-        <section id="faida" className="min-h-screen flex items-center justify-center px-8 pt-16 pb-16 bg-secondary/30">
+        <section id="faida" className="min-h-screen flex flex-col items-center justify-center px-8 pt-16 pb-16 bg-secondary/30">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center w-full max-w-7xl mx-auto h-full gap-12">
             <div 
               className="relative w-full h-[70vh] order-1 md:order-1"
@@ -193,26 +193,24 @@ Rahisi, haraka, na chenye Ladha.
                     ))}
                 </div>
               </div>
-
-              <div className="flex flex-col items-center">
-                <h3 className="text-lg font-headline font-bold text-center mb-4">Baadhi ya vyakula unavyoweza kupika</h3>
-                <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
-                  {foodItems.map((food, index) => (
-                    <Card key={index} className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
-                      <CardHeader className="p-0">
-                          <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
-                              <Image src={food.image} alt={food.name} width={100} height={100} className="object-cover w-full h-full" data-ai-hint={food.hint}/>
-                          </div>
-                      </CardHeader>
-                      <CardContent className="p-0 mt-2">
-                          <CardTitle className="font-bold text-sm">{food.name}</CardTitle>
-                          <CardDescription className="text-xs mt-1">{food.description}</CardDescription>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-
+            </div>
+          </div>
+          <div className="mt-12 w-full max-w-4xl flex flex-col items-center">
+            <h3 className="text-lg font-headline font-bold text-center mb-4">Baadhi ya vyakula unavyoweza kupika</h3>
+            <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
+              {foodItems.map((food, index) => (
+                <Card key={index} className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
+                  <CardHeader className="p-0">
+                      <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
+                          <Image src={food.image} alt={food.name} width={100} height={100} className="object-cover w-full h-full" data-ai-hint={food.hint}/>
+                      </div>
+                  </CardHeader>
+                  <CardContent className="p-0 mt-2">
+                      <CardTitle className="font-bold text-sm">{food.name}</CardTitle>
+                      <CardDescription className="text-xs mt-1">{food.description}</CardDescription>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
@@ -442,4 +440,5 @@ Rahisi, haraka, na chenye Ladha.
 
 
     
+
 
