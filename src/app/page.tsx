@@ -316,7 +316,7 @@ Rahisi, haraka, na chenye Ladha.
             </div>
         </section>
 
-        <section id="mawasiliano" className="min-h-screen flex flex-col items-center justify-center px-8 pt-16 pb-16 bg-[#322d29] text-white">
+        <footer id="mawasiliano" className="min-h-screen flex flex-col items-center justify-center px-8 pt-16 pb-16 bg-[#322d29] text-white">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-headline font-extrabold tracking-tighter">Wasiliana Nasi</h2>
             <p className="max-w-xl text-gray-300 mx-auto text-sm mt-4">Una maswali? Tuko hapa kukusaidia. Wasiliana nasi kupitia njia yoyote hapa chini.</p>
@@ -329,14 +329,14 @@ Rahisi, haraka, na chenye Ladha.
                       <div className="space-y-4">
                         <div className="relative">
                           <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                          <Input placeholder="Jina lako" className="pl-10 pointer-events-none" />
+                          <Input placeholder="Jina lako" className="pl-10 pointer-events-none bg-white text-black" />
                         </div>
                         <div className="relative">
                           <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                          <Input type="email" placeholder="Barua pepe yako" className="pl-10 pointer-events-none" />
+                          <Input type="email" placeholder="Barua pepe yako" className="pl-10 pointer-events-none bg-white text-black" />
                         </div>
                         <div className="relative">
-                          <Textarea placeholder="Ujumbe wako..." rows={5} className="pointer-events-none" />
+                          <Textarea placeholder="Ujumbe wako..." rows={5} className="pointer-events-none bg-white text-black" />
                         </div>
                         <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground pointer-events-none">Tuma Ujumbe</Button>
                       </div>
@@ -386,10 +386,26 @@ Rahisi, haraka, na chenye Ladha.
                 <LifeBuoy className="w-6 h-6 text-white" />
                 <span className="text-gray-300">Tembelea kituo chetu cha usaidizi</span>
               </div>
+               <div className="flex items-center gap-4 pt-4">
+                  <Link href="https://www.tiktok.com/@fuego_smartcooker?_t=ZM-8zAdCjrRy80&_r=1" target="_blank" rel="noopener noreferrer" aria-label="Fuego SmartCook on TikTok">
+                      <svg className="w-6 h-6 text-white hover:opacity-80 transition-opacity" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.03-4.83-.95-6.43-2.98-1.59-2.01-2.18-4.71-1.84-7.06.35-2.36 1.72-4.49 3.48-5.97 1.75-1.48 3.8-2.31 5.9-2.28.23.01.47.01.7.02z"/></svg>
+                  </Link>
+                  <Link href="https://www.instagram.com/fuego_smartcooker?utm_source=qr&igsh=dXhheWw3NjFoeHJ6" target="_blank" rel="noopener noreferrer" aria-label="Fuego SmartCook on Instagram">
+                      <svg className="w-6 h-6 text-white hover:opacity-80 transition-opacity" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg>
+                  </Link>
+                  <Link href="https://www.facebook.com/profile.php?id=61577259601606" target="_blank" rel="noopener noreferrer" aria-label="Fuego SmartCook on Facebook">
+                      <svg className="w-6 h-6 text-white hover:opacity-80 transition-opacity" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06c0 5.52 4.5 10.02 10 10.02 5.5 0 10-4.5 10-10.02C22 6.53 17.5 2.04 12 2.04zM16.5 8.25h-2.25c-.34 0-.62.28-.62.62v1.63h2.87l-.37 2.25h-2.5v6.75h-2.5V12.75H9V10.5h1.75V9.1c0-1.74 1.06-2.69 2.62-2.69h2.13v1.84z"/></svg>
+                  </Link>
+              </div>
             </div>
           </div>
-        </section>
+           <div className="border-t border-gray-700 mt-12 pt-8 w-full max-w-4xl text-center text-sm text-gray-400">
+                <p>&copy; {new Date().getFullYear()} Fuego SmartCook. All Rights Reserved.</p>
+            </div>
+        </footer>
       </main>
     
   );
 }
+
+    
