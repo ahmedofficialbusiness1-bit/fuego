@@ -9,13 +9,25 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { FuegoLogo } from "@/components/fuego-logo";
 import Link from "next/link";
-import { ArrowLeft, Award, ShieldCheck } from "lucide-react";
+import { ArrowLeft, Award, ShieldCheck, Upload } from "lucide-react";
 
 type FormToShow = "jumla" | "rejareja" | null;
 
 const PRICE_PER_ITEM = 150000;
 
-const RetailForm = ({ quantity, handleQuantityChange, totalPrice }: { quantity: number; handleQuantityChange: (event: React.ChangeEvent<HTMLInputElement>) => void; totalPrice: number; }) => (
+const RetailForm = ({ 
+    quantity, 
+    handleQuantityChange, 
+    totalPrice,
+    selectedPaymentMethod,
+    handlePaymentMethodChange
+}: { 
+    quantity: number; 
+    handleQuantityChange: (event: React.ChangeEvent<HTMLInputElement>) => void; 
+    totalPrice: number; 
+    selectedPaymentMethod: string;
+    handlePaymentMethodChange: (value: string) => void;
+}) => (
     <Card className="w-full max-w-2xl bg-white text-black">
       <CardHeader>
         <CardTitle>Fomu ya Ununuzi wa Rejareja</CardTitle>
@@ -76,7 +88,7 @@ const RetailForm = ({ quantity, handleQuantityChange, totalPrice }: { quantity: 
 
           <div className="space-y-3">
             <Label>Njia ya Malipo</Label>
-            <RadioGroup defaultValue="cash" className="space-y-2">
+            <RadioGroup value={selectedPaymentMethod} onValueChange={handlePaymentMethodChange} className="space-y-2">
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="cash" id="r1" />
                 <Label htmlFor="r1">Cash On Delivery</Label>
@@ -91,6 +103,36 @@ const RetailForm = ({ quantity, handleQuantityChange, totalPrice }: { quantity: 
               </div>
             </RadioGroup>
           </div>
+          
+          <div className="p-4 rounded-lg bg-muted text-sm space-y-3">
+            {selectedPaymentMethod === 'cash' && (
+                <div>
+                    <h3 className="font-bold mb-2">Maelezo ya Cash on Delivery</h3>
+                    <p>Hii ni kwa Unguja pekee yake, na gharama za delivery ni juu yetu kwa maeneo ya Unguja mjini pekee.</p>
+                </div>
+            )}
+            {selectedPaymentMethod === 'lipa' && (
+                <div className="space-y-2">
+                    <h3 className="font-bold mb-2">Maelezo ya Lipa Namba</h3>
+                    <p>1. Fanya malipo kwenye Lipa Namba: <strong className="text-accent">123456</strong> (Jina: Mlandege Home Store)</p>
+                    <p>2. Mtandao: <strong className="text-accent">Mixx by Yas</strong></p>
+                    <p>3. Screenshot malipo yako na upload hapa chini.</p>
+                    <div className="relative flex items-center">
+                        <Upload className="absolute left-3 w-5 h-5 text-muted-foreground" />
+                        <Input type="file" className="pl-10" />
+                    </div>
+                </div>
+            )}
+            {selectedPaymentMethod === 'bank' && (
+                <div className="space-y-2">
+                    <h3 className="font-bold mb-2">Maelezo ya Bank Account</h3>
+                    <p>Benki: <strong className="text-accent">NBC Bank</strong></p>
+                    <p>Jina la Akaunti: <strong className="text-accent">Mlandege Home Store</strong></p>
+                    <p>Namba ya Akaunti: <strong className="text-accent">[Weka Namba Hapa]</strong></p>
+                </div>
+            )}
+          </div>
+
 
           <Button type="submit" className="w-full">Weka Oda</Button>
         </form>
@@ -102,12 +144,17 @@ export default function NunuaPage() {
   const [formToShow, setFormToShow] = useState<FormToShow>(null);
   const [quantity, setQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(PRICE_PER_ITEM);
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("cash");
 
   const handleQuantityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newQuantity = parseInt(event.target.value, 10) || 0;
     setQuantity(newQuantity);
     setTotalPrice(newQuantity * PRICE_PER_ITEM);
   };
+  
+  const handlePaymentMethodChange = (value: string) => {
+    setSelectedPaymentMethod(value);
+  }
 
 
   return (
@@ -148,7 +195,7 @@ export default function NunuaPage() {
                 </Card>
             )}
 
-            {formToShow === "rejareja" && <RetailForm quantity={quantity} handleQuantityChange={handleQuantityChange} totalPrice={totalPrice} />}
+            {formToShow === "rejareja" && <RetailForm quantity={quantity} handleQuantityChange={handleQuantityChange} totalPrice={totalPrice} selectedPaymentMethod={selectedPaymentMethod} handlePaymentMethodChange={handlePaymentMethodChange} />}
             
 
         </main>
