@@ -369,19 +369,19 @@ Rahisi, haraka, na chenye Ladha.
             </div>
             <div className="space-y-4 flex flex-col justify-center order-1 md:order-2">
               <div className="flex items-center gap-4">
-                <Phone className="w-6 h-6 text-accent" />
+                <Phone className="w-6 h-6 text-white" />
                 <span className="text-gray-300">+255 712 345 678</span>
               </div>
               <div className="flex items-center gap-4">
-                <Mail className="w-6 h-6 text-accent" />
+                <Mail className="w-6 h-6 text-white" />
                 <span className="text-gray-300">msaada@fuego.co.tz</span>
               </div>
               <div className="flex items-center gap-4">
-                <MessageSquare className="w-6 h-6 text-accent" />
+                <MessageSquare className="w-6 h-6 text-white" />
                 <span className="text-gray-300">Chat na sisi moja kwa moja</span>
               </div>
               <div className="flex items-center gap-4">
-                <LifeBuoy className="w-6 h-6 text-accent" />
+                <LifeBuoy className="w-6 h-6 text-white" />
                 <span className="text-gray-300">Tembelea kituo chetu cha usaidizi</span>
               </div>
             </div>
@@ -391,5 +391,7 @@ Rahisi, haraka, na chenye Ladha.
     
   );
 }
+
+    
 
     
