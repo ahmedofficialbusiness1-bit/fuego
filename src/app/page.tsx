@@ -129,7 +129,7 @@ Rahisi, haraka, na chenye Ladha.
                       ].map((item, index) => (
                           <Dialog key={item.title}>
                             <DialogTrigger asChild>
-                                <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105 hover:z-20">
+                                <Card className="cursor-pointer bg-card shadow-2xl transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105 hover:z-20">
                                     <CardHeader>
                                         <CardTitle className="flex items-center gap-2 text-base"><item.icon className="text-accent" /> {item.title}</CardTitle>
                                     </CardHeader>
