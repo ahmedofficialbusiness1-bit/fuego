@@ -67,6 +67,19 @@ export default function Home() {
     };
   }, []);
 
+  const foodItems = [
+    { name: 'Ugali', description: 'Unapika vyakula vyote jamii ya ugali.', image: '/ugali.png', hint: 'ugali dish' },
+    { name: 'Maharage', description: 'Unapika vyakula vyote jamii ya maharage yakiwemo makande.', image: '/maharage2.png', hint: 'beans dish' },
+    { name: 'Wali', description: 'Unapika wali wa aina yoyote.', image: '/wali2.png', hint: 'rice dish' },
+    { name: 'Supu', description: 'Unapika supu aina zote.', image: '/supu.png', hint: 'soup bowl' },
+    { name: 'Keki', description: 'Unapika keki aina zote.', image: '/keki.png', hint: 'cake slice' },
+    { name: 'Nyama', description: 'Unapika nyama na kuku wa aina zote.', image: '/kuku.png', hint: 'chicken dish' },
+    { name: 'Ndizi', description: 'Unapika vyakula vyote jamii ya ndizi.', image: '/ndizi.png', hint: 'plantain dish' },
+    { name: 'Mchuzi', description: 'Unapika mchuzi wa aina yoyote.', image: '/mchuzi.png', hint: 'maize beans' },
+    { name: 'Mboga', description: 'inapika mboga za aina zote.', image: '/mboga.png', hint: 'vegetable dish' },
+    { name: 'Maandazi', description: 'ina bake kila kitu.', image: '/maandazi.png', hint: 'maandazi pastry' },
+  ];
+
   return (
     <>
       <main className="w-full relative flex flex-col">
@@ -184,104 +197,23 @@ Rahisi, haraka, na chenye Ladha.
                 </div>
             </div>
             
-            <div className="md:col-span-2 flex-col order-3 md:order-3">
-                <h3 className="text-lg font-headline font-bold text-center mb-4">Baadhi ya vyakula unavyoweza kupika</h3>
-                <div className="grid grid-cols-2 gap-4 h-full">
-                    <div className="flex flex-col items-center justify-center gap-8">
-                        <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0s' }}>
-                            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="/ugali.png" alt="Ugali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="ugali dish"/>
-                            </div>
-                            <div>
-                                <h3 className="font-bold text-sm">Ugali</h3>
-                                <p className="text-xs text-muted-foreground">Unapika vyakula vyote jamii ya ugali.</p>
-                            </div>
+             <div className="md:col-span-2 flex-col order-3 md:order-3">
+              <h3 className="text-lg font-headline font-bold text-center mb-4">Baadhi ya vyakula unavyoweza kupika</h3>
+              <div className="grid grid-cols-2 gap-4 h-full">
+                {foodItems.map((food, index) => (
+                  <Card key={index} className="flex flex-col items-center text-center gap-2 p-4 bg-accent/10 backdrop-blur-sm border-accent/30 shadow-lg transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105">
+                    <CardHeader className="p-0">
+                        <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-accent bg-background z-10 mx-auto">
+                            <Image src={food.image} alt={food.name} width={100} height={100} className="object-cover w-full h-full" data-ai-hint={food.hint}/>
                         </div>
-                        <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.5s' }}>
-                            <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="/maharage2.png" alt="Maharage" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="beans dish"/>
-                            </div>
-                            <div>
-                                <h3 className="font-bold text-sm">Maharage</h3>
-                                <p className="text-xs text-muted-foreground">Unapika vyakula vyote jamii ya maharage yakiwemo makande.</p>
-                            </div>
-                        </div>
-                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.5s' }}>
-                            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="/wali2.png" alt="Wali" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="rice dish"/>
-                            </div>
-                            <div>
-                                <h3 className="font-bold text-sm">Wali</h3>
-                                <p className="text-xs text-muted-foreground">Unapika wali wa aina yoyote.</p>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.5s' }}>
-                            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="/supu.png" alt="Supu" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="soup bowl"/>
-                            </div>
-                             <div>
-                                <h3 className="font-bold text-sm">Supu</h3>
-                                <p className="text-xs text-muted-foreground">Unapika supu aina zote.</p>
-                            </div>
-                        </div>
-                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1s' }}>
-                            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="/keki.png" alt="Keki" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="cake slice"/>
-                            </div>
-                             <div>
-                                <h3 className="font-bold text-sm">Keki</h3>
-                                <p className="text-xs text-muted-foreground">Unapika keki aina zote.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="flex flex-col items-center justify-center gap-8">
-                        <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.8s' }}>
-                            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="/kuku.png" alt="Nyama" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="chicken dish"/>
-                            </div>
-                            <div>
-                                <h3 className="font-bold text-sm">Nyama</h3>
-                                <p className="text-xs text-muted-foreground">Unapika nyama na kuku wa aina zote.</p>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.2s' }}>
-                            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="/ndizi.png" alt="Ndizi" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="plantain dish"/>
-                            </div>
-                            <div>
-                                <h3 className="font-bold text-sm">Ndizi</h3>
-                                <p className="text-xs text-muted-foreground">Unapika vyakula vyote jamii ya ndizi.</p>
-                            </div>
-                        </div>
-                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '0.3s' }}>
-                            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="/mchuzi.png" alt="Mchuzi" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="maize beans"/>
-                            </div>
-                            <div>
-                                <h3 className="font-bold text-sm">Mchuzi</h3>
-                                <p className="text-xs text-muted-foreground">Unapika mchuzi wa aina yoyote.</p>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '1.8s' }}>
-                            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="/mboga.png" alt="Mboga" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="vegetable dish"/>
-                            </div>
-                             <div>
-                                <h3 className="font-bold text-sm">Mboga</h3>
-                                <p className="text-xs text-muted-foreground">inapika mboga za aina zote.</p>
-                            </div>
-                        </div>
-                         <div className="flex items-center gap-4 w-full animate-bubble-float" style={{ animationDelay: '2.8s' }}>
-                            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
-                                <Image src="/maandazi.png" alt="Maandazi" width={100} height={100} className="object-cover w-full h-full" data-ai-hint="maandazi pastry"/>
-                            </div>
-                             <div>
-                                <h3 className="font-bold text-sm">Maandazi</h3>
-                                <p className="text-xs text-muted-foreground">ina bake kila kitu.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    </CardHeader>
+                    <CardContent className="p-0 mt-2">
+                        <CardTitle className="font-bold text-sm">{food.name}</CardTitle>
+                        <CardDescription className="text-xs mt-1">{food.description}</CardDescription>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </section>
