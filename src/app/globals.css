@@ -6,9 +6,9 @@
   :root {
     --background: 45 100% 50%; /* #ffc300 */
     --foreground: 24 9.8% 10%;
-    --card: 45 100% 47%;
+    --card: 210 14% 83%; /* #ced4da */
     --card-foreground: 24 9.8% 10%;
-    --popover: 45 100% 47%;
+    --popover: 210 14% 83%; /* #ced4da */
     --popover-foreground: 24 9.8% 10%;
     --primary: 24 9.8% 10%; 
     --primary-foreground: 0 0% 98%;
