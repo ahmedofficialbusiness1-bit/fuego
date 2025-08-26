@@ -109,7 +109,7 @@ const RetailForm = ({
                     <p>3. Tafadhali piga picha ya skrini (screenshot) malipo yako na upakie hapa chini.</p>
                     <div className="relative flex items-center">
                         <Upload className="absolute left-3 w-5 h-5 text-muted-foreground" />
-                        <Input type="file" className="pl-10" />
+                        <Input type="file" className="pl-10" required />
                     </div>
                 </div>
             )}
@@ -122,7 +122,7 @@ const RetailForm = ({
                     <p>Tafadhali piga picha ya skrini (screenshot) malipo yako na upakie hapa chini.</p>
                     <div className="relative flex items-center">
                         <Upload className="absolute left-3 w-5 h-5 text-muted-foreground" />
-                        <Input type="file" className="pl-10" />
+                        <Input type="file" className="pl-10" required />
                     </div>
                 </div>
             )}
