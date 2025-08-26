@@ -83,7 +83,7 @@ Rahisi, haraka, na chenye Ladha.
                 className="relative md:w-1/2 w-full h-[60vh] md:h-[90vh]"
               >
               <Image
-                src="/logo.png"
+                src="/fuego.png"
                 alt="Fuego SmartCook"
                 fill
                 quality={100}
@@ -103,7 +103,7 @@ Rahisi, haraka, na chenye Ladha.
               className="relative w-full h-[70vh] order-1 md:order-1"
             >
               <Image
-                src="/logo.png"
+                src="/fuego.png"
                 alt="Fuego SmartCook"
                 fill
                 quality={100}
@@ -257,7 +257,7 @@ Rahisi, haraka, na chenye Ladha.
               </div>
               <div className="relative w-full h-[70vh]">
                   <Image
-                      src="/logo.png"
+                      src="/fuego.png"
                       alt="Fuego SmartCook Sifa"
                       fill
                       quality={100}
