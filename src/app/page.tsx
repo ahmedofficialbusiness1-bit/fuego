@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import { FuegoLogo } from "@/components/fuego-logo";
@@ -34,7 +33,7 @@ export default function Home() {
     <>
       <main className="w-full relative flex flex-col">
         <header className="sticky top-0 left-0 right-0 z-20 flex justify-between items-center p-4 bg-background/80 backdrop-blur-sm">
-            <FuegoLogo className="h-8 w-auto" />
+            <FuegoLogo className="h-8 w-32" />
             <Navigation />
         </header>
         
@@ -120,8 +119,10 @@ Rahisi, haraka, na chenye Ladha.
                                 </Card>
                             </DialogTrigger>
                             <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
-                              <DialogTitle className="sr-only">{item.title}</DialogTitle>
-                              <DialogDescription className="sr-only">{item.text}</DialogDescription>
+                              <DialogTitle>Faida: {item.title}</DialogTitle>
+                              <DialogDescription>
+                                {item.text}
+                              </DialogDescription>
                               <Card className="bg-transparent border-0 shadow-none">
                                 <CardHeader>
                                   <CardTitle className="flex items-center gap-4 text-2xl"><item.icon className="text-accent w-8 h-8" /> {item.title}</CardTitle>
@@ -412,3 +413,5 @@ Rahisi, haraka, na chenye Ladha.
     </>
   );
 }
+
+    
