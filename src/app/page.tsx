@@ -1,38 +1,22 @@
 
+
 "use client";
 
 import { FuegoLogo } from "@/components/fuego-logo";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/toaster";
-import type { SuggestCookingTimesOutput } from "@/ai/flows/suggest-cooking-times";
-import { Bolt, Clock, Cpu, LifeBuoy, Lock, Mail, MessageSquare, Phone, Soup, User, Zap, ArrowRight, Salad, Utensils, ShieldCheck, HeartPulse, BrainCircuit, Users, Thermometer, Scaling, Wrench, Award } from "lucide-react";
+import { Bolt, Clock, LifeBuoy, Mail, MessageSquare, Phone, ShieldCheck, HeartPulse, Users, Award, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, useRef, useCallback } from "react";
-import type { MouseEvent, Dispatch, SetStateAction } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { cn } from "@/lib/utils";
 import { Navigation } from "@/components/ui/navigation";
 
 
 export default function Home() {
-  const [suggestion, setSuggestion] =
-    useState<SuggestCookingTimesOutput | null>(null);
-  const [dishImage, setDishImage] = useState<string | null>(null);
-
-  const handleSuggestion = (newSuggestion: SuggestCookingTimesOutput) => {
-    setSuggestion(newSuggestion);
-  };
-
-  const handleImageChange = (dataUrl: string) => {
-    setDishImage(dataUrl);
-  };
-
   const foodItems = [
     { name: 'Ugali', description: 'Unapika vyakula vyote jamii ya ugali.', image: '/ugali.png', hint: 'ugali dish' },
     { name: 'Maharage', description: 'Unapika vyakula vyote jamii ya maharage yakiwemo makande.', image: '/maharage2.png', hint: 'beans dish' },
@@ -47,7 +31,7 @@ export default function Home() {
   ];
 
   return (
-    
+    <>
       <main className="w-full relative flex flex-col">
         <header className="sticky top-0 left-0 right-0 z-20 flex justify-between items-center p-4 bg-background/80 backdrop-blur-sm">
             <FuegoLogo className="h-8 w-auto" />
@@ -124,7 +108,7 @@ Rahisi, haraka, na chenye Ladha.
                           { icon: Bolt, title: 'Punguza Gharama', text: 'Sahau gharama za mkaa na gesi zinazopanda kila siku! Fuego SmartCook inatumia umeme mdogo sana, ikikupunguzia bili na kukuwekea akiba. Ni uwekezaji bora kwa jiko la kisasa na familia yako.' },
                           { icon: Clock, title: 'Hifadhi Muda Wako', text: 'Fuego imeundwa kwa teknolojia ya kisasa inayopika haraka na salama. Haijalishi unapika wali, ugali, makande, maharage,keki, maandazi, supu au nyama ngumu kila kitu kinakamilika kwa muda mfupi bila kupoteza ladha fuego inapika zaidi ya vyakula 44.' },
                           { icon: HeartPulse, title: 'Pika Chakula Chenye Afya', text: 'Kwa kutumia Fuego Pressure Cooker utaboresha afya yako kwani huhifadhi virutubisho na vitamini kwenye chakula chako. Hakuna haja ya mafuta mengi au kupika kwa muda mrefu unaopoteza ladha.' },
-                          { icon: Utensils, title: 'Rafiki Yako Jikoni', text: 'Kwa vitufe vya moja kwa moja (Rice, Beans, Meat, Soup, Chicken n.k.), huitaji kuwa mtaalamu wa mapishi. Bonyeza tu na acha Fuego ikufanyie kazi.' },
+                          { icon: LifeBuoy, title: 'Rafiki Yako Jikoni', text: 'Kwa vitufe vya moja kwa moja (Rice, Beans, Meat, Soup, Chicken n.k.), huitaji kuwa mtaalamu wa mapishi. Bonyeza tu na acha Fuego ikufanyie kazi.' },
                           { icon: ShieldCheck, title: 'Usalama wa Kipekee', text: 'Imetengenezwa kwa mfumo salama wa pressure release, lock system, kufunga vizuri na sensa za joto ili kuhakikisha hakuna ajali jikoni. Ni salama kutumia kila siku bila hofu.' },
                           { icon: Users, title: 'Urahisi kwa Kila Nyumba', text: 'Iwe wewe ni mama anayetaka kuokoa muda, mwanafunzi, mfanyakazi au familia kubwa – Fuego inakupa suluhisho la Pamoja.' },
                           { icon: LifeBuoy, title: 'Warranty na Huduma', text: 'Fuego ina warranty wa mwaka moja hivyo uko salama kutumia fuego bila ya kujali matatizo ya kiufundi na vile vile tunakupa huduma masaa 4 ikiwemo elimu juu ya matumizi.' },
@@ -290,8 +274,8 @@ Rahisi, haraka, na chenye Ladha.
                     </Card>
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
-                    <DialogTitle className="sr-only">Sifa za Kiufundi</DialogTitle>
-                    <DialogDescription className="sr-only">Detailed technical specifications of the Fuego SmartCook.</DialogDescription>
+                    <DialogTitle>Sifa za Kiufundi</DialogTitle>
+                    <DialogDescription>Detailed technical specifications of the Fuego SmartCook.</DialogDescription>
                     <Card className="bg-transparent border-0 shadow-none">
                       <CardHeader>
                           <CardTitle className="text-2xl">Sifa za Kiufundi</CardTitle>
@@ -328,7 +312,7 @@ Rahisi, haraka, na chenye Ladha.
                   <Card className="cursor-pointer bg-accent/10 backdrop-blur-sm p-8 border-accent/30 shadow-2xl transition-all duration-300 transform hover:shadow-accent/50 hover:scale-105 hover:z-20">
                       <div className="space-y-4">
                         <div className="relative">
-                          <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                           <Input placeholder="Jina lako" className="pl-10 pointer-events-none bg-white text-black" />
                         </div>
                         <div className="relative">
@@ -344,7 +328,7 @@ Rahisi, haraka, na chenye Ladha.
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[80vw] bg-card/80 backdrop-blur-lg">
                   <DialogTitle>Tuandikie Ujumbe</DialogTitle>
-                  <DialogDescription className="sr-only">Fill out this form to send us a message.</DialogDescription>
+                  <DialogDescription>Fill out this form to send us a message.</DialogDescription>
                   <Card className="bg-transparent border-0 shadow-none">
                     <CardHeader>
                       <CardTitle className="text-2xl">Tuandikie Ujumbe</CardTitle>
@@ -352,7 +336,7 @@ Rahisi, haraka, na chenye Ladha.
                     <CardContent>
                        <form className="space-y-4">
                         <div className="relative">
-                          <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                           <Input placeholder="Jina lako" className="pl-10 bg-white text-black" />
                         </div>
                         <div className="relative">
@@ -429,11 +413,7 @@ Rahisi, haraka, na chenye Ladha.
             </svg>
         </a>
       </main>
-    
+      <Toaster />
+    </>
   );
 }
-
-    
-
-    
-
