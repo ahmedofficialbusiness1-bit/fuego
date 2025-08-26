@@ -5,7 +5,7 @@ export function FuegoLogo({ className }: { className?: string }) {
   return (
     <div className={cn("relative", className)}>
       <Image
-        src="/Adobe Express - file.png"
+        src="/logo.png"
         alt="Fuego Logo"
         fill
         className="object-contain"

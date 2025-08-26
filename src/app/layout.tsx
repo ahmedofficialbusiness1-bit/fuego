@@ -4,6 +4,9 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Fuego SmartCooker',
   description: 'Njia ya kisasa ya kupika.',
+  icons: {
+    icon: '/logo.png',
+  },
 };
 
 export default function RootLayout({
